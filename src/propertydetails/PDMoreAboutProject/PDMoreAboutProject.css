@@ -1,0 +1,475 @@
+/* PDMoreAboutProject.css - BLUE THEME & RESPONSIVE */
+.pd-more-projects-container {
+  width: 800px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+  overflow: hidden;
+  border: 1px solid #93c5fd;
+  padding: 32px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Header */
+.pd-project-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0f2fe;
+}
+
+.pd-project-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Content Layout */
+.pd-project-content {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Columns */
+.pd-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-left-column {
+  padding-right: 12px;
+}
+
+.pd-middle-column {
+  padding: 0 12px;
+  border-left: 1px solid #e0f2fe;
+  border-right: 1px solid #e0f2fe;
+}
+
+.pd-right-column {
+  padding-left: 12px;
+}
+
+/* Sections */
+.pd-section {
+  margin-bottom: 8px;
+}
+
+/* Section Titles - BLUE */
+.pd-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3b82f6;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Subtitles - BLUE */
+.pd-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3b82f6;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Values - DARK BLUE */
+.pd-units-count {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e40af;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.pd-size-range,
+.pd-possession-date,
+.pd-area-unit,
+.pd-project-size,
+.pd-price-range {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e40af;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+/* Configurations */
+.pd-configurations {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pd-config-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e40af;
+  line-height: 1.3;
+}
+
+/* Project Area */
+.pd-project-area {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.pd-area-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.pd-area-note {
+  font-size: 14px;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* RERA Info */
+.pd-rera-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.pd-rera-id {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e40af;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  background: #f0f9ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #93c5fd;
+}
+
+.pd-rera-link {
+  padding: 0;
+  height: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3b82f6;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.pd-rera-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Dividers */
+.pd-divider {
+  margin: 16px 0 !important;
+  border-color: #e0f2fe !important;
+}
+
+.pd-main-divider {
+  margin: 8px 0 20px 0 !important;
+  border-color: #e0f2fe !important;
+}
+
+/* Download Button - LIGHT BLUE */
+.pd-download-btn {
+  margin-top: auto;
+  height: 44px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+  border: none;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.pd-download-btn:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* Action Buttons */
+.pd-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pd-action-btn {
+  height: 40px;
+  padding: 0 24px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #93c5fd;
+  background: white;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.pd-action-btn:hover {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+  color: #1e40af;
+  transform: translateY(-2px);
+}
+
+.pd-action-btn.pd-ask-btn {
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+  border: none;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.pd-action-btn.pd-ask-btn:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* Additional Styles */
+.pd-value-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e40af;
+  line-height: 1.4;
+}
+
+.pd-label-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pd-emphasis-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 4px 0;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablet (768px to 1023px) - Same 3-column layout but smaller */
+@media (max-width: 1023px) {
+  .pd-more-projects-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 24px;
+    margin: 24px auto;
+  }
+  
+  .pd-project-title {
+    font-size: 22px;
+  }
+  
+  .pd-units-count {
+    font-size: 28px;
+  }
+  
+  .pd-download-btn {
+    height: 40px;
+    font-size: 15px;
+  }
+  
+  .pd-action-buttons {
+    gap: 12px;
+  }
+  
+  .pd-action-btn {
+    padding: 0 20px;
+    height: 38px;
+  }
+}
+
+/* Mobile (below 768px) - Stack to single column */
+@media (max-width: 767px) {
+  .pd-more-projects-container {
+    width: 94%;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+  }
+  
+  .pd-project-content {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .pd-left-column,
+  .pd-middle-column,
+  .pd-right-column {
+    padding: 0;
+  }
+  
+  .pd-middle-column {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #e0f2fe;
+    border-bottom: 1px solid #e0f2fe;
+    padding: 20px 0;
+  }
+  
+  .pd-project-title {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .pd-project-header {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  
+  .pd-units-count {
+    font-size: 24px;
+  }
+  
+  .pd-size-range,
+  .pd-possession-date,
+  .pd-area-unit,
+  .pd-project-size,
+  .pd-price-range {
+    font-size: 15px;
+  }
+  
+  .pd-download-btn {
+    width: 100%;
+    height: 42px;
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  
+  .pd-action-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .pd-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    height: 40px;
+  }
+  
+  .pd-section {
+    text-align: center;
+  }
+  
+  .pd-configurations {
+    align-items: center;
+  }
+  
+  .pd-project-area {
+    justify-content: center;
+  }
+  
+  .pd-rera-info {
+    align-items: center;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 479px) {
+  .pd-more-projects-container {
+    width: 96%;
+    padding: 16px;
+    margin: 16px auto;
+  }
+  
+  .pd-project-title {
+    font-size: 18px;
+  }
+  
+  .pd-units-count {
+    font-size: 22px;
+  }
+  
+  .pd-size-range,
+  .pd-possession-date,
+  .pd-area-unit,
+  .pd-project-size,
+  .pd-price-range {
+    font-size: 14px;
+  }
+  
+  .pd-section-title,
+  .pd-subtitle {
+    font-size: 12px;
+  }
+  
+  .pd-download-btn {
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .pd-action-btn {
+    height: 38px;
+    font-size: 13px;
+  }
+  
+  .pd-area-value {
+    font-size: 16px;
+  }
+  
+  .pd-config-item {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* Extra Small Mobile (below 360px) */
+@media (max-width: 359px) {
+  .pd-more-projects-container {
+    padding: 12px;
+  }
+  
+  .pd-project-title {
+    font-size: 16px;
+  }
+  
+  .pd-units-count {
+    font-size: 20px;
+  }
+  
+  .pd-download-btn {
+    height: 38px;
+    font-size: 13px;
+  }
+  
+  .pd-action-btn {
+    height: 36px;
+    font-size: 12px;
+  }
+}

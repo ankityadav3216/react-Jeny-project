@@ -1,0 +1,57 @@
+/* ===============================
+   LABEL CONTAINER
+   =============================== */
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background: linear-gradient(135deg, #cee0f2);
+  border-bottom: 1px solid #ddd;
+
+  /* ❌ sticky removed to prevent header overlap */
+  position: relative;
+  top: auto;
+  z-index: auto;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.label-button {
+  padding: 8px 16px;
+  background-color: #94b8dc;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+  white-space: nowrap; /* prevent line break */
+}
+
+.label-button:hover {
+  background-color: #2b73bb;
+  border-color: #ffffff;
+}
+
+/* ===============================
+   MOBILE HORIZONTAL SCROLL
+   =============================== */
+@media (max-width: 768px) {
+  .label-container {
+    flex-wrap: nowrap;               /* horizontal scrolling */
+    overflow-x: auto;                /* scroll if overflow */
+    -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
+    padding: 10px 0;
+  }
+
+  /* hide scrollbar nicely */
+  .label-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .label-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+}

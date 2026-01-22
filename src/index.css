@@ -1,0 +1,10 @@
+/* IMPORTANT: @import statements MUST come first */
+
+/* Ant Design Reset - MUST BE FIRST */
+@import 'antd/dist/reset.css';
+
+/* Tailwind Directives - AFTER @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

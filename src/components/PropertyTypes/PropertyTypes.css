@@ -1,0 +1,152 @@
+.property-types-section {
+  padding: 64px 0;
+  background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
+}
+
+.property-types-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #8B0000;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #5D4037;
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.property-type-card {
+  border-radius: 16px !important;
+  border: 2px solid #FFD700 !important;
+  text-align: center;
+  padding: 24px 16px !important;
+  height: 100%;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  background: white !important;
+}
+
+.property-type-card:hover {
+  border-color: #FF4500 !important;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px rgba(255, 69, 0, 0.1) !important;
+}
+
+.type-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #FF4500 0%, #FF0000 100%);
+  border: 2px solid #FFD700;
+}
+
+.type-icon-inner {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.type-icon-inner .anticon {
+  font-size: 28px;
+  color: #FFD700;
+}
+
+.type-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #8B0000;
+  margin-bottom: 8px;
+}
+
+.type-count {
+  font-size: 14px;
+  color: #5D4037;
+  margin-bottom: 16px;
+}
+
+.type-indicator {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 0 auto;
+  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+}
+
+.property-type-card:hover .type-indicator {
+  width: 60px;
+  background: linear-gradient(90deg, #FF4500 0%, #8B0000 100%);
+}
+
+@media (max-width: 1024px) {
+  .property-types-section {
+    padding: 48px 0;
+  }
+  
+  .section-title {
+    font-size: 30px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .property-types-section {
+    padding: 32px 0;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  
+  .property-type-card {
+    padding: 20px 12px !important;
+  }
+  
+  .type-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .type-icon-inner {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .type-title {
+    font-size: 16px;
+  }
+  
+  .type-count {
+    font-size: 12px;
+  }
+}

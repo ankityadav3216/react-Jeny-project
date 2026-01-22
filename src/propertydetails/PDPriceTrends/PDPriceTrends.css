@@ -1,0 +1,451 @@
+/* PDPriceTrends.css - WHITE CONTAINER WITH BLUE TEXT */
+
+/* Main Container - White */
+.pd-container-compact {
+  width: 800px;
+  background: white; /* WHITE CONTAINER */
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  float: left;
+  margin: 20px 0;
+  border: 1px solid #dbeafe;
+  margin-left: 0%;
+  margin-right: auto;
+}
+
+/* Top Navigation Tabs - Blue Theme */
+.pd-tabs-container-compact {
+  border-bottom: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  padding: 0 16px;
+  background: #f8fafc; /* VERY LIGHT BLUE BACKGROUND */
+}
+
+.pd-tabs-compact .ant-tabs-nav {
+  margin: 0;
+}
+
+.pd-tabs-compact .ant-tabs-tab {
+  padding: 10px 8px;
+  margin-right: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #60a5fa; /* LIGHT BLUE TEXT */
+}
+
+.pd-tabs-compact .ant-tabs-tab:hover {
+  color: #3b82f6; /* BLUE ON HOVER */
+}
+
+.pd-tabs-compact .ant-tabs-tab-active {
+  color: #3b82f6 !important; /* BLUE ACTIVE TAB */
+  font-weight: 600;
+}
+
+.pd-tabs-compact .ant-tabs-ink-bar {
+  background: #3b82f6; /* BLUE INDICATOR */
+  height: 2px;
+}
+
+.pd-tab-item-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pd-tab-icon-compact {
+  font-size: 14px;
+  color: #3b82f6; /* BLUE ICONS */
+}
+
+/* Main Content */
+.pd-main-content-compact {
+  padding: 20px;
+}
+
+/* Title Section - DARK BLUE HEADING */
+.pd-title-section-compact {
+  margin-bottom: 20px;
+}
+
+.pd-title-row-compact {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* MAIN HEADING - DARK BLUE */
+.pd-title-compact {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e40af !important; /* DARK BLUE HEADING */
+  margin: 0;
+  line-height: 1.3;
+}
+
+.pd-info-icon-compact {
+  color: #3b82f6; /* BLUE ICON */
+  font-size: 16px;
+  cursor: help;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* BLUE APPRECIATION BADGE */
+.pd-appreciation-badge-compact {
+  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  border: 1px solid #93c5fd; /* BLUE BORDER */
+  color: #1e40af; /* DARK BLUE TEXT */
+  border-radius: 12px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pd-badge-icon-compact {
+  color: #3b82f6; /* BLUE ICON */
+  font-size: 11px;
+}
+
+/* Chart Container */
+.pd-chart-container-compact {
+  border: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #f8fafc; /* VERY LIGHT BLUE BACKGROUND */
+}
+
+.pd-chart-header-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* CHART TITLE - DARK BLUE */
+.pd-chart-title-compact {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e40af; /* DARK BLUE */
+}
+
+.pd-time-filter-compact {
+  display: flex;
+  align-items: center;
+}
+
+.pd-time-select-compact {
+  width: 110px;
+}
+
+.pd-time-select-compact .ant-select-selector {
+  border-radius: 4px !important;
+  border-color: #93c5fd !important; /* BLUE BORDER */
+  font-size: 12px !important;
+  height: 30px !important;
+  color: #2563eb; /* BLUE TEXT */
+}
+
+.pd-time-select-compact .ant-select-selection-item {
+  color: #2563eb; /* BLUE TEXT */
+}
+
+.pd-chart-area-compact {
+  position: relative;
+  height: 180px;
+}
+
+.pd-chart-svg-compact {
+  width: 100%;
+  height: 100%;
+}
+
+.pd-grid-lines-compact line {
+  stroke: #e0f2ff; /* LIGHT BLUE GRID */
+}
+
+/* Y-axis and X-axis text - BLUE */
+.pd-y-axis-compact text,
+.pd-x-axis-compact text {
+  fill: #2563eb !important; /* BLUE TEXT */
+  font-weight: 500;
+}
+
+/* Chart Legend - BLUE */
+.pd-chart-legend-compact text {
+  fill: #1e40af !important; /* DARK BLUE TEXT */
+  font-weight: 600;
+}
+
+/* Comparison Cards */
+.pd-cards-container-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pd-card-compact {
+  border-radius: 6px;
+  border: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  transition: all 0.2s ease;
+  padding: 16px !important;
+  height: 100%;
+  background: white;
+}
+
+.pd-card-compact:hover {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6; /* BLUE BORDER ON HOVER */
+}
+
+/* Add Card - BLUE */
+.pd-card-add-compact {
+  border-style: dashed;
+  border-color: #93c5fd; /* BLUE DASHED BORDER */
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pd-card-add-compact:hover {
+  border-color: #3b82f6;
+  background: #dbeafe; /* DEEPER BLUE ON HOVER */
+}
+
+.pd-card-add-content-compact {
+  color: #3b82f6; /* BLUE TEXT */
+}
+
+.pd-add-icon-compact {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.pd-add-text-compact {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Project and Locality Cards */
+.pd-card-header-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pd-card-dot-compact {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pd-dot-project-compact {
+  background: #3b82f6; /* BLUE DOT */
+}
+
+.pd-dot-locality-compact {
+  background: #60a5fa; /* LIGHT BLUE DOT */
+}
+
+.pd-card-label-compact {
+  font-size: 11px;
+  font-weight: 600;
+  color: #3b82f6; /* BLUE TEXT */
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.pd-card-content-compact {
+  padding: 0;
+}
+
+/* CARD TITLE - DARK BLUE */
+.pd-card-title-compact {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e40af !important; /* DARK BLUE HEADING */
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.pd-growth-section-compact {
+  margin-bottom: 12px;
+}
+
+/* GROWTH VALUE - BLUE */
+.pd-growth-value-compact {
+  font-size: 20px;
+  font-weight: 700;
+  color: #3b82f6; /* BLUE TEXT */
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 3px;
+}
+
+.pd-growth-icon-compact {
+  font-size: 14px;
+  color: #3b82f6; /* BLUE ICON */
+}
+
+.pd-growth-label-compact {
+  font-size: 11px;
+  color: #60a5fa; /* LIGHT BLUE TEXT */
+}
+
+.pd-rate-section-compact {
+  border-top: 1px solid #e0f2ff; /* LIGHT BLUE BORDER */
+  padding-top: 12px;
+}
+
+/* RATE VALUE - DARK BLUE */
+.pd-rate-value-compact {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e40af; /* DARK BLUE TEXT */
+  margin-bottom: 3px;
+}
+
+.pd-rate-label-compact {
+  font-size: 11px;
+  color: #60a5fa; /* LIGHT BLUE TEXT */
+}
+
+/* Footer Link - BLUE */
+.pd-footer-link-compact {
+  text-align: center;
+  padding: 12px 0;
+  border-top: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+}
+
+.pd-trends-link-compact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #3b82f6; /* BLUE TEXT */
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pd-trends-link-compact:hover {
+  color: #1e40af; /* DARK BLUE ON HOVER */
+  text-decoration: underline;
+}
+
+.pd-link-icon-compact {
+  font-size: 11px;
+  color: #3b82f6; /* BLUE ICON */
+}
+
+/* Ant Design Select Customization */
+.pd-time-select-compact .ant-select-arrow {
+  color: #3b82f6 !important; /* BLUE ARROW */
+}
+
+/* Chart Lines - Keep original colors for differentiation */
+/* Project Line (Orange) - Keep as is for chart clarity */
+/* Locality Line (Blue) - Keep as is */
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pd-container-compact {
+    width: 100%;
+    float: none;
+    margin: 20px auto;
+    border-radius: 6px;
+  }
+  
+  .pd-main-content-compact {
+    padding: 16px;
+  }
+  
+  .pd-title-compact {
+    font-size: 16px;
+  }
+  
+  .pd-chart-container-compact {
+    padding: 12px;
+  }
+  
+  .pd-chart-area-compact {
+    height: 160px;
+  }
+  
+  .pd-cards-container-compact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .pd-card-compact {
+    padding: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-tabs-compact .ant-tabs-tab {
+    padding: 8px 4px;
+    margin-right: 8px;
+    font-size: 11px;
+  }
+  
+  .pd-tab-icon-compact {
+    font-size: 12px;
+  }
+  
+  .pd-title-compact {
+    font-size: 15px;
+  }
+  
+  .pd-chart-area-compact {
+    height: 140px;
+  }
+  
+  .pd-growth-value-compact {
+    font-size: 18px;
+  }
+  
+  .pd-rate-value-compact {
+    font-size: 16px;
+  }
+}
+
+/* Ensure all headings are dark blue */
+.pd-container-compact h1,
+.pd-container-compact h2,
+.pd-container-compact h3,
+.pd-container-compact h4 {
+  color: #1e40af !important; /* DARK BLUE FOR ALL HEADINGS */
+}
+
+/* Ant Design Tab Customizations for Blue Theme */
+.ant-tabs-tab.ant-tabs-tab-active .pd-tab-icon-compact {
+  color: #3b82f6 !important;
+}
+
+/* Card hover effects */
+.pd-card-compact:hover .pd-card-title-compact {
+  color: #1d4ed8 !important; /* SLIGHTLY DIFFERENT DARK BLUE ON HOVER */
+}
+
+/* Focus states for accessibility */
+.pd-trends-link-compact:focus,
+.pd-card-add-compact:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

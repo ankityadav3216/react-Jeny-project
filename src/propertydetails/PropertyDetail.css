@@ -1,0 +1,114 @@
+/* 🔹 BODY & ROOT */
+body,
+#root {
+  overflow: visible;
+}
+
+/* MAIN CONTAINER */
+.property-detail-container {
+  width: 100%;
+  max-width: 1400px; /* adjust based on design */
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* MAIN 2-COLUMN LAYOUT */
+.pd-main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* LEFT CONTENT */
+.pd-left {
+  flex: 1;
+  min-width: 0;
+}
+
+/* RIGHT – STICKY CONTACT SELLER */
+.pd-right {
+  
+  position: sticky;
+  top: 90px; /* header height */
+  
+  flex-shrink: 0;
+}
+
+/* ANT DESIGN FIX */
+.ant-layout,
+.ant-layout-content {
+  overflow: visible !important;
+}
+
+/* ====================== MEDIA QUERIES ====================== */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .pd-main-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pd-right {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
+/* MOBILE MEDIUM 576px - 768px */
+@media (max-width: 768px) {
+  .pd-main-layout {
+    gap: 14px;
+    padding: 8px;
+  }
+
+  .pd-left,
+  .pd-right {
+    width: 100%;
+  }
+
+  .pd-right {
+    position: static;
+    margin-top: 12px;
+  }
+}
+
+/* MOBILE SMALL 480px */
+@media (max-width: 480px) {
+  .property-detail-container{
+    max-width: 100%;
+  }
+  .pd-main-layout {
+    gap: 12px;
+    padding: 6px;
+  }
+
+  .pd-right {
+    margin-top: 10px;
+  }
+}
+
+/* VERY SMALL MOBILE – 360px AND BELOW */
+@media (max-width: 360px) {
+  .property-detail-container{
+    width: 100%;
+  }
+  .pd-main-layout {
+    flex-direction: column;
+    gap: 10px;
+    padding: 4px;
+  }
+
+  .pd-left {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pd-right {
+    width: 100%;
+    position: static; /* sticky off */
+    top: auto;
+    margin-top: 10px;
+  }
+}

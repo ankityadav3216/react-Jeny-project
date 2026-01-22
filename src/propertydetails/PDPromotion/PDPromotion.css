@@ -1,0 +1,70 @@
+/* Main container */
+.ps-main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;      /* same width as highlight */
+  width: 100%;
+  margin: 4px 0;         /* reduced margin */
+  background: #ffffff;   /* WHITE background */
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); /* Blue tint shadow */
+  box-sizing: border-box;
+}
+
+/* Content container */
+.ps-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title → BLUE */
+.ps-title {
+  color: #1e40af;        /* BLUE */
+  font-size: 1.5rem;
+  margin-bottom: 8px;   /* reduced margin */
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Offers container */
+.ps-offers-container {
+  margin-bottom: 8px;   /* reduced margin */
+}
+
+/* Offer item → BLUE TEXT */
+.ps-offer-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4px;   /* reduced spacing */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #1e40af;        /* BLUE TEXT */
+}
+
+/* Toggle button → LIGHT BLUE with BLUE TEXT */
+.ps-toggle-btn {
+  margin-top: 4px;      /* tight spacing */
+  background-color: #93c5fd;  /* LIGHT BLUE */
+  color: #1e40af;              /* BLUE TEXT */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.ps-toggle-btn:hover {
+  background-color: #3b82f6;  /* MEDIUM BLUE */
+  color: #ffffff;              /* WHITE TEXT on hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ps-main-container {
+    max-width: 90%;
+    margin: 4px auto;  /* tight margin on mobile too */
+  }
+}

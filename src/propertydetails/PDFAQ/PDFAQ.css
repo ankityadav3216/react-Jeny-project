@@ -1,0 +1,393 @@
+/* FAQ Section - Blue Theme */
+.pd-faq {
+  padding: 40px 0;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15); /* BLUE SHADOW */
+  max-width: 800px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #dbeafe; /* BLUE BORDER */
+  margin: 20px 0;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.pd-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* DARK BLUE HEADING */
+.pd-section-title {
+  font-size: 2rem;
+  color: #1e40af !important; /* DARK BLUE HEADING */
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #3b82f6; /* BLUE BORDER */
+  display: inline-block;
+  font-weight: 700;
+}
+
+.pd-faq-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* LIGHT BLUE TEXT */
+.pd-faq-intro p {
+  font-size: 18px;
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.pd-faq-categories {
+  margin-bottom: 30px;
+}
+
+.pd-categories-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  scrollbar-width: thin;
+}
+
+.pd-categories-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pd-categories-scroll::-webkit-scrollbar-track {
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+}
+
+.pd-categories-scroll::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* BLUE SCROLLBAR */
+  border-radius: 3px;
+}
+
+/* LIGHT BLUE TABS */
+.pd-category-tab {
+  padding: 10px 20px;
+  border: 2px solid #dbeafe; /* LIGHT BLUE BORDER */
+  background: white;
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  border-radius: 25px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pd-category-tab:hover {
+  border-color: #3b82f6; /* BLUE BORDER ON HOVER */
+  color: #3b82f6 !important; /* BLUE TEXT ON HOVER */
+  transform: translateY(-2px);
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+}
+
+.pd-category-tab.active {
+  background: #3b82f6 !important; /* BLUE BACKGROUND */
+  color: white !important; /* WHITE TEXT */
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); /* BLUE SHADOW */
+}
+
+.pd-faq-accordion {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dbeafe; /* BLUE BORDER */
+  margin-bottom: 30px;
+  background: #f8fafc; /* VERY LIGHT BLUE BACKGROUND */
+}
+
+.pd-faq-item {
+  border-bottom: 1px solid #dbeafe; /* BLUE BORDER */
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.pd-faq-item:last-child {
+  border-bottom: none;
+}
+
+.pd-faq-item:hover {
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND ON HOVER */
+}
+
+.pd-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pd-faq-question:hover {
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND ON HOVER */
+}
+
+/* DARK BLUE QUESTION TEXT */
+.pd-faq-q {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e40af !important; /* DARK BLUE HEADING */
+  flex: 1;
+  line-height: 1.4;
+}
+
+.pd-faq-toggle {
+  font-size: 1.5rem;
+  color: #3b82f6 !important; /* BLUE TEXT */
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  border-radius: 50%;
+  margin-left: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.pd-faq-item:hover .pd-faq-toggle {
+  background: #bfdbfe; /* DEEPER BLUE ON HOVER */
+  color: #2563eb !important; /* DARKER BLUE */
+}
+
+.pd-faq-answer {
+  padding: 0 25px 20px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LIGHT BLUE ANSWER TEXT */
+.pd-faq-a {
+  font-size: 16px;
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  border-left: 3px solid #3b82f6; /* BLUE BORDER */
+  padding-left: 15px;
+  font-weight: 500;
+}
+
+.pd-faq-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.pd-faq-category {
+  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  color: #1e40af !important; /* DARK BLUE TEXT */
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #93c5fd; /* LIGHT BLUE BORDER */
+}
+
+.pd-faq-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* LIGHT BLUE BUTTONS */
+.pd-faq-helpful,
+.pd-faq-share {
+  padding: 6px 12px;
+  border: 1px solid #93c5fd; /* LIGHT BLUE BORDER */
+  background: white;
+  color: #3b82f6 !important; /* BLUE TEXT */
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.pd-faq-helpful:hover {
+  border-color: #3b82f6;
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  color: #2563eb !important; /* DARKER BLUE */
+}
+
+.pd-faq-share:hover {
+  border-color: #3b82f6;
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  color: #2563eb !important; /* DARKER BLUE */
+}
+
+/* Read More Button - BLUE */
+.pd-read-more-container {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #dbeafe; /* BLUE BORDER */
+}
+
+.pd-read-more-btn {
+  padding: 12px 40px;
+  background: #3b82f6 !important; /* BLUE BACKGROUND */
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pd-read-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); /* BLUE SHADOW */
+  background: #2563eb !important; /* DARKER BLUE ON HOVER */
+}
+
+/* Ensure all text in FAQ section is light blue except headings */
+.pd-faq p:not(.pd-section-title),
+.pd-faq span:not(.pd-faq-q):not(.pd-faq-category):not(.pd-section-title) {
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+}
+
+/* Ensure all headings are dark blue */
+.pd-faq h1,
+.pd-faq h2,
+.pd-faq h3,
+.pd-faq h4,
+.pd-faq h5,
+.pd-faq h6 {
+  color: #1e40af !important; /* DARK BLUE HEADINGS */
+}
+
+/* Ensure all borders are blue */
+.pd-faq,
+.pd-faq-accordion,
+.pd-faq-item,
+.pd-category-tab,
+.pd-faq-helpful,
+.pd-faq-share {
+  border-color: #dbeafe !important; /* LIGHT BLUE BORDER */
+}
+
+/* Ensure active/hover borders are darker blue */
+.pd-category-tab.active,
+.pd-faq-helpful:hover,
+.pd-faq-share:hover {
+  border-color: #3b82f6 !important; /* BLUE BORDER */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pd-container {
+    padding: 0 15px;
+  }
+  
+  .pd-faq {
+    padding: 30px 0;
+  }
+  
+  .pd-faq-question {
+    padding: 15px 20px;
+  }
+  
+  .pd-faq-answer {
+    padding: 0 20px 15px;
+  }
+  
+  .pd-faq-meta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .pd-faq-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .pd-categories-scroll {
+    padding: 5px 0;
+  }
+  
+  .pd-category-tab {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .pd-read-more-btn {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-section-title {
+    font-size: 1.5rem;
+  }
+  
+  .pd-faq-intro p {
+    font-size: 16px;
+  }
+  
+  .pd-faq-q {
+    font-size: 1rem;
+  }
+  
+  .pd-faq-a {
+    font-size: 14px;
+  }
+  
+  .pd-faq {
+    box-shadow: 0 1px 4px rgba(59, 130, 246, 0.1);
+    border-radius: 10px;
+  }
+}
+
+/* Add blue shadow to main container on hover */
+.pd-faq:hover {
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+}
+
+/* Animation for active FAQ item */
+.pd-faq-item.active {
+  background: #f0f7ff;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+/* Focus states for accessibility */
+.pd-category-tab:focus,
+.pd-faq-helpful:focus,
+.pd-faq-share:focus,
+.pd-read-more-btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+.pd-category-tab,
+.pd-faq-helpful,
+.pd-faq-share,
+.pd-read-more-btn,
+.pd-faq-item {
+  transition: all 0.2s ease-in-out;
+}

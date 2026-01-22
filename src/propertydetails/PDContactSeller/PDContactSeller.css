@@ -1,0 +1,287 @@
+/* PAGE CONTAINER */
+.property-page-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* GRID LAYOUT */
+.property-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* left flexible, right fixed */
+  gap: 12px;
+  align-items: start;
+}
+
+/* LEFT CONTENT */
+.left-content {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: calc(100vh - 96px);
+  border: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1); /* LIGHT BLUE SHADOW */
+}
+
+/* RIGHT SIDEBAR - FIXED POSITION */
+.right-sidebar {
+  
+  top: 96px;
+  height: calc(100vh - 120px); /* Viewport height minus some padding */
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+/* STICKY CARD */
+.sticky-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: auto;
+  background: #f8fafc; /* VERY LIGHT BLUE BACKGROUND */
+  border: 2px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); /* LIGHT BLUE SHADOW */
+}
+
+
+
+
+/* CARD TITLE - DARK BLUE HEADING */
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e40af !important; /* DARK BLUE HEADING */
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #3b82f6; /* BLUE BORDER */
+}
+
+/* COMPANY INFO */
+.company-info {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e40af !important; /* DARK BLUE TEXT */
+  border: 1px solid #93c5fd; /* LIGHT BLUE BORDER */
+}
+
+.company-name {
+  font-weight: 600;
+  color: #1e40af !important;
+  margin-bottom: 4px;
+}
+
+.company-type, .company-phone {
+  color: #60a5fa !important;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+/* FORM */
+.helper-text {
+  font-size: 13px;
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Form input fields - LIGHT BLUE BORDER */
+.blue-input, .blue-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #93c5fd !important; /* LIGHT BLUE BORDER */
+  border-radius: 6px;
+  font-size: 14px;
+  color: #2563eb; /* BLUE TEXT */
+  background: white;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.blue-input:focus, .blue-select:focus {
+  outline: none;
+  border-color: #3b82f6 !important; /* BLUE BORDER ON FOCUS */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Submit Button - LIGHT BLUE */
+.light-blue-button {
+  width: 100%;
+  padding: 12px;
+  background: #93c5fd !important; /* LIGHT BLUE BACKGROUND */
+  color: white !important;
+  border: none !important;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.light-blue-button:hover {
+  background: #60a5fa !important; /* SLIGHTLY DARKER LIGHT BLUE ON HOVER */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 197, 253, 0.3);
+}
+
+/* CONSENT */
+.consent-section {
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  line-height: 1.4;
+}
+
+/* Checkbox styling */
+.blue-checkbox .ant-checkbox-inner {
+  border-color: #93c5fd !important;
+}
+
+.blue-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #93c5fd !important;
+  border-color: #93c5fd !important;
+}
+
+/* CONTACT OPTIONS */
+.contact-options {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  margin: 8px 0 12px 0;
+  align-items: center;
+}
+
+.contact-option-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.whatsapp-icon {
+  color: #25d366 !important; /* Keep WhatsApp green */
+  font-size: 16px;
+}
+
+/* Ensure all headings in the container are dark blue */
+.property-page-container h1,
+.property-page-container h2,
+.property-page-container h3,
+.property-page-container h4,
+.property-page-container h5,
+.property-page-container h6 {
+  color: #1e40af !important; /* DARK BLUE HEADINGS */
+}
+
+/* Ensure all text is light blue */
+.property-page-container p,
+.property-page-container span:not(.card-title):not(.company-logo):not(.company-name) {
+  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+}
+
+/* Ensure all borders are light blue */
+.property-page-container,
+.sticky-card,
+.left-content,
+.company-logo,
+.info-strip,
+.blue-input,
+.blue-select {
+  border-color: #dbeafe !important; /* LIGHT BLUE BORDER */
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .property-grid {
+    grid-template-columns: 1fr; /* stack left + right on mobile */
+  }
+
+  .right-sidebar {
+    position: static;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .left-content {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .property-page-container {
+    padding: 12px;
+  }
+  
+  .left-content {
+    padding: 12px;
+  }
+  
+  .sticky-card {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .company-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .contact-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .property-grid {
+    gap: 8px;
+  }
+  
+  .left-content {
+    margin-bottom: 8px;
+  }
+  
+  .light-blue-button {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .info-strip {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

@@ -1,0 +1,51 @@
+/* Home.css - Responsive Width Breakpoints */
+
+/* Mobile devices (max-width: 480px) */
+@media (min-width:360px)and(max-width: 480px) {
+  .home-page {
+    width: 100%;
+  }
+  
+  .home-page > * {
+    width: 100%;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .home-page {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  
+  .home-page > * {
+    width: 100%;
+  }
+}
+
+/* Laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-page {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  .home-page > * {
+    width: 100%;
+  }
+}
+
+/* Desktops (1025px and above) */
+@media (min-width: 1025px) {
+  .home-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .home-page > * {
+    width: 100%;
+  }
+}

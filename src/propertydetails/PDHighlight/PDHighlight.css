@@ -1,0 +1,172 @@
+/* PDHighlight.css */
+
+/* Main container */
+.pd-highlight-main-container {
+  padding: 32px;
+  border-radius: 16px;
+  width: 800px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.pd-highlight-title {
+  color: #1e40af;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Points container */
+.pd-highlight-points-container {
+  margin-bottom: 24px;
+}
+
+/* Point item */
+.pd-highlight-point-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #1e40af;
+}
+
+/* Bullet */
+.pd-highlight-point-bullet {
+  color: #3b82f6;
+  font-size: 24px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+/* Point text */
+.pd-highlight-point-text {
+  flex: 1;
+  font-weight: 500;
+  color: #1e40af;
+}
+
+/* Toggle button - Same blue theme as previous section */
+.pd-highlight-toggle-btn {
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+.pd-highlight-toggle-btn:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .pd-highlight-main-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 28px;
+    margin: 28px auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pd-highlight-main-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 24px;
+    margin: 24px auto;
+    border-radius: 12px;
+  }
+  
+  .pd-highlight-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .pd-highlight-point-item {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .pd-highlight-point-bullet {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .pd-highlight-toggle-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .pd-highlight-main-container {
+    width: 94%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .pd-highlight-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .pd-highlight-point-item {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  
+  .pd-highlight-point-bullet {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+  
+  .pd-highlight-toggle-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .pd-highlight-main-container {
+    padding: 16px;
+    margin: 16px auto;
+  }
+  
+  .pd-highlight-title {
+    font-size: 18px;
+  }
+  
+  .pd-highlight-point-item {
+    font-size: 13px;
+  }
+  
+  .pd-highlight-point-bullet {
+    font-size: 16px;
+  }
+  
+  .pd-highlight-toggle-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

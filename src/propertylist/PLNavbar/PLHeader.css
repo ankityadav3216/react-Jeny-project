@@ -1,0 +1,119 @@
+/* src/components/propertylist/navbar/Header.css */
+
+.pl-main-header {
+  background: linear-gradient(135deg, #003366, #1677ff);
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.pl-header-container {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+/* LOGO */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.logo-wrapper {
+  background: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 600;
+}
+
+/* DIVIDER */
+.pl-divider {
+  height: 24px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+/* BUY IN */
+.buy-location {
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* SEARCH */
+.pl-search {
+  max-width: 460px;
+  min-width: 260px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.pl-search input {
+  border-radius: 20px;
+}
+
+/* ACTIONS */
+.pl-actions {
+  margin-left: auto;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* DOWNLOAD APP */
+.download-btn {
+  background: white;
+  border-radius: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* LIST PROPERTY */
+.list-property-btn {
+  border-radius: 20px;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+/* MENU */
+.menu-btn {
+  background: white;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .pl-header-container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pl-header-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pl-search {
+    min-width: 220px;
+  }
+}

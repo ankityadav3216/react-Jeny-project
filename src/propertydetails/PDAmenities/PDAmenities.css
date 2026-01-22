@@ -1,0 +1,267 @@
+/* PDAmenities.css - COMPLETE EXPANSION VERSION - BLUE THEME */
+.pd-amenities-container {
+  width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin-left: 0;
+  margin-right: auto;
+  margin: 20px 0;
+  background: rgb(255, 255, 255);
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: visible;
+  transition: all 0.3s ease;
+  min-height: 300px;
+  height: auto;
+}
+
+/* BLUE HEADING */
+.pd-amenities-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #3b82f6; /* BLUE TEXT */
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #3b82f6; /* BLUE BORDER */
+}
+
+.pd-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.pd-amenities-grid.expanded {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.pd-amenity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #e0f2ff; /* LIGHT BLUE BORDER */
+  border-radius: 8px;
+  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  transition: all 0.2s ease;
+  min-height: 90px;
+  cursor: default;
+}
+
+.pd-amenity-item:hover {
+  border-color: #3b82f6; /* BLUE BORDER ON HOVER */
+  background: #dbeafe; /* DEEPER BLUE ON HOVER */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* BLUE ICONS */
+.pd-amenity-icon {
+  font-size: 24px;
+  color: #3b82f6 !important; /* BLUE ICONS */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  border-radius: 50%;
+  border: 1px solid #bfdbfe; /* BLUE BORDER */
+}
+
+/* BLUE TEXT FOR AMENITY NAMES */
+.pd-amenity-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2563eb; /* DARK BLUE TEXT */
+  text-align: center;
+  line-height: 1.3;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+/* BLUE "MORE" ITEM */
+.pd-more-item {
+  cursor: pointer !important;
+  border: 2px dashed #3b82f6 !important; /* BLUE DASHED BORDER */
+  background: #e0f2ff !important; /* BLUE BACKGROUND */
+}
+
+.pd-more-item:hover {
+  border-color: #1d4ed8 !important; /* DARKER BLUE ON HOVER */
+  background: #dbeafe !important; /* DEEPER BLUE ON HOVER */
+  transform: translateY(-2px) scale(1.05) !important;
+}
+
+.pd-more-icon-bg {
+  background: #3b82f6 !important; /* BLUE BACKGROUND */
+  color: white !important; /* WHITE ICON */
+  border-color: #2563eb !important; /* BLUE BORDER */
+}
+
+/* BLUE EXTERNAL TOGGLE BUTTON */
+.pd-external-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  width: 800px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.pd-external-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3b82f6; /* BLUE BACKGROUND */
+  color: white; /* WHITE TEXT */
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pd-external-toggle-btn:hover {
+  background: #2563eb; /* DARKER BLUE ON HOVER */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.pd-external-toggle-btn:active {
+  background: #1d4ed8; /* EVEN DARKER BLUE ON CLICK */
+  transform: translateY(0);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pd-amenities-container.expanded .pd-amenity-item {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+.pd-amenities-container.expanded .pd-amenity-item:nth-child(n+11) {
+  animation-delay: calc((var(--item-index) - 10) * 0.05s);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+  .pd-amenities-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .pd-external-toggle-container {
+    width: 100%;
+  }
+  
+  .pd-amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .pd-amenities-grid.expanded {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-amenities-container {
+    padding: 12px;
+  }
+  
+  .pd-amenities-heading {
+    font-size: 20px;
+  }
+  
+  .pd-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .pd-amenities-grid.expanded {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pd-amenity-item {
+    padding: 10px;
+    min-height: 80px;
+  }
+  
+  .pd-amenity-icon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .pd-amenity-name {
+    font-size: 12px;
+  }
+  
+  .pd-external-toggle-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .pd-amenities-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .pd-amenities-grid.expanded {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* SMOOTH EXPANSION */
+.pd-amenities-container:not(.expanded) {
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.pd-amenities-container.expanded {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.pd-amenities-grid.expanded {
+  min-height: 400px;
+}
+
+/* BLUE SHADOWS AND EFFECTS */
+.pd-amenity-item:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* BLUE BULLET POINTS IF NEEDED */
+.pd-amenities-heading::before {
+  content: "•";
+  color: #3b82f6;
+  margin-right: 8px;
+}

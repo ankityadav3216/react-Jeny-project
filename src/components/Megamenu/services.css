@@ -1,0 +1,61 @@
+/* ===== WRAPPER (HEADER KE NICHE) ===== */
+.services-wrapper {
+  position: absolute;
+  top: 64px;          /* header height */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* ===== SMALL VERTICAL DROPDOWN ===== */
+.services-dropdown {
+  width: 260px;
+  background: #ffffff;
+  margin-left: 320px;   /* Services tab ke niche */
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ===== DIVIDER ===== */
+.services-divider {
+  height: 1px;
+  background: #eaeaea;
+  margin: 6px 0;
+}
+
+/* ===== BUTTON STYLE ===== */
+.services-item {
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #003366;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.services-item:hover {
+  background: #ffffff;
+  color: #1677ff;
+  border-color: #1677ff;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .services-wrapper {
+    top: 56px;
+  }
+
+  .services-dropdown {
+    margin-left: 12px;
+    width: calc(100% - 24px);
+  }
+}

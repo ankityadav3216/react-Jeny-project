@@ -1,0 +1,119 @@
+.main-header {
+  background: linear-gradient(135deg, #003366, #1677ff);
+  height: 64px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+/* LOGO */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-wrapper {
+  background: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 600;
+}
+
+/* DESKTOP */
+.desktop-menu {
+  margin-left: 30px;
+  background: transparent;
+}
+
+.header-actions {
+  margin-left: auto;
+  gap: 14px;
+}
+
+.action-icon {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* MOBILE */
+.mobile-scroll-menu,
+.mobile-right-icons {
+  display: none;
+}
+
+/* ================= MOBILE 0–480 ================= */
+@media (max-width: 480px) {
+  .desktop-menu,
+  .desktop-actions {
+    display: none !important;
+  }
+
+  .main-header {
+    height: 56px;
+  }
+
+  .header-container {
+    padding: 0 6px;
+  }
+
+  .mobile-scroll-menu {
+    display: flex;
+    gap: 14px;
+    margin-left: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .fixed-item {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .scroll-item {
+    color: #e6e6e6;
+  }
+
+  .mobile-scroll-menu span {
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .mobile-scroll-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-right-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+  }
+
+  
+}

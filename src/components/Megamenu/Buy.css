@@ -1,0 +1,88 @@
+.mega-wrapper {
+  position: absolute;
+  top: 64px; 
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  z-index: 999;
+  overflow-x: auto;   /* horizontal scroll */
+  overflow-y: hidden;
+  padding: 12px 0;
+}
+
+.mega-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;   /* ❌ never wrap */
+  width: max-content;  /* important: allow horizontal scroll if needed */
+  gap: 20px;
+  padding: 0 24px;
+}
+
+.mega-card {
+  min-width: 260px;     /* fixed width for each card */
+  flex: 0 0 260px;      /* prevent shrinking */
+}
+
+.mega-card .ant-card-head {
+  padding: 0 0 12px 0;
+  border-bottom: none;
+}
+
+.mega-card .ant-card-head-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #003366;
+}
+
+.mega-card .ant-card-body {
+  padding: 0;
+}
+
+.mega-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mega-list li {
+  font-size: 14px;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mega-list li:hover {
+  color: #1677ff;
+  transform: translateX(4px);
+}
+
+/* scrollbar */
+.mega-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.mega-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 4px;
+}
+
+/* Responsive: mobile */
+@media (max-width: 767px) {
+  .mega-card {
+    min-width: 200px;
+  }
+  .mega-list li {
+    font-size: 13px;
+  }
+}
+
+/* Extra small mobile <360px */
+@media (max-width: 360px) {
+  .mega-card {
+    min-width: 160px;
+  }
+  .mega-list li {
+    font-size: 12px;
+  }
+}

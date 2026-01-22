@@ -1,0 +1,457 @@
+/* Compact Highlighted Projects */
+.compact-highlighted-projects {
+  width: 100%;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: transparent;
+}
+
+/* Header */
+.compact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #007bff;
+}
+
+.compact-title-section {
+  flex: 1;
+}
+
+.compact-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #003366;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 51, 102, 0.1);
+}
+
+.compact-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 6px 0 0 0;
+  font-weight: 500;
+}
+
+/* Controls */
+.compact-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.compact-scroll-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.compact-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: #007bff;
+  outline: none;
+}
+
+.compact-nav-btn:hover {
+  background: #007bff;
+  border-color: #0056b3;
+  color: white;
+  transform: scale(1.05);
+}
+
+.compact-view-all {
+  font-size: 14px;
+  font-weight: 600;
+  color: #007bff !important;
+  padding: 0 !important;
+  height: auto !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.compact-view-all:hover {
+  color: #0056b3 !important;
+  transform: translateX(3px);
+  text-decoration: underline !important;
+}
+
+/* Scroll Container */
+.compact-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 10px 0 25px 0;
+  overflow-x: auto;
+}
+
+.compact-scroll-container {
+  display: flex;
+  gap: 16px;
+  padding: 10px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.compact-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Wrapper */
+.compact-project-card {
+  flex: 0 0 220px;
+  min-height: 320px;
+}
+
+/* Card - WHITE BACKGROUND */
+.compact-card {
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #e3f2fd;
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+.compact-card:hover {
+  transform: translateY(-8px);
+  border-color: #007bff;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.2);
+}
+
+/* Image Section */
+.compact-image-section {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+
+.compact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.compact-card:hover .compact-image {
+  transform: scale(1.05);
+}
+
+/* Badges */
+.compact-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.badge-compact {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 9px;
+  font-weight: 800;
+  color: white;
+  border: 1px solid #bbdefb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}
+
+.featured-compact {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 8px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: 1px solid #bbdefb;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.like-btn-compact {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #bbdefb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #007bff;
+  font-size: 14px;
+  outline: none;
+}
+
+.like-btn-compact:hover {
+  background: #007bff;
+  border-color: white;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Details */
+.compact-details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 120px);
+}
+
+/* Title and Rating */
+.compact-title-rating {
+  margin-bottom: 8px;
+}
+
+.project-title-compact {
+  font-size: 4px;
+  font-weight: 700;
+  color: #003366;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.rating-compact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(227, 242, 253, 0.8);
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid #bbdefb;
+  display: inline-flex;
+}
+
+.star-compact {
+  color: #007bff;
+  font-size: 12px;
+}
+
+.rating-value-compact {
+  font-size: 12px;
+  font-weight: 700;
+  color: #003366;
+}
+
+/* Developer */
+.developer-compact {
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.developer-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.developer-name {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Type and Location */
+.type-location-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #bbdefb;
+}
+
+.type-compact,
+.location-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #666;
+  font-weight: 500;
+}
+
+.type-icon,
+.location-icon {
+  color: #007bff;
+  font-size: 11px;
+  background: #e3f2fd;
+  padding: 3px;
+  border-radius: 4px;
+  border: 1px solid #bbdefb;
+}
+
+/* Quick Info */
+.quick-info-compact {
+  margin-bottom: 12px;
+}
+
+.info-item-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #003366;
+  font-weight: 600;
+}
+
+.info-icon {
+  color: #007bff;
+  font-size: 11px;
+  background: #e3f2fd;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid #bbdefb;
+}
+
+/* Price and Action */
+.price-action-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #bbdefb;
+}
+
+.price-compact {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-value-compact {
+  font-size: 16px;
+  font-weight: 900;
+  color: #003366;
+  line-height: 1;
+  text-shadow: 1px 1px 2px rgba(0, 51, 102, 0.1);
+}
+
+.price-label-compact {
+  font-size: 10px;
+  color: #666;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.view-btn-compact {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  height: 28px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 0 10px !important;
+  color: white !important;
+  transition: all 0.2s ease !important;
+}
+
+.view-btn-compact:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003366 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Navigation Dots */
+.compact-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(187, 222, 251, 0.5);
+}
+
+.compact-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bbdefb;
+  border: 1px solid #003366;
+  transition: all 0.3s ease;
+}
+
+.compact-dot:hover {
+  background: #007bff;
+  transform: scale(1.3);
+  border-color: #bbdefb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .compact-highlighted-projects {
+    padding: 0 15px;
+  }
+  
+  .compact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .compact-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .compact-title {
+    font-size: 20px;
+  }
+  
+  .compact-project-card {
+    flex: 0 0 200px;
+  }
+  
+  .project-title-compact {
+    font-size: 13px;
+  }
+  
+  .price-value-compact {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .compact-project-card {
+    flex: 0 0 180px;
+    min-height: 300px;
+  }
+  
+  .compact-image-section {
+    height: 100px;
+  }
+  
+  .compact-details {
+    padding: 10px;
+  }
+  
+  .view-btn-compact {
+    padding: 0 8px !important;
+    font-size: 10px !important;
+  }
+}
