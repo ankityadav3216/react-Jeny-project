@@ -1,0 +1,176 @@
+/* ================= FOOTER BASE ================= */
+.pl-footer {
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  color: #ccc;
+  padding: 32px 16px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* CONTAINER */
+.pl-footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1.2fr;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* ================= LEFT SECTION ================= */
+.pl-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.logo-box {
+  background: #facc15;
+  color: black;
+  padding: 5px 8px;
+  font-size: 16px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pl-badges img {
+  display: block;
+  margin-bottom: 10px;
+  max-width: 120px;
+}
+
+.pl-follow p {
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons span {
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.copyright {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ================= COLUMNS ================= */
+.pl-footer-column h4,
+.pl-footer-app h4 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.pl-footer-column a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.pl-footer-column a:hover {
+  color: #fff;
+}
+
+/* ================= APP ================= */
+.app-buttons img {
+  width: 120px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.qr-box {
+  margin-top: 10px;
+}
+
+.qr-box img {
+  background: white;
+  padding: 4px;
+  border-radius: 4px;
+  width: 110px;
+}
+
+.qr-box p {
+  font-size: 11px;
+  margin-top: 6px;
+  color: #aaa;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .pl-footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .pl-footer {
+    text-align: center;
+    padding: 26px 12px;
+  }
+
+  .pl-footer-container {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .pl-logo {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .pl-badges img {
+    margin: 8px auto;
+  }
+
+  .app-buttons img {
+    margin: 8px auto;
+    width: 105px;
+  }
+
+  .qr-box img {
+    margin: 0 auto;
+  }
+}
+
+/* ================= SMALL MOBILE (360px) ================= */
+@media (max-width: 360px) {
+  .pl-footer {
+    padding: 22px 10px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .pl-footer-column h4,
+  .pl-footer-app h4 {
+    font-size: 13px;
+  }
+
+  .pl-footer-column a {
+    font-size: 12px;
+  }
+}

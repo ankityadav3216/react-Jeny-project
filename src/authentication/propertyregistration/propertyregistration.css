@@ -1,0 +1,147 @@
+.property-registration-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.sidebar-wrapper {
+  width: 280px; /* Reduced from 320px */
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Centered Form Layout */
+.centered-form-wrapper {
+  flex: 1;
+  margin-left: 280px; /* Reduced from 320px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  background: #f8fafc;
+}
+
+.centered-form-container {
+  width: 100%;
+  max-width: 520px; /* Reduced from 600px */
+  background: white;
+  border-radius: 12px; /* Reduced from 16px */
+  padding: 30px; /* Reduced from 40px */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.prev-btn,
+.next-btn,
+.submit-btn {
+  padding: 12px 28px; /* Reduced from 14px 35px */
+  border-radius: 8px;
+  font-size: 15px; /* Reduced from 16px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.prev-btn {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.prev-btn:hover {
+  background: #e5e7eb;
+}
+
+.next-btn {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: white;
+  margin-left: auto;
+}
+
+.next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  margin-left: auto;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar-wrapper {
+    width: 240px; /* Further reduced for tablets */
+  }
+  
+  .centered-form-wrapper {
+    margin-left: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .property-registration-wrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .centered-form-wrapper {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .centered-form-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .prev-btn,
+  .next-btn,
+  .submit-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-form-container {
+    padding: 18px;
+  }
+  
+  .prev-btn,
+  .next-btn,
+  .submit-btn {
+    font-size: 14px;
+  }
+}

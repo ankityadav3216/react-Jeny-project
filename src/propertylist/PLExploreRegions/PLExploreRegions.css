@@ -1,0 +1,90 @@
+.region-wrapper {
+  background: #ededf4;
+  padding: 30px;
+  overflow: hidden;
+  width: 1150px;
+  margin: auto;
+}
+
+.region-wrapper h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll 28s linear infinite;
+}
+
+/* CARD */
+.region-card {
+  background: #fff;
+  min-width: 320px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 2px solid #7c4dff;
+}
+
+/* LOCALITY GREEN BOX */
+.locality-box {
+  background: #e6f7ef;
+  color: #0f5132;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+/* PRICE + GROWTH BOX */
+.price-growth-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.price-item,
+.growth-item {
+  background: #ffffff;
+  border: 1.5px solid #28a745;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1;
+}
+
+.price-item strong,
+.growth-item strong {
+  display: block;
+  font-size: 18px;
+  color: #198754;
+}
+
+.price-item span,
+.growth-item span {
+  font-size: 12px;
+  color: #555;
+}
+
+/* LINK */
+.region-card a {
+  color: #6a35ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* AUTO SCROLL */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

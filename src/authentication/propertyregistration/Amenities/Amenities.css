@@ -1,0 +1,188 @@
+/* Amenities.css */
+
+.am-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LEFT STEPPER / SIDEBAR */
+.am-sidebar {
+  width: 280px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.am-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.am-sidebar ul li {
+  padding: 12px 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.am-sidebar ul li.done {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.am-sidebar ul li.active {
+  background: #2196f3;
+  color: #fff;
+}
+
+.am-score {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.am-score .circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2196f3;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.am-score p {
+  font-size: 14px;
+  color: #1976d2;
+}
+
+/* CENTER CONTENT */
+.am-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.am-content h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1565c0;
+}
+
+.am-sub {
+  color: #1976d2;
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.85;
+}
+
+/* BLOCKS */
+.am-block {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.am-block h3 {
+  margin-bottom: 12px;
+  color: #1565c0;
+  font-size: 18px;
+}
+
+/* TAGS */
+.am-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.am-tags .ant-tag {
+  background: #e3f2fd;
+  color: #0d47a1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.am-tags .ant-tag:hover {
+  background: #2196f3;
+  color: #fff;
+}
+
+/* PARKING BLOCK */
+.am-parking {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.am-parking span {
+  font-weight: 600;
+  color: #1565c0;
+}
+
+.am-parking .ml {
+  margin-left: 20px;
+}
+
+/* BUTTONS */
+.am-submit {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.am-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+/* RIGHT INFO */
+.am-right {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 12px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+  color: #1565c0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .am-wrapper {
+    flex-direction: column;
+  }
+
+  .am-sidebar,
+  .am-right {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  .am-content {
+    padding: 20px;
+  }
+}

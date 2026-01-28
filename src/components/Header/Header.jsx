@@ -1,9 +1,9 @@
 // src/components/Header/Header.jsx
 import React, { useState } from "react";
 import { Home } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import Login from "../../authentication/loginmodel/login";
-import SignUp from "../../authentication/registration/sign-up";
 
 import Buy from "../Megamenu/Buy";
 import Tenants from "../Megamenu/tenants";
@@ -13,26 +13,23 @@ import Guide from "../Megamenu/guide";
 
 import "./Header.css";
 
-import { Layout, Menu, Button, Select, Space, Modal } from "antd";
+import { Layout, Menu, Select, Space, Modal } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 
 const { Header: AntHeader } = Layout;
 const { Option } = Select;
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const [menuModal, setMenuModal] = useState(false);
   const [authModal, setAuthModal] = useState(false);
-  const [authType, setAuthType] = useState("login");
-
-  // 👇 mega states
   const [activeMega, setActiveMega] = useState(null);
 
   const openLogin = () => {
-    setAuthType("login");
     setAuthModal(true);
   };
 
-  // 🔁 toggle logic (open / close)
   const toggleMega = (name) => {
     setActiveMega((prev) => (prev === name ? null : name));
   };
@@ -50,7 +47,7 @@ const Header = () => {
             <span className="logo-text">Jeny</span>
           </div>
 
-          {/* ===== MOBILE SCROLL MENU ===== */}
+          {/* MOBILE SCROLL MENU */}
           <div className="mobile-scroll-menu">
             <span onClick={() => toggleMega("buy")}>For Buyers</span>
             <span onClick={() => toggleMega("tenants")}>For Tenants</span>
@@ -59,12 +56,12 @@ const Header = () => {
             <span onClick={() => toggleMega("guide")}>News & Guide</span>
           </div>
 
-          {/* ===== MOBILE RIGHT ICON ===== */}
+          {/* MOBILE ICON */}
           <div className="mobile-right-icons">
             <MenuOutlined onClick={() => setMenuModal(true)} />
           </div>
 
-          {/* ===== DESKTOP MENU ===== */}
+          {/* DESKTOP MENU */}
           <Menu mode="horizontal" className="nav-menu desktop-menu">
             <Menu.Item onClick={() => toggleMega("buy")}>For Buyers</Menu.Item>
             <Menu.Item onClick={() => toggleMega("tenants")}>For Tenants</Menu.Item>
@@ -73,47 +70,56 @@ const Header = () => {
             <Menu.Item onClick={() => toggleMega("guide")}>News & Guide</Menu.Item>
           </Menu>
 
-          {/* ===== DESKTOP ACTIONS ===== */}
+          {/* DESKTOP ACTIONS */}
           <Space className="header-actions desktop-actions">
             <Select defaultValue="mumbai" size="small">
               <Option value="mumbai">Mumbai</Option>
               <Option value="delhi">Delhi</Option>
             </Select>
 
-            <Button onClick={openLogin}>Login</Button>
-            <Button type="primary">Post Property</Button>
+            {/* ✅ OWNER CTA BUTTON */}
+            <div className="owner-cta-btn" onClick={openLogin}>
+              <div className="owner-text">
+                <span>Are you a property owner?</span>
+                <strong>Sell / Rent</strong>
+              </div>
+              <span className="free-badge">FREE</span>
+            </div>
           </Space>
 
         </div>
       </AntHeader>
 
-      {/* ===== MEGA MENUS ===== */}
+      {/* MEGA MENUS */}
       <Buy open={activeMega === "buy"} />
       <Tenants open={activeMega === "tenants"} />
       <Sellers open={activeMega === "sellers"} />
       <Services open={activeMega === "services"} />
       <Guide open={activeMega === "guide"} />
 
-      {/* ===== MOBILE MENU MODAL ===== */}
+      {/* MOBILE MENU MODAL */}
       <Modal
         open={menuModal}
         footer={null}
         onCancel={() => setMenuModal(false)}
         width={260}
       >
-        <Button block onClick={openLogin}>Login</Button>
-        <Button block type="primary" style={{ marginTop: 8 }}>
-          Post Property
-        </Button>
+        <div className="owner-cta-btn mobile" onClick={openLogin}>
+          <div className="owner-text">
+            <span>Are you a property owner?</span>
+            <strong>Sell / Rent</strong>
+          </div>
+          <span className="free-badge">FREE</span>
+        </div>
       </Modal>
 
-      {/* ===== AUTH MODAL ===== */}
+      {/* LOGIN MODAL */}
       <Modal
         open={authModal}
         footer={null}
         onCancel={() => setAuthModal(false)}
       >
-        {authType === "login" ? <Login /> : <SignUp />}
+        <Login />
       </Modal>
     </>
   );

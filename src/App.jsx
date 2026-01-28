@@ -9,7 +9,10 @@ import "antd/dist/reset.css";
 import Home from "./components/Home.jsx";
 import PropertyDetail from "./propertydetails/propertydetail.jsx";
 import PropertyList from './propertylist/propertylist.jsx';
-import Auth from "./authentication/auth";
+
+// Directly import auth pages
+import Login from "./authentication/loginmodel/login";
+import PropertyRegistration from "./authentication/propertyregistration/PropertyRegistration";
 
 // Layout
 import Layout from "./components/layout";
@@ -33,9 +36,10 @@ function App() {
           </Route>
 
           {/* 🔹 Auth pages WITHOUT Header & Footer */}
-          <Route path="/auth/*" element={<Auth />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/property-registration" element={<PropertyRegistration />} />
 
-
+          {/* 🔹 Property List */}
           <Route path="/buy/:location" element={<PropertyList />} />
         </Routes>
       </Router>

@@ -1,0 +1,199 @@
+.popular-search-section {
+  padding: 30px;
+  background: #efefef;
+  width: 1150px;
+  margin: auto;
+}
+
+/* Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Scroll Container */
+.scroll-container {
+  position: relative;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.scroll-indicator .arrow-icon {
+  font-size: 30px;
+  color: #5b3df5;
+  transform: rotate(90deg);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.scroll-indicator .scroll-text {
+  font-size: 12px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Horizontal Scroll */
+.horizontal-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 5px;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.horizontal-scroll:active {
+  cursor: grabbing;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.search-card {
+  min-width: 300px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid #e0d9ff;
+  flex-shrink: 0;
+}
+
+.search-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.search-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-card li {
+  font-size: 14px;
+  color: #4b4b4b;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.search-card li:hover {
+  color: #5b3df5;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .popular-search-section {
+    padding: 20px 15px;
+  }
+  
+  .section-header h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  
+  .scroll-indicator {
+    right: 10px;
+    opacity: 1;
+    animation: fadeInOut 2s ease-in-out infinite;
+  }
+  
+  .scroll-indicator .arrow-icon {
+    font-size: 24px;
+  }
+  
+  .scroll-indicator .scroll-text {
+    font-size: 11px;
+  }
+  
+  .horizontal-scroll {
+    gap: 15px;
+    padding: 15px 0;
+  }
+  
+  .search-card {
+    min-width: 280px;
+    padding: 15px;
+  }
+  
+  .search-card h3 {
+    font-size: 16px;
+  }
+  
+  .search-card li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popular-search-section {
+    padding: 15px 12px;
+  }
+  
+  .section-header h2 {
+    font-size: 20px;
+  }
+  
+  .scroll-indicator {
+    right: 5px;
+  }
+  
+  .scroll-indicator .arrow-icon {
+    font-size: 20px;
+  }
+  
+  .search-card {
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-card {
+    min-width: 240px;
+  }
+  
+  .section-header h2 {
+    font-size: 18px;
+  }
+}
+
+/* Hide scroll indicator on desktop and large tablets */
+@media (min-width: 1024px) {
+  .scroll-indicator {
+    display: none;
+  }
+}

@@ -37,7 +37,7 @@
   font-weight: 600;
 }
 
-/* DESKTOP */
+/* DESKTOP MENU */
 .desktop-menu {
   margin-left: 30px;
   background: transparent;
@@ -48,12 +48,49 @@
   gap: 14px;
 }
 
-.action-icon {
-  font-size: 18px;
-  color: white;
+/* ================= OWNER CTA (NEW) ================= */
+.owner-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
 }
 
+.owner-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.owner-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.owner-text span {
+  font-size: 11px;
+  color: #e6e6e6;
+}
+
+.owner-text strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.free-badge {
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* OLD LOGIN BUTTON (NO LONGER USED, SAFE TO KEEP) */
 .login-btn {
   background: rgba(255,255,255,0.15);
   color: white;
@@ -115,5 +152,9 @@
     color: white;
   }
 
-  
+  /* Mobile modal CTA */
+  .owner-cta-btn.mobile {
+    justify-content: space-between;
+    width: 100%;
+  }
 }

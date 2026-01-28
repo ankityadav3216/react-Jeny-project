@@ -8,11 +8,12 @@
   padding: 10px;
   background: linear-gradient(135deg, #cee0f2);
   border-bottom: 1px solid #ddd;
-
+  background-color: #efefef;
   /* ❌ sticky removed to prevent header overlap */
   position: relative;
   top: auto;
   z-index: auto;
+  margin: auto;
 }
 
 /* ===============================

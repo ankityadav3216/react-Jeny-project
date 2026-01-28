@@ -1,33 +1,35 @@
-/* src/authentication/loginmodel/login.css */
+/* login.css */
 
 .login-page {
-  min-height: 20vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-  padding: 20px;
+  flex-direction: row;
+  min-height: 80vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
 }
 
-/* Website Header Styles */
-.website-header {
-  text-align: center;
-  margin-bottom: 40px;
+/* LEFT SIDE */
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #1677ff, #4096ff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 20px;
 }
 
 .logo-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 15px;
-  margin-bottom: 10px;
 }
 
 .house-icon {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
   border-radius: 12px;
   display: flex;
@@ -37,56 +39,45 @@
 }
 
 .house-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   color: white;
 }
 
 .website-name {
-  color: #1565c0;
   font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: -0.5px;
   margin: 0;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .website-tagline {
-  color: #1976d2;
   font-size: 1rem;
-  font-weight: 400;
-  margin: 0;
-  opacity: 0.9;
+  color: #e0f7fa;
+  text-align: center;
+  margin-top: 5px;
 }
 
-/* Login Container */
-.login-container {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 10px 40px rgba(33, 150, 243, 0.15);
-  border: 2px solid #bbdefb;
+/* RIGHT SIDE */
+.login-right {
+  flex: 1;
+  background: #fff;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 20px 20px 0;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.05);
 }
 
 .login-title {
-  color: #1565c0;
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 8px;
-  text-align: center;
+  color: #1565c0;
+  margin-bottom: 25px;
+  text-align: left;
 }
 
-.login-subtitle {
-  color: #1976d2;
-  text-align: center;
-  margin-bottom: 32px;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* Form Styles */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -96,17 +87,16 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .input-group label {
-  color: #1565c0;
   font-size: 14px;
   font-weight: 600;
+  color: #1565c0;
 }
 
 .login-input {
-  width: 100%;
   padding: 14px 16px;
   border-radius: 10px;
   border: 2px solid #90caf9;
@@ -122,90 +112,16 @@
   box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
 }
 
-.login-input::placeholder {
-  color: #90caf9;
-}
-
-/* Remember Me & Forgot Password */
-.remember-forgot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  color: #1565c0;
-  position: relative;
-}
-
-.checkbox-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.checkmark {
-  width: 18px;
-  height: 18px;
-  background: white;
-  border: 2px solid #90caf9;
-  border-radius: 4px;
-  margin-right: 8px;
-  position: relative;
-}
-
-.checkbox-container input:checked ~ .checkmark {
-  background: #2196f3;
-  border-color: #2196f3;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-  left: 5px;
-  top: 2px;
-  width: 4px;
-  height: 8px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.forgot-link {
-  color: #2196f3;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.forgot-link:hover {
-  color: #0d47a1;
-  text-decoration: underline;
-}
-
-/* Buttons */
 .login-button {
-  width: 100%;
   padding: 16px;
-  margin-top: 10px;
   border-radius: 10px;
   border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
-  color: white;
   background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
 }
 
 .login-button:hover {
@@ -213,136 +129,44 @@
   box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
 }
 
-.login-button:active {
-  transform: translateY(0);
-}
-
-/* Divider */
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #90caf9;
-  font-size: 14px;
-  margin: 20px 0;
-}
-
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #e3f2fd;
-}
-
-.divider span {
-  padding: 0 15px;
-}
-
-/* Social Buttons */
-.social-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: 2px solid #e3f2fd;
-  background: white;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  color: #1565c0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-}
-
-.social-button img {
-  width: 20px;
-  height: 20px;
-}
-
-.social-button:hover {
-  border-color: #2196f3;
-  background: #f5fbff;
-  transform: translateY(-1px);
-}
-
-.google-button {
-  margin-bottom: 12px;
-}
-
-/* Sign Up Link */
+/* Registration link */
 .signup-link {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 14px;
   color: #1976d2;
 }
 
 .signup-link span {
-  color: #1565c0;
   font-weight: 700;
   margin-left: 5px;
   cursor: pointer;
-  transition: color 0.3s;
   text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .signup-link span:hover {
   color: #0d47a1;
 }
 
-/* Horizontal layout */
-.horizontal-layout {
-  display: flex;
-  width: 100%;
-  min-height: 500px;
-}
-
-/* LEFT */
-.login-left {
-  flex: 1;
-  background: linear-gradient(135deg, #1677ff, #4096ff);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* RIGHT */
-.login-right {
-  flex: 1;
-  padding: 40px;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  .login-container {
-    padding: 30px 20px;
-    margin: 0 15px;
-  }
-  
-  .website-name {
-    font-size: 2rem;
-  }
-  
-  .house-icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .house-icon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  /* Mobile Responsive */
+/* Responsive */
 @media (max-width: 768px) {
-  .horizontal-layout {
+  .login-page {
     flex-direction: column;
   }
 
-  .login-left {
-    padding: 30px 0;
+  .login-left,
+  .login-right {
+    border-radius: 20px;
+    width: 90%;
+    margin: 20px auto;
   }
-}
+
+  .login-right {
+    padding: 30px 20px;
+  }
+
+  .website-name {
+    font-size: 2rem;
+  }
 }

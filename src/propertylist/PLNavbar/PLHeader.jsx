@@ -1,75 +1,101 @@
-// src/components/propertylist/navbar/Header.jsx
-import React from "react";
-import { Layout, Input, Button, Space } from "antd";
+import React, { useState } from "react";
+import { Layout, Input, Button, Modal } from "antd";
 import { Home, Smartphone } from "lucide-react";
-import {
-  SearchOutlined,
-  MenuOutlined,
-} from "@ant-design/icons";
+import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
 
 import "./PLHeader.css";
 
 const { Header } = Layout;
 
 const PLHeader = ({ location = "Mumbai" }) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
-    <Header className="pl-main-header">
-      <div className="pl-header-container">
+    <>
+      <Header className="pl-main-header">
 
-        {/* LOGO */}
-        <div className="logo-section">
-          <div className="logo-wrapper">
-            <Home className="logo-icon" />
+        {/* ================= DESKTOP HEADER ================= */}
+        <div className="pl-header-container desktop-only">
+          <div className="logo-section">
+            <div className="logo-wrapper">
+              <Home className="logo-icon" />
+            </div>
+            <span className="logo-text">Jeny</span>
           </div>
-          <span className="logo-text">Jeny</span>
-        </div>
-
-        <span className="pl-divider" />
-
-        {/* BUY IN */}
-        <div className="buy-location">
-          Buy in {location}
-        </div>
-
-        <span className="pl-divider" />
-
-        {/* SEARCH */}
-        <Input
-          className="pl-search"
-          prefix={<SearchOutlined />}
-          placeholder={`Search property in ${location}`}
-        />
-
-        <span className="pl-divider" />
-
-        {/* ACTIONS */}
-        <Space className="pl-actions">
-
-          {/* DOWNLOAD APP */}
-          <Button className="download-btn">
-            <Smartphone size={16} style={{ marginRight: 6 }} />
-            Download App
-          </Button>
 
           <span className="pl-divider" />
 
-          {/* LIST PROPERTY */}
-          <Button type="primary" className="list-property-btn">
-            List Property
-          </Button>
+          <div className="buy-location">Buy in {location}</div>
 
           <span className="pl-divider" />
 
-          {/* MENU */}
+          <Input
+            className="pl-search"
+            prefix={<SearchOutlined />}
+            placeholder={`Search property in ${location}`}
+          />
+
+          <span className="pl-divider" />
+
+          <div className="pl-actions">
+            <Button className="download-btn">
+              <Smartphone size={16} style={{ marginRight: 6 }} />
+              Download App
+            </Button>
+
+            <Button type="primary" className="list-property-btn">
+              List Property
+            </Button>
+          </div>
+        </div>
+
+        {/* ================= MOBILE HEADER ================= */}
+        <div className="pl-mobile-header mobile-only">
+          <div className="logo-section">
+            <div className="logo-wrapper">
+              <Home className="logo-icon" />
+            </div>
+            <span className="logo-text">Jeny</span>
+          </div>
+
           <Button
             shape="circle"
             icon={<MenuOutlined />}
             className="menu-btn"
+            onClick={() => setDrawerOpen(true)}
           />
-        </Space>
+        </div>
+      </Header>
 
-      </div>
-    </Header>
+      {/* ================= MOBILE POP (CENTER) ================= */}
+      <Modal
+        open={drawerOpen}
+        onCancel={() => setDrawerOpen(false)}
+        footer={null}
+        centered
+        width={300}
+        className="pl-mobile-pop"
+      >
+        <Input
+          prefix={<SearchOutlined />}
+          placeholder={`Search in ${location}`}
+          style={{ marginBottom: 12 }}
+        />
+
+        <Button block style={{ marginBottom: 12 }}>
+          <Smartphone size={16} style={{ marginRight: 6 }} />
+          Download App
+        </Button>
+
+        <Button type="primary" block style={{ marginBottom: 12 }}>
+          List Property
+        </Button>
+
+        <div className="buy-location mobile-buy">
+          Buy in {location}
+        </div>
+      </Modal>
+    </>
   );
 };
 
