@@ -1,11 +1,16 @@
 import React from 'react';
+import { HomeOutlined } from '@ant-design/icons';
 import './RegistrationSidebar.css';
 
 const RegistrationSidebar = ({ currentStep = 1, steps = [], onStepClick }) => {
   return (
     <div className="registration-sidebar">
+      {/* Logo Section - Updated */}
       <div className="logo-section">
-        <h2 className="logo-text">99acres</h2>
+        <div className="logo-wrapper">
+          <HomeOutlined className="logo-icon" />
+        </div>
+        <span className="logo-text">Jeny</span>
       </div>
       
       <div className="steps-section">

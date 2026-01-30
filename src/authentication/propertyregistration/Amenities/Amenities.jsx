@@ -1,120 +1,461 @@
-import React from "react";
-import { Button, Tag } from "antd";
+// Amenities.jsx
+import React, { useState } from "react";
+import {
+  Button,
+  Typography,
+  Checkbox,
+  Radio,
+  Space,
+  InputNumber,
+  Select,
+  Divider
+} from "antd";
+import {
+  PlusOutlined,
+  MinusOutlined,
+  DownOutlined,
+  UpOutlined
+} from "@ant-design/icons";
 import "./Amenities.css";
 
-const Amenities = () => {
-  return (
-    <div className="am-wrapper">
-      {/* LEFT STEPPER */}
-      <div className="am-sidebar">
-        <ul>
-          <li className="done">Basic Details</li>
-          <li className="done">Location Details</li>
-          <li className="done">Property Profile</li>
-          <li className="done">Photos, Videos & Voice-over</li>
-          <li className="active">Amenities section</li>
-        </ul>
+const { Title, Text } = Typography;
+const { Option } = Select;
 
-        <div className="am-score">
-          <div className="circle">75%</div>
-          <p>Property Score</p>
+const Amenities = () => {
+  const [showMoreFeatures, setShowMoreFeatures] = useState(false);
+  const [showMoreSociety, setShowMoreSociety] = useState(false);
+  const [showMoreLocation, setShowMoreLocation] = useState(false);
+  const [furnishingType, setFurnishingType] = useState(null);
+  
+  const [coveredParking, setCoveredParking] = useState(0);
+  const [openParking, setOpenParking] = useState(0);
+
+  // Other rooms options
+  const otherRooms = [
+    "Pooja Room",
+    "Study Room", 
+    "Servant Room",
+    "Store Room"
+  ];
+
+  // Amenities options
+  const amenities = [
+    "Maintenance Staff",
+    "Water Storage",
+    "Security / Fire Alarm",
+    "Visitor Parking",
+    "Vaastu Compliant",
+    "Park",
+    "Intercom Facility",
+    "Lift(s)"
+  ];
+
+  // Property features
+  const propertyFeatures = [
+    "High Ceiling Height",
+    "False Ceiling Lighting", 
+    "Piped-gas",
+    "Internet/wi-fi connectivity",
+    "Air Conditioning",
+    "Power Back-up",
+    "Rain Water Harvesting",
+    "Waste Disposal",
+    "Pet Friendly",
+    "Concierge"
+  ];
+
+  // Society features
+  const societyFeatures = [
+    "Water softening plant",
+    "Shopping Centre",
+    "Fitness Centre / GYM",
+    "Swimming Pool",
+    "Club House",
+    "Indoor Games",
+    "Landscaped Garden"
+  ];
+
+  // Water source
+  const waterSources = [
+    "Municipal corporation",
+    "Borewell/Tank",
+    "24*7 Water"
+  ];
+
+  // Overlooking
+  const overlooking = [
+    "Pool",
+    "Park/Garden",
+    "Club",
+    "Main Road",
+    "Others"
+  ];
+
+  // Other features
+  const otherFeatures = [
+    "In a gated society",
+    "Corner Property",
+    "Wheelchair friendly"
+  ];
+
+  // Property facing
+  const propertyFacing = [
+    "North", "South", "East", "West",
+    "North-East", "North-West", "South-East", "South-West"
+  ];
+
+  // Furnishings
+  const furnishings = [
+    "Light", "Fans", "AC", "TV", "Beds", "Wardrobe",
+    "Geyser", "Sofa", "Washing Machine", "Stove", "Fridge",
+    "Water Purifier", "Microwave", "Modular Kitchen", "Chimney", "Dining Table"
+  ];
+
+  // Location advantages
+  const locationAdvantages = [
+    "Close to Metro Station",
+    "Close to School",
+    "Close to Hospital",
+    "Close to Market",
+    "Close to Railway Station",
+    "Close to Bus Stand",
+    "Close to Airport",
+    "Near Shopping Mall"
+  ];
+
+  return (
+    <div className="amenities-container">
+      {/* Header */}
+      <div className="amenities-header">
+        <Button type="text" className="back-btn">← Back</Button>
+        <Title level={4} className="page-title">
+          Add amenities/unique features
+        </Title>
+        <Text className="page-subtitle">
+          These fields are used to populate USP & captions
+        </Text>
+        <Text className="optional-note">
+          All fields on this page are optional
+        </Text>
+      </div>
+
+      <div className="amenities-sections">
+        {/* Other Rooms */}
+        <div className="section-card">
+          <Title level={5} className="section-title">
+            Other rooms <span className="optional-label">(Optional)</span>
+          </Title>
+          <div className="checkbox-group">
+            {otherRooms.map(room => (
+              <div key={room} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{room}</Checkbox>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Furnishing */}
+        <div className="section-card">
+          <Title level={5} className="section-title">
+            Furnishing <span className="optional-label">(Optional)</span>
+          </Title>
+          <div className="radio-group">
+            <Radio.Group onChange={(e) => setFurnishingType(e.target.value)} value={furnishingType}>
+              <Space direction="vertical">
+                <Radio value="furnished"><strong>Furnished</strong></Radio>
+                <Radio value="semi-furnished">Semi-furnished</Radio>
+                <Radio value="un-furnished">Un-furnished</Radio>
+              </Space>
+            </Radio.Group>
+          </div>
+
+          {/* Furnishing details - shown only when Furnished is selected */}
+          {furnishingType === 'furnished' && (
+            <div className="furnishing-details">
+              <Text className="mandatory-note">
+                At least three furnishings are mandatory for furnished
+              </Text>
+              <div className="furnishings-grid">
+                {furnishings.map(item => (
+                  <div key={item} className="furnishing-item">
+                    <Checkbox>{item}</Checkbox>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Reserved Parking */}
+        <div className="section-card">
+          <Title level={5} className="section-title">
+            Reserved Parking <span className="optional-label">(Optional)</span>
+          </Title>
+          <div className="parking-section">
+            <div className="parking-item">
+              <div className="parking-label">
+                <Checkbox>Covered Parking</Checkbox>
+              </div>
+              <div className="parking-counter">
+                <Button 
+                  icon={<MinusOutlined />} 
+                  onClick={() => setCoveredParking(Math.max(0, coveredParking - 1))}
+                  className="counter-btn"
+                />
+                <InputNumber 
+                  min={0} 
+                  value={coveredParking} 
+                  onChange={setCoveredParking}
+                  className="counter-input"
+                />
+                <Button 
+                  icon={<PlusOutlined />} 
+                  onClick={() => setCoveredParking(coveredParking + 1)}
+                  className="counter-btn"
+                />
+              </div>
+            </div>
+
+            <div className="parking-item">
+              <div className="parking-label">
+                <Checkbox>Open Parking</Checkbox>
+              </div>
+              <div className="parking-counter">
+                <Button 
+                  icon={<MinusOutlined />} 
+                  onClick={() => setOpenParking(Math.max(0, openParking - 1))}
+                  className="counter-btn"
+                />
+                <InputNumber 
+                  min={0} 
+                  value={openParking} 
+                  onChange={setOpenParking}
+                  className="counter-input"
+                />
+                <Button 
+                  icon={<PlusOutlined />} 
+                  onClick={() => setOpenParking(openParking + 1)}
+                  className="counter-btn"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Water Source */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Water Source</Title>
+          <div className="checkbox-group">
+            {waterSources.map(source => (
+              <div key={source} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{source}</Checkbox>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Overlooking */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Overlooking</Title>
+          <div className="checkbox-group">
+            {overlooking.map(item => (
+              <div key={item} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{item}</Checkbox>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Other Features */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Other Features</Title>
+          <div className="checkbox-group">
+            {otherFeatures.map(feature => (
+              <div key={feature} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{feature}</Checkbox>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Power Backup */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Power Back up</Title>
+          <div className="radio-group horizontal">
+            <Radio.Group>
+              <Space>
+                <Radio value="none">None</Radio>
+                <Radio value="partial">Partial</Radio>
+                <Radio value="full">Full</Radio>
+              </Space>
+            </Radio.Group>
+          </div>
+        </div>
+
+        {/* Amenities */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Amenities</Title>
+          <div className="checkbox-grid">
+            {amenities.map(amenity => (
+              <div key={amenity} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{amenity}</Checkbox>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Property Features */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Property Features</Title>
+          <div className="checkbox-grid">
+            {propertyFeatures.slice(0, showMoreFeatures ? propertyFeatures.length : 4).map(feature => (
+              <div key={feature} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{feature}</Checkbox>
+              </div>
+            ))}
+          </div>
+          {propertyFeatures.length > 4 && (
+            <Button 
+              type="link" 
+              onClick={() => setShowMoreFeatures(!showMoreFeatures)}
+              className="show-more-btn"
+            >
+              {showMoreFeatures ? (
+                <>
+                  <UpOutlined /> Show less
+                </>
+              ) : (
+                <>
+                  {propertyFeatures.length - 4} more <DownOutlined />
+                </>
+              )}
+            </Button>
+          )}
+        </div>
+
+        {/* Society/Building feature */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Society/Building feature</Title>
+          <div className="checkbox-grid">
+            {societyFeatures.slice(0, showMoreSociety ? societyFeatures.length : 4).map(feature => (
+              <div key={feature} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{feature}</Checkbox>
+              </div>
+            ))}
+          </div>
+          {societyFeatures.length > 4 && (
+            <Button 
+              type="link" 
+              onClick={() => setShowMoreSociety(!showMoreSociety)}
+              className="show-more-btn"
+            >
+              {showMoreSociety ? (
+                <>
+                  <UpOutlined /> Show less
+                </>
+              ) : (
+                <>
+                  {societyFeatures.length - 4} more <DownOutlined />
+                </>
+              )}
+            </Button>
+          )}
+        </div>
+
+        {/* Additional Features */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Additional Features</Title>
+          <div className="additional-features">
+            <Text type="secondary">Click to add additional features</Text>
+          </div>
+        </div>
+
+        {/* Property facing */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Property facing</Title>
+          <div className="property-facing-grid">
+            {propertyFacing.map(direction => (
+              <Radio key={direction} value={direction} className="facing-radio">
+                {direction}
+              </Radio>
+            ))}
+          </div>
+        </div>
+
+        {/* Type of flooring */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Type of flooring</Title>
+          <Select 
+            placeholder="Select" 
+            className="flooring-select"
+            suffixIcon={<DownOutlined />}
+          >
+            <Option value="marble">Marble</Option>
+            <Option value="vitrified">Vitrified Tiles</Option>
+            <Option value="wooden">Wooden</Option>
+            <Option value="granite">Granite</Option>
+          </Select>
+        </div>
+
+        {/* Width of facing road */}
+        <div className="section-card">
+          <Title level={5} className="section-title">Width of facing road</Title>
+          <div className="road-width">
+            <InputNumber 
+              placeholder="Enter the width"
+              className="road-input"
+            />
+            <Text className="unit">Feet</Text>
+          </div>
+        </div>
+
+        {/* Location Advantages */}
+        <div className="section-card">
+          <Title level={5} className="section-title">
+            Location Advantages
+            <Text className="subtitle" type="secondary">Highlight the nearby landmarks*</Text>
+          </Title>
+          <div className="checkbox-grid">
+            {locationAdvantages.slice(0, showMoreLocation ? locationAdvantages.length : 5).map(advantage => (
+              <div key={advantage} className="checkbox-item">
+                <PlusOutlined className="plus-icon" />
+                <Checkbox>{advantage}</Checkbox>
+              </div>
+            ))}
+          </div>
+          {locationAdvantages.length > 5 && (
+            <Button 
+              type="link" 
+              onClick={() => setShowMoreLocation(!showMoreLocation)}
+              className="show-more-btn"
+            >
+              {showMoreLocation ? (
+                <>
+                  <UpOutlined /> Show less
+                </>
+              ) : (
+                <>
+                  Show more <DownOutlined />
+                </>
+              )}
+            </Button>
+          )}
         </div>
       </div>
 
-      {/* CENTER */}
-      <div className="am-content">
-        <h2>Add amenities / unique features</h2>
-        <p className="am-sub">
-          These fields are optional but increase responses
-        </p>
-
-        {/* OTHER ROOMS */}
-        <div className="am-block">
-          <h3>Other rooms</h3>
-          <div className="am-tags">
-            <Tag>+ Pooja Room</Tag>
-            <Tag>+ Study Room</Tag>
-            <Tag>+ Servant Room</Tag>
-            <Tag>+ Store Room</Tag>
-          </div>
-        </div>
-
-        {/* FURNISHING */}
-        <div className="am-block">
-          <h3>Furnishing</h3>
-          <div className="am-tags">
-            <Tag>Furnished</Tag>
-            <Tag>Semi-furnished</Tag>
-            <Tag>Un-furnished</Tag>
-          </div>
-        </div>
-
-        {/* PARKING */}
-        <div className="am-block">
-          <h3>Reserved Parking</h3>
-          <div className="am-parking">
-            <span>Covered Parking</span>
-            <Button size="small">-</Button>
-            <span>0</span>
-            <Button size="small">+</Button>
-
-            <span className="ml">Open Parking</span>
-            <Button size="small">-</Button>
-            <span>0</span>
-            <Button size="small">+</Button>
-          </div>
-        </div>
-
-        {/* AMENITIES */}
-        <div className="am-block">
-          <h3>Amenities</h3>
-          <div className="am-tags">
-            <Tag>+ Maintenance Staff</Tag>
-            <Tag>+ Water Storage</Tag>
-            <Tag>+ Security / Fire Alarm</Tag>
-            <Tag>+ Visitor Parking</Tag>
-            <Tag>+ Vaastu Compliant</Tag>
-            <Tag>+ Park</Tag>
-            <Tag>+ Intercom Facility</Tag>
-            <Tag>+ Lift(s)</Tag>
-          </div>
-        </div>
-
-        {/* PROPERTY FEATURES */}
-        <div className="am-block">
-          <h3>Property Features</h3>
-          <div className="am-tags">
-            <Tag>+ High Ceiling Height</Tag>
-            <Tag>+ False Ceiling Lighting</Tag>
-            <Tag>+ Piped Gas</Tag>
-            <Tag>+ Internet / Wi-Fi</Tag>
-            <Tag className="more">7 more</Tag>
-          </div>
-        </div>
-
-        {/* SOCIETY FEATURES */}
-        <div className="am-block">
-          <h3>Society / Building features</h3>
-          <div className="am-tags">
-            <Tag>+ Water Softening Plant</Tag>
-            <Tag>+ Shopping Centre</Tag>
-            <Tag>+ Fitness Centre / GYM</Tag>
-            <Tag>+ Swimming Pool</Tag>
-            <Tag className="more">2 more</Tag>
-          </div>
-        </div>
-
-        <Button type="primary" size="large" className="am-submit">
+      {/* Save and Submit Button */}
+      <div className="submit-section">
+        <Divider />
+        <Button type="primary" className="submit-btn">
           Save and Submit
         </Button>
-      </div>
-
-      {/* RIGHT INFO */}
-      <div className="am-right">
-        <p>
-          These are the features that buyers look for. Highlighting them attracts
-          more responses.
-        </p>
       </div>
     </div>
   );

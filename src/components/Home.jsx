@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Import all components except PropertyDetail
-// import Header from '../components/Header/Header.jsx';
-import HeroSection from '../components/HeroSection/Herosection.jsx';
+// import Header from '../components/Header/Navbar/Header.jsx';
+import HeroSection from '../components/HeroSection/HeroSection.jsx';
 import SearchBar from '../components/SearchBar/SearchBar.jsx';
 import HousingTopPicks from '../components/HousingTopPicks/HousingTopPicks.jsx';
 import FeaturedDeveloper from '../components/FeaturedDevelopers/FeaturedDevelopers.jsx';

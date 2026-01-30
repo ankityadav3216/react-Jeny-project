@@ -9,7 +9,7 @@ import {
 import "./HeroSection.css";
 
 const defaultBackgroundImage =
-  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80";
+  "https://images.adsttc.com/media/images/51d4/84a8/b3fc/4bea/e100/01d6/large_jpg/Portada.jpg?1372882078";
 
 const HeroSection = ({ backgroundImage = defaultBackgroundImage }) => {
   const stats = [

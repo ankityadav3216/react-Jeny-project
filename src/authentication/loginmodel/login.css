@@ -1,172 +1,316 @@
-/* login.css */
-
-.login-page {
-  display: flex;
-  flex-direction: row;
-  min-height: 80vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-}
-
-/* LEFT SIDE */
-.login-left {
-  flex: 1;
-  background: linear-gradient(135deg, #1677ff, #4096ff);
-  color: white;
+/* Main Container with Buildings Background */
+.jenny-login-page {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 40px 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #113b62, #2569b7);
 }
 
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+/* Buildings Background */
+.jenny-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.house-icon {
+.jenny-buildings-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #051534;
+  /* background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+  animation: subtlePan 30s infinite alternate ease-in-out;
+}
+
+@keyframes subtlePan {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Compact Login Container */
+.jenny-login-container {
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  z-index: 1;
+  
+}
+
+/* Compact Transparent Card */
+.jenny-compact-card {
+  background: linear-gradient(180deg, #0b2d4d, #1f5ea8);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  padding: 30px 25px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Logo */
+.jenny-logo {
+  margin-bottom: 25px;
+}
+
+.jenny-house-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  margin: 0 auto 10px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.house-icon svg {
-  width: 30px;
-  height: 30px;
-  color: white;
-}
-
-.website-name {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #fff;
-}
-
-.website-tagline {
-  font-size: 1rem;
-  color: #e0f7fa;
-  text-align: center;
-  margin-top: 5px;
-}
-
-/* RIGHT SIDE */
-.login-right {
-  flex: 1;
-  background: #fff;
-  padding: 50px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 0 20px 20px 0;
-  box-shadow: -4px 0 15px rgba(0,0,0,0.05);
-}
-
-.login-title {
+.jenny-house-icon .anticon {
   font-size: 28px;
-  font-weight: 700;
-  color: #1565c0;
-  margin-bottom: 25px;
-  text-align: left;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.input-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1565c0;
-}
-
-.login-input {
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 2px solid #90caf9;
-  outline: none;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  color: #0d47a1;
-  background: #f8fdff;
-}
-
-.login-input:focus {
-  border-color: #2196f3;
-  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
-}
-
-.login-button {
-  padding: 16px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
   color: white;
-  font-size: 16px;
+}
+
+.jenny-brand {
+  margin: 0;
+  color: #333;
+  font-size: 28px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
-.login-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+/* Form */
+.jenny-form {
+  margin-bottom: 15px;
 }
 
-/* Registration link */
-.signup-link {
-  text-align: center;
-  margin-top: 25px;
+.jenny-input-group {
+  margin-bottom: 15px;
+}
+
+.jenny-input {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 42px;
+  padding: 6px 15px;
   font-size: 14px;
-  color: #1976d2;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
 }
 
-.signup-link span {
-  font-weight: 700;
-  margin-left: 5px;
-  cursor: pointer;
+.jenny-input:hover,
+.jenny-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+  background: white;
+}
+
+.jenny-input .ant-input-prefix {
+  margin-right: 10px;
+  color: #999;
+}
+
+/* Remember & Forgot */
+.jenny-remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.jenny-checkbox {
+  color: #666;
+}
+
+.jenny-checkbox .ant-checkbox-inner {
+  border-radius: 3px;
+  border-color: #ccc;
+}
+
+.jenny-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.remember-text {
+  font-size: 13px;
+  color: #666;
+}
+
+.jenny-forgot {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.jenny-forgot:hover {
   text-decoration: underline;
-  transition: color 0.3s ease;
 }
 
-.signup-link span:hover {
-  color: #0d47a1;
+/* Login Button */
+.jenny-login-btn {
+  height: 42px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.jenny-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* OR Divider */
+.jenny-or-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.jenny-or-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.jenny-or-text {
+  padding: 0 15px;
+  color: #888;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Social Buttons in One Line */
+.jenny-social-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.jenny-google-btn,
+.jenny-facebook-btn {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 10px;
+}
+
+.jenny-google-btn:hover {
+  border-color: #db4437;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(219, 68, 55, 0.15);
+}
+
+.jenny-facebook-btn:hover {
+  border-color: #1877F2;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.15);
+}
+
+/* Actual Google Icon */
+.jenny-google-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Actual Facebook Icon */
+.jenny-facebook-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.jenny-google-btn {
+  color: #5f6368;
+}
+
+.jenny-facebook-btn {
+  color: #1877F2;
+}
+
+.social-btn-text {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Footer */
+.jenny-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #888;
+  font-size: 11px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .login-page {
+@media (max-width: 480px) {
+  .jenny-compact-card {
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .jenny-house-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .jenny-house-icon .anticon {
+    font-size: 24px;
+  }
+  
+  .jenny-brand {
+    font-size: 24px;
+  }
+  
+  .jenny-social-row {
     flex-direction: column;
+    gap: 8px;
   }
-
-  .login-left,
-  .login-right {
-    border-radius: 20px;
-    width: 90%;
-    margin: 20px auto;
+  
+  .jenny-buildings-image {
+    animation: subtlePan 40s infinite alternate ease-in-out;
   }
+}
 
-  .login-right {
-    padding: 30px 20px;
+@media (max-width: 380px) {
+  .jenny-compact-card {
+    padding: 20px 15px;
   }
-
-  .website-name {
-    font-size: 2rem;
+  
+  .jenny-brand {
+    font-size: 22px;
   }
 }

@@ -1,160 +1,128 @@
 .main-header {
-  background: linear-gradient(135deg, #003366, #1677ff);
+  background: linear-gradient(180deg, #0b2d4d, #1f5ea8);
   height: 64px;
   position: fixed;
   width: 100%;
   z-index: 100;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: auto;
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 16px;
 }
 
-/* LOGO */
-.logo-section {
+/* LEFT */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.location-select {
   display: flex;
   align-items: center;
   gap: 6px;
+  color: #e5e7eb;
+  font-size: 14px;
 }
 
-.logo-wrapper {
-  background: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.location-select .ant-select-selector {
+  color: #ffffff !important;
+  font-weight: 500;
 }
 
-.logo-text {
-  color: white;
-  font-weight: 600;
-}
-
-/* DESKTOP MENU */
+/* CENTER MENU */
 .desktop-menu {
-  margin-left: 30px;
-  background: transparent;
+  flex: 1;
+  min-width: 0;
+  background: transparent !important;
+  border-bottom: none !important;
 }
 
-.header-actions {
-  margin-left: auto;
-  gap: 14px;
+.desktop-menu .ant-menu-item {
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 0 16px;
 }
 
-/* ================= OWNER CTA (NEW) ================= */
-.owner-cta-btn {
+.desktop-menu .ant-menu-item:hover {
+  color: #cfe3ff !important;
+}
+
+.desktop-menu .ant-menu-item::after {
+  display: none;
+}
+
+.new-badge {
+  background: #ec4899;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+/* RIGHT SECTION (IMPORTANT PART) */
+.right-section {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 10px;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 6px;
+  gap: 18px; /* 🔥 MAIN GAP CONTROL */
 }
 
-.owner-cta-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-}
-
-.owner-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.owner-text span {
-  font-size: 11px;
-  color: #e6e6e6;
-}
-
-.owner-text strong {
-  font-size: 13px;
+/* Post Property Button */
+.post-btn {
+  background: #ffffff;
+  border-radius: 18px;
   font-weight: 600;
-  color: #ffffff;
+  padding: 0 18px;
+  height: 36px;
 }
 
 .free-badge {
   background: #22c55e;
-  color: #ffffff;
+  color: #fff;
   font-size: 10px;
-  font-weight: 600;
   padding: 2px 6px;
   border-radius: 4px;
+  margin-left: 6px;
 }
 
-/* OLD LOGIN BUTTON (NO LONGER USED, SAFE TO KEEP) */
-.login-btn {
-  background: rgba(255,255,255,0.15);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.4);
+/* ICONS */
+.icon-btn {
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;              /* 👈 icon ke around space */
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 /* MOBILE */
-.mobile-scroll-menu,
-.mobile-right-icons {
+.mobile-only {
   display: none;
 }
 
-/* ================= MOBILE 0–480 ================= */
-@media (max-width: 480px) {
-  .desktop-menu,
-  .desktop-actions {
-    display: none !important;
-  }
-
-  .main-header {
-    height: 56px;
-  }
-
-  .header-container {
-    padding: 0 6px;
-  }
-
-  .mobile-scroll-menu {
-    display: flex;
-    gap: 14px;
-    margin-left: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    flex: 1;
-  }
-
-  .fixed-item {
-    font-weight: 600;
-    color: #fff;
-  }
-
-  .scroll-item {
-    color: #e6e6e6;
-  }
-
-  .mobile-scroll-menu span {
-    font-size: 14px;
-    cursor: pointer;
-  }
-
-  .mobile-scroll-menu::-webkit-scrollbar {
+@media (max-width: 768px) {
+  .desktop-menu {
     display: none;
   }
 
-  .mobile-right-icons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    color: white;
-  }
-
-  /* Mobile modal CTA */
-  .owner-cta-btn.mobile {
-    justify-content: space-between;
-    width: 100%;
+  .mobile-only {
+    display: inline-block;
   }
 }

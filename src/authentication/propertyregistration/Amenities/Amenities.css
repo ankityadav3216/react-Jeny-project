@@ -1,188 +1,304 @@
 /* Amenities.css */
-
-.am-wrapper {
-  display: flex;
-  min-height: 100vh;
-  background: #f5f5f5;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.amenities-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* LEFT STEPPER / SIDEBAR */
-.am-sidebar {
-  width: 280px;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+/* Header */
+.amenities-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.back-btn {
+  color: #1677ff;
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 12px;
+  height: auto;
+}
+
+.page-title {
+  margin-bottom: 8px !important;
+  color: #262626;
+  font-size: 18px !important;
+}
+
+.page-subtitle {
+  display: block;
+  color: #595959;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.optional-note {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+/* Sections */
+.amenities-sections {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Section Cards */
+.section-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+}
+
+.section-title {
+  margin-bottom: 16px !important;
+  color: #262626;
+  font-size: 15px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.optional-label {
+  font-size: 12px;
+  color: #8c8c8c;
+  font-weight: normal;
+}
+
+.subtitle {
+  display: block !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+  font-weight: normal !important;
+  color: #595959 !important;
+}
+
+/* Checkbox Groups */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plus-icon {
+  color: #1677ff;
+  font-size: 12px;
+}
+
+/* Radio Groups */
+.radio-group {
+  margin-top: 8px;
+}
+
+.radio-group.horizontal {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Furnishing Details */
+.furnishing-details {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mandatory-note {
+  display: block;
+  font-size: 12px;
+  color: #fa8c16;
+  margin-bottom: 16px;
+}
+
+.furnishings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px;
+}
+
+.furnishing-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Parking Section */
+.parking-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.parking-item {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.am-sidebar ul {
-  list-style: none;
+.parking-label {
+  flex: 1;
+}
+
+.parking-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.counter-btn {
+  width: 28px;
+  height: 28px;
   padding: 0;
-}
-
-.am-sidebar ul li {
-  padding: 12px 10px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: default;
-}
-
-.am-sidebar ul li.done {
-  background: #e3f2fd;
-  color: #0d47a1;
-}
-
-.am-sidebar ul li.active {
-  background: #2196f3;
-  color: #fff;
-}
-
-.am-score {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.am-score .circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #2196f3;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px auto;
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 
-.am-score p {
-  font-size: 14px;
-  color: #1976d2;
+.counter-input {
+  width: 60px;
+  text-align: center;
 }
 
-/* CENTER CONTENT */
-.am-content {
-  flex: 1;
-  padding: 40px;
+.counter-input .ant-input-number-input {
+  text-align: center;
 }
 
-.am-content h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #1565c0;
+/* Property Facing Grid */
+.property-facing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
-.am-sub {
-  color: #1976d2;
-  font-size: 14px;
-  margin-bottom: 25px;
-  opacity: 0.85;
+.facing-radio {
+  display: block !important;
+  margin-bottom: 8px !important;
 }
 
-/* BLOCKS */
-.am-block {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+/* Flooring Select */
+.flooring-select {
+  width: 180px;
 }
 
-.am-block h3 {
-  margin-bottom: 12px;
-  color: #1565c0;
-  font-size: 18px;
-}
-
-/* TAGS */
-.am-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.am-tags .ant-tag {
-  background: #e3f2fd;
-  color: #0d47a1;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.am-tags .ant-tag:hover {
-  background: #2196f3;
-  color: #fff;
-}
-
-/* PARKING BLOCK */
-.am-parking {
+/* Road Width */
+.road-width {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  gap: 12px;
 }
 
-.am-parking span {
-  font-weight: 600;
-  color: #1565c0;
+.road-input {
+  width: 150px;
 }
 
-.am-parking .ml {
-  margin-left: 20px;
-}
-
-/* BUTTONS */
-.am-submit {
-  width: 100%;
-  padding: 16px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 10px;
-  background: #2196f3;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.am-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
-}
-
-/* RIGHT INFO */
-.am-right {
-  width: 250px;
-  background: #fff;
-  padding: 20px;
-  margin-left: 20px;
-  border-radius: 12px;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
-  color: #1565c0;
+.unit {
+  color: #595959;
   font-size: 14px;
-  line-height: 1.5;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-  .am-wrapper {
+/* Additional Features */
+.additional-features {
+  padding: 20px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.additional-features:hover {
+  border-color: #1677ff;
+  background: #f6fbff;
+}
+
+/* Show More Button */
+.show-more-btn {
+  margin-top: 12px;
+  padding: 0;
+  height: auto;
+  font-size: 12px;
+  color: #1677ff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Submit Section */
+.submit-section {
+  margin-top: 30px;
+}
+
+.submit-btn {
+  width: 200px;
+  height: 44px;
+  font-weight: 500;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .amenities-container {
+    margin: 10px;
+    padding: 16px;
+  }
+  
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .property-facing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .furnishings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .radio-group.horizontal {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
+}
 
-  .am-sidebar,
-  .am-right {
-    width: 90%;
-    margin: 15px auto;
-  }
+/* Ant Design Overrides */
+.ant-checkbox-wrapper {
+  font-size: 14px !important;
+}
 
-  .am-content {
-    padding: 20px;
-  }
+.ant-radio-wrapper {
+  font-size: 14px !important;
+}
+
+.ant-input-number {
+  font-size: 14px;
+}
+
+.ant-select {
+  font-size: 14px;
 }
