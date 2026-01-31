@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Button, Rate } from 'antd';
-import { 
-  HeartOutlined, 
+import {
+  HeartOutlined,
   HeartFilled,
-  EnvironmentOutlined, 
+  EnvironmentOutlined,
   EyeOutlined,
   LeftOutlined,
   RightOutlined
@@ -16,7 +16,7 @@ const properties = [
     title: '3 BHK Luxury Apartment',
     location: 'Bandra West, Mumbai',
     price: '₹2.8 Cr',
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600',
     beds: 3,
     baths: 3,
     area: '1850 sq.ft',
@@ -28,7 +28,7 @@ const properties = [
     title: 'Modern 2 BHK Flat',
     location: 'Whitefield, Bangalore',
     price: '₹1.2 Cr',
-    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600',
     beds: 2,
     baths: 2,
     area: '1250 sq.ft',
@@ -37,313 +37,191 @@ const properties = [
   },
   {
     id: 3,
-    title: 'Penthouse with Pool',
-    location: 'Gurgaon Sector 56',
+    title: '4 BHK Penthouse',
+    location: 'Koramangala, Bangalore',
     price: '₹4.5 Cr',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.jqk4B_Mlq9qmMSBNM7FFJgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
     beds: 4,
     baths: 4,
-    area: '3200 sq.ft',
+    area: '2500 sq.ft',
     rating: 4.9,
     featured: true,
   },
   {
     id: 4,
-    title: 'Villa with Garden',
-    location: 'Pune, Hinjewadi',
-    price: '₹3.2 Cr',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&h=400&fit=crop',
-    beds: 5,
-    baths: 4,
-    area: '4500 sq.ft',
-    rating: 4.7,
+    title: '2 BHK Cozy Apartment',
+    location: 'Andheri East, Mumbai',
+    price: '₹1.1 Cr',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+    beds: 2,
+    baths: 2,
+    area: '1100 sq.ft',
+    rating: 4.5,
     featured: false,
   },
-  {
+   {
     id: 5,
-    title: 'Sea View Apartment',
-    location: 'Marine Drive, Mumbai',
-    price: '₹5.8 Cr',
-    image: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=600&h=400&fit=crop',
+    title: '3 BHK Villa',
+    location: 'Whitefield, Bangalore',
+    price: '₹3.2 Cr',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
     beds: 3,
     baths: 3,
-    area: '2100 sq.ft',
-    rating: 4.9,
+    area: '2000 sq.ft',
+    rating: 4.7,
     featured: true,
   },
   {
     id: 6,
-    title: 'Smart Home Villa',
-    location: 'Electronic City, Bangalore',
-    price: '₹2.9 Cr',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
-    beds: 4,
-    baths: 4,
-    area: '2800 sq.ft',
-    rating: 4.5,
+    title: 'Studio Apartment',
+    location: 'Powai, Mumbai',
+    price: '₹80 Lakh',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+    beds: 1,
+    baths: 1,
+    area: '650 sq.ft',
+    rating: 4.2,
     featured: false,
   },
   {
     id: 7,
-    title: 'Luxury Penthouse',
-    location: 'South Delhi',
-    price: '₹6.5 Cr',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop',
+    title: '5 BHK Luxury House',
+    location: 'Juhu, Mumbai',
+    price: '₹8 Cr',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
     beds: 5,
     baths: 5,
-    area: '3800 sq.ft',
-    rating: 4.9,
+    area: '3500 sq.ft',
+    rating: 5,
     featured: true,
   },
   {
     id: 8,
-    title: 'Modern Studio',
-    location: 'Koramangala, Bangalore',
-    price: '₹85 L',
-    image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&h=400&fit=crop',
-    beds: 1,
-    baths: 1,
-    area: '800 sq.ft',
+    title: '3 BHK Apartment',
+    location: 'MG Road, Bangalore',
+    price: '₹2.5 Cr',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+    beds: 3,
+    baths: 3,
+    area: '1800 sq.ft',
+    rating: 4.6,
+    featured: false,
+  },
+  {
+    id: 9,
+    title: '2 BHK Luxury Flat',
+    location: 'Vikhroli, Mumbai',
+    price: '₹1.5 Cr',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+    beds: 2,
+    baths: 2,
+    area: '1300 sq.ft',
     rating: 4.4,
     featured: false,
-  }
+  },
+  {
+    id: 10,
+    title: '4 BHK Premium Apartment',
+    location: 'Indiranagar, Bangalore',
+    price: '₹3.8 Cr',
+    image: 'https://images.unsplash.com/photo-1599423300746-b62533397364?w=600',
+    beds: 4,
+    baths: 4,
+    area: '2400 sq.ft',
+    rating: 4.9,
+    featured: true,
+  },
 ];
 
 const FeaturedProperties = () => {
   const scrollRef = useRef(null);
-  const [likedCards, setLikedCards] = useState({});
-  const [autoScroll, setAutoScroll] = useState(true);
-  const [isHovering, setIsHovering] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardWidth = 280; // Card width including gap
-  const visibleCards = properties.length; // Total cards
+  const [liked, setLiked] = useState({});
+  const [expanded, setExpanded] = useState({});
+  const cardWidth = 260;
 
   useEffect(() => {
-    let scrollInterval;
-    
-    if (autoScroll && !isHovering) {
-      scrollInterval = setInterval(() => {
-        if (scrollRef.current) {
-          const container = scrollRef.current;
-          const maxScrollLeft = container.scrollWidth - container.clientWidth;
-          const currentScrollLeft = container.scrollLeft;
-          
-          // Check if last card is fully visible
-          const isLastCardVisible = currentScrollLeft >= maxScrollLeft - 50; // 50px buffer
-          
-          if (isLastCardVisible) {
-            // Reset to first card
-            container.scrollTo({
-              left: 0,
-              behavior: 'smooth'
-            });
-            setCurrentIndex(0);
-          } else {
-            // Move to next card
-            const nextScrollLeft = currentScrollLeft + cardWidth;
-            container.scrollTo({
-              left: nextScrollLeft,
-              behavior: 'smooth'
-            });
-            
-            // Update current index
-            const nextIndex = Math.round(nextScrollLeft / cardWidth) % visibleCards;
-            setCurrentIndex(nextIndex);
-          }
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        if (
+          scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
+          scrollRef.current.scrollWidth
+        ) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         }
-      }, 3000); // Scroll every 3 seconds
-    }
-
-    return () => {
-      if (scrollInterval) clearInterval(scrollInterval);
-    };
-  }, [autoScroll, isHovering, currentIndex, visibleCards]);
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const newIndex = currentIndex > 0 ? currentIndex - 1 : visibleCards - 1;
-      
-      container.scrollTo({
-        left: newIndex * cardWidth,
-        behavior: 'smooth'
-      });
-      setCurrentIndex(newIndex);
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const newIndex = (currentIndex + 1) % visibleCards;
-      
-      container.scrollTo({
-        left: newIndex * cardWidth,
-        behavior: 'smooth'
-      });
-      setCurrentIndex(newIndex);
-    }
-  };
-
-  const toggleLike = (id) => {
-    setLikedCards(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
-
-  const handleDotClick = (index) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({
-        left: index * cardWidth,
-        behavior: 'smooth'
-      });
-      setCurrentIndex(index);
-    }
-  };
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="featured-properties-horizontal">
-      {/* Header */}
       <div className="featured-header">
-        <div className="featured-title-section">
-          <h2 className="featured-title">Featured Properties</h2>
-          <p className="featured-subtitle">Premium properties with verified details</p>
-        </div>
-        
-        <div className="featured-controls">
-          <div className="scroll-buttons">
-            <button className="nav-button" onClick={scrollLeft}>
-              <LeftOutlined />
-            </button>
-            <button className="nav-button" onClick={scrollRight}>
-              <RightOutlined />
-            </button>
-          </div>
-          <Button type="link" className="view-all-link">
-            View All →
-          </Button>
+        <h2>Featured Properties</h2>
+        <div className="scroll-buttons">
+          <button onClick={() => scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' })}>
+            <LeftOutlined />
+          </button>
+          <button onClick={() => scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' })}>
+            <RightOutlined />
+          </button>
         </div>
       </div>
 
-      {/* Horizontal Scroll Container */}
-      <div className="featured-scroll-wrapper">
-        <div 
-          className="featured-scroll-container" 
-          ref={scrollRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {properties.map((property) => (
-            <div key={property.id} className="featured-card-compact">
-              {/* Property Card */}
-              <div className="property-card-compact">
-                {/* Image Section */}
-                <div className="card-image-compact">
-                  <img
-                    alt={property.title}
-                    src={property.image}
-                    className="property-image-compact"
-                  />
-                  
-                  {/* Badges */}
-                  <div className="card-badges-compact">
-                    {property.featured && (
-                      <span className="badge-featured-compact">
-                        FEATURED
-                      </span>
-                    )}
-                    <button 
-                      className="like-button-compact"
-                      onClick={() => toggleLike(property.id)}
-                    >
-                      {likedCards[property.id] ? (
-                        <HeartFilled style={{ color: '#007bff', fontSize: '16px' }} />
-                      ) : (
-                        <HeartOutlined style={{ fontSize: '16px' }} />
-                      )}
-                    </button>
-                  </div>
+      <div className="featured-scroll-container" ref={scrollRef}>
+        {properties.map((p) => {
+          const desc = `This ${p.beds} BHK premium property offers ${p.baths} modern bathrooms with a spacious layout of ${p.area}. Located in ${p.location}, it is ideal for luxury and comfortable living.`;
+
+          return (
+            <div key={p.id} className="featured-card">
+              {/* IMAGE */}
+              <div className="card-image">
+                <img src={p.image} alt={p.title} />
+                <button
+                  className="like-btn"
+                  onClick={() => setLiked({ ...liked, [p.id]: !liked[p.id] })}
+                >
+                  {liked[p.id] ? <HeartFilled /> : <HeartOutlined />}
+                </button>
+              </div>
+
+              {/* DETAILS */}
+              <div className="card-details">
+                <h3>{p.title}</h3>
+
+                <div className="location">
+                  <EnvironmentOutlined /> {p.location}
                 </div>
 
-                {/* Property Details */}
-                <div className="card-details-compact">
-                  {/* Title and Location */}
-                  <div className="property-title-section-compact">
-                    <h3 className="property-title-compact">{property.title}</h3>
-                    <div className="property-location-compact">
-                      <EnvironmentOutlined className="location-icon-compact" />
-                      <span className="location-text-compact">{property.location}</span>
-                    </div>
+                <Rate disabled allowHalf defaultValue={p.rating} />
+
+                <p className={`description ${expanded[p.id] ? 'expanded' : ''}`}>
+                  {desc}
+                </p>
+
+                <span
+                  className="see-more"
+                  onClick={() =>
+                    setExpanded({ ...expanded, [p.id]: !expanded[p.id] })
+                  }
+                >
+                  {expanded[p.id] ? 'See less' : 'See more'}
+                </span>
+
+                <div className="card-footer">
+                  <div>
+                    <strong>{p.price}</strong>
+                    <div className="unit">₹25,000 / sq.ft</div>
                   </div>
 
-                  {/* Rating */}
-                  <div className="property-rating-compact">
-                    <Rate 
-                      disabled 
-                      defaultValue={property.rating} 
-                      allowHalf 
-                      className="rating-stars-compact"
-                    />
-                    <span className="rating-value-compact">{property.rating}</span>
-                  </div>
-
-                  {/* Features */}
-                  <div className="property-features-compact">
-                    <div className="feature-item-compact">
-                      <span className="feature-icon-compact">🛏️</span>
-                      <span className="feature-text-compact">{property.beds} Beds</span>
-                    </div>
-                    <div className="feature-item-compact">
-                      <span className="feature-icon-compact">🚿</span>
-                      <span className="feature-text-compact">{property.baths} Baths</span>
-                    </div>
-                    <div className="feature-item-compact">
-                      <span className="feature-icon-compact">📏</span>
-                      <span className="feature-text-compact">{property.area}</span>
-                    </div>
-                  </div>
-
-                  {/* Price and Action */}
-                  <div className="property-action-compact">
-                    <div className="price-section-compact">
-                      <div className="price-compact">{property.price}</div>
-                      <div className="price-unit-compact">₹25,000/sq.ft</div>
-                    </div>
-                    <Button 
-                      type="primary" 
-                      size="small"
-                      icon={<EyeOutlined />}
-                      className="view-button-compact"
-                    >
-                      View
-                    </Button>
-                  </div>
+                  <Button size="small" icon={<EyeOutlined />}>
+                    View
+                  </Button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-        
-        {/* Scroll Indicators */}
-        <div className="scroll-indicators">
-          {properties.map((_, index) => (
-            <button
-              key={index}
-              className={`scroll-dot ${currentIndex === index ? 'active' : ''}`}
-              onClick={() => handleDotClick(index)}
-              aria-label={`Go to card ${index + 1}`}
-            />
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,138 +1,133 @@
-import React, { useRef, useState, useEffect } from "react";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import React, { useRef, useEffect } from "react";
 import "./RecommendedSellers.css";
 
+const sellers = [
+  {
+    name: "Locality Master",
+    experience: "20 Yrs",
+    properties: 5,
+    location: ["Mira Road East"],
+    image: "https://dummyimage.com/50x50/000/fff&text=LM",
+  },
+  {
+    name: "Bhagyashree Estate",
+    experience: "33 Yrs",
+    properties: 23,
+    location: ["Kandivali East"],
+    image: "https://dummyimage.com/50x50/111/fff&text=B",
+  },
+  {
+    name: "Shivshakti Properties",
+    experience: "5 Yrs",
+    properties: 40,
+    location: ["Vikhroli East"],
+    image: "https://dummyimage.com/50x50/888/fff&text=S",
+  },
+  {
+    name: "Lotekar Realtors P",
+    experience: "0.5 Yrs",
+    properties: 42,
+    location: ["Kandivali West"],
+    image: "https://dummyimage.com/50x50/ff0000/fff&text=L",
+  },
+  {
+    name: "Arise real estate a",
+    experience: "15 Yrs",
+    properties: 26,
+    location: ["Andheri West", "Jogeshwari West"],
+    image: "https://dummyimage.com/50x50/aaaa00/fff&text=A",
+  },
+  {
+    name: "Sachin Bhilare",
+    experience: "15 Yrs",
+    properties: 63,
+    location: ["Virar West", "Virar East"],
+    image: "https://dummyimage.com/50x50/555/fff&text=S",
+  },
+  {
+    name: "Prime Estates",
+    experience: "10 Yrs",
+    properties: 30,
+    location: ["Goregaon East"],
+    image: "https://dummyimage.com/50x50/0f0/fff&text=P",
+  },
+  {
+    name: "Urban Realtors",
+    experience: "12 Yrs",
+    properties: 22,
+    location: ["Chembur"],
+    image: "https://dummyimage.com/50x50/00f/fff&text=U",
+  },
+];
+
 const RecommendedSellers = () => {
-  const scrollContainerRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [autoScroll, setAutoScroll] = useState(true);
+  const containerRef = useRef(null);
 
-  const sellers = [
-    { id: 1, name: "Housing Star ES", company: "MS Developers", experience: "13 Yrs", properties: "13", rating: 4.8 },
-    { id: 2, name: "Avail Pataluran", company: "Elite Properties", experience: "7 Yrs", properties: "114", rating: 4.9 },
-    { id: 3, name: "PropExpert Pro", company: "Dream Homes", experience: "9 Yrs", properties: "87", rating: 4.7 },
-    { id: 4, name: "Realty Masters", company: "Prime Constructions", experience: "11 Yrs", properties: "156", rating: 4.9 },
-    { id: 5, name: "HomeConnect", company: "Urban Spaces", experience: "5 Yrs", properties: "42", rating: 4.6 },
-  ];
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstChild?.offsetWidth || 260;
-      scrollContainerRef.current.scrollBy({
-        left: -cardWidth,
-        behavior: "smooth",
-      });
-      setAutoScroll(false);
-      setTimeout(() => setAutoScroll(true), 5000);
-      setCurrentIndex(prev => prev > 0 ? prev - 1 : sellers.length - 1);
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstChild?.offsetWidth || 260;
-      scrollContainerRef.current.scrollBy({
-        left: cardWidth,
-        behavior: "smooth",
-      });
-      setAutoScroll(false);
-      setTimeout(() => setAutoScroll(true), 5000);
-      setCurrentIndex(prev => (prev + 1) % sellers.length);
-    }
-  };
-
-  /* 🔥 AUTO SCROLL */
+  // Auto scroll
   useEffect(() => {
-    let interval;
-    if (autoScroll && scrollContainerRef.current) {
-      interval = setInterval(() => {
-        if (!scrollContainerRef.current) return;
+    const container = containerRef.current;
+    let scrollAmount = 0;
+    const scrollStep = 1;
 
-        const cardWidth = scrollContainerRef.current.firstChild?.offsetWidth || 260;
-        const maxScroll = scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
-
-        if (scrollContainerRef.current.scrollLeft >= maxScroll - 10) {
-          scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
-          setCurrentIndex(0);
-        } else {
-          scrollContainerRef.current.scrollBy({
-            left: cardWidth,
-            behavior: "smooth",
-          });
-          setCurrentIndex((prev) => (prev + 1) % sellers.length);
+    const interval = setInterval(() => {
+      if (container) {
+        scrollAmount += scrollStep;
+        if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+          scrollAmount = 0;
         }
-      }, 3000);
-    }
+        container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+      }
+    }, 20);
 
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [autoScroll, sellers.length]);
+    return () => clearInterval(interval);
+  }, []);
+
+  const scroll = (direction) => {
+    const container = containerRef.current;
+    const scrollOffset = 300;
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollOffset, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollOffset, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section className="recommended-sellers-section">
-      {/* HEADER - Left aligned */}
-      <div className="section-header">
-        <h2 className="section-title">Recommended Sellers</h2>
-        <p className="section-subtitle">
-          Sellers with complete knowledge about locality
-        </p>
+    <div className="recommended-sellers-section">
+      <h2>Recommended Sellers</h2>
+      <div className="rs-scroll-btn left" onClick={() => scroll("left")}>
+        &#8592;
+      </div>
+      <div className="rs-scroll-btn right" onClick={() => scroll("right")}>
+        &#8594;
       </div>
 
-      {/* SCROLL CONTAINER WITH BUTTONS */}
-      <div className="horizontal-scroll-container">
-        {/* Left Scroll Button */}
-        <button className="scroll-button scroll-button-left" onClick={scrollLeft}>
-          <LeftOutlined />
-        </button>
-
-        {/* Scroll Container */}
-        <div className="sellers-horizontal-scroll" ref={scrollContainerRef}>
-          {sellers.map((seller) => (
-            <div className="seller-card-horizontal" key={seller.id}>
-              <h3 className="seller-name">{seller.name}</h3>
-              <p className="seller-company">{seller.company}</p>
-
-              <div className="seller-stats">
-                <span>{seller.experience} Experience</span>
-                <span>{seller.properties} Properties</span>
-              </div>
-
-              <div className="rating">⭐ {seller.rating}</div>
-
-              <button className="contact-btn">Show Contact</button>
+      <div className="recommended-sellers-container" ref={containerRef}>
+        {sellers.map((seller, index) => (
+          <div className="recommended-seller-card" key={index}>
+            <div
+              className="rs-seller-header"
+              style={{ background: index % 2 === 0 ? "#3b3f5c" : "#1e3a5f" }}
+            >
+              <img src={seller.image} alt={seller.name} />
+              <span>{seller.name} &gt;</span>
             </div>
-          ))}
-        </div>
-
-        {/* Right Scroll Button */}
-        <button className="scroll-button scroll-button-right" onClick={scrollRight}>
-          <RightOutlined />
-        </button>
-      </div>
-
-      {/* Scroll Dots */}
-      <div className="scroll-dots">
-        {sellers.map((_, index) => (
-          <div 
-            key={index} 
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => {
-              if (scrollContainerRef.current) {
-                const cardWidth = scrollContainerRef.current.firstChild?.offsetWidth || 260;
-                scrollContainerRef.current.scrollTo({
-                  left: index * cardWidth,
-                  behavior: "smooth"
-                });
-                setCurrentIndex(index);
-                setAutoScroll(false);
-                setTimeout(() => setAutoScroll(true), 5000);
-              }
-            }}
-          ></div>
+            <div className="rs-seller-details">
+              <p>
+                <b>{seller.experience}</b> Experience | <b>{seller.properties}</b>{" "}
+                Properties
+              </p>
+              <div className="rs-seller-location">
+                {seller.location.map((loc, idx) => (
+                  <span key={idx}>{loc}</span>
+                ))}
+              </div>
+              <button>📞 Show Contact</button>
+            </div>
+          </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

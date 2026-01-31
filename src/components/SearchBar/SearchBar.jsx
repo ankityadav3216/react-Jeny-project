@@ -3,7 +3,8 @@ import { Input, Select, Button } from 'antd';
 import { 
   SearchOutlined, 
   EnvironmentOutlined,
-  FilterOutlined 
+  HomeOutlined,
+  WalletOutlined 
 } from '@ant-design/icons';
 import './SearchBar.css';
 
@@ -11,41 +12,41 @@ const { Option } = Select;
 
 const SearchBar = () => {
   return (
-    <div className="search-section-compact">
+    <div className="search-section-minimal">
       
-      {/* Title */}
-      <div className="search-title-wrapper-compact">
-        <h2 className="search-title-compact">
-          Find Your <span className="title-highlight-compact">Dream Property</span>
+      {/* Minimal Title */}
+      <div className="search-title-wrapper-minimal">
+        <h2 className="search-title-minimal">
+          Find Your <span className="title-highlight-minimal">Dream Home</span>
         </h2>
-        <p className="search-subtitle-compact">
-          Search from 1L+ properties across India
+        <p className="search-subtitle-minimal">
+          Discover properties matching your lifestyle & budget
         </p>
       </div>
 
-      {/* Compact Search Form */}
-      <div className="search-form-compact">
-        <div className="search-grid-compact">
+      {/* Minimal Search Form */}
+      <div className="search-form-minimal">
+        <div className="search-grid-minimal">
           
           {/* Location Input */}
-          <div className="search-group-compact">
-            <div className="input-group-compact">
-              <EnvironmentOutlined className="input-icon-compact" />
+          <div className="search-group-minimal">
+            <div className="input-wrapper-minimal">
+              <EnvironmentOutlined className="input-icon-minimal" />
               <Input
                 placeholder="Enter location"
-                className="search-input-compact"
+                className="search-input-minimal"
                 size="middle"
               />
             </div>
           </div>
 
-          {/* Property Type Dropdown */}
-          <div className="search-group-compact">
+          {/* Property Type */}
+          <div className="search-group-minimal">
             <Select
               defaultValue="apartment"
-              className="select-compact"
+              className="select-minimal"
               size="middle"
-              suffixIcon={<span className="dropdown-arrow-compact">▼</span>}
+              suffixIcon={<span className="dropdown-arrow-minimal">▼</span>}
             >
               <Option value="apartment">Apartments</Option>
               <Option value="house">Houses</Option>
@@ -55,13 +56,13 @@ const SearchBar = () => {
             </Select>
           </div>
 
-          {/* Budget Dropdown */}
-          <div className="search-group-compact">
+          {/* Budget */}
+          <div className="search-group-minimal">
             <Select
               defaultValue="any"
-              className="select-compact"
+              className="select-minimal"
               size="middle"
-              suffixIcon={<span className="dropdown-arrow-compact">▼</span>}
+              suffixIcon={<span className="dropdown-arrow-minimal">▼</span>}
             >
               <Option value="any">Any Budget</Option>
               <Option value="20-40">₹20-40 Lakhs</Option>
@@ -73,39 +74,27 @@ const SearchBar = () => {
           </div>
 
           {/* Search Button */}
-          <div className="search-group-compact">
+          <div className="search-group-minimal">
             <Button 
               type="primary"
               icon={<SearchOutlined />}
-              className="search-btn-compact"
+              className="search-btn-minimal"
               size="middle"
             >
               Search
             </Button>
           </div>
-
-          {/* Filter Button */}
-          <div className="search-group-compact">
-            <Button 
-              type="default"
-              icon={<FilterOutlined />}
-              className="filter-btn-compact"
-              size="middle"
-            >
-              Filters
-            </Button>
-          </div>
         </div>
       </div>
 
-      {/* Quick Tags */}
-      <div className="quick-tags-compact">
-        <span className="tag-compact">Mumbai</span>
-        <span className="tag-compact">Bangalore</span>
-        <span className="tag-compact">Delhi</span>
-        <span className="tag-compact">Pune</span>
-        <span className="tag-compact">Hyderabad</span>
-        <span className="tag-compact">Chennai</span>
+      {/* Minimal Quick Tags */}
+      <div className="quick-tags-minimal">
+        <span className="tag-minimal">Mumbai</span>
+        <span className="tag-minimal">Bangalore</span>
+        <span className="tag-minimal">Delhi</span>
+        <span className="tag-minimal">Pune</span>
+        <span className="tag-minimal">Hyderabad</span>
+        <span className="tag-minimal">Chennai</span>
       </div>
     </div>
   );

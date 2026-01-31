@@ -1,5 +1,5 @@
 .main-header {
-  background: linear-gradient(180deg, #0b2d4d, #1f5ea8);
+  background: linear-gradient(180deg, #0b2d4d, #3c82d1);
   height: 64px;
   position: fixed;
   width: 100%;
@@ -82,11 +82,12 @@
 
 /* Post Property Button */
 .post-btn {
-  background: #ffffff;
+  background: #1717af;
   border-radius: 18px;
   font-weight: 600;
   padding: 0 18px;
   height: 36px;
+  color : color ;
 }
 
 .free-badge {

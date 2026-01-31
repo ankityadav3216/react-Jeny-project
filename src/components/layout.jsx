@@ -1,30 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { Outlet } from "react-router-dom";
+
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
-import { Outlet } from "react-router-dom";
+import "./Layout.css";
 
 const Layout = () => {
-  
-
   return (
-    <>
+    <div className="app-layout">
       {/* Header */}
-      <Header
-       
-      />
+      <Header />
 
-      {/* Buy Mega Menu */}
-      
-
-      {/* Page Content */}
-      <main style={{ minHeight: "80vh" }}>
+      {/* Main Content */}
+      <main className="main-content">
         <Outlet />
       </main>
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 };
 

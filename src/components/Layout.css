@@ -1,0 +1,65 @@
+/* ===============================
+   GLOBAL LAYOUT SYSTEM
+   =============================== */
+
+/* Root scaling (VERY IMPORTANT for DPI issue) */
+html {
+  font-size: clamp(15px, 1vw, 16px);
+}
+
+/* App wrapper */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   MAIN CONTENT AREA
+   =============================== */
+
+.main-content {
+  flex: 1;                 /* Footer ko bottom pe rakhta hai */
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0;          /* Header fixed ho to yahan gap add kar sakta hai */
+}
+
+/* Prevent children overflow */
+.main-content > * {
+  width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE SAFETY
+   =============================== */
+
+/* Mobile */
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 0;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 0;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .main-content {
+    padding-top: 0;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+  .main-content {
+    max-width: 100%;
+  }
+}

@@ -1,401 +1,120 @@
-:root {
-  --blue-dark: #1e40af;
-  --blue-main: #2563eb;
-  --blue-light: #60a5fa;
-}
-
-/* SECTION */
 .recommended-sellers-section {
+  position: relative;
+  padding: 20px;
   width: 100%;
-  margin: 30px 0;
+  
+  margin: auto;
+ 
 }
 
-/* HEADER */
-.section-header {
-  max-width: 1200px;
-  margin: 0 auto 20px;
-  padding: 0 16px;
-  text-align: right;
-}
-
-.section-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--blue-dark);
-}
-
-.section-subtitle {
-  font-size: 13px;
-  color: #475569;
-}
-
-/* SCROLL CONTAINER */
-.horizontal-scroll-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.sellers-horizontal-scroll {
-  display: flex;
-  gap: 16px;
-  padding: 10px 16px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.sellers-horizontal-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* CARD */
-.seller-card-horizontal {
-  flex: 0 0 auto;
-  width: clamp(220px, 25vw, 260px);
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  border: 2px solid var(--blue-light);
-  border-radius: 14px;
-  padding: 16px;
-  transition: all 0.3s ease;
-}
-
-.seller-card-horizontal:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
-}
-
-/* TEXT */
-.seller-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--blue-dark);
-}
-
-.seller-company {
-  font-size: 12px;
-  color: #334155;
-  margin-bottom: 10px;
-}
-
-.seller-stats {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
+.recommended-sellers-section h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
   font-weight: 600;
-  color: #1e3a8a;
-  margin-bottom: 10px;
 }
 
-.rating {
-  font-weight: 700;
-  color: var(--blue-main);
-  margin-bottom: 12px;
+.recommended-sellers-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding-bottom: 10px;
 }
 
-/* BUTTON */
-.contact-btn {
-  width: 100%;
-  height: 36px;
-  border-radius: 8px;
-  border: none;
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue-main));
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.recommended-seller-card {
+  min-width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
-.contact-btn:hover {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .section-header {
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 20px;
-  }
-}
-:root {
-  --blue-dark: #1e40af;
-  --blue-main: #2563eb;
-  --blue-light: #60a5fa;
-  --blue-very-light: #93c5fd;
-  --blue-background: #eff6ff;
-}
-
-/* SECTION */
-.recommended-sellers-section {
-  width: 100%;
-  margin: 40px 0;
-  padding: 30px 0;
-}
-
-/* HEADER - Left aligned */
-.section-header {
-  max-width: 1200px;
-  margin: 0 auto 25px;
-  padding: 0 16px;
-  text-align: left;
-}
-
-.section-title {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--blue-dark) !important;
-  margin: 0 0 8px 0;
-}
-
-.section-subtitle {
-  font-size: 16px;
-  color: var(--blue-light) !important;
-  margin: 0;
+.rs-seller-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
   font-weight: 500;
 }
 
-/* SCROLL CONTAINER */
-.horizontal-scroll-container {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-/* Scroll Buttons */
-.scroll-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.rs-seller-header img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
-  border: 2px solid var(--blue-very-light);
-  color: var(--blue-main);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  margin-right: 10px;
 }
 
-.scroll-button:hover {
-  background: var(--blue-main);
-  color: white;
-  border-color: var(--blue-main);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+.rs-seller-details {
+  padding: 10px;
+  font-size: 13px;
 }
 
-.scroll-button-left {
-  left: 20px;
+.rs-seller-location span {
+  background: #eee;
+  padding: 3px 6px;
+  border-radius: 12px;
+  margin-right: 5px;
+  font-size: 12px;
 }
 
-.scroll-button-right {
-  right: 20px;
-}
-
-.sellers-horizontal-scroll {
-  display: flex;
-  gap: 16px;
-  padding: 10px 60px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
+.rs-seller-details button {
+  margin-top: 8px;
   width: 100%;
+  border: 1px solid #6c5dd3;
+  background: transparent;
+  color: #6c5dd3;
+  padding: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
 }
 
-.sellers-horizontal-scroll::-webkit-scrollbar {
+.rs-seller-details button:hover {
+  background: #6c5dd3;
+  color: #fff;
+}
+
+.rs-scroll-btn {
+  position: absolute;
+  top: 40%;
+  background: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.rs-scroll-btn.left {
+  left: -10px;
+}
+
+.rs-scroll-btn.right {
+  right: -10px;
+}
+
+/* Hide scrollbar */
+.recommended-sellers-container::-webkit-scrollbar {
   display: none;
 }
-
-/* CARD */
-.seller-card-horizontal {
-  flex: 0 0 auto;
-  width: 260px;
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  border: 2px solid var(--blue-very-light);
-  border-radius: 14px;
-  padding: 20px;
-  transition: all 0.3s ease;
+.recommended-sellers-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.seller-card-horizontal:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
-  border-color: var(--blue-main);
-}
-
-/* TEXT */
-.seller-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--blue-dark);
-  margin: 0 0 5px 0;
-}
-
-.seller-company {
-  font-size: 14px;
-  color: #475569;
-  margin: 0 0 15px 0;
-}
-
-.seller-stats {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: 600;
-  color: #1e3a8a;
-  margin-bottom: 12px;
-  background: rgba(219, 234, 254, 0.5);
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--blue-very-light);
-}
-
-.rating {
-  font-weight: 700;
-  color: var(--blue-main);
-  margin-bottom: 15px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* BUTTON */
-.contact-btn {
-  width: 100%;
-  height: 40px;
-  border-radius: 8px;
-  border: 2px solid var(--blue-main);
-  background: white;
-  color: var(--blue-main);
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.contact-btn:hover {
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue-main));
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-}
-
-/* Scroll Dots */
-.scroll-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding-top: 20px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--blue-very-light);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.dot.active {
-  background: var(--blue-main);
-  transform: scale(1.3);
-}
-
-.dot:hover {
-  background: var(--blue-main);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .recommended-sellers-section {
-    margin: 30px 0;
-    padding: 20px 0;
+/* Responsive */
+@media(max-width: 768px){
+  .recommended-seller-card {
+    min-width: 200px;
   }
 
-  .section-header {
-    text-align: left;
-    padding: 0 12px;
-    margin-bottom: 20px;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .section-subtitle {
-    font-size: 14px;
-  }
-
-  .seller-card-horizontal {
-    width: 240px;
-    padding: 16px;
-  }
-
-  .sellers-horizontal-scroll {
-    padding: 10px 50px;
-    gap: 12px;
-  }
-
-  .scroll-button {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-  }
-
-  .scroll-button-left {
-    left: 10px;
-  }
-
-  .scroll-button-right {
-    right: 10px;
-  }
-
-  .seller-name {
-    font-size: 16px;
-  }
-
-  .seller-stats {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .contact-btn {
-    height: 36px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .seller-card-horizontal {
-    width: 220px;
-  }
-
-  .sellers-horizontal-scroll {
-    padding: 10px 40px;
-  }
-
-  .scroll-button {
-    width: 32px;
-    height: 32px;
-    font-size: 12px;
-  }
-
-  .scroll-button-left {
-    left: 5px;
-  }
-
-  .scroll-button-right {
-    right: 5px;
+  .rs-scroll-btn {
+    display: none;
   }
 }

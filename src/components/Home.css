@@ -1,51 +1,68 @@
-/* Home.css - Responsive Width Breakpoints */
+/* ===============================
+   HOME PAGE – RESPONSIVE SYSTEM
+   =============================== */
 
-/* Mobile devices (max-width: 480px) */
-@media (min-width:360px)and(max-width: 480px) {
-  .home-page {
-    width: 100%;
-  }
-  
-  .home-page > * {
-    width: 100%;
+/* Root scaling – MOST IMPORTANT */
+html {
+  font-size: clamp(15px, 1vw, 16px);
+}
+
+/* Page wrapper */
+.home-page {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Common centered container */
+.container {
+  width: 100%;
+  max-width: 100%;   /* 👈 FIXED ISSUE */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Full width sections (Hero etc.) */
+.full-width {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure children never overflow */
+.container > * {
+  width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   =============================== */
+
+/* Small phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
   }
 }
 
-/* Tablets (481px to 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .home-page {
-    width: 100%;
-    max-width: 768px;
-    margin: 0 auto;
-  }
-  
-  .home-page > * {
-    width: 100%;
+/* Tablets */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
   }
 }
 
-/* Laptops (769px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .home-page {
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-  
-  .home-page > * {
-    width: 100%;
+/* Small laptops */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
   }
 }
 
-/* Desktops (1025px and above) */
-@media (min-width: 1025px) {
-  .home-page {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .home-page > * {
-    width: 100%;
+/* Large desktops */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px; /* premium wide screens */
   }
 }

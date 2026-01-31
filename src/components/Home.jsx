@@ -1,38 +1,69 @@
 // src/pages/Home.jsx
-import React from 'react';
+import React from "react";
 
-// Import all components except PropertyDetail
-// import Header from '../components/Header/Navbar/Header.jsx';
-import HeroSection from '../components/HeroSection/HeroSection.jsx';
-import SearchBar from '../components/SearchBar/SearchBar.jsx';
-import HousingTopPicks from '../components/HousingTopPicks/HousingTopPicks.jsx';
-import FeaturedDeveloper from '../components/FeaturedDevelopers/FeaturedDevelopers.jsx';
-import FeaturedProperties from '../components/FeaturedProperties/FeaturedProperties.jsx';
-import Localities from '../components/Localities/Localities.jsx';
-import RecommendedSellers from '../components/RecommendedSellers/RecommendedSellers.jsx';
-import Services from '../components/Services/Services.jsx';
-import TopHighlightedProjects from '../components/TopHighlightedProjects/TopHighlightedProjects.jsx';
-import PropertyResearchTools from '../components/PropertyResearchTools/PropertyResearchTools.jsx';
-import NewsSection from '../components/NewsSection/NewsSection.jsx';
-// import Footer from '../components/Footer/Footer.jsx';
- import "./Home.css";
+import HeroSection from "../components/HeroSection/HeroSection.jsx";
+import SearchBar from "../components/SearchBar/SearchBar.jsx";
+import HousingTopPicks from "../components/HousingTopPicks/HousingTopPicks.jsx";
+import FeaturedDeveloper from "../components/FeaturedDevelopers/FeaturedDevelopers.jsx";
+import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties.jsx";
+import Localities from "../components/Localities/Localities.jsx";
+import RecommendedSellers from "../components/RecommendedSellers/RecommendedSellers.jsx";
+import Services from "../components/Services/Services.jsx";
+import TopHighlightedProjects from "../components/TopHighlightedProjects/TopHighlightedProjects.jsx";
+import PropertyResearchTools from "../components/PropertyResearchTools/PropertyResearchTools.jsx";
+import NewsSection from "../components/NewsSection/NewsSection.jsx";
+
+import "./Home.css";
 
 const Home = () => {
   return (
     <div className="home-page">
-    {/* <Header /> */}
-      <HeroSection />
-      <SearchBar />
-      <HousingTopPicks />
-      <FeaturedDeveloper />
-      <FeaturedProperties />
-      <Localities />
-      <RecommendedSellers />
-      <Services />
-      <TopHighlightedProjects/>
-      <PropertyResearchTools/>
-      <NewsSection />
-    {/* <Footer /> */}
+
+      {/* Full width sections */}
+      <section className="full-width">
+        <HeroSection />
+      </section>
+
+      <section className="container">
+        <SearchBar />
+      </section>
+
+      <section className="container">
+        <HousingTopPicks />
+      </section>
+
+      <section className="container">
+        <FeaturedDeveloper />
+      </section>
+
+      <section className="container">
+        <FeaturedProperties />
+      </section>
+
+      <section className="container">
+        <Localities />
+      </section>
+
+      <section className="container">
+        <RecommendedSellers />
+      </section>
+
+      <section className="container">
+        <Services />
+      </section>
+
+      <section className="container">
+        <TopHighlightedProjects />
+      </section>
+
+      <section className="container">
+        <PropertyResearchTools />
+      </section>
+
+      <section className="container">
+        <NewsSection />
+      </section>
+
     </div>
   );
 };
