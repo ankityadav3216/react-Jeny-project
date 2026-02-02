@@ -1,3 +1,4 @@
+/* ================= HEADER BASE ================= */
 .main-header {
   background: linear-gradient(180deg, #0b2d4d, #3c82d1);
   height: 64px;
@@ -13,39 +14,76 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  justify-content: space-between;
+  padding: 0 12px;
+  flex-wrap: nowrap;
+  position: relative;
 }
 
-/* LEFT */
+/* ================= LEFT ================= */
 .left-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
-.brand-text {
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
+/* LOGO */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 12px;
+  position: relative;
+  cursor: pointer;
 }
 
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-main {
+  font-size: 18px;
+  font-weight: 900;
+  color: #e0f2fe;
+  letter-spacing: 1px;
+}
+
+.logo-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: #bfdbfe;
+}
+
+/* LOCATION */
 .location-select {
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #e5e7eb;
+  gap: 4px;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #ffffff;
+  position: relative;
+  padding-right: 12px;
+}
+
+.buy-in {
+  font-weight: 500;
   font-size: 14px;
 }
 
 .location-select .ant-select-selector {
   color: #ffffff !important;
   font-weight: 500;
+  background: transparent !important;
+  padding: 0 !important;
 }
 
-/* CENTER MENU */
+/* ================= CENTER ================= */
 .desktop-menu {
   flex: 1;
-  min-width: 0;
   background: transparent !important;
   border-bottom: none !important;
 }
@@ -56,38 +94,49 @@
   padding: 0 16px;
 }
 
-.desktop-menu .ant-menu-item:hover {
-  color: #cfe3ff !important;
-}
-
 .desktop-menu .ant-menu-item::after {
   display: none;
 }
 
-.new-badge {
-  background: #ec4899;
-  color: #fff;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: 6px;
-}
-
-/* RIGHT SECTION (IMPORTANT PART) */
+/* ================= RIGHT ================= */
 .right-section {
   display: flex;
   align-items: center;
-  gap: 18px; /* 🔥 MAIN GAP CONTROL */
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-/* Post Property Button */
+.icon-btn {
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.icon-btn:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .post-btn {
   background: #1717af;
   border-radius: 18px;
   font-weight: 600;
-  padding: 0 18px;
-  height: 36px;
-  color : color ;
+  padding: 0 16px;
+  height: 34px;
+  color: #fff;
 }
 
 .free-badge {
@@ -99,31 +148,45 @@
   margin-left: 6px;
 }
 
-/* ICONS */
-.icon-btn {
-  font-size: 18px;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 6px;              /* 👈 icon ke around space */
-  border-radius: 50%;
-  transition: background 0.2s ease;
-}
-
-.icon-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* MOBILE */
-.mobile-only {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .desktop-menu {
-    display: none;
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  /* Hide menu, location, post button */
+  .desktop-menu,
+  .post-btn,
+  .location-select {
+    display: none !important;
   }
 
-  .mobile-only {
-    display: inline-block;
+  /* Keep logo on left */
+  .left-section {
+    position: relative;
+    left: 0;
+    transform: none;
+  }
+
+  .brand-logo {
+    padding-right: 0;
+  }
+
+  .logo-main {
+    font-size: 16px;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+  }
+
+  /* Right icons stay visible */
+  .right-section {
+    margin-left: auto;
+    gap: 8px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 481px) and (max-width: 1200px) {
+  .desktop-menu,
+  .post-btn {
+    display: none !important;
   }
 }

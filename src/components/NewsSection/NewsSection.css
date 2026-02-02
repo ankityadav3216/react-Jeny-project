@@ -13,14 +13,17 @@
    Header
 ================================ */
 .news-section-header {
-  text-align: center;
+  text-align: left; /* LEFT ALIGN now */
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .news-section-header h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #111827; /* BLACK */
+  color: #111827;
   margin: 0;
 }
 
@@ -28,7 +31,7 @@
   width: 90px;
   height: 3px;
   background: #2563eb;
-  margin: 12px auto 0;
+  margin-top: 8px;
   border-radius: 2px;
 }
 
@@ -40,6 +43,7 @@
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 10px;
+  scroll-snap-type: x mandatory; /* smooth scroll snap */
 }
 
 .news-section-scroll::-webkit-scrollbar {
@@ -56,13 +60,13 @@
 ================================ */
 .news-section-card {
   min-width: 280px;
-  height: 380px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #e5e7eb;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start; /* for smooth snap */
 }
 
 .news-section-card:hover {
@@ -83,6 +87,7 @@
 .news-section-card .ant-card-cover img {
   height: 160px;
   object-fit: cover;
+  width: 100%;
 }
 
 /* ===============================
@@ -101,13 +106,13 @@
 .news-section-card .ant-card-meta-title {
   font-size: 16px;
   font-weight: 600;
-  color: #111827; /* BLACK */
+  color: #111827;
   line-height: 1.4;
 }
 
 .news-desc {
   font-size: 14px;
-  color: #374151; /* DARK GRAY */
+  color: #374151;
   line-height: 1.5;
   margin-top: 6px;
   flex: 1;
@@ -133,7 +138,7 @@
 .author {
   font-size: 12px;
   font-weight: 600;
-  color: #111827; /* BLACK */
+  color: #111827;
 }
 
 .date {
@@ -141,7 +146,6 @@
   color: #6b7280;
 }
 
-/* Button fix (inside card only) */
 .news-footer .ant-btn {
   border-radius: 20px;
   padding: 4px 14px;
@@ -152,10 +156,9 @@
 /* ===============================
    Responsive
 ================================ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .news-section-card {
     min-width: 250px;
-    height: 360px;
   }
 
   .news-section-header h2 {
@@ -163,13 +166,38 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .news-section {
-    padding: 30px 10px;
+    padding: 30px 15px;
   }
 
   .news-section-card {
-    min-width: 230px;
-    height: 350px;
+    min-width: 220px; /* smaller cards for mobile */
+  }
+
+  .news-section-header h2 {
+    font-size: 22px;
+  }
+
+  .news-section-header .line {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-section {
+    padding: 25px 10px;
+  }
+
+  .news-section-card {
+    min-width: 200px;
+  }
+
+  .news-section-header h2 {
+    font-size: 20px;
+  }
+
+  .news-section-header .line {
+    width: 50px;
   }
 }

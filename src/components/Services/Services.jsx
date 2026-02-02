@@ -41,9 +41,7 @@ const Services = () => {
       <div className="services-container">
         <div className="section-header">
           <h2 className="section-title">Why Choose Housing.com?</h2>
-          <p className="section-subtitle">
-            India's most trusted real estate platform with complete transparency
-          </p>
+        
         </div>
         
         <div className="services-grid">

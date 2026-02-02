@@ -27,39 +27,60 @@
   margin-right: auto;
 }
 
+/* ============================= */
+/* HORIZONTAL SCROLL CONTAINER */
+/* ============================= */
+.property-types-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+}
+
+.property-types-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================= */
+/* CARD (SMALLER SIZE) */
+/* ============================= */
 .property-type-card {
+  flex: 0 0 180px;  /* smaller width */
   border-radius: 16px !important;
   border: 2px solid #FFD700 !important;
   text-align: center;
-  padding: 24px 16px !important;
-  height: 100%;
-  transition: all 0.3s ease !important;
+  padding: 20px 12px !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   background: white !important;
 }
 
 .property-type-card:hover {
   border-color: #FF4500 !important;
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px rgba(255, 69, 0, 0.1) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 20px rgba(255, 69, 0, 0.1) !important;
 }
 
+/* ============================= */
+/* ICONS */
+/* ============================= */
 .type-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 16px;
   background: linear-gradient(135deg, #FF4500 0%, #FF0000 100%);
   border: 2px solid #FFD700;
 }
 
 .type-icon-inner {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,25 +88,28 @@
 }
 
 .type-icon-inner .anticon {
-  font-size: 28px;
+  font-size: 24px;
   color: #FFD700;
 }
 
+/* ============================= */
+/* TITLE & COUNT */
+/* ============================= */
 .type-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #8B0000;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .type-count {
-  font-size: 14px;
+  font-size: 12px;
   color: #5D4037;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .type-indicator {
-  width: 40px;
+  width: 36px;
   height: 4px;
   border-radius: 2px;
   margin: 0 auto;
@@ -94,10 +118,13 @@
 }
 
 .property-type-card:hover .type-indicator {
-  width: 60px;
+  width: 50px;
   background: linear-gradient(90deg, #FF4500 0%, #8B0000 100%);
 }
 
+/* ============================= */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================= */
 @media (max-width: 1024px) {
   .property-types-section {
     padding: 48px 0;
@@ -125,28 +152,42 @@
     font-size: 14px;
     margin-bottom: 32px;
   }
-  
+
   .property-type-card {
-    padding: 20px 12px !important;
+    flex: 0 0 150px; /* even smaller on mobile */
+    padding: 16px 10px !important;
   }
-  
+
   .type-icon-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
   
   .type-icon-inner {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .type-title {
+    font-size: 14px;
+  }
+
+  .type-count {
+    font-size: 11px;
+  }
+
+  .type-indicator {
+    width: 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .type-title {
-    font-size: 16px;
+  .section-title {
+    font-size: 20px;
   }
   
-  .type-count {
+  .section-subtitle {
     font-size: 12px;
+    margin-bottom: 24px;
   }
 }

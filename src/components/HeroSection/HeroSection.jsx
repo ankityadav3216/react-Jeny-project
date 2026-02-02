@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, Statistic } from "antd";
 import {
   HomeOutlined,
   SafetyOutlined,
@@ -28,15 +27,14 @@ const HeroSection = ({ backgroundImage = defaultBackgroundImage }) => {
 
       <div className="hero-container-compact">
         <div className="hero-content-compact">
-          {/* Single Line Text */}
           <div className="hero-text-container">
             <h1 className="hero-main-title">
               <span className="title-text">
-                Find Your Perfect Dream 
+                Find Your Perfect Dream
                 <span className="home-highlight"> Home</span>
               </span>
             </h1>
-            
+
             <div className="hero-tagline">
               <p className="hero-subtitle">
                 India's Most Trusted Property Platform
@@ -49,32 +47,24 @@ const HeroSection = ({ backgroundImage = defaultBackgroundImage }) => {
             </div>
           </div>
 
-          {/* नया डिज़ाइन वाले स्टेट कार्ड्स */}
           <div className="stats-grid-compact">
             <div className="desktop-stats">
               {stats.map((stat, index) => (
                 <div key={index} className="stat-card-new">
-                  <div className="stat-icon-new">
-                    {stat.icon}
-                  </div>
+                  <div className="stat-icon-new">{stat.icon}</div>
                   <div className="stat-content-new">
                     <div className="stat-value-new">{stat.value}</div>
                     <div className="stat-label-new">{stat.label}</div>
                   </div>
-                  {/* Corner decoration */}
-                  <div className="corner-decoration"></div>
                 </div>
               ))}
             </div>
 
-            {/* Mobile Stats - Horizontal Scrollable Row */}
             <div className="mobile-stats">
               <div className="mobile-stats-scroll">
                 {stats.map((stat, index) => (
                   <div key={index} className="mobile-stat-card-new">
-                    <div className="mobile-stat-icon-new">
-                      {stat.icon}
-                    </div>
+                    <div className="mobile-stat-icon-new">{stat.icon}</div>
                     <div className="mobile-stat-content-new">
                       <div className="mobile-stat-value-new">{stat.value}</div>
                       <div className="mobile-stat-label-new">{stat.label}</div>

@@ -30,113 +30,25 @@ const Amenities = () => {
   const [coveredParking, setCoveredParking] = useState(0);
   const [openParking, setOpenParking] = useState(0);
 
-  // Other rooms options
-  const otherRooms = [
-    "Pooja Room",
-    "Study Room", 
-    "Servant Room",
-    "Store Room"
-  ];
-
-  // Amenities options
-  const amenities = [
-    "Maintenance Staff",
-    "Water Storage",
-    "Security / Fire Alarm",
-    "Visitor Parking",
-    "Vaastu Compliant",
-    "Park",
-    "Intercom Facility",
-    "Lift(s)"
-  ];
-
-  // Property features
-  const propertyFeatures = [
-    "High Ceiling Height",
-    "False Ceiling Lighting", 
-    "Piped-gas",
-    "Internet/wi-fi connectivity",
-    "Air Conditioning",
-    "Power Back-up",
-    "Rain Water Harvesting",
-    "Waste Disposal",
-    "Pet Friendly",
-    "Concierge"
-  ];
-
-  // Society features
-  const societyFeatures = [
-    "Water softening plant",
-    "Shopping Centre",
-    "Fitness Centre / GYM",
-    "Swimming Pool",
-    "Club House",
-    "Indoor Games",
-    "Landscaped Garden"
-  ];
-
-  // Water source
-  const waterSources = [
-    "Municipal corporation",
-    "Borewell/Tank",
-    "24*7 Water"
-  ];
-
-  // Overlooking
-  const overlooking = [
-    "Pool",
-    "Park/Garden",
-    "Club",
-    "Main Road",
-    "Others"
-  ];
-
-  // Other features
-  const otherFeatures = [
-    "In a gated society",
-    "Corner Property",
-    "Wheelchair friendly"
-  ];
-
-  // Property facing
-  const propertyFacing = [
-    "North", "South", "East", "West",
-    "North-East", "North-West", "South-East", "South-West"
-  ];
-
-  // Furnishings
-  const furnishings = [
-    "Light", "Fans", "AC", "TV", "Beds", "Wardrobe",
-    "Geyser", "Sofa", "Washing Machine", "Stove", "Fridge",
-    "Water Purifier", "Microwave", "Modular Kitchen", "Chimney", "Dining Table"
-  ];
-
-  // Location advantages
-  const locationAdvantages = [
-    "Close to Metro Station",
-    "Close to School",
-    "Close to Hospital",
-    "Close to Market",
-    "Close to Railway Station",
-    "Close to Bus Stand",
-    "Close to Airport",
-    "Near Shopping Mall"
-  ];
+  const otherRooms = ["Pooja Room", "Study Room", "Servant Room", "Store Room"];
+  const amenities = ["Maintenance Staff", "Water Storage", "Security / Fire Alarm", "Visitor Parking", "Vaastu Compliant", "Park", "Intercom Facility", "Lift(s)"];
+  const propertyFeatures = ["High Ceiling Height", "False Ceiling Lighting", "Piped-gas", "Internet/wi-fi connectivity", "Air Conditioning", "Power Back-up", "Rain Water Harvesting", "Waste Disposal", "Pet Friendly", "Concierge"];
+  const societyFeatures = ["Water softening plant", "Shopping Centre", "Fitness Centre / GYM", "Swimming Pool", "Club House", "Indoor Games", "Landscaped Garden"];
+  const waterSources = ["Municipal corporation", "Borewell/Tank", "24*7 Water"];
+  const overlooking = ["Pool", "Park/Garden", "Club", "Main Road", "Others"];
+  const otherFeatures = ["In a gated society", "Corner Property", "Wheelchair friendly"];
+  const propertyFacing = ["North", "South", "East", "West", "North-East", "North-West", "South-East", "South-West"];
+  const furnishings = ["Light", "Fans", "AC", "TV", "Beds", "Wardrobe", "Geyser", "Sofa", "Washing Machine", "Stove", "Fridge", "Water Purifier", "Microwave", "Modular Kitchen", "Chimney", "Dining Table"];
+  const locationAdvantages = ["Close to Metro Station", "Close to School", "Close to Hospital", "Close to Market", "Close to Railway Station", "Close to Bus Stand", "Close to Airport", "Near Shopping Mall"];
 
   return (
     <div className="amenities-container">
       {/* Header */}
       <div className="amenities-header">
         <Button type="text" className="back-btn">← Back</Button>
-        <Title level={4} className="page-title">
-          Add amenities/unique features
-        </Title>
-        <Text className="page-subtitle">
-          These fields are used to populate USP & captions
-        </Text>
-        <Text className="optional-note">
-          All fields on this page are optional
-        </Text>
+        <Title level={4} className="page-title">Add amenities/unique features</Title>
+        <Text className="page-subtitle">These fields are used to populate USP & captions</Text>
+        <Text className="optional-note">All fields on this page are optional</Text>
       </div>
 
       <div className="amenities-sections">
@@ -170,12 +82,9 @@ const Amenities = () => {
             </Radio.Group>
           </div>
 
-          {/* Furnishing details - shown only when Furnished is selected */}
           {furnishingType === 'furnished' && (
             <div className="furnishing-details">
-              <Text className="mandatory-note">
-                At least three furnishings are mandatory for furnished
-              </Text>
+              <Text className="mandatory-note">At least three furnishings are mandatory for furnished</Text>
               <div className="furnishings-grid">
                 {furnishings.map(item => (
                   <div key={item} className="furnishing-item">
@@ -198,46 +107,19 @@ const Amenities = () => {
                 <Checkbox>Covered Parking</Checkbox>
               </div>
               <div className="parking-counter">
-                <Button 
-                  icon={<MinusOutlined />} 
-                  onClick={() => setCoveredParking(Math.max(0, coveredParking - 1))}
-                  className="counter-btn"
-                />
-                <InputNumber 
-                  min={0} 
-                  value={coveredParking} 
-                  onChange={setCoveredParking}
-                  className="counter-input"
-                />
-                <Button 
-                  icon={<PlusOutlined />} 
-                  onClick={() => setCoveredParking(coveredParking + 1)}
-                  className="counter-btn"
-                />
+                <Button icon={<MinusOutlined />} onClick={() => setCoveredParking(Math.max(0, coveredParking - 1))} className="counter-btn" />
+                <InputNumber min={0} value={coveredParking} onChange={setCoveredParking} className="counter-input" />
+                <Button icon={<PlusOutlined />} onClick={() => setCoveredParking(coveredParking + 1)} className="counter-btn" />
               </div>
             </div>
-
             <div className="parking-item">
               <div className="parking-label">
                 <Checkbox>Open Parking</Checkbox>
               </div>
               <div className="parking-counter">
-                <Button 
-                  icon={<MinusOutlined />} 
-                  onClick={() => setOpenParking(Math.max(0, openParking - 1))}
-                  className="counter-btn"
-                />
-                <InputNumber 
-                  min={0} 
-                  value={openParking} 
-                  onChange={setOpenParking}
-                  className="counter-input"
-                />
-                <Button 
-                  icon={<PlusOutlined />} 
-                  onClick={() => setOpenParking(openParking + 1)}
-                  className="counter-btn"
-                />
+                <Button icon={<MinusOutlined />} onClick={() => setOpenParking(Math.max(0, openParking - 1))} className="counter-btn" />
+                <InputNumber min={0} value={openParking} onChange={setOpenParking} className="counter-input" />
+                <Button icon={<PlusOutlined />} onClick={() => setOpenParking(openParking + 1)} className="counter-btn" />
               </div>
             </div>
           </div>
@@ -321,20 +203,8 @@ const Amenities = () => {
             ))}
           </div>
           {propertyFeatures.length > 4 && (
-            <Button 
-              type="link" 
-              onClick={() => setShowMoreFeatures(!showMoreFeatures)}
-              className="show-more-btn"
-            >
-              {showMoreFeatures ? (
-                <>
-                  <UpOutlined /> Show less
-                </>
-              ) : (
-                <>
-                  {propertyFeatures.length - 4} more <DownOutlined />
-                </>
-              )}
+            <Button type="link" onClick={() => setShowMoreFeatures(!showMoreFeatures)} className="show-more-btn">
+              {showMoreFeatures ? (<><UpOutlined /> Show less</>) : (<>{propertyFeatures.length - 4} more <DownOutlined /></>)}
             </Button>
           )}
         </div>
@@ -351,20 +221,8 @@ const Amenities = () => {
             ))}
           </div>
           {societyFeatures.length > 4 && (
-            <Button 
-              type="link" 
-              onClick={() => setShowMoreSociety(!showMoreSociety)}
-              className="show-more-btn"
-            >
-              {showMoreSociety ? (
-                <>
-                  <UpOutlined /> Show less
-                </>
-              ) : (
-                <>
-                  {societyFeatures.length - 4} more <DownOutlined />
-                </>
-              )}
+            <Button type="link" onClick={() => setShowMoreSociety(!showMoreSociety)} className="show-more-btn">
+              {showMoreSociety ? (<><UpOutlined /> Show less</>) : (<>{societyFeatures.length - 4} more <DownOutlined /></>)}
             </Button>
           )}
         </div>
@@ -382,9 +240,7 @@ const Amenities = () => {
           <Title level={5} className="section-title">Property facing</Title>
           <div className="property-facing-grid">
             {propertyFacing.map(direction => (
-              <Radio key={direction} value={direction} className="facing-radio">
-                {direction}
-              </Radio>
+              <Radio key={direction} value={direction} className="facing-radio">{direction}</Radio>
             ))}
           </div>
         </div>
@@ -392,11 +248,7 @@ const Amenities = () => {
         {/* Type of flooring */}
         <div className="section-card">
           <Title level={5} className="section-title">Type of flooring</Title>
-          <Select 
-            placeholder="Select" 
-            className="flooring-select"
-            suffixIcon={<DownOutlined />}
-          >
+          <Select placeholder="Select" className="flooring-select" suffixIcon={<DownOutlined />}>
             <Option value="marble">Marble</Option>
             <Option value="vitrified">Vitrified Tiles</Option>
             <Option value="wooden">Wooden</Option>
@@ -408,10 +260,7 @@ const Amenities = () => {
         <div className="section-card">
           <Title level={5} className="section-title">Width of facing road</Title>
           <div className="road-width">
-            <InputNumber 
-              placeholder="Enter the width"
-              className="road-input"
-            />
+            <InputNumber placeholder="Enter the width" className="road-input" />
             <Text className="unit">Feet</Text>
           </div>
         </div>
@@ -431,32 +280,14 @@ const Amenities = () => {
             ))}
           </div>
           {locationAdvantages.length > 5 && (
-            <Button 
-              type="link" 
-              onClick={() => setShowMoreLocation(!showMoreLocation)}
-              className="show-more-btn"
-            >
-              {showMoreLocation ? (
-                <>
-                  <UpOutlined /> Show less
-                </>
-              ) : (
-                <>
-                  Show more <DownOutlined />
-                </>
-              )}
+            <Button type="link" onClick={() => setShowMoreLocation(!showMoreLocation)} className="show-more-btn">
+              {showMoreLocation ? (<><UpOutlined /> Show less</>) : (<>Show more <DownOutlined /></>)}
             </Button>
           )}
         </div>
       </div>
 
-      {/* Save and Submit Button */}
-      <div className="submit-section">
-        <Divider />
-        <Button type="primary" className="submit-btn">
-          Save and Submit
-        </Button>
-      </div>
+      
     </div>
   );
 };

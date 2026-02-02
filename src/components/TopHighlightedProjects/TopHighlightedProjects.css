@@ -1,6 +1,6 @@
 .thp-wrapper {
   padding: 20px;
-  width:100%;
+  width: 100%;
   margin: auto;
 }
 
@@ -15,19 +15,24 @@
   margin-bottom: 16px;
 }
 
-/* Horizontal scroll */
+/* ===== Scroll Container ===== */
 .thp-scroll {
+  overflow: hidden;
+  position: relative;
+}
+
+.thp-scroll-track {
   display: flex;
   gap: 16px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  width: max-content;
+  animation: thp-autoscroll 35s linear infinite;
 }
 
-.thp-scroll::-webkit-scrollbar {
-  display: none;
+.thp-scroll:hover .thp-scroll-track {
+  animation-play-state: paused;
 }
 
-/* Card */
+/* ===== Card ===== */
 .thp-card {
   min-width: 420px;
   height: 240px;
@@ -43,28 +48,42 @@
   object-fit: cover;
 }
 
-/* Dark gradient overlay */
+/* ===== Overlay ===== */
 .thp-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.15)
   );
   color: #fff;
   padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  gap: 4px;
 }
 
+/* Title */
 .thp-overlay h3 {
   font-size: 20px;
   font-weight: 700;
   margin: 0;
 }
 
+/* PRICE — CLEAN (no border, no bg) */
+.thp-overlay .price {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 2px 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* Other text */
 .thp-overlay .by {
   font-size: 13px;
   opacity: 0.85;
@@ -72,25 +91,66 @@
 
 .thp-overlay p {
   font-size: 14px;
-  margin: 2px 0;
+  margin: 0;
 }
 
 .thp-overlay .location {
   opacity: 0.9;
 }
 
-.thp-overlay .price {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  font-size: 18px;
-  font-weight: 700;
+/* ===== Auto Scroll Animation ===== */
+@keyframes thp-autoscroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .thp-scroll {
+    overflow-x: auto;
+  }
+
+  .thp-scroll-track {
+    animation: none;
+  }
+
   .thp-card {
     min-width: 300px;
     height: 200px;
+  }
+
+  .thp-overlay h3 {
+    font-size: 18px;
+  }
+
+  .thp-overlay .price {
+    font-size: 14px;
+  }
+
+  .thp-overlay p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thp-card {
+    min-width: 260px;
+    height: 180px;
+  }
+
+  .thp-overlay h3 {
+    font-size: 16px;
+  }
+
+  .thp-overlay .price {
+    font-size: 13px;
+  }
+
+  .thp-overlay p {
+    font-size: 12px;
   }
 }
