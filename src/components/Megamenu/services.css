@@ -1,61 +1,65 @@
-/* ===== WRAPPER (HEADER KE NICHE) ===== */
+/* WRAPPER – header ke niche */
 .services-wrapper {
   position: absolute;
-  top: 64px;          /* header height */
+  top: 64px;
   left: 0;
   width: 100%;
   z-index: 999;
+  display: flex;
+  justify-content: center;
 }
 
-/* ===== SMALL VERTICAL DROPDOWN ===== */
-.services-dropdown {
-  width: 260px;
+/* MAIN DROPDOWN BOX */
+.services-mega {
   background: #ffffff;
-  margin-left: 320px;   /* Services tab ke niche */
-  padding: 8px;
-  border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  padding: 20px 24px;
 
+  display: flex;
+  gap: 48px;
+}
+
+/* COLUMN */
+.services-col {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 220px;
 }
 
-/* ===== DIVIDER ===== */
-.services-divider {
-  height: 1px;
-  background: #eaeaea;
-  margin: 6px 0;
+/* COLUMN TITLE */
+.services-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8a8a8a;
+  margin-bottom: 8px;
 }
 
-/* ===== BUTTON STYLE ===== */
+/* ITEMS */
 .services-item {
-  background: #ffffff;
-  border: 1px solid #ffffff;
-  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  padding: 8px 6px;
   text-align: left;
   font-size: 14px;
-  color: #003366;
-  border-radius: 6px;
+  color: #1f2937;
   cursor: pointer;
+  border-radius: 6px;
   transition: all 0.2s ease;
 }
 
-/* ===== HOVER EFFECT ===== */
+/* HOVER EXACT FEEL */
 .services-item:hover {
-  background: #ffffff;
+  background: #f1f5ff;
   color: #1677ff;
-  border-color: #1677ff;
 }
 
-/* ===== MOBILE FIX ===== */
+/* MOBILE */
 @media (max-width: 768px) {
-  .services-wrapper {
-    top: 56px;
-  }
-
-  .services-dropdown {
-    margin-left: 12px;
+  .services-mega {
+    flex-direction: column;
+    gap: 16px;
     width: calc(100% - 24px);
   }
 }

@@ -1,0 +1,186 @@
+.bank-offers-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.bank-offers-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.bank-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.bank-name img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.sub-text {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Apply Button – Dark Blue */
+.apply-btn {
+  background: #06243f;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 4px;
+}
+
+.apply-btn:hover {
+  background: #3c82d1;
+  color: #fff;
+}
+
+/* Table styling */
+.ant-table-thead > tr > th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.ant-table-tbody > tr {
+  border-bottom: 1px solid #eee;
+}
+
+/* Horizontal scroll for small screens */
+.bank-offers-wrapper .ant-table-wrapper {
+  overflow-x: auto;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .bank-offers-wrapper {
+    padding: 18px;
+  }
+
+  .bank-offers-title {
+    font-size: 17px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .ant-table {
+    min-width: 700px;
+  }
+
+  .bank-name img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .apply-btn {
+    padding: 5px 14px;
+  }
+}
+
+/* Small tablets / large mobiles (≤768px) */
+@media (max-width: 768px) {
+  .bank-offers-wrapper {
+    padding: 15px;
+  }
+
+  .bank-offers-title {
+    font-size: 16px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .ant-table {
+    min-width: 600px;
+  }
+
+  .bank-name img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .apply-btn {
+    padding: 5px 12px;
+  }
+}
+
+/* Mobile Medium (≤480px) */
+@media (max-width: 480px) {
+  .bank-offers-wrapper {
+    padding: 12px;
+  }
+
+  .bank-offers-title {
+    font-size: 15px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .ant-table {
+    min-width: 500px;
+  }
+
+  .bank-name img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .apply-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile Small (≤360px) */
+@media (max-width: 360px) {
+  .bank-offers-wrapper {
+    padding: 10px;
+  }
+
+  .bank-offers-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 5px 6px;
+    font-size: 11px;
+  }
+
+  .ant-table {
+    min-width: 480px;
+  }
+
+  .bank-name img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .apply-btn {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+}

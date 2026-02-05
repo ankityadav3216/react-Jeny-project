@@ -1,0 +1,17 @@
+.pvc-page {
+  position: relative;
+}
+
+/* Header ko reference banaya */
+.pvc-header {
+  position: relative;
+  height: 300px; /* header height */
+}
+
+/* Calculator overlap */
+.pvc-page .pvc-wrapper {
+  position: relative;
+  top: -290px;          /* overlap amount */
+  margin: 0 auto;
+  z-index: 10;
+}

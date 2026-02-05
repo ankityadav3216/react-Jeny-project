@@ -1,0 +1,92 @@
+.reads-wrapper {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.reads-heading {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.reads-wave {
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.reads-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+}
+
+.reads-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.reads-icon {
+  width: 60px;
+  height: 60px;
+  background: #ccc8fd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reads-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.reads-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.reads-date {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.reads-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.reads-list {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  padding-left: 18px;
+}
+
+.reads-list li {
+  margin-bottom: 10px;
+}
+
+.reads-dots {
+  margin-top: 18px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.dot.active {
+  background: #666;
+}

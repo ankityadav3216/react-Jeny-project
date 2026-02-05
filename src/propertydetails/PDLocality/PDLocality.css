@@ -17,10 +17,12 @@
 /* Section Styling */
 .locality-section {
   margin-bottom: 32px;
+  width: 700px;
 }
 
 .locality-section:last-child {
   margin-bottom: 0;
+  width: 700px;
 }
 
 /* Section Header */
@@ -28,6 +30,7 @@
   margin-bottom: 20px;
   border-bottom: 2px solid #3b82f6; /* BLUE BORDER */
   padding-bottom: 12px;
+  width: 700px;
 }
 
 /* DARK BLUE HEADING */

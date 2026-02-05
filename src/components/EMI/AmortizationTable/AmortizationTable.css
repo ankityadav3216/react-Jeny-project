@@ -1,0 +1,129 @@
+.amortization-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.amortization-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Ant Design table overrides */
+.ant-table {
+  font-size: 14px;
+}
+
+.ant-table-thead > tr > th {
+  background: #f2f2f2;
+  font-weight: 600;
+}
+
+.ant-table-tbody > tr:nth-child(even) {
+  background: #ededed;
+}
+
+.ant-table-tbody > tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.ant-table a {
+  color: #5b2dff;
+  font-weight: 500;
+}
+
+/* TABLE SCROLL CONTAINER */
+.amortization-wrapper .ant-table-wrapper {
+  overflow-x: auto;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .amortization-wrapper {
+    padding: 18px;
+  }
+
+  .amortization-title {
+    font-size: 17px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .ant-table {
+    min-width: 700px;
+  }
+}
+
+/* Small tablets / large mobiles (≤768px) */
+@media (max-width: 768px) {
+  .amortization-wrapper {
+    padding: 15px;
+  }
+
+  .amortization-title {
+    font-size: 16px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .ant-table {
+    min-width: 600px;
+  }
+}
+
+/* Mobile Medium (≤480px) */
+@media (max-width: 480px) {
+  .amortization-wrapper {
+    padding: 12px;
+  }
+
+  .amortization-title {
+    font-size: 15px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .ant-table {
+    min-width: 500px;
+  }
+}
+
+/* Mobile Small (≤360px) */
+@media (max-width: 360px) {
+  .amortization-wrapper {
+    padding: 10px;
+  }
+
+  .amortization-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 5px 6px;
+    font-size: 11px;
+  }
+
+  .ant-table {
+    min-width: 480px;
+  }
+}

@@ -1,0 +1,42 @@
+.bank-loans-box {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bank-loans-box h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.bank-loans-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bank-loans-box li {
+  margin-bottom: 6px;
+}
+
+.bank-loans-box a {
+  font-size: 13px;
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.bank-loans-box a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .bank-loans-box {
+    margin-top: 16px;
+  }
+}

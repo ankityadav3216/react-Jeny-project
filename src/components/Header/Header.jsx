@@ -12,7 +12,12 @@ import HeaderProfileBar from "../headerprofilebar/HeaderProfileBar";
 import "./Header.css";
 
 import { Layout, Menu, Select, Button } from "antd";
-import { MenuOutlined, UserOutlined, BellOutlined, DownOutlined } from "@ant-design/icons";
+import {
+  MenuOutlined,
+  UserOutlined,
+  BellOutlined,
+  DownOutlined,
+} from "@ant-design/icons";
 
 const { Header: AntHeader } = Layout;
 const { Option } = Select;
@@ -49,9 +54,29 @@ const Header = () => {
                     <stop offset="100%" stopColor="#1e40af" />
                   </linearGradient>
                 </defs>
-                <path d="M8 30L32 10L56 30" stroke="url(#houseGrad)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-                <rect x="16" y="30" width="32" height="22" rx="4" fill="url(#houseGrad)"/>
-                <rect x="29" y="38" width="6" height="14" rx="2" fill="#0b2d4d"/>
+                <path
+                  d="M8 30L32 10L56 30"
+                  stroke="url(#houseGrad)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  x="16"
+                  y="30"
+                  width="32"
+                  height="22"
+                  rx="4"
+                  fill="url(#houseGrad)"
+                />
+                <rect
+                  x="29"
+                  y="38"
+                  width="6"
+                  height="14"
+                  rx="2"
+                  fill="#0b2d4d"
+                />
               </svg>
 
               <div className="logo-text">
@@ -60,7 +85,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* LOCATION SELECT (hidden on mobile) */}
+            {/* LOCATION */}
             <div className="location-select">
               <span className="buy-in">Buy in</span>
               <Select defaultValue="Mumbai" bordered={false}>
@@ -69,21 +94,34 @@ const Header = () => {
               </Select>
               <DownOutlined style={{ fontSize: 10 }} />
             </div>
-
           </div>
 
-          {/* CENTER MENU (hidden on mobile) */}
+          {/* CENTER MENU */}
           <Menu
             mode="horizontal"
             selectable={false}
             overflowedIndicator={null}
             className="desktop-menu"
           >
-            <Menu.Item onClick={() => toggleMega("buy")}>For Buyers</Menu.Item>
-            <Menu.Item onClick={() => toggleMega("tenants")}>For Tenants</Menu.Item>
-            <Menu.Item onClick={() => toggleMega("sellers")}>For Owners</Menu.Item>
-            <Menu.Item>For Dealers / Builders</Menu.Item>
-            <Menu.Item>Insights</Menu.Item>
+            <Menu.Item onClick={() => toggleMega("buy")}>
+              For Buyers
+            </Menu.Item>
+
+            <Menu.Item onClick={() => toggleMega("tenants")}>
+              For Tenants
+            </Menu.Item>
+
+            <Menu.Item onClick={() => toggleMega("sellers")}>
+              For Owners
+            </Menu.Item>
+
+            <Menu.Item onClick={() => toggleMega("services")}>
+              For Services
+            </Menu.Item>
+
+            <Menu.Item onClick={() => toggleMega("guide")}>
+              Insights
+            </Menu.Item>
           </Menu>
 
           {/* RIGHT */}
@@ -93,10 +131,15 @@ const Header = () => {
             </Button>
 
             <BellOutlined className="icon-btn" />
-            <UserOutlined className="icon-btn" onClick={() => setProfileOpen(true)} />
-            <MenuOutlined className="icon-btn" onClick={() => setMenuBarOpen(true)} />
+            <UserOutlined
+              className="icon-btn"
+              onClick={() => setProfileOpen(true)}
+            />
+            <MenuOutlined
+              className="icon-btn"
+              onClick={() => setMenuBarOpen(true)}
+            />
           </div>
-
         </div>
       </AntHeader>
 
@@ -108,8 +151,14 @@ const Header = () => {
       <Guide open={activeMega === "guide"} />
 
       {/* MOBILE DRAWERS */}
-      <HeaderMenuBar open={menuBarOpen} onClose={() => setMenuBarOpen(false)} />
-      <HeaderProfileBar open={profileOpen} onClose={() => setProfileOpen(false)} />
+      <HeaderMenuBar
+        open={menuBarOpen}
+        onClose={() => setMenuBarOpen(false)}
+      />
+      <HeaderProfileBar
+        open={profileOpen}
+        onClose={() => setProfileOpen(false)}
+      />
     </>
   );
 };

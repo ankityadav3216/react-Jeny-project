@@ -1,0 +1,120 @@
+.emi-faq-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.emi-faq-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.emi-faq-collapse {
+  background: #ffffff;
+}
+
+.emi-faq-collapse .ant-collapse-item {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.emi-faq-collapse .ant-collapse-header {
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 0 !important;
+}
+
+.emi-faq-collapse .ant-collapse-content {
+  background: #ffffff;
+}
+
+.see-more {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #3c82d1;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .emi-faq-wrapper {
+    padding: 18px;
+  }
+
+  .emi-faq-title {
+    font-size: 17px;
+  }
+
+  .emi-faq-collapse .ant-collapse-header {
+    font-size: 14px;
+  }
+
+  .see-more {
+    font-size: 13px;
+  }
+}
+
+/* Small tablets / large mobiles (≤768px) */
+@media (max-width: 768px) {
+  .emi-faq-wrapper {
+    padding: 15px;
+  }
+
+  .emi-faq-title {
+    font-size: 16px;
+  }
+
+  .emi-faq-collapse .ant-collapse-header {
+    font-size: 13px;
+  }
+
+  .see-more {
+    font-size: 12px;
+  }
+}
+
+/* Mobile Medium (≤480px) */
+@media (max-width: 480px) {
+  .emi-faq-wrapper {
+    padding: 12px;
+  }
+
+  .emi-faq-title {
+    font-size: 15px;
+  }
+
+  .emi-faq-collapse .ant-collapse-header {
+    font-size: 12px;
+  }
+
+  .see-more {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Small (≤360px) */
+@media (max-width: 360px) {
+  .emi-faq-wrapper {
+    padding: 10px;
+  }
+
+  .emi-faq-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .emi-faq-collapse .ant-collapse-header {
+    font-size: 11px;
+  }
+
+  .see-more {
+    font-size: 10px;
+  }
+}

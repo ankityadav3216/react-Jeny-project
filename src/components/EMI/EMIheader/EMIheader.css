@@ -1,0 +1,140 @@
+/* HEADER */
+.emi-header {
+  height: 64px;
+  background: linear-gradient(180deg, #0b2d4d, #3c82d1);
+  display: flex;
+  align-items: center;
+}
+
+.emi-header-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.emi-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emi-logo-icon {
+  background: #f5c518;
+  color: #0b2d4d;
+  font-weight: 800;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.emi-logo-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.emi-logo-text span {
+  font-weight: 400;
+}
+
+/* RIGHT AREA */
+.emi-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* GLASS BUTTON */
+.emi-header-btn {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 0 14px;
+  font-weight: 500;
+}
+
+/* POST PROPERTY WHITE */
+.emi-list-btn {
+  background: #fff !important;
+  color: #0b2d4d !important;
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 0 16px;
+}
+
+/* FREE GREEN */
+.emi-free {
+  background: #22c55e;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+/* SIMPLE TEXT (Saved / New) */
+.emi-simple-text {
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ICON GROUP CONTAINER */
+.emi-icon-wrapper {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 2px;
+  border-radius: 24px;
+}
+
+/* ICON BUTTONS */
+.emi-icon-btn {
+  background: linear-gradient(180deg, #0b2d4d, #3c82d1) !important;
+  border: none;
+  color: #fff !important;
+}
+
+/* DIVIDER */
+.emi-divider {
+  height: 28px;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* MOBILE & TABLET RESPONSIVE */
+
+/* Extra small screens (360px, 480px) */
+@media (max-width: 480px) {
+  .emi-header-btn,
+  .emi-list-btn,
+  .emi-simple-text,
+  .emi-divider {
+    display: none; /* hide all buttons & text */
+  }
+  .emi-header-right {
+    gap: 6px;
+  }
+}
+
+/* Small to medium screens (up to tablets, 768px) */
+@media (max-width: 768px) {
+  .emi-header-btn {
+    display: none; /* hide Download App button */
+  }
+
+  .emi-list-btn,
+  .emi-simple-text,
+  .emi-divider {
+    display: none; /* hide Post Property, Saved, New */
+  }
+
+  .emi-header-right {
+    gap: 6px;
+  }
+}

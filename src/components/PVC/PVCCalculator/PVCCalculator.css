@@ -1,0 +1,53 @@
+.pvc-wrapper {
+  max-width: 680px; /* thoda chhota */
+  padding: 20px;    /* thoda kam padding */
+
+  border: 1px solid #c0d9eb;
+  background: #f0f8ff;
+  border-radius: 6px 6px 14px 14px; /* thoda kam curve */
+}
+
+/* spacing between sections */
+.form-section {
+  margin-top: 16px; /* thoda kam */
+}
+
+/* labels */
+.form-section label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #1a3f5a;
+  font-size: 14px; /* thoda chhota */
+}
+
+/* inputs */
+.ant-input {
+  border: 1px solid #bcd7eb;
+  border-radius: 6px;
+  padding: 6px 8px; /* thoda compact */
+  background: #ffffff;
+  font-size: 14px; /* thoda chhota */
+}
+
+/* buttons */
+.ant-btn {
+  border: 1px solid #a3c2e0;
+  border-radius: 6px;
+  background: #e6f2fb;
+  color: #1a3f5a;
+  font-size: 13px; /* thoda chhota */
+  padding: 4px 10px; /* thoda compact */
+}
+
+/* estimate button */
+.estimate-btn {
+  margin-top: 24px; /* thoda kam gap */
+  height: 40px;      /* chhota height */
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px; /* thoda chhota */
+}

@@ -1,0 +1,151 @@
+.emi-footer {
+  background: #111;
+  color: #bfbfbf;
+  font-family: Inter, sans-serif;
+  margin: auto;
+}
+
+.emi-footer-links {
+  padding: 40px 60px;
+}
+
+.emi-footer h4 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.emi-footer p {
+  margin: 4px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.emi-footer p:hover {
+  color: #fff;
+}
+
+.emi-divider {
+  border-color: #2a2a2a;
+}
+
+.emi-footer-bottom {
+  padding: 40px 60px;
+}
+
+.emi-logo {
+  color: #f5c518;
+  font-size: 22px;
+}
+
+.emi-copy {
+  font-size: 12px;
+  color: #888;
+}
+
+.emi-app img {
+  width: 140px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* 📱 MEDIA QUERIES */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .emi-footer-links,
+  .emi-footer-bottom {
+    padding: 35px 40px;
+  }
+
+  .emi-footer h4 {
+    font-size: 13px;
+  }
+
+  .emi-footer p {
+    font-size: 12px;
+  }
+
+  .emi-logo {
+    font-size: 20px;
+  }
+
+  .emi-app img {
+    width: 130px;
+  }
+}
+
+/* Small tablets / large mobiles (≤768px) */
+@media (max-width: 768px) {
+  .emi-footer-links,
+  .emi-footer-bottom {
+    padding: 30px 20px;
+  }
+
+  .emi-footer h4 {
+    font-size: 12px;
+  }
+
+  .emi-footer p {
+    font-size: 11px;
+  }
+
+  .emi-logo {
+    font-size: 18px;
+  }
+
+  .emi-app img {
+    width: 120px;
+    margin-top: 8px;
+  }
+}
+
+/* Mobile Medium (≤480px) */
+@media (max-width: 480px) {
+  .emi-footer-links,
+  .emi-footer-bottom {
+    padding: 25px 15px;
+  }
+
+  .emi-footer h4 {
+    font-size: 11px;
+  }
+
+  .emi-footer p {
+    font-size: 10px;
+  }
+
+  .emi-logo {
+    font-size: 16px;
+  }
+
+  .emi-app img {
+    width: 100px;
+    margin-top: 6px;
+  }
+}
+
+/* Mobile Small (≤360px) */
+@media (max-width: 360px) {
+  .emi-footer-links,
+  .emi-footer-bottom {
+    padding: 20px 10px;
+  }
+
+  .emi-footer h4 {
+    font-size: 10px;
+  }
+
+  .emi-footer p {
+    font-size: 9px;
+  }
+
+  .emi-logo {
+    font-size: 15px;
+  }
+
+  .emi-app img {
+    width: 90px;
+    margin-top: 5px;
+  }
+}
