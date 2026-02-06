@@ -9,7 +9,7 @@ import PropertyDetail from "./propertydetails/propertydetail.jsx";
 import PropertyList from "./propertylist/propertylist.jsx";
 import EMI from "./components/EMI/EMI";
 import PVC from "./components/PVC/PVC"; // ✅ PVC page
-
+import RRG from "./components/RRG/RRG";
 // Auth pages
 import Login from "./authentication/loginmodel/login";
 import PropertyRegistration from "./authentication/propertyregistration/PropertyRegistration";
@@ -40,6 +40,7 @@ function App() {
           <Route path="/emi" element={<EMI />} />           {/* EMI Calculator */}
           <Route path="/pvc" element={<PVC />} />           {/* PVC Page */}
           <Route path="/login" element={<Login />} />
+          <Route path="/RRG" element={<RRG />} />
           <Route path="/property-registration" element={<PropertyRegistration />} />
         </Routes>
       </Router>

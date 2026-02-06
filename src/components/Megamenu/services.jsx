@@ -30,7 +30,7 @@ const Services = ({ open }) => {
           </button>
 
           {/* Rent Receipt Button */}
-          <button className="services-item">
+          <button className="services-item"   onClick={() => navigate("/RRG") }   >
             Rent receipt generator
           </button>
         </div>

@@ -1,0 +1,74 @@
+.rrg-header {
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(180deg, #0b2d4d, #3c82d1);
+  display: flex;
+  align-items: center;
+}
+
+/* Container */
+.rrg-header-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo wrapper */
+.rrg-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Yellow icon box */
+.logo-box {
+  width: 36px;
+  height: 36px;
+  background: #f5d000;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow inside box */
+.logo-arrow {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0b2d4d;
+}
+
+/* Divider between icon & text */
+.logo-divider {
+  width: 1px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Brand text */
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  letter-spacing: 0.4px;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .rrg-header-container {
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .logo-divider {
+    height: 22px;
+  }
+}
