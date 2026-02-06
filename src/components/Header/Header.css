@@ -1,11 +1,13 @@
 /* ================= HEADER BASE ================= */
-.main-header {background: linear-gradient(180deg, #0b2d4d, #3c82d1);
-  
-  height: 64px;
+.main-header 
+{background: linear-gradient(180deg, #0b2d4d, #3c82d1);
+ height: 64px;
   position: fixed;
   width: 100%;
   z-index: 100;
   font-family: "Inter", "Segoe UI", sans-serif;
+ border-bottom-left-radius: 54px;
+  border-bottom-right-radius: 54px;
 }
 
 .header-container {

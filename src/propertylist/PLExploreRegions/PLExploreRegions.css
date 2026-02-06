@@ -2,8 +2,8 @@
   background: #ededf4;
   padding: 30px;
   overflow: hidden;
-  width: 1150px;
-  margin: auto;
+  width: auto;
+  
 }
 
 .region-wrapper h2 {
@@ -20,7 +20,7 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: scroll 28s linear infinite;
+  animation: scroll  linear infinite;
 }
 
 /* CARD */

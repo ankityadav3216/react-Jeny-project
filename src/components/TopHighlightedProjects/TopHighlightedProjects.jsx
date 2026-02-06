@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./TopHighlightedProjects.css";
 
 const projects = [
@@ -37,22 +38,46 @@ const projects = [
 ];
 
 const TopHighlightedProjects = () => {
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({
+      left: -500,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({
+      left: 500,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="thp-wrapper">
       <h2 className="thp-title">Top highlighted projects</h2>
       <p className="thp-subtitle">Noteworthy projects to watch</p>
 
       <div className="thp-scroll">
-        <div className="thp-scroll-track">
-          {[...projects, ...projects].map((item, index) => (
+        {/* LEFT ARROW */}
+        <div className="thp-arrow left" onClick={scrollLeft}>
+          <LeftOutlined />
+        </div>
+
+        {/* RIGHT ARROW */}
+        <div className="thp-arrow right" onClick={scrollRight}>
+          <RightOutlined />
+        </div>
+
+        <div className="thp-scroll-track" ref={scrollRef}>
+          {projects.map((item, index) => (
             <div className="thp-card" key={index}>
               <img src={item.image} alt={item.title} />
+
               <div className="thp-overlay">
                 <h3>{item.title}</h3>
-
-                {/* PRICE — name ke niche, no border */}
                 <span className="price">{item.price}</span>
-
                 <p className="by">{item.by}</p>
                 <p>{item.bhk}</p>
                 <p className="location">{item.location}</p>

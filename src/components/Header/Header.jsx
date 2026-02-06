@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import Buy from "../Megamenu/Buy";
 import Tenants from "../Megamenu/tenants";
@@ -27,9 +27,25 @@ const Header = () => {
   const [menuBarOpen, setMenuBarOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
+  const megaRef = useRef(null);
+
   const toggleMega = (name) => {
     setActiveMega((prev) => (prev === name ? null : name));
   };
+
+  // 👉 CLICK OUTSIDE TO CLOSE
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (megaRef.current && !megaRef.current.contains(e.target)) {
+        setActiveMega(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -38,8 +54,6 @@ const Header = () => {
 
           {/* LEFT */}
           <div className="left-section">
-
-            {/* LOGO */}
             <div className="brand-logo">
               <svg
                 className="logo-icon"
@@ -85,7 +99,6 @@ const Header = () => {
               </div>
             </div>
 
-            {/* LOCATION */}
             <div className="location-select">
               <span className="buy-in">Buy in</span>
               <Select defaultValue="Mumbai" bordered={false}>
@@ -103,25 +116,11 @@ const Header = () => {
             overflowedIndicator={null}
             className="desktop-menu"
           >
-            <Menu.Item onClick={() => toggleMega("buy")}>
-              For Buyers
-            </Menu.Item>
-
-            <Menu.Item onClick={() => toggleMega("tenants")}>
-              For Tenants
-            </Menu.Item>
-
-            <Menu.Item onClick={() => toggleMega("sellers")}>
-              For Owners
-            </Menu.Item>
-
-            <Menu.Item onClick={() => toggleMega("services")}>
-              For Services
-            </Menu.Item>
-
-            <Menu.Item onClick={() => toggleMega("guide")}>
-              Insights
-            </Menu.Item>
+            <Menu.Item onClick={() => toggleMega("buy")}>For Buyers</Menu.Item>
+            <Menu.Item onClick={() => toggleMega("tenants")}>For Tenants</Menu.Item>
+            <Menu.Item onClick={() => toggleMega("sellers")}>For Owners</Menu.Item>
+            <Menu.Item onClick={() => toggleMega("services")}>For Services</Menu.Item>
+            <Menu.Item onClick={() => toggleMega("guide")}>Insights</Menu.Item>
           </Menu>
 
           {/* RIGHT */}
@@ -144,11 +143,13 @@ const Header = () => {
       </AntHeader>
 
       {/* MEGA MENUS */}
-      <Buy open={activeMega === "buy"} />
-      <Tenants open={activeMega === "tenants"} />
-      <Sellers open={activeMega === "sellers"} />
-      <Services open={activeMega === "services"} />
-      <Guide open={activeMega === "guide"} />
+      <div ref={megaRef}>
+        <Buy open={activeMega === "buy"} />
+        <Tenants open={activeMega === "tenants"} />
+        <Sellers open={activeMega === "sellers"} />
+        <Services open={activeMega === "services"} />
+        <Guide open={activeMega === "guide"} />
+      </div>
 
       {/* MOBILE DRAWERS */}
       <HeaderMenuBar

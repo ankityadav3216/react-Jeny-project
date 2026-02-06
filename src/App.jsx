@@ -18,7 +18,7 @@ import PropertyRegistration from "./authentication/propertyregistration/Property
 // Layout
 import Layout from "./components/layout";
 
-// 🔥 Route Loader (NEW)
+// Route Loader
 import RouteLoader from "./components/RouteLoader";
 
 function App() {
@@ -32,15 +32,17 @@ function App() {
       }}
     >
       <Router>
-        {/* 🔥 Route change loader wrapper */}
         <RouteLoader>
           <Routes>
-            {/* Pages WITH Header & Footer */}
+
+            {/* Pages WITH Home Header & Footer */}
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/property/:id" element={<PropertyDetail />} />
-              <Route path="/buy/:location" element={<PropertyList />} />
             </Route>
+
+            {/* Pages WITH THEIR OWN Header & Footer */}
+            <Route path="/buy/:location" element={<PropertyList />} />
 
             {/* Pages WITHOUT Header & Footer */}
             <Route path="/emi" element={<EMI />} />
@@ -51,6 +53,7 @@ function App() {
               path="/property-registration"
               element={<PropertyRegistration />}
             />
+
           </Routes>
         </RouteLoader>
       </Router>

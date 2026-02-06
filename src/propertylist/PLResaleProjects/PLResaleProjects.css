@@ -1,16 +1,13 @@
 /* PLResaleProjects.css - Ultra Compact Version */
 
 .resale-section {
-   position: relative;
+  position: relative;
   padding: 20px;
-  width: 100%;
-  max-width: 1150px;
-  margin: auto;
-  width:1300px;
-  margin-left: 0%;
-  margin-right: auto;
-  background-color: #efefef;
-  margin: auto;}
+  
+  width:auto;
+ background-color: #efefef;
+ 
+}
 
 .resale-section h2 {
   font-size: 1.3rem;

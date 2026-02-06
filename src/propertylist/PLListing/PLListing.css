@@ -3,13 +3,11 @@
 ================================*/
 .listing-header {
   max-width: 800px;
-  margin: 32px auto 24px;
+  width:auto;
   padding: 0 16px;
   font-family: Arial, sans-serif;
   color: #222;
-  margin-left: 0%;
-  margin-right: auto;
- 
+  
 }
 
 /* ===============================

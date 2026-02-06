@@ -1,7 +1,11 @@
 .thp-wrapper {
   padding: 20px;
   width: 100%;
+  max-width: 1200px; /* container bigger */
   margin: auto;
+  position: relative;
+  
+  overflow: visible; /* FIX: arrows cut nahi honge */
 }
 
 .thp-title {
@@ -17,25 +21,21 @@
 
 /* ===== Scroll Container ===== */
 .thp-scroll {
-  overflow: hidden;
   position: relative;
+  overflow: visible; /* FIX: arrows properly visible */
 }
 
 .thp-scroll-track {
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: thp-autoscroll 35s linear infinite;
-}
-
-.thp-scroll:hover .thp-scroll-track {
-  animation-play-state: paused;
+  transition: transform 0.3s ease;
 }
 
 /* ===== Card ===== */
 .thp-card {
-  min-width: 420px;
-  height: 240px;
+  min-width: 480px; /* 2 cards visible */
+  height: 260px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -72,15 +72,16 @@
   margin: 0;
 }
 
-/* PRICE — CLEAN (no border, no bg) */
+/* PRICE — CLEAN TEXT (NO CONTAINER FEEL) */
 .thp-overlay .price {
   font-size: 15px;
   font-weight: 600;
-  margin: 2px 0;
   padding: 0;
-  border: none;
+  margin: 2px 0;
   background: none;
+  border: none;
   box-shadow: none;
+  display: inline;
 }
 
 /* Other text */
@@ -98,41 +99,46 @@
   opacity: 0.9;
 }
 
-/* ===== Auto Scroll Animation ===== */
-@keyframes thp-autoscroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* ===== Scroll Buttons (exact round style) ===== */
+.thp-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10; /* FIX: overlay ke upar rahe */
+}
+
+.thp-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.thp-arrow.left {
+  left: -28px;
+}
+
+.thp-arrow.right {
+  right: -28px;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .thp-scroll {
-    overflow-x: auto;
-  }
-
-  .thp-scroll-track {
-    animation: none;
-  }
-
   .thp-card {
     min-width: 300px;
     height: 200px;
   }
 
-  .thp-overlay h3 {
-    font-size: 18px;
-  }
-
-  .thp-overlay .price {
-    font-size: 14px;
-  }
-
-  .thp-overlay p {
-    font-size: 13px;
+  .thp-arrow {
+    width: 46px;
+    height: 46px;
   }
 }
 
@@ -142,15 +148,7 @@
     height: 180px;
   }
 
-  .thp-overlay h3 {
-    font-size: 16px;
-  }
-
-  .thp-overlay .price {
-    font-size: 13px;
-  }
-
-  .thp-overlay p {
-    font-size: 12px;
+  .thp-arrow {
+    display: none; /* mobile = swipe */
   }
 }

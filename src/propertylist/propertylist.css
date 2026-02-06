@@ -1,0 +1,91 @@
+/* ================= ROOT ================= */
+.property-content {
+  width: 100%;
+  background: #f8fafc;
+}
+
+/* ================= MAIN LAYOUT ================= */
+.property-layout {
+  width: 100%;
+  display: flex;
+  justify-content: center;      /* 👈 page center */
+  padding: 20px 12px;
+  box-sizing: border-box;
+}
+
+/* ================= LEFT COLUMN ================= */
+.property-left {
+  width: 100%;
+  max-width: 1280px;            /* 👈 zoom-safe center */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ================= LABEL FIX ================= */
+/* agar Label component ke andar ye class hai */
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;      /* 👈 labels center */
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #cee0f2);
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* ================= COMMON SECTION STYLE ================= */
+.property-left > div {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= FOOTER ================= */
+.pl-footer,
+.PLFooter {
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .property-left {
+    gap: 24px;
+  }
+
+  .property-left > div {
+    padding: 16px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .property-layout {
+    padding: 12px 8px;
+  }
+
+  .property-left {
+    gap: 20px;
+  }
+
+  .property-left > div {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .label-container {
+    padding: 8px;
+    gap: 8px;
+  }
+}
