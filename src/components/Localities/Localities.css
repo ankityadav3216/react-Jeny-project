@@ -9,15 +9,16 @@
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0;
+  color: #000; /* Black heading */
 }
 
 .section-subtitle {
   font-size: 14px;
-  color: #666;
-  margin-top: 5px;
+  color: #000; /* Black subtitle */
+  margin: 4px 0 0 0; /* Just below heading */
 }
 
 /* Horizontal scroll container */
@@ -25,15 +26,16 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 10px;
+  scroll-snap-type: x mandatory; /* optional smooth snap */
 }
 
 .localities-scroll-wrapper {
   display: flex;
-  gap: 15px;
-  width: max-content; /* keeps cards horizontal */
+  gap: 12px;
+  width: max-content;
 }
 
-/* Hide scrollbar */
+/* Auto scroll for mobile/desktop */
 .localities-cards-section::-webkit-scrollbar {
   display: none;
 }
@@ -42,23 +44,23 @@
   scrollbar-width: none;
 }
 
-/* Card styling */
+/* Card styling (compact) */
 .locality-card {
   background: #fff;
   border-radius: 12px;
-  padding: 15px;
-  min-width: 220px; /* makes them scrollable */
+  padding: 12px;
+  min-width: 160px; /* Smaller card */
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .locality-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(60, 130, 209, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(60, 130, 209, 0.15);
 }
 
 .locality-header {
@@ -68,29 +70,30 @@
 }
 
 .locality-number {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #3c82d1;
 }
 
 .locality-name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0;
+  color: #000;
 }
 
 .locality-price {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   color: #111;
 }
 
 .locality-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 12px;
   color: #555;
-  gap: 10px;
+  gap: 5px;
 }
 
 .info-item {
@@ -99,58 +102,30 @@
   align-items: center;
 }
 
-.info-divider {
-  width: 1px;
-  background: #eee;
-  margin: 0 5px;
-}
+/* Removed demand level line and progress bar */
 
-.locality-progress-container {
-  margin-top: 8px;
-}
-
-.progress-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-
-.progress-bar {
-  height: 6px;
-  background: #eee;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: #3c82d1;
-  border-radius: 3px;
-  transition: width 0.5s ease;
-}
-
+/* Explore button */
 .explore-btn {
-  margin-top: 10px;
+  margin-top: 8px;
   background: linear-gradient(90deg, #3c82d1, #06243f);
   color: #fff;
   border: none;
   width: 100%;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .explore-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(60, 130, 209, 0.3);
+  box-shadow: 0 4px 12px rgba(60, 130, 209, 0.25);
 }
 
 /* --------------------- MEDIA QUERIES --------------------- */
@@ -158,11 +133,11 @@
 /* Tablet */
 @media screen and (max-width: 992px) {
   .localities-scroll-wrapper {
-    gap: 12px;
+    gap: 10px;
   }
 
   .locality-card {
-    min-width: 180px;
+    min-width: 140px;
   }
 
   .section-title {
@@ -177,11 +152,11 @@
 /* Mobile */
 @media screen and (max-width: 600px) {
   .localities-scroll-wrapper {
-    gap: 10px;
+    gap: 8px;
   }
 
   .locality-card {
-    min-width: 140px;
+    min-width: 120px;
   }
 
   .section-title {
@@ -193,7 +168,7 @@
   }
 
   .explore-btn {
-    padding: 6px 10px;
-    font-size: 12px;
+    padding: 5px 8px;
+    font-size: 11px;
   }
 }

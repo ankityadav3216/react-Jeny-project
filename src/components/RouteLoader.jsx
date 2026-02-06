@@ -1,0 +1,26 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import PageLoader from "./PageLoader/PageLoader"; // ✅ UPDATED PATH
+
+const RouteLoader = ({ children }) => {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 700);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  return (
+    <>
+      {loading && <PageLoader />}
+      {children}
+    </>
+  );
+};
+
+export default RouteLoader;

@@ -1,68 +1,176 @@
-/* ===============================
-   HOME PAGE – RESPONSIVE SYSTEM
-   =============================== */
-
-/* Root scaling – MOST IMPORTANT */
-html {
-  font-size: clamp(15px, 1vw, 16px);
+.localities-wrapper {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Page wrapper */
-.home-page {
-  width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden;
+.localities-header {
+  margin-bottom: 20px;
+  color: #000; /* Ensure all text inside header is black */
 }
 
-/* Common centered container */
-.container {
-  width: 100%;
-  max-width: 100%;   /* 👈 FIXED ISSUE */
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Full width sections (Hero etc.) */
-.full-width {
-  width: 100%;
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
   margin: 0;
-  padding: 0;
+  color: #000 !important; /* Force black heading */
 }
 
-/* Ensure children never overflow */
-.container > * {
+.section-subtitle {
+  font-size: 14px;
+  margin: 4px 0 0 0;
+  color: #000 !important; /* Force black subtitle */
+}
+
+/* Horizontal scroll container */
+.localities-cards-section {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory; /* optional smooth snap */
+}
+
+/* Auto-scroll wrapper */
+.localities-scroll-wrapper {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+/* Hide scrollbar */
+.localities-cards-section::-webkit-scrollbar {
+  display: none;
+}
+.localities-cards-section {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card styling */
+.locality-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  min-width: 160px; /* Smaller card */
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.locality-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(60, 130, 209, 0.15);
+}
+
+.locality-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.locality-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3c82d1;
+}
+
+.locality-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #000 !important; /* Black name text */
+}
+
+.locality-price {
+  font-weight: 600;
+  font-size: 13px;
+  color: #111;
+}
+
+.locality-info {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #555;
+  gap: 5px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Removed demand level line and progress bar */
+
+/* Explore button */
+.explore-btn {
+  margin-top: 8px;
+  background: linear-gradient(90deg, #3c82d1, #06243f);
+  color: #fff;
+  border: none;
   width: 100%;
+  padding: 6px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* ===============================
-   RESPONSIVE BREAKPOINTS
-   =============================== */
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(60, 130, 209, 0.25);
+}
 
-/* Small phones */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 14px;
+/* --------------------- MEDIA QUERIES --------------------- */
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+  .localities-scroll-wrapper {
+    gap: 10px;
+  }
+
+  .locality-card {
+    min-width: 140px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
   }
 }
 
-/* Tablets */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .localities-scroll-wrapper {
+    gap: 8px;
   }
-}
 
-/* Small laptops */
-@media (max-width: 1024px) {
-  .container {
-    max-width: 100%;
-    padding: 0 20px;
+  .locality-card {
+    min-width: 120px;
   }
-}
 
-/* Large desktops */
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px; /* premium wide screens */
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+  }
+
+  .explore-btn {
+    padding: 5px 8px;
+    font-size: 11px;
   }
 }

@@ -4,21 +4,24 @@
   padding: 40px 20px;
   text-align: center;
   margin-top: -250px;
+  background: #f9f9f9; /* light brown background added */
+  border-radius: 10px;
 }
 
 .benefits-title {
   margin-bottom: 6px;
+  color: #6b3e26; /* brown title text */
 }
 
 .benefits-divider {
   font-size: 18px;
-  color: #999;
+  color: #a67c52; /* brownish divider */
   margin-bottom: 10px;
 }
 
 .benefits-subtitle {
   display: block;
-  color: #555;
+  color: #5a3e2b; /* brown subtitle */
   margin-bottom: 40px;
 }
 
@@ -35,12 +38,13 @@
 .icon-box {
   width: 90px;
   height: 90px;
-  background:  #1976d2;
+  background: #924a13; /* original blue */
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(107, 62, 38, 0.3); /* subtle brown shadow */
 }
 
 .icon-box .anticon {
@@ -50,6 +54,6 @@
 
 .benefit-text {
   font-size: 14px;
-  color: #222;
+  color: #4e342e; /* brown text */
   line-height: 1.5;
 }

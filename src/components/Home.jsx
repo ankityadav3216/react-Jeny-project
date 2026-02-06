@@ -18,7 +18,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="home-page">
-
       {/* Full width sections */}
       <section className="full-width">
         <HeroSection />
@@ -63,7 +62,6 @@ const Home = () => {
       <section className="container">
         <NewsSection />
       </section>
-
     </div>
   );
 };

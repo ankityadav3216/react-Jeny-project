@@ -14,7 +14,7 @@ const Login = () => {
 
       {/* HEADER */}
       <header className="login-header">
-        <div className="logo">tract.</div>
+        <div className="logo">PrimeAcres.</div>
 
         <div className="header-right">
           <span>En</span>
@@ -32,7 +32,7 @@ const Login = () => {
           {/* CENTER TEXT */}
           <div className="center-text">
             <div className="top-badge">
-              Are you a Brand? Explore how to use Tract for growth.
+              Are you a Brand? Explore how to use PrimeAcres for growth.
               <span className="badge-arrow">→</span>
             </div>
 
@@ -93,7 +93,7 @@ const Login = () => {
       <footer className="login-footer">
         <span>Privacy Policy</span>
         <span>Terms & Conditions</span>
-        <span>Copyrights @tract.group 2023</span>
+        <span>Copyrights @PrimeAcres.group 2023</span>
       </footer>
     </div>
   );

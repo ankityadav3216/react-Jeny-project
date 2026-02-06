@@ -1,53 +1,126 @@
+/* ===============================
+   PVC / EMI WRAPPER
+   =============================== */
+
 .pvc-wrapper {
-  max-width: 680px; /* thoda chhota */
-  padding: 20px;    /* thoda kam padding */
-
-  border: 1px solid #c0d9eb;
-  background: #f0f8ff;
-  border-radius: 6px 6px 14px 14px; /* thoda kam curve */
+  max-width: 680px;
+  padding: 20px;
+  border: 1px solid #d6b8a2;
+  background: #fff7f0;
+  border-radius: 6px 6px 14px 14px;
 }
 
-/* spacing between sections */
+/* ===============================
+   FORM SECTIONS
+   =============================== */
+
 .form-section {
-  margin-top: 16px; /* thoda kam */
+  margin-top: 16px;
 }
 
-/* labels */
+/* ===============================
+   LABELS
+   =============================== */
+
 .form-section label {
   display: block;
   margin-bottom: 6px;
   font-weight: 500;
-  color: #1a3f5a;
-  font-size: 14px; /* thoda chhota */
+  color: #5a3a1a;
+  font-size: 14px;
 }
 
-/* inputs */
+/* ===============================
+   INPUTS (Ant Design)
+   =============================== */
+
 .ant-input {
-  border: 1px solid #bcd7eb;
+  border: 1px solid #d2b49c;
   border-radius: 6px;
-  padding: 6px 8px; /* thoda compact */
+  padding: 6px 8px;
   background: #ffffff;
-  font-size: 14px; /* thoda chhota */
+  font-size: 14px;
+  color: #3b2a1a;
 }
 
-/* buttons */
+.ant-input::placeholder {
+  color: #9b7a5a;
+}
+
+/* focus – simple, no glow */
+.ant-input:focus,
+.ant-input-focused {
+  border-color: #a97142;
+  box-shadow: none;
+}
+
+/* ===============================
+   BUTTONS (SIMPLE)
+   =============================== */
+
 .ant-btn {
-  border: 1px solid #a3c2e0;
+  border: 1px solid #c7a07a;
   border-radius: 6px;
-  background: #e6f2fb;
-  color: #1a3f5a;
-  font-size: 13px; /* thoda chhota */
-  padding: 4px 10px; /* thoda compact */
+  background: #f3e5d8;
+  color: #5a3a1a;
+  font-size: 13px;
+  padding: 4px 10px;
 }
 
-/* estimate button */
+/* hover – only color change, no animation */
+.ant-btn:hover {
+  background: #ead4c0;
+  border-color: #b4875f;
+  color: #4a2f14;
+}
+
+/* ===============================
+   ESTIMATE BUTTON (MAIN CTA)
+   =============================== */
+
 .estimate-btn {
-  margin-top: 24px; /* thoda kam gap */
-  height: 40px;      /* chhota height */
-  background: #4a90e2;
-  color: #fff;
+  margin-top: 24px;
+  height: 40px;
+  width: 100%;
+  background: #8b5a2b;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   font-weight: 500;
-  font-size: 14px; /* thoda chhota */
+  font-size: 14px;
+}
+
+/* hover – simple color change */
+.estimate-btn:hover {
+  background: #73461f;
+}
+
+/* focus – no ring */
+.estimate-btn:focus {
+  box-shadow: none;
+}
+
+/* ===============================
+   ANT DESIGN BLUE REMOVAL
+   =============================== */
+
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: #a97142 !important;
+  box-shadow: none !important;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 480px) {
+  .pvc-wrapper {
+    padding: 16px;
+  }
+
+  .estimate-btn {
+    height: 38px;
+    font-size: 13px;
+  }
 }
