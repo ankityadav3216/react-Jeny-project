@@ -18,7 +18,7 @@ import PropertyRegistration from "./authentication/propertyregistration/Property
 // Layout
 import Layout from "./components/layout";
 
-// Route Loader
+// Loader
 import RouteLoader from "./components/RouteLoader";
 
 function App() {
@@ -26,7 +26,9 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#dc2626",
+          colorPrimary: "#2563eb",        // 🔵 BLUE
+          colorPrimaryHover: "#1d4ed8",
+          colorPrimaryActive: "#1e40af",
           borderRadius: 6,
         },
       }}
@@ -35,16 +37,16 @@ function App() {
         <RouteLoader>
           <Routes>
 
-            {/* Pages WITH Home Header & Footer */}
+            {/* Pages WITH Layout */}
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/property/:id" element={<PropertyDetail />} />
             </Route>
 
-            {/* Pages WITH THEIR OWN Header & Footer */}
+            {/* Pages WITH OWN Header */}
             <Route path="/buy/:location" element={<PropertyList />} />
 
-            {/* Pages WITHOUT Header & Footer */}
+            {/* Pages WITHOUT Header */}
             <Route path="/emi" element={<EMI />} />
             <Route path="/pvc" element={<PVC />} />
             <Route path="/login" element={<Login />} />
