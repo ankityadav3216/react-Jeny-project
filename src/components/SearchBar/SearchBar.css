@@ -162,7 +162,7 @@
 
 .search-input-minimal {
   width: 100%;
-  border: none !important;
+  
   background: transparent !important;
   padding: 0 20px 0 45px !important; /* CHANGED: Increased padding */
   height: 44px !important; /* CHANGED: Increased height */
@@ -172,7 +172,7 @@
 }
 
 .search-input-minimal::placeholder {
-  color: #6b7280 !important;
+ 
   font-size: 14px !important;
 }
 

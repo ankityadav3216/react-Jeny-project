@@ -4,9 +4,9 @@ import React from "react";
 import HeroSection from "../components/HeroSection/HeroSection.jsx";
 import SearchBar from "../components/SearchBar/SearchBar.jsx";
 import HousingTopPicks from "../components/HousingTopPicks/HousingTopPicks.jsx";
+import Reels from "../components/Reels/Reels.jsx";
 import FeaturedDeveloper from "../components/FeaturedDevelopers/FeaturedDevelopers.jsx";
 import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties.jsx";
-import Localities from "../components/Localities/Localities.jsx";
 import RecommendedSellers from "../components/RecommendedSellers/RecommendedSellers.jsx";
 import Services from "../components/Services/Services.jsx";
 import TopHighlightedProjects from "../components/TopHighlightedProjects/TopHighlightedProjects.jsx";
@@ -19,6 +19,8 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Full width sections */}
+     
+
       <section className="full-width">
         <HeroSection />
       </section>
@@ -31,6 +33,10 @@ const Home = () => {
         <HousingTopPicks />
       </section>
 
+       <section className="container">
+        <Reels  />
+      </section>
+
       <section className="container">
         <FeaturedDeveloper />
       </section>
@@ -39,9 +45,7 @@ const Home = () => {
         <FeaturedProperties />
       </section>
 
-      <section className="container">
-        <Localities />
-      </section>
+      
 
       <section className="container">
         <RecommendedSellers />

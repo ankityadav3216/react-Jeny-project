@@ -10,6 +10,7 @@ import PropertyList from "./propertylist/propertylist.jsx";
 import EMI from "./components/EMI/EMI";
 import PVC from "./components/PVC/PVC";
 import RRG from "./components/RRG/RRG";
+import Infobar from "./components/Infobar/Infobar.jsx";
 
 // Auth pages
 import Login from "./authentication/loginmodel/login";
@@ -34,9 +35,12 @@ function App() {
       }}
     >
       <Router>
+        {/* Infobar globally har page ke upar */}
+        <Infobar />
+
         <RouteLoader>
           <Routes>
-
+            
             {/* Pages WITH Layout */}
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
@@ -55,7 +59,6 @@ function App() {
               path="/property-registration"
               element={<PropertyRegistration />}
             />
-
           </Routes>
         </RouteLoader>
       </Router>

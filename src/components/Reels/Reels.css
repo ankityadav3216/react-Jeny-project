@@ -1,0 +1,103 @@
+.reels-section {
+  padding: 24px 16px;
+  background: #f8fafc;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.reels-heading-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.reels-logo {
+  font-size: 26px;
+  color: #ff0000;
+  background: #fff;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.reels-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* SCROLL */
+.reels-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 12px 0;
+}
+
+/* CARD */
+.reel-card {
+  min-width: 200px;
+  max-width: 200px;
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* VIDEO PREVIEW */
+.reel-thumbnail {
+  position: relative;
+  height: 320px;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reel-thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none; /* click card pe hi ho */
+}
+
+/* PLAY ICON */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+}
+
+.play-icon {
+  font-size: 56px;
+  color: #fff;
+  background: rgba(255, 0, 0, 0.9);
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .reel-card {
+    min-width: 180px;
+  }
+  .reel-thumbnail {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reel-card {
+    min-width: 160px;
+  }
+  .reel-thumbnail {
+    height: 240px;
+  }
+}

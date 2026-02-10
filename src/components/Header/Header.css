@@ -1,194 +1,154 @@
 /* ================= HEADER BASE ================= */
-.main-header 
-{background: linear-gradient(180deg, #0b2d4d, #3c82d1);
- height: 64px;
+.main-header {
+  background: #ffffff; /* white background */
+  height: 64px;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   font-family: "Inter", "Segoe UI", sans-serif;
- border-bottom-left-radius: 54px;
-  border-bottom-right-radius: 54px;
+  
 }
 
 .header-container {
-  max-width: 1280px;
+  max-width: 1300px;
   margin: auto;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
-  flex-wrap: nowrap;
-  position: relative;
+  padding: 0 20px;
 }
 
 /* ================= LEFT ================= */
 .left-section {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
 }
 
-/* LOGO */
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-right: 12px;
-  position: relative;
+.header-logo {
+  color: #000; /* logo black */
+  font-size: 26px;
+  font-weight: 700;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+.header-logo:hover {
+  color: #333;
 }
 
-.logo-main {
-  font-size: 18px;
-  font-weight: 900;
-  color: #e0f2fe;
-  letter-spacing: 1px;
-}
-
-.logo-sub {
-  font-size: 12px;
-  font-weight: 500;
-  color: #bfdbfe;
-}
-
-/* LOCATION */
-.location-select {
+/* ================= CENTER MENU ================= */
+.center-menu-wrapper {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 13px;
-  white-space: nowrap;
-  color: #ffffff;
-  position: relative;
-  padding-right: 12px;
-}
-
-.buy-in {
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.location-select .ant-select-selector {
-  color: #ffffff !important;
-  font-weight: 500;
-  background: transparent !important;
-  padding: 0 !important;
-}
-
-/* ================= CENTER ================= */
-.desktop-menu {
+  justify-content: center;
   flex: 1;
+}
+
+.desktop-menu {
   background: transparent !important;
   border-bottom: none !important;
+  display: flex;
+  align-items: center;
 }
 
 .desktop-menu .ant-menu-item {
-  color: #ffffff !important;
+  color: #000 !important; /* menu items black */
+  font-size: 15px;
   font-weight: 500;
-  padding: 0 16px;
-}
-
-.desktop-menu .ant-menu-item::after {
-  display: none;
-}
-
-/* ================= RIGHT ================= */
-.right-section {
+  padding: 0 12px;
+  transition: color 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
 }
 
-.icon-btn {
-  font-size: 18px;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 6px;
-  border-radius: 50%;
-  transition: background 0.2s ease;
-  position: relative;
+.desktop-menu .ant-menu-item:hover {
+  color: #444 !important; /* hover dark gray */
 }
 
-.icon-btn:not(:last-child)::after {
-  content: "|";
-  position: absolute;
-  right: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-}
-
-.icon-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.post-btn {
-  background: #1717af;
-  border-radius: 18px;
+.post-property-btn {
+  background-color: #ffffff;
+  color: #000 !important;
+  border-radius: 20px;
+  padding: 0 12px !important;
   font-weight: 600;
-  padding: 0 16px;
-  height: 34px;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e3e3e3;
+  height: 32px;
+  cursor: pointer;
 }
 
-.free-badge {
-  background: #22c55e;
-  color: #fff;
+.post-property-btn:hover {
+  background-color: #ff0a6b;
+  color: #fff !important;
+}
+
+.free-label {
+  background-color: red;
+  color: white;
   font-size: 10px;
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: 6px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 480px) {
-  /* Hide menu, location, post button */
-  .desktop-menu,
-  .post-btn,
-  .location-select {
-    display: none !important;
-  }
-
-  /* Keep logo on left */
-  .left-section {
-    position: relative;
-    left: 0;
-    transform: none;
-  }
-
-  .brand-logo {
-    padding-right: 0;
-  }
-
-  .logo-main {
-    font-size: 16px;
-  }
-
-  .logo-sub {
-    font-size: 11px;
-  }
-
-  /* Right icons stay visible */
-  .right-section {
-    margin-left: auto;
-    gap: 8px;
-  }
+/* ================= RIGHT ================= */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* ================= TABLET ================= */
-@media (min-width: 481px) and (max-width: 1200px) {
-  .desktop-menu,
-  .post-btn {
+.reels-btn,
+.icon-circle-btn,
+.pill-btn {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #eee !important;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reels-btn:hover,
+.icon-circle-btn:hover,
+.pill-btn:hover {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+/* BUTTON SIZES */
+.reels-btn {
+  height: 34px;
+  padding: 0 16px;
+  font-weight: 600;
+  gap: 6px;
+}
+
+.icon-circle-btn,
+.pill-btn {
+  width: 36px;
+  height: 36px;
+}
+
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .desktop-menu {
     display: none !important;
+  }
+
+  .header-logo {
+    font-size: 22px;
   }
 }
