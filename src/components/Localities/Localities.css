@@ -1,0 +1,49 @@
+.localities-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+  background-color: #ffffff;
+  margin-top:-40px; 
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  perspective: 800px;
+  scroll-behavior: smooth;
+  cursor: grab;
+  /* Padding will be set dynamically via JS */
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.locality-card {
+  width: 140px !important;
+  min-width: 140px !important;
+  height: 210px;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 0 !important;
+  will-change: transform;
+  user-select: none;
+}
+
+.card-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.city-name {
+  font-size: 14px;
+  font-weight: 900;
+  margin: 6px 0 0 0;
+  color: #000;
+}

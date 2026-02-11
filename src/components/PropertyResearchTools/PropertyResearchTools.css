@@ -7,12 +7,19 @@
 .prt-title {
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a1a1a;
 }
 
-.prt-subtitle {
-  color: #666;
-  margin-bottom: 20px;
+/* Section heading icon */
+.prt-section-icon {
+  font-size: 28px;
+  color: orange;
+  display: flex;
+  align-items: center;
 }
 
 /* Horizontal scroll container */
@@ -28,76 +35,65 @@
   display: none;
 }
 
-/* Smaller Card */
+/* Card */
+/* Card */
 .prt-card {
-  min-width: 230px;
-  height: 240px;
+  min-width: 150px;
+  height: 120px;
+  border:1px solid #efeeee;
   border-radius: 14px;
-  padding: 14px;
-  position: relative;
+  padding: 10px;
   flex-shrink: 0;
-  background: #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  background: linear-gradient(180deg, #0b2d4d, #3c82d1);
-}
-
-/* Illustration circle */
-.prt-icon-wrapper {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #e6f0ff, #f4f8ff);
+  background: transparent; 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
+  flex-direction: column;
+  align-items: center;   /* horizontal center */
+  justify-content: center; /* vertical center */
+  box-shadow: none;
+  text-align: center;
 }
 
-/* Icon */
+/* Icon wrapper - perfectly centered inside card */
+.prt-icon-wrapper {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;  /* vertical center */
+  justify-content: center; /* horizontal center */
+  margin-bottom: 8px;
+}
+
+/* Icon color orange */
 .prt-icon {
-  font-size: 46px;
-  color: #1677ff;
+  font-size: 20px;
+  color: orange;
 }
 
 .prt-card h3 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.prt-card p {
-  font-size: 13px;
-  color: #666;
-}
-
-/* Arrow */
-.prt-arrow {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  background: #1677ff;
-  color: white;
-  border: none;
-}
-
-.prt-arrow:hover {
-  background: #0958d9;
-  color: #fff;
+  text-align: center;
+  margin: 0;
 }
 
 /* Mobile tweak */
 @media (max-width: 768px) {
   .prt-card {
-    min-width: 200px;
-    height: 220px;
+    min-width: 100px;
+    height: 100px;
   }
 
   .prt-icon-wrapper {
-    width: 95px;
-    height: 95px;
+    width: 30px;
+    height: 30px;
   }
 
   .prt-icon {
-    font-size: 40px;
+    font-size: 18px;
+  }
+
+  .prt-title {
+    font-size: 22px;
   }
 }

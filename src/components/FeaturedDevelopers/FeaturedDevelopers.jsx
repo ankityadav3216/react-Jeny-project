@@ -6,6 +6,7 @@ import {
   PhoneOutlined,
   HomeOutlined
 } from "@ant-design/icons";
+import { SmileOutlined } from '@ant-design/icons'; // Featured Developers icon
 import "./FeaturedDevelopers.css";
 
 const developers = [
@@ -48,19 +49,7 @@ const developers = [
     rating: 4.3,
     tags: ["Value", "South Chennai"],
   },
-  {
-    name: "Prestige Group",
-    year: 1986,
-    projects: 100,
-    desc: "Prestige Group is one of India's leading developers.",
-    logo: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=80&h=80&fit=crop&crop=center",
-    projectImg: "https://chadwick-homes.com/wp-content/uploads/2020/10/chadwick-custom-homes-lake-conroe-min-1.jpg",
-    projectName: "Prestige City",
-    location: "Bangalore",
-    price: "₹85 L onwards",
-    rating: 4.9,
-    tags: ["Ultra Luxury", "Awarded"],
-  },
+  
   {
     name: "Godrej Properties",
     year: 1990,
@@ -93,7 +82,7 @@ const FeaturedDevelopers = () => {
   return (
     <div className="fd-wrapper">
       <div className="fd-header-section">
-        <h2>Featured Developers</h2>
+        <h2><SmileOutlined className="fd-title-icon"/> Featured Developers</h2>
         <p className="fd-subtitle">Prominent real-estate builders</p>
       </div>
 
@@ -106,7 +95,7 @@ const FeaturedDevelopers = () => {
                 <img src={item.logo} alt="logo" className="fd-logo" />
               </div>
               <div className="fd-header-content">
-                <h4>{item.name}</h4>
+                <h4 className="fd-card-title">{item.name}</h4>
                 <div className="fd-meta">
                   <div className="fd-meta-item">
                     <span className="fd-meta-value">{item.year}</span>

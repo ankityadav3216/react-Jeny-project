@@ -1,89 +1,118 @@
-/* ============================= */
-/* WRAPPER */
-/* ============================= */
 .fd-wrapper {
-  padding: 20px;
+  padding: 16px;
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.fd-header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
 }
 
 .fd-header-section h2 {
   font-size: 22px;
-  margin-bottom: 4px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fd-title-icon {
+  font-size: 15px;
+  color: #000000;
 }
 
 .fd-subtitle {
   color: #777;
-  margin-bottom: 18px;
+  font-size: 15px;
+  margin-top: 2px;
+  margin-left: 29px;
 }
 
-/* ============================= */
-/* HORIZONTAL SCROLL */
-/* ============================= */
 .fd-scroll {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   overflow-x: auto;
-  padding-bottom: 10px;
   scroll-behavior: smooth;
+  position: relative;
+}
+
+.fd-scroll::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to left, #fff, rgba(255,255,255,0));
 }
 
 .fd-scroll::-webkit-scrollbar {
   display: none;
 }
 
-/* ============================= */
-/* CARD (EQUAL HEIGHT & WIDTH) */
-/* ============================= */
 .fd-card {
-  width: 340px;
-  height: 460px;
-  border-radius: 12px;
+  width: 320px;
+  height: 420px;
+  border-radius: 10px;
   border: 1px solid #eee;
-  padding: 14px;
+  padding: 10px;
   background: #fff;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: none; /* Removed shadow */
 }
 
-/* ============================= */
-/* HEADER */
-/* ============================= */
+/* Card Heading Highlight */
+.fd-card-title {
+  font-weight: 700;
+  color: #000000;
+  
+}
+
+/* CARD HEADER */
 .fd-header {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   align-items: center;
   flex-shrink: 0;
 }
 
 .fd-logo-container {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
+  flex-shrink: 0;
 }
 
 .fd-logo {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
 .fd-header-content h4 {
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
 }
 
-/* ============================= */
-/* META */
-/* ============================= */
 .fd-meta {
   display: flex;
-  gap: 16px;
-  margin-top: 6px;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 .fd-meta-item {
@@ -92,12 +121,12 @@
 }
 
 .fd-meta-value {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .fd-meta-label {
-  font-size: 11px;
+  font-size: 10px;
   color: #777;
 }
 
@@ -108,64 +137,58 @@
 }
 
 .fd-meta-icon {
-  font-size: 14px;
+  font-size: 12px;
   color: #888;
 }
 
-/* ============================= */
-/* DESCRIPTION */
-/* ============================= */
 .fd-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: #666;
-  margin: 10px 0;
-  height: 42px;
+  margin: 6px 0;
+  height: 36px;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-/* ============================= */
-/* RATING & TAGS */
-/* ============================= */
 .fd-rating-tags {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   flex-shrink: 0;
 }
 
 .fd-rating {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 4px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .fd-tags {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
 .fd-tag {
-  font-size: 11px;
-  padding: 0 6px;
+  font-size: 10px;
+  padding: 0 4px;
 }
 
-/* ============================= */
-/* IMAGE SECTION */
-/* ============================= */
 .fd-image-container {
   flex: 1;
   display: flex;
+  min-height: 140px;
 }
 
 .fd-image {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -178,55 +201,53 @@
 .fd-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }
 
 .fd-image-content {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
   color: #fff;
+  font-size: 11px;
 }
 
 .fd-project-name {
-  font-size: 14px;
   font-weight: 600;
 }
 
 .fd-project-location {
-  font-size: 12px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin: 2px 0;
+  gap: 3px;
 }
 
 .fd-project-price {
-  font-size: 13px;
   font-weight: 600;
 }
 
-/* ============================= */
-/* BUTTON (GRADIENT) */
-/* ============================= */
+/* Contact Developer Button */
 .fd-contact-btn {
-  margin-top: 12px;
-  margin-bottom: 8px;
-  height: 42px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #3c82d1, #06243f);
-  border: none;
-  color: #fff;
+  margin-top: 8px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid #ccc; /* optional light border */
+  background-color: #fff;  /* White background */
+  color: #000;             /* Black text */
   font-weight: 600;
+  font-size: 12px;
+  transition: background 0.3s ease;
 }
 
-/* ============================= */
-/* RESPONSIVE */
-/* ============================= */
+.fd-contact-btn:hover {
+  background-color: #f0f0f0; /* Grey hover */
+  color: #000; /* Keep text black */
+}
+
 @media (max-width: 768px) {
   .fd-card {
-    width: 300px;
-    height: 500px;
+    width: 280px;
+    height: 460px;
   }
 }
