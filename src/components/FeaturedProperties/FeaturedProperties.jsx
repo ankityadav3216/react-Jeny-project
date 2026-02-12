@@ -1,227 +1,148 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Button, Rate } from 'antd';
-import {
-  HeartOutlined,
-  HeartFilled,
-  EnvironmentOutlined,
-  EyeOutlined,
-  LeftOutlined,
-  RightOutlined
-} from '@ant-design/icons';
-import './FeaturedProperties.css';
+import React, { useRef, useState, useEffect } from "react";
+import "./FeaturedProperties.css";
+import { EnvironmentOutlined, AppstoreOutlined } from "@ant-design/icons";
 
 const properties = [
   {
-    id: 1,
-    title: '3 BHK Luxury Apartment',
-    location: 'Bandra West, Mumbai',
-    price: '₹2.8 Cr',
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600',
-    beds: 3,
-    baths: 3,
-    area: '1850 sq.ft',
-    rating: 4.8,
-    featured: true,
+    title: "Kreeva",
+    developer: "Amogha Group",
+    type: "2, 3 BHK Flat",
+    location: "Vavol, Gandhinagar",
+    price: "₹45.88 L - ₹67.83 L",
+    image:
+      "https://d33wubrfki0l68.cloudfront.net/8d802d82084b8b59aeb59232f47a066456a8a218/607ca/img/process/process-4.jpg",
   },
   {
-    id: 2,
-    title: 'Modern 2 BHK Flat',
-    location: 'Whitefield, Bangalore',
-    price: '₹1.2 Cr',
-    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600',
-    beds: 2,
-    baths: 2,
-    area: '1250 sq.ft',
-    rating: 4.6,
-    featured: false,
+    title: "3 BHK Flat for Sale in Raysan",
+    developer: "Jayesh barot",
+    type: "3 BHK Flat",
+    location: "Raysan, Gandhinagar",
+    price: "₹1.50 Cr - ₹1.55 Cr",
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.LSeRWpEcjdEqF44ankcjVgHaHx?w=691&h=725&rs=1&pid=ImgDetMain&o=7&rm=3",
   },
   {
-    id: 3,
-    title: '4 BHK Penthouse',
-    location: 'Koramangala, Bangalore',
-    price: '₹4.5 Cr',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.jqk4B_Mlq9qmMSBNM7FFJgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 4,
-    baths: 4,
-    area: '2500 sq.ft',
-    rating: 4.9,
-    featured: true,
+    title: "AUXERIA",
+    developer: "Atishay Shivalay Group",
+    type: "3 BHK Flat",
+    location: "Kudasan, Gandhinagar",
+    price: "₹1.16 Cr - ₹1.31 Cr",
+    image:
+      "https://i.pinimg.com/736x/7b/54/39/7b54396284821030f2705a215a685c97.jpg",
   },
   {
-    id: 4,
-    title: '2 BHK Cozy Apartment',
-    location: 'Andheri East, Mumbai',
-    price: '₹1.1 Cr',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 2,
-    baths: 2,
-    area: '1100 sq.ft',
-    rating: 4.5,
-    featured: false,
-  },
-   {
-    id: 5,
-    title: '3 BHK Villa',
-    location: 'Whitefield, Bangalore',
-    price: '₹3.2 Cr',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 3,
-    baths: 3,
-    area: '2000 sq.ft',
-    rating: 4.7,
-    featured: true,
+    title: "Bosky The Upland",
+    developer: "Prince Infra",
+    type: "3, 4 BHK Flat",
+    location: "Kudasan, Gandhinagar",
+    price: "₹1.18 Cr - ₹1.58 Cr",
+    image:
+      "https://artdecomumbai.com/wp-content/uploads/2022/09/INN_SION_SHANTI-NIWAS_7a.jpg",
   },
   {
-    id: 6,
-    title: 'Studio Apartment',
-    location: 'Powai, Mumbai',
-    price: '₹80 Lakh',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 1,
-    baths: 1,
-    area: '650 sq.ft',
-    rating: 4.2,
-    featured: false,
+    title: "Green Heights",
+    developer: "Shree Buildcon",
+    type: "2 BHK Flat",
+    location: "Randesan, Gandhinagar",
+    price: "₹60 L - ₹75 L",
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.KZamzkXOYmzl3hD6glFc0wHaGu?w=768&h=698&rs=1&pid=ImgDetMain&o=7&rm=3",
   },
   {
-    id: 7,
-    title: '5 BHK Luxury House',
-    location: 'Juhu, Mumbai',
-    price: '₹8 Cr',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 5,
-    baths: 5,
-    area: '3500 sq.ft',
-    rating: 5,
-    featured: true,
+    title: "Skyline Towers",
+    developer: "Urban Group",
+    type: "3 BHK Flat",
+    location: "Sargasan, Gandhinagar",
+    price: "₹90 L - ₹1.2 Cr",
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.myi2yGYqdDVH7Oc25qggawHaEB?w=1068&h=580&rs=1&pid=ImgDetMain&o=7&rm=3",
   },
   {
-    id: 8,
-    title: '3 BHK Apartment',
-    location: 'MG Road, Bangalore',
-    price: '₹2.5 Cr',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 3,
-    baths: 3,
-    area: '1800 sq.ft',
-    rating: 4.6,
-    featured: false,
+    title: "Royal Nest",
+    developer: "Prime Infra",
+    type: "4 BHK Flat",
+    location: "Kudasan, Gandhinagar",
+    price: "₹1.5 Cr - ₹1.9 Cr",
+    image:
+      "https://www.housefind.in/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-17-at-1.10.59-PM.jpeg",
   },
   {
-    id: 9,
-    title: '2 BHK Luxury Flat',
-    location: 'Vikhroli, Mumbai',
-    price: '₹1.5 Cr',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.3as8iMYG4TST_oonpE7zRQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
-    beds: 2,
-    baths: 2,
-    area: '1300 sq.ft',
-    rating: 4.4,
-    featured: false,
-  },
-  {
-    id: 10,
-    title: '4 BHK Premium Apartment',
-    location: 'Indiranagar, Bangalore',
-    price: '₹3.8 Cr',
-    image: 'https://images.unsplash.com/photo-1599423300746-b62533397364?w=600',
-    beds: 4,
-    baths: 4,
-    area: '2400 sq.ft',
-    rating: 4.9,
-    featured: true,
+    title: "Elite Enclave",
+    developer: "Dream Homes",
+    type: "3 BHK Flat",
+    location: "Raysan, Gandhinagar",
+    price: "₹1.1 Cr - ₹1.4 Cr",
+    image:
+      "https://img.staticmb.com/mbphoto/property/cropped_images/2023/Jun/29/Photo_h300_w450/67409169_3_0230523181443_300_450.jpg",
   },
 ];
 
 const FeaturedProperties = () => {
   const scrollRef = useRef(null);
-  const [liked, setLiked] = useState({});
-  const [expanded, setExpanded] = useState({});
-  const cardWidth = 260;
+  const [isHovering, setIsHovering] = useState(false);
+  // Duplicate cards 3 times for smooth infinite scroll
+  const allProperties = [...properties, ...properties, ...properties];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        if (
-          scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
-          scrollRef.current.scrollWidth
-        ) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    let interval;
+    if (!isHovering) {
+      interval = setInterval(() => {
+        if (scrollRef.current) {
+          const container = scrollRef.current;
+          const cardWidth = 330; // card width (300px) + gap (30px)
+          const maxScroll = container.scrollWidth - container.clientWidth;
+
+          // Smoothly scroll one card at a time
+          let nextScroll = container.scrollLeft + cardWidth;
+          if (nextScroll >= maxScroll) {
+            // Reset to start without animation
+            container.scrollLeft = 0;
+          } else {
+            container.scrollTo({
+              left: nextScroll,
+              behavior: "smooth",
+            });
+          }
         }
-      }
-    }, 3000);
+      }, 2500); // scroll every 2.5 seconds
+    }
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovering]);
 
   return (
-    <div className="featured-properties-horizontal">
-      <div className="featured-header">
-        <h2>Featured Properties</h2>
-        <div className="scroll-buttons">
-          <button onClick={() => scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' })}>
-            <LeftOutlined />
-          </button>
-          <button onClick={() => scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' })}>
-            <RightOutlined />
-          </button>
-        </div>
-      </div>
+    <div className="featured-properties">
+      <h2 className="fp-heading">Featured Properties</h2>
 
-      <div className="featured-scroll-container" ref={scrollRef}>
-        {properties.map((p) => {
-          const desc = `This ${p.beds} BHK premium property offers ${p.baths} modern bathrooms with a spacious layout of ${p.area}. Located in ${p.location}, it is ideal for luxury and comfortable living.`;
-
-          return (
-            <div key={p.id} className="featured-card">
-              {/* IMAGE */}
-              <div className="card-image">
-                <img src={p.image} alt={p.title} />
-                <button
-                  className="like-btn"
-                  onClick={() => setLiked({ ...liked, [p.id]: !liked[p.id] })}
-                >
-                  {liked[p.id] ? <HeartFilled /> : <HeartOutlined />}
-                </button>
-              </div>
-
-              {/* DETAILS */}
-              <div className="card-details">
-                <h3>{p.title}</h3>
-
-                <div className="location">
-                  <EnvironmentOutlined /> {p.location}
-                </div>
-
-                <Rate disabled allowHalf defaultValue={p.rating} />
-
-                <p className={`description ${expanded[p.id] ? 'expanded' : ''}`}>
-                  {desc}
-                </p>
-
-                <span
-                  className="see-more"
-                  onClick={() =>
-                    setExpanded({ ...expanded, [p.id]: !expanded[p.id] })
-                  }
-                >
-                  {expanded[p.id] ? 'See less' : 'See more'}
-                </span>
-
-                <div className="card-footer">
-                  <div>
-                    <strong>{p.price}</strong>
-                    <div className="unit">₹25,000 / sq.ft</div>
-                  </div>
-
-                  <Button size="small" icon={<EyeOutlined />}>
-                    View
-                  </Button>
-                </div>
-              </div>
+      <div
+        className="fp-scroll"
+        ref={scrollRef}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {allProperties.map((item, index) => (
+          <div className="fp-card" key={`${item.title}-${index}`}>
+            <div className="fp-image-wrapper">
+              <img src={item.image} alt={item.title} />
+              <span className="fp-badge">New Launch</span>
             </div>
-          );
-        })}
+
+            <div className="fp-details">
+              <h3>{item.title}</h3>
+              <p className="fp-dev">{item.developer}</p>
+
+              <div className="fp-info">
+                <span>
+                  <AppstoreOutlined /> {item.type}
+                </span>
+                <span>
+                  <EnvironmentOutlined /> {item.location}
+                </span>
+              </div>
+
+              <h4 className="fp-price">{item.price}</h4>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

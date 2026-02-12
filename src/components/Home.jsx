@@ -30,26 +30,26 @@ const Home = () => {
         <SearchBar />
       </section> */}
 
-      <section className="container tight-section">
+      <section className="container compact-section">
   <Localities />
 </section>
 
-<section className="container tight-section">
+<section className="container compact-section">
   <PropertyCategories />
 </section>
 
-<section className="container tight-section">
+<section className="container compact-section">
   <HousingTopPicks />
 </section>
 
+<section className="container compact-section">
+  <Reels />
+</section>
 
-      <section className="container">
-        <Reels />
-      </section>
+<section className="container compact-section">
+  <FeaturedDeveloper />
+</section>
 
-      <section className="container">
-        <FeaturedDeveloper />
-      </section>
 
       <section className="container">
         <FeaturedProperties />

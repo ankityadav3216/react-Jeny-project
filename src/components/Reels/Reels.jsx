@@ -4,33 +4,15 @@ import { PlayCircleOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import "./Reels.css";
 
 const reelsData = [
-  {
-    id: 1,
-    videoUrl: "https://youtube.com/shorts/8cumXFw9TlY",
-  },
-  {
-    id: 2,
-    videoUrl: "https://www.youtube.com/watch?v=BWch04ZigCI",
-  },
-  {
-    id: 3,
-    videoUrl: "https://youtube.com/shorts/SsEcO9fnTNk",
-  },
-  {
-    id: 4,
-    videoUrl: "https://youtube.com/shorts/ZisVgwJ8TVw",
-  },
-  {
-    id: 5,
-    videoUrl: "https://youtube.com/shorts/hdtF9da8dO8",
-  },
-  {
-    id: 6,
-    videoUrl: "https://youtube.com/shorts/lhjKS8SJMvE",
-  },
+  { id: 1, videoUrl: "https://youtube.com/shorts/8cumXFw9TlY" },
+  { id: 2, videoUrl: "https://www.youtube.com/watch?v=BWch04ZigCI" },
+  { id: 3, videoUrl: "https://youtube.com/shorts/SsEcO9fnTNk" },
+  { id: 4, videoUrl: "https://youtube.com/shorts/ZisVgwJ8TVw" },
+  { id: 5, videoUrl: "https://youtube.com/shorts/hdtF9da8dO8" },
+  { id: 6, videoUrl: "https://youtube.com/shorts/lhjKS8SJMvE" },
 ];
 
-/* 🔥 Convert ANY YouTube URL to EMBED */
+/* Convert ANY YouTube URL to EMBED */
 const toEmbedUrl = (url) => {
   if (url.includes("/shorts/")) {
     const id = url.split("/shorts/")[1].split("?")[0];

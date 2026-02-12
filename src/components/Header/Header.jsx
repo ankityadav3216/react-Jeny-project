@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import Buy from "../Megamenu/Buy";
 import Services from "../Megamenu/services";
 import HeaderMenuBar from "../headermenubar/HeaderMenuBar";
@@ -49,16 +48,20 @@ const Header = () => {
             <div className="header-logo">PrimeAcres</div>
           </div>
 
-          {/* CENTER MENU (Horizontal) */}
+          {/* CENTER MENU */}
           <div className="center-menu-wrapper">
             <Menu
               mode="horizontal"
               selectable={false}
-              overflowedIndicator={null}
+              disabledOverflow={true}   // 🔥 prevents auto hiding
               className="desktop-menu"
             >
-              <Menu.Item onClick={() => toggleMega("buy")}>For Buyers</Menu.Item>
-              <Menu.Item onClick={() => toggleMega("services")}>For Services</Menu.Item>
+              <Menu.Item onClick={() => toggleMega("buy")}>
+                For Buyers
+              </Menu.Item>
+              <Menu.Item onClick={() => toggleMega("services")}>
+                For Services
+              </Menu.Item>
               <Menu.Item>News & Guide</Menu.Item>
               <Menu.Item>Download App</Menu.Item>
               <Menu.Item>
@@ -106,8 +109,14 @@ const Header = () => {
       </div>
 
       {/* MOBILE DRAWERS */}
-      <HeaderMenuBar open={menuBarOpen} onClose={() => setMenuBarOpen(false)} />
-      <HeaderProfileBar open={profileOpen} onClose={() => setProfileOpen(false)} />
+      <HeaderMenuBar
+        open={menuBarOpen}
+        onClose={() => setMenuBarOpen(false)}
+      />
+      <HeaderProfileBar
+        open={profileOpen}
+        onClose={() => setProfileOpen(false)}
+      />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Card } from "antd";
 import {
   CalculatorOutlined,
@@ -28,6 +28,36 @@ const tools = [
 ];
 
 const PropertyResearchTools = () => {
+  const scrollRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+  // Duplicate tools for seamless infinite scroll
+  const duplicatedTools = [...tools, ...tools, ...tools];
+
+  useEffect(() => {
+    let interval;
+    if (!isHovering) {
+      interval = setInterval(() => {
+        if (scrollRef.current) {
+          const container = scrollRef.current;
+          const cardWidth = 166; // min-width (150px) + gap (16px)
+          const maxScroll = container.scrollWidth - container.clientWidth;
+          let nextScroll = container.scrollLeft + cardWidth;
+
+          if (nextScroll >= maxScroll) {
+            // Reset to start without animation
+            container.scrollLeft = 0;
+          } else {
+            container.scrollTo({
+              left: nextScroll,
+              behavior: "smooth",
+            });
+          }
+        }
+      }, 2500); // scroll every 2.5 seconds
+    }
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
   return (
     <div className="prt-wrapper">
       <h2 className="prt-title">
@@ -37,9 +67,14 @@ const PropertyResearchTools = () => {
         User Property Research Tools
       </h2>
 
-      <div className="prt-scroll">
-        {tools.map((item, index) => (
-          <Card className="prt-card" bordered={false} key={index}>
+      <div
+        className="prt-scroll"
+        ref={scrollRef}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {duplicatedTools.map((item, index) => (
+          <Card className="prt-card" bordered={false} key={`${item.title}-${index}`}>
             <div className="prt-icon-wrapper">
               <div className="prt-icon">{item.icon}</div>
             </div>

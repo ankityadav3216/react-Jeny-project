@@ -12,16 +12,13 @@ const localitiesData = [
   { id: 7, city: "Jamnagar", img: "https://www.trawell.in/admin/images/upload/133167821Pratap_Vilas_Palace.jpg" },
   { id: 8, city: "Junagadh", img: "https://www.gosahin.com/go/p/b/t1/1516274113_GIRNAR5.jpg" },
   { id: 9, city: "Anand", img: "https://seekatour.com/wp-content/uploads/2022/11/Gandhinagar.jpg" },
-  { id: 10, city: "Morbi", img: "https://th.bing.com/th/id/R.ebb05dbb517eb2473ff6d9544b99ab0e?rik=U15xhVhHsKAT3A&riu=http%3a%2f%2ftouristinformationcenter.net%2fwp-content%2fuploads%2f2021%2f11%2fMani-Mandir-morbi.jpg&ehk=ZKT%2bl1UMi8eOJHlD8le2OfYAGfPa5Zt%2fsd0brvwf8ak%3d&risl=&pid=ImgRaw&r=0" },
+  { id: 10, city: "Morbi", img: "https://th.bing.com/th/id/R.ebb05dbb517eb2473ff6d9544b99ab0e?rik=U15xhVhHsKAT3A&riu=http%3a%2f%2ftouristinformationcenter.net%2fwp-content%2fuploads%2f2021%2f11%2fMani-Mandir-morbi.jpg" },
 ];
 
 const Localities = () => {
   const wrapperRef = useRef(null);
   const [cardStyles, setCardStyles] = useState({});
-  const hasScrolledInitial = useRef(false); // to prevent double scroll on mount
-  const cardWidth = 140;
 
-  // --- Scroll to a specific card and center it ---
   const scrollToCard = (index) => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
@@ -31,18 +28,21 @@ const Localities = () => {
     const wrapperRect = wrapper.getBoundingClientRect();
     const cardRect = card.getBoundingClientRect();
 
-    // Calculate scroll position that puts card exactly in the middle
     const relativeLeft = cardRect.left - wrapperRect.left;
     const scrollLeft =
-      wrapper.scrollLeft + relativeLeft + card.offsetWidth / 2 - wrapper.clientWidth / 2;
+      wrapper.scrollLeft +
+      relativeLeft +
+      card.offsetWidth / 2 -
+      wrapper.clientWidth / 2;
 
     wrapper.scrollTo({ left: scrollLeft, behavior: "smooth" });
   };
 
-  // --- Update 3D transforms based on current scroll ---
   const updateTransforms = () => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
+
+    const isMobile = window.innerWidth <= 768;
 
     const cards = wrapper.children;
     const wrapperRect = wrapper.getBoundingClientRect();
@@ -57,26 +57,27 @@ const Localities = () => {
       const offsetX = cardCenterX - (wrapperRect.left + centerX);
 
       const normalizedOffset = Math.max(Math.min(offsetX / centerX, 1), -1);
-      const rotationY = normalizedOffset * 30;
+
+      // Mobile pe rotation kam rakha
+      const rotationY = normalizedOffset * (isMobile ? 15 : 30);
       const scale = 1 - Math.min(Math.abs(normalizedOffset) * 0.15, 0.15);
 
       newStyles[i] = {
-        transform: `perspective(800px) rotateY(${rotationY}deg) scale(${scale})`,
-        transition: "transform 0.2s cubic-bezier(0.2, 0, 0, 1)",
+        transform: `perspective(1000px) rotateY(${rotationY}deg) scale(${scale})`,
+        transition: "transform 0.2s ease",
         zIndex: Math.round(100 - Math.abs(rotationY)),
-        cursor: "grab",
       };
     }
 
     setCardStyles(newStyles);
   };
 
-  // --- Add left/right padding so first & last card can be centered ---
   const adjustPadding = () => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
     const containerWidth = wrapper.clientWidth;
+    const cardWidth = wrapper.children[0]?.offsetWidth || 140;
     const padding = Math.max((containerWidth - cardWidth) / 2, 0);
 
     wrapper.style.paddingLeft = `${padding}px`;
@@ -85,52 +86,22 @@ const Localities = () => {
     updateTransforms();
   };
 
-  // --- Set up Intersection Observer to reset to Gandhinagar when section becomes visible ---
-  useEffect(() => {
-    const container = document.querySelector(".localities-container");
-    if (!container) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          // If it's the first time, just mark it – we already scroll in mount effect
-          if (!hasScrolledInitial.current) {
-            hasScrolledInitial.current = true;
-          } else {
-            // On every subsequent appearance, scroll back to Gandhinagar
-            scrollToCard(4); // index of Gandhinagar
-          }
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(container);
-
-    return () => observer.disconnect();
-  }, []);
-
-  // --- Initial setup: padding, transforms, and scroll to Gandhinagar ---
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    // 1. Set correct padding
     adjustPadding();
 
-    // 2. After padding is applied, scroll to Gandhinagar
-    const timer = setTimeout(() => {
-      scrollToCard(4); // Gandhinagar
-    }, 0);
+    setTimeout(() => {
+      scrollToCard(4);
+    }, 100);
 
-    // 3. Add event listeners
     wrapper.addEventListener("scroll", updateTransforms);
     window.addEventListener("resize", adjustPadding);
 
     return () => {
       wrapper.removeEventListener("scroll", updateTransforms);
       window.removeEventListener("resize", adjustPadding);
-      clearTimeout(timer);
     };
   }, []);
 

@@ -1,24 +1,65 @@
 .infobar-container {
-  position: sticky; /* scroll karte time upar chipka rahe */
+  position: sticky;
   top: 0;
-  width: auto;
-  max-width: 100%;
-  z-index: 9999; /* header ke upar rahe */
-  border-radius: 0; /* curved hataya, fully straight */
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
 }
 
+/* Main Alert */
 .ant-alert {
-  background-color: #000000 !important; /* black background */
-  border: 1px solid #000000 !important; /* subtle border */
+  background-color: #000000 !important;
+  border: none !important;
+  border-radius: 0 !important;
   text-align: center;
   font-weight: 500;
   font-size: 14px;
-  color: rgb(255, 255, 255);
-}
+  color: #ffffff !important;
 
-.ant-alert-message {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px; /* icon aur text ke beech gap */
+  padding: 8px 40px;
+
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Remove icon spacing */
+.ant-alert-no-icon {
+  padding-left: 0 !important;
+}
+
+.ant-alert-message {
+  color: #ffffff !important;
+}
+
+/* Close icon */
+.ant-alert-close-icon {
+  color: #ffffff !important;
+}
+
+/* ================= MOBILE SCROLL EFFECT ================= */
+
+@media (max-width: 768px) {
+
+  .ant-alert-message {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 12s linear infinite;
+  }
+
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .ant-alert {
+    font-size: 12px;
+    padding: 6px 20px;
+  }
 }

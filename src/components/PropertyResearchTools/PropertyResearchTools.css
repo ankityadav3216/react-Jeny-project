@@ -22,13 +22,18 @@
   align-items: center;
 }
 
-/* Horizontal scroll container */
+/* Horizontal scroll container - with auto-scroll support */
 .prt-scroll {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   padding-bottom: 10px;
   scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+
+  /* ✅ LOCK CONTENT */
+  user-select: none;
 }
 
 .prt-scroll::-webkit-scrollbar {
@@ -36,38 +41,63 @@
 }
 
 /* Card */
-/* Card */
 .prt-card {
   min-width: 150px;
   height: 120px;
-  border:1px solid #efeeee;
+  border: 1px solid #efeeee;
   border-radius: 14px;
   padding: 10px;
   flex-shrink: 0;
-  background: transparent; 
+  background: transparent;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* horizontal center */
-  justify-content: center; /* vertical center */
+  align-items: center;
+  justify-content: center;
   box-shadow: none;
   text-align: center;
+  transition: all 0.3s ease;
+
+  /* ✅ LOCK CONTENT */
+  user-select: none;
+  pointer-events: auto;
 }
 
-/* Icon wrapper - perfectly centered inside card */
+.prt-card:hover {
+  border-color: orange;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Icon wrapper */
 .prt-icon-wrapper {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   display: flex;
-  align-items: center;  /* vertical center */
-  justify-content: center; /* horizontal center */
+  align-items: center;
+  justify-content: center;
   margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+
+  user-select: none;
 }
 
-/* Icon color orange */
+.prt-card:hover .prt-icon-wrapper {
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
+/* Icon */
 .prt-icon {
   font-size: 20px;
   color: orange;
+  transition: transform 0.3s ease;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.prt-card:hover .prt-icon {
+  transform: scale(1.1);
 }
 
 .prt-card h3 {
@@ -75,6 +105,9 @@
   font-weight: 600;
   text-align: center;
   margin: 0;
+  color: #333;
+
+  user-select: none;
 }
 
 /* Mobile tweak */
@@ -95,5 +128,28 @@
 
   .prt-title {
     font-size: 22px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .prt-card {
+    min-width: 90px;
+    height: 90px;
+    padding: 8px;
+  }
+
+  .prt-icon-wrapper {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 6px;
+  }
+
+  .prt-icon {
+    font-size: 16px;
+  }
+
+  .prt-card h3 {
+    font-size: 12px;
   }
 }

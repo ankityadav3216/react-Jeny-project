@@ -1,118 +1,99 @@
-import React from 'react';
-import { Row, Col, Input, Button } from 'antd';
-import { 
-  FacebookOutlined, 
-  TwitterOutlined, 
-  InstagramOutlined, 
-  LinkedinOutlined, 
-  YoutubeOutlined,
-  MailOutlined,
-  PhoneOutlined,
-  EnvironmentOutlined 
-} from '@ant-design/icons';
-import './Footer.css';
+import React from "react";
+import { Row, Col, Typography, Space } from "antd";
+import {
+  InstagramOutlined,
+  FacebookOutlined,
+  LinkedinOutlined,
+  PinterestOutlined,
+  TwitterOutlined,
+} from "@ant-design/icons";
+import "./Footer.css";
+
+const { Title, Text, Link } = Typography;
 
 const Footer = () => {
-  const footerLinks = {
-    'Buy': ['Homes for Sale', 'New Projects', 'Builder Floors', 'Villas', 'Plots'],
-    'Rent': ['Apartments for Rent', 'Houses for Rent', 'PG & Hostels', 'Commercial', 'Short Term'],
-    'Sell': ['Post Property Free', 'Property Valuation', 'Find Agents', 'Home Inspection', 'Sell Fast'],
-    'Company': ['About Us', 'Careers', 'Press', 'Blog', 'Contact Us'],
-  };
-
   return (
-    <footer className="main-footer">
-      <div className="footer-container">
-        {/* Top Section */}
-        <div className="footer-top">
-          <div className="footer-brand">
+    <div className="main-footer">
+      <div className="footer-inner">
+
+        <Row gutter={[40, 30]}>
+
+          {/* LEFT SECTION */}
+          <Col xs={24} md={8}>
             <div className="footer-logo">
-              <div className="logo-icon">
-                <div className="logo-gradient"></div>
-              </div>
-              <span className="logo-text">housing.com</span>
+              <span className="logo-icon">🔎</span>
+              <span className="logo-text">PrimeAcres</span>
             </div>
-            <p className="brand-description">
-              India's No. 1 property portal for buying, selling, and renting properties.
-            </p>
-            <div className="social-links">
-              <a href="#" className="social-icon"><FacebookOutlined /></a>
-              <a href="#" className="social-icon"><TwitterOutlined /></a>
-              <a href="#" className="social-icon"><InstagramOutlined /></a>
-              <a href="#" className="social-icon"><LinkedinOutlined /></a>
-              <a href="#" className="social-icon"><YoutubeOutlined /></a>
+
+            <div className="footer-email">
+              <Text className="footer-label">EMAIL</Text>
+              <br />
+              <Text className="footer-mail">hello@PrimeAcres</Text>
             </div>
-          </div>
-          
-          {/* Newsletter */}
-          <div className="newsletter-section">
-            <h3 className="newsletter-title">Stay Updated</h3>
-            <p className="newsletter-text">Subscribe to our newsletter for latest updates</p>
-            <div className="newsletter-form">
-              <Input 
-                placeholder="Enter your email" 
-                size="large"
-                prefix={<MailOutlined />}
-                className="newsletter-input"
+          </Col>
+
+          {/* EXPLORE */}
+          <Col xs={12} md={4}>
+            <Title level={5} className="footer-heading">EXPLORE</Title>
+            <Space direction="vertical" size={6}>
+              <Link>For Investors</Link>
+              <Link>Blog</Link>
+              <Link>Web Stories</Link>
+              <Link>Reals</Link>
+              <Link>Tools</Link>
+              <Link>Sitemap</Link>
+            </Space>
+          </Col>
+
+          {/* COMPANY */}
+          <Col xs={12} md={4}>
+            <Title level={5} className="footer-heading">COMPANY</Title>
+            <Space direction="vertical" size={6}>
+              <Link>Privacy Policy</Link>
+              <Link>Terms & Conditions</Link>
+              <Link>About Us</Link>
+              <Link>Contact Us</Link>
+            </Space>
+          </Col>
+
+          {/* RIGHT SIDE */}
+          <Col xs={24} md={8}>
+            <Title level={5} className="footer-heading">
+              Experience <span className="highlight">PrimeAcres.com</span> App on mobile
+            </Title>
+
+            <div className="store-buttons">
+              <img
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store"
               />
-              <Button type="primary" className="subscribe-btn">
-                Subscribe
-              </Button>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play"
+              />
             </div>
-          </div>
-        </div>
 
-        {/* Links Section */}
-        <div className="footer-links">
-          <Row gutter={[32, 32]}>
-            {Object.entries(footerLinks).map(([category, links]) => (
-              <Col xs={12} sm={8} md={6} key={category}>
-                <h4 className="links-category">{category}</h4>
-                <ul className="links-list">
-                  {links.map((link, index) => (
-                    <li key={index}>
-                      <a href="#" className="footer-link">{link}</a>
-                    </li>
-                  ))}
-                </ul>
-              </Col>
-            ))}
-            
-            {/* Contact Info */}
-            <Col xs={12} sm={8} md={6}>
-              <h4 className="links-category">Contact Us</h4>
-              <ul className="contact-list">
-                <li>
-                  <PhoneOutlined />
-                  <span>1800-123-4567</span>
-                </li>
-                <li>
-                  <MailOutlined />
-                  <span>support@housing.com</span>
-                </li>
-                <li>
-                  <EnvironmentOutlined />
-                  <span>Mumbai, India</span>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </div>
+            <div className="social-section">
+              <Text className="footer-label">Follow us</Text>
+              <div className="social-icons">
+                <InstagramOutlined />
+                <TwitterOutlined />
+                <FacebookOutlined />
+                <LinkedinOutlined />
+                <PinterestOutlined />
+              </div>
+            </div>
+          </Col>
+        </Row>
 
-        {/* Bottom Section */}
+        <div className="footer-divider" />
+
         <div className="footer-bottom">
-          <div className="copyright">
-            © 2024 Housing.com. All rights reserved.
-          </div>
-          <div className="legal-links">
-            <a href="#" className="legal-link">Privacy Policy</a>
-            <a href="#" className="legal-link">Terms of Use</a>
-            <a href="#" className="legal-link">Site Map</a>
-            <a href="#" className="legal-link">Fraud Alert</a>
-          </div>
+          ©2026-27 PrimeAcres.com
         </div>
+
       </div>
-    </footer>
+    </div>
   );
 };
 

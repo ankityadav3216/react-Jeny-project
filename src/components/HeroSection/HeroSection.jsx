@@ -1,59 +1,104 @@
-import React from "react";
-import { DatePicker, InputNumber, Button } from "antd";
+import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import "./HeroSection.css";
 
 const HeroSection = () => {
-  const searchItems = [
-    {
-      label: "Location",
-      element: <input type="text" placeholder="Where are you going?" className="custom-input" />
-    },
-    {
-      label: "Check-in",
-      element: <DatePicker bordered={false} className="custom-datepicker" />
-    },
-    {
-      label: "Check-out",
-      element: <DatePicker bordered={false} className="custom-datepicker" />
-    },
-    {
-      label: "Guests",
-      element: <InputNumber min={1} defaultValue={2} bordered={false} className="guest-input" />
-    }
+  const [selectedCity, setSelectedCity] = useState("Gandhinagar");
+
+  const gujaratCities = [
+    "Ahmedabad",
+    "Surat",
+    "Vadodara",
+    "Rajkot",
+    "Gandhinagar",
+    "Bhavnagar",
+    "Jamnagar",
+    "Junagadh",
+    "Anand",
+    "Navsari"
   ];
 
   return (
     <section className="hero-section">
       <div className="hero-overlay">
-        
-        {/* 🔥 TEXT CONTENT */}
+
+        {/* 🔥 MOBILE TOP TABS */}
+        <div className="mobile-top-tabs">
+          <button className="active">Buy</button>
+          <button>Rent</button>
+          <button>Commercial</button>
+          <button>Plots</button>
+          <button>PG</button>
+        </div>
+
+        {/* TEXT CONTENT */}
         <div className="hero-content">
           <h1>Welcome to PrimeAcres</h1>
           <p>Find your dream property with ease</p>
           <button className="hero-btn">Explore Now</button>
         </div>
 
-        {/* 🔥 SEARCHBAR */}
-        <div className="searchbar-container">
-          <div className="searchbar-box">
-            {searchItems.map(({ label, element }, index) => (
-              <React.Fragment key={label}>
-                <div className="search-item">
-                  <label>{label}</label>
-                  {element}
-                </div>
-                {/* Divider after each item except the last one */}
-                {index < searchItems.length - 1 && <div className="divider" />}
-              </React.Fragment>
+        {/* 🔥 MOBILE CITY SELECT */}
+        <div className="mobile-city-select">
+          <select
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+          >
+            {gujaratCities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
             ))}
+          </select>
+        </div>
 
-            <Button
-              shape="circle"
-              icon={<SearchOutlined />}
-              className="search-button"
-              size="large"
+        {/* 🔥 MOBILE SEARCH INPUT */}
+        <div className="mobile-search-box">
+          <input
+            type="text"
+            placeholder="Search Area, Project or Builder"
+          />
+          <SearchOutlined className="search-icon" />
+        </div>
+
+        {/* DESKTOP SEARCH (Same as before) */}
+        <div className="property-search-wrapper">
+
+          <div className="property-tabs">
+            <button className="active">Buy</button>
+            <button>Rent</button>
+            <button>Commercial</button>
+            <button>Plots/Lands</button>
+            <button>PG/Hostel</button>
+          </div>
+
+          <div className="property-search-bar">
+
+            <select
+              className="location-select"
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+            >
+              {gujaratCities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+
+            <div className="vertical-divider"></div>
+
+            <input
+              type="text"
+              placeholder="Search Area, Project or Builder"
+              className="property-input"
             />
+
+            <button className="property-search-btn">
+              <SearchOutlined />
+              <span>Search</span>
+            </button>
+
           </div>
         </div>
 

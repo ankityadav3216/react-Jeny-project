@@ -1,32 +1,54 @@
+/* ================= HERO SECTION ================= */
+
 .hero-section {
   width: 97%;
-  margin: 67px auto;
+  margin: 70px auto;
   height: 550px;
   background-image: url("https://d287g3eda0fymb.cloudfront.net/nautical-living-room1-fit=constrain&wid=2560&hei=1440.jpg?fit=constrain&wid=750&hei=440");
   background-position: center;
   background-size: cover;
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
-/* 🔥 Overlay */
+/* Overlay */
 .hero-overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;   /* content top side */
-
-  padding-top: 110px;   /* 🔥 text upar shift */
-  border-radius: 12px;
+  padding-top: 110px;
+  position: relative;
 }
 
-/* TEXT */
+/* Location Select Dropdown */
+.location-select {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  background: transparent;
+  min-width: 170px;
+  cursor: pointer;
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23333'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 30px;
+}
+
+.location-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ================= TEXT ================= */
+
 .hero-content {
   text-align: center;
   color: #fff;
@@ -35,115 +57,253 @@
 
 .hero-content h1 {
   font-size: 48px;
-  font-weight: 900;
-  margin-bottom: 16px;
+  font-weight: 800;
+  margin-bottom: 15px;
 }
 
 .hero-content p {
   font-size: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
+  font-weight: 400;
 }
 
 .hero-btn {
   padding: 12px 32px;
   font-size: 16px;
   font-weight: 600;
-  background-color: #000;
+  background-color: #ff5a00;
   color: #fff;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .hero-btn:hover {
-  background-color: #333;
+  background-color: #e14d00;
 }
 
-/* 🔥 SEARCHBAR POSITION */
-.searchbar-container {
+/* ================= PROPERTY SEARCH ================= */
+
+.property-search-wrapper {
   position: absolute;
-  bottom: 130px;   /* 🔥 searchbar upar */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 90px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  z-index: 5;
+  flex-direction: column;
+  align-items: center;
 }
 
-.searchbar-box {
+/* Tabs */
+.property-tabs {
+  background: #f2f2f2;
+  padding: 8px;
+  border-radius: 40px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.property-tabs button {
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #444;
+  transition: 0.3s;
+}
+
+.property-tabs button.active {
+  background: #ff5a00;
+  color: #fff;
+}
+
+.property-tabs button:hover:not(.active) {
+  background: #e6e6e6;
+}
+
+/* Search Bar */
+.property-search-bar {
+  background: #ffffff;
   display: flex;
   align-items: center;
-  background: #ffffff;
-  padding: 12px 20px;
-  border-radius: 50px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  padding: 14px 20px;
+  border-radius: 60px;
+  width: 75%;
+  max-width: 850px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.search-item {
+.location-box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 20px;
-  min-width: 170px;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  min-width: 160px;
+  cursor: pointer;
+  color: #333;
 }
 
-.search-item label {
-  font-size: 16px;
-  font-weight: 700;
-  color: #000000;
-  margin-bottom: 6px;
-}
-
-.custom-input {
-  border: none;
-  font-size: 15px;
-  outline: none;
-}
-
-.custom-datepicker {
-  width: 140px;
-}
-
-.guest-input {
-  width: 70px;
-}
-
-.divider {
+.vertical-divider {
   width: 1px;
   height: 40px;
-  background: #000;
-  opacity: 0.2;
+  background: #ddd;
+  margin: 0 15px;
 }
 
-.search-button {
-  background-color: #ffffff !important;
+.property-input {
+  flex: 1;
   border: none;
-  color: #000000 !important;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
 }
 
-.search-button:hover {
-  background-color: #e0e0e0 !important;
+.property-input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-/* RESPONSIVE */
+.property-search-btn {
+  background: #ff5a00;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.property-search-btn:hover {
+  background: #e14d00;
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
-  .hero-section {
-    height: 450px;
-    width: 95%;
+
+  .property-search-wrapper {
+    display: none;
   }
 
   .hero-overlay {
-    padding-top: 80px;
+    padding-top: 20px;
+    align-items: stretch;
   }
 
-  .searchbar-box {
-    flex-direction: column;
-    border-radius: 20px;
+  .mobile-top-tabs {
+    margin: 0 16px 30px;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
   }
 
-  .divider {
+  .mobile-top-tabs button {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .mobile-top-tabs button.active::after {
+    content: ">";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #ff5a00;
+    font-weight: bold;
+  }
+
+  .hero-content {
+    margin-bottom: 45px;
+  }
+
+  .mobile-city-select {
+    margin: 0 16px 20px;
+    width: 38%;
+  }
+
+  .mobile-city-select select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    appearance: none;
+    outline: none;
+
+    background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ff5a00' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'>\
+    <polyline points='6 9 12 15 18 9'></polyline>\
+    </svg>");
+
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+  }
+
+  .mobile-city-select select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .mobile-search-box {
+    margin: 0 16px 30px;
+    position: relative;
+  }
+
+  .mobile-search-box input {
+    width: 100%;
+    padding: 14px 60px 14px 16px;
+    border-radius: 16px;
+    border: none;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    outline: none;
+  }
+
+  .mobile-search-box input:focus {
+    outline: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  /* ✅ UPDATED MOBILE SEARCH ICON */
+  .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff5a00;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-top-tabs,
+  .mobile-city-select,
+  .mobile-search-box {
     display: none;
   }
 }

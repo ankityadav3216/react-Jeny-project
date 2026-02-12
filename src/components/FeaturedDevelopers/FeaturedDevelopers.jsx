@@ -1,157 +1,107 @@
 import React from "react";
-import { Card, Button, Tag } from "antd";
-import { 
-  StarFilled, 
-  EnvironmentOutlined, 
-  PhoneOutlined,
-  HomeOutlined
-} from "@ant-design/icons";
-import { SmileOutlined } from '@ant-design/icons'; // Featured Developers icon
 import "./FeaturedDevelopers.css";
+import { ArrowRightOutlined, BuildOutlined } from "@ant-design/icons";
 
 const developers = [
   {
-    name: "Majestique Landmarks",
-    year: 2002,
-    projects: 111,
-    desc: "Majestique Landmarks is committed to crafting spaces that transcend the ordinary.",
-    logo: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=80&h=80&fit=crop&crop=center",
-    projectImg: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=300&h=180&fit=crop",
-    projectName: "Evolvus Phase I",
-    location: "Kharadi, Pune",
-    price: "₹1.38 Cr - 2.69 Cr",
-    rating: 4.8,
-    tags: ["Luxury", "Premium"],
+    name: "Omkar Group",
+    description:
+      "With over 34 years of experience, Omkar Group has delivered 50+ Lacs sq.ft. of luxury and landmark developments.",
+    logo: "https://static.vecteezy.com/system/resources/previews/026/531/921/non_2x/blue-and-red-abstract-corporate-logo-design-free-vector.jpg",
+    projectImage:
+      "https://www.reecosys.com/api/image-tool/index.php?src=https://www.reecosys.com/assets/uploads/project/banner/banner_web_1671512828_88.jpg&h=1079&w=1920&q=75",
+    projectName: "Rivanta Vibgyor",
+    location: "Sargasan, Gandhinagar",
   },
   {
-    name: "Premier Housing & Properties",
-    year: 2008,
-    projects: 49,
-    desc: "Premier Housing & Properties is a company developing real assets over a decade.",
-    logo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=80&h=80&fit=crop&crop=center",
-    projectImg: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=300&h=180&fit=crop",
-    projectName: "Premier JJS Ashok Nagar",
-    location: "Sriperumbudur, Chennai",
-    price: "₹26.46 L - 79.38 L",
-    rating: 4.5,
-    tags: ["Affordable", "RERA"],
+    name: "Dev Vinayak Group",
+    description:
+      "Leading real estate developer known for premium residential and commercial projects.",
+    logo: "https://static.vecteezy.com/system/resources/previews/015/567/048/original/building-logo-icon-design-free-vector.jpg",
+    projectImage:
+      "https://www.reecosys.com/api/image-tool/index.php?src=https://www.reecosys.com/assets/uploads/project/banner/banner_web_1674540638_47.jpg&h=1079&w=1920&q=75",
+    projectName: "The Avante",
+    location: "Sargasan, Gandhinagar",
   },
   {
-    name: "Asset Tree Homes",
-    year: 2008,
-    projects: 47,
-    desc: "Asset Tree Homes has delivered multiple residential projects across Chennai.",
-    logo: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=80&h=80&fit=crop&crop=center",
-    projectImg: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=300&h=180&fit=crop",
-    projectName: "ATH Ananterra",
-    location: "Madambakkam, Chennai",
-    price: "₹1.21 Cr - 2.18 Cr",
-    rating: 4.3,
-    tags: ["Value", "South Chennai"],
-  },
-  
-  {
-    name: "Godrej Properties",
-    year: 1990,
-    projects: 85,
-    desc: "Godrej Properties brings trust & innovation together.",
-    logo: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=80&h=80&fit=crop&crop=center",
-    projectImg: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=300&h=180&fit=crop",
-    projectName: "Godrej Park Greens",
-    location: "Pune",
-    price: "₹72 L onwards",
-    rating: 4.7,
-    tags: ["Green Homes", "Premium"],
+    name: "Vision Group",
+    description:
+      "A progressive developer setting new benchmarks in architectural excellence.",
+    logo: "https://static.vecteezy.com/system/resources/previews/043/210/670/non_2x/logo-of-a-company-featuring-a-building-as-the-central-element-building-construction-logo-design-free-vector.jpg",
+    projectImage:
+      "https://myrealestate.in/storage/2021/08/DLF-PRIME-TOWER-592x444.jpg",
+    projectName: "Vision Ventus",
+    location: "Randesan, Gandhinagar",
   },
   {
-    name: "DLF Limited",
-    year: 1946,
-    projects: 200,
-    desc: "India's largest real estate developer with iconic projects.",
-    logo: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=80&h=80&fit=crop&crop=center",
-    projectImg: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=300&h=180&fit=crop",
-    projectName: "DLF Camellias",
-    location: "Gurgaon, Delhi",
-    price: "₹5 Cr onwards",
-    rating: 4.8,
-    tags: ["Iconic", "Commercial"],
+    name: "Dev Group",
+    description:
+      "Built on principles of quality, trust and long-term value creation.",
+    logo: "https://static.vecteezy.com/system/resources/previews/000/603/705/original/architectural-construction-building-logo-design-concept-template-vector.jpg",
+    projectImage:
+      "https://tse2.mm.bing.net/th/id/OIP.6cFCPqujb3UnNgYauyKKVwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    projectName: "Dev Aalay",
+    location: "Sargasan, Gandhinagar",
+  },
+  {
+    name: "Skyline Builders",
+    description:
+      "Known for modern architecture and strong construction standards.",
+    logo: "https://static.vecteezy.com/system/resources/previews/010/664/778/non_2x/construction-building-logo-icon-design-free-vector.jpg",
+    projectImage:
+      "https://www.roofandfloor.com/blogimg/155/Asv-Suntech-Park.jpg",
+    projectName: "Skyline Heights",
+    location: "Kudasan, Gandhinagar",
+  },
+  {
+    name: "Urban Nest Group",
+    description:
+      "Focused on affordable luxury homes with premium lifestyle amenities.",
+    logo: "https://static.vecteezy.com/system/resources/previews/010/664/645/non_2x/construction-building-logo-icon-design-free-vector.jpg",
+    projectImage:
+      "https://ownnerz.com/wp-content/uploads/classified-listing/2022/03/20220326_003128-1240x640.png",
+    projectName: "Urban Nest Residency",
+    location: "Raysan, Gandhinagar",
   },
 ];
 
 const FeaturedDevelopers = () => {
   return (
-    <div className="fd-wrapper">
-      <div className="fd-header-section">
-        <h2><SmileOutlined className="fd-title-icon"/> Featured Developers</h2>
-        <p className="fd-subtitle">Prominent real-estate builders</p>
+    <div className="featured-developers">
+      <div className="fd-header">
+        <h2 className="fd-title">
+          <BuildOutlined className="fd-title-icon" />
+          Top Developers
+        </h2>
       </div>
 
       <div className="fd-scroll">
-        {developers.map((item, index) => (
-          <Card key={index} className="fd-card" bordered={false}>
-            {/* Header */}
-            <div className="fd-header">
-              <div className="fd-logo-container">
-                <img src={item.logo} alt="logo" className="fd-logo" />
-              </div>
-              <div className="fd-header-content">
-                <h4 className="fd-card-title">{item.name}</h4>
-                <div className="fd-meta">
-                  <div className="fd-meta-item">
-                    <span className="fd-meta-value">{item.year}</span>
-                    <span className="fd-meta-label">Year estd.</span>
-                  </div>
-                  <div className="fd-meta-item projects">
-                    <HomeOutlined className="fd-meta-icon" />
-                    <span className="fd-meta-value">{item.projects}</span>
-                    <span className="fd-meta-label">Projects</span>
-                  </div>
-                </div>
+        {developers.map((dev, index) => (
+          <div className="fd-card" key={index}>
+            <div className="fd-top">
+              <img src={dev.logo} alt={dev.name} className="fd-logo" />
+              <div>
+                <h4>{dev.name}</h4>
+                <p className="fd-role">Real Estate Developer</p>
               </div>
             </div>
 
-            {/* Description */}
-            <p className="fd-desc">{item.desc}</p>
+            <p className="fd-description">{dev.description}</p>
 
-            {/* Rating & Tags */}
-            <div className="fd-rating-tags">
-              <div className="fd-rating">
-                <StarFilled style={{ color: '#FFD700' }} />
-                <span className="fd-rating-value">{item.rating}</span>
-              </div>
-              <div className="fd-tags">
-                {item.tags.map((tag, idx) => (
-                  <Tag key={idx} className="fd-tag">{tag}</Tag>
-                ))}
-              </div>
-            </div>
-
-            {/* Project Image */}
-            <div className="fd-image-container">
-              <div className="fd-image">
-                <img src={item.projectImg} alt="project" />
-                <div className="fd-image-overlay"></div>
-                <div className="fd-image-content">
-                  <div className="fd-project-name">{item.projectName}</div>
-                  <div className="fd-project-location">
-                    <EnvironmentOutlined />
-                    <span>{item.location}</span>
-                  </div>
-                  <div className="fd-project-price">{item.price}</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Button */}
-            <Button 
-              type="primary" 
-              block 
-              className="fd-contact-btn"
-              icon={<PhoneOutlined />}
+            <div
+              className="fd-project-image"
+              style={{ backgroundImage: `url(${dev.projectImage})` }}
             >
-              Contact Developer
-            </Button>
-          </Card>
+              <div className="fd-overlay">
+                <h3>{dev.projectName}</h3>
+                <p>{dev.location}</p>
+              </div>
+            </div>
+
+            <button className="fd-btn">
+              View Projects <ArrowRightOutlined />
+            </button>
+          </div>
         ))}
       </div>
     </div>

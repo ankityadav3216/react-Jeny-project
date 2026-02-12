@@ -9,7 +9,7 @@ const Infobar = () => {
       <Alert
         message="🔥 Special Offer: Get 20% off on all products! | 📧 Contact: info@example.com"
         type="info"
-        showIcon
+        showIcon={false}
         closable
       />
     </div>

@@ -1,29 +1,27 @@
 .reels-section {
-  padding: 24px 16px;
+  padding: 20px 0;
   background: #ffffff;
-  max-width: 1200px;
-  margin: 0px auto;
-  margin-top:-30px; 
+  width: 100%;
 }
 
 /* HEADER */
 .reels-heading-container {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .reels-logo {
-  font-size: 26px;
+  font-size: 24px;
   color: #ff0000;
   background: #fff;
-  padding: 8px;
+  padding: 6px;
   border-radius: 50%;
 }
 
 .reels-heading {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   margin: 0;
 }
@@ -33,13 +31,18 @@
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding: 12px 0;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.reels-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 /* CARD */
 .reel-card {
-  min-width: 200px;
-  max-width: 200px;
+  flex: 0 0 auto;
+  width: 200px;
   border-radius: 16px !important;
   overflow: hidden;
   border: none !important;
@@ -47,10 +50,11 @@
   background: transparent !important;
 }
 
-/* VIDEO PREVIEW */
+/* 9:16 Aspect Ratio */
 .reel-thumbnail {
   position: relative;
-  height: 320px;
+  width: 100%;
+  aspect-ratio: 9 / 16;
   background: #000;
   border-radius: 16px;
   overflow: hidden;
@@ -61,7 +65,7 @@
   width: 100%;
   height: 100%;
   border: none;
-  pointer-events: none; /* click card pe hi ho */
+  pointer-events: none;
 }
 
 /* PLAY ICON */
@@ -71,34 +75,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  cursor: pointer;
 }
 
 .play-icon {
-  font-size: 56px;
+  font-size: 50px;
   color: #fff;
   background: rgba(255, 0, 0, 0.9);
   border-radius: 50%;
-  padding: 12px;
-  cursor: pointer;
+  padding: 10px;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .reel-card {
+    width: 180px;
+  }
+}
+
 @media (max-width: 768px) {
   .reel-card {
-    min-width: 180px;
+    width: 160px;
   }
-  .reel-thumbnail {
-    height: 280px;
+
+  .reels-heading {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .reel-card {
-    min-width: 160px;
+    width: 140px;
   }
-  .reel-thumbnail {
-    height: 240px;
+
+  .reels-heading {
+    font-size: 16px;
+  }
+
+  .play-icon {
+    font-size: 40px;
+    padding: 8px;
   }
 }

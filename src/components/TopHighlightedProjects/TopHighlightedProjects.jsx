@@ -1,92 +1,91 @@
-import React, { useRef } from "react";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import React from "react";
 import "./TopHighlightedProjects.css";
 
 const projects = [
   {
-    title: "Miliarium",
-    by: "Mktd. by EESHANYA INFRAA",
-    bhk: "3, 4 BHK Apartments",
-    location: "Patil, West Hyderabad, Hyderabad",
-    price: "₹1.07 Cr - 1.99 Cr",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+    id: 1,
+    title: "Luxury Sky Villas",
+    location: "Gurgaon, Sector 54",
+    type: "3 & 4 BHK Apartments",
+    price: "₹ 2.4 Cr onwards",
+    image:
+      "https://tse1.mm.bing.net/th/id/OIP.WWi6nvMA2Mr1L6xAzxgezwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
   },
   {
-    title: "Sujay Global Elara",
-    by: "by Sujay Global Homes LLP",
-    bhk: "3 BHK Apartment",
-    location: "Tellapur, West Hyderabad, Hyderabad",
-    price: "₹1.39 Cr - 1.53 Cr",
-    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+    id: 2,
+    title: "Green Valley Residency",
+    location: "Noida Extension",
+    type: "2 & 3 BHK Homes",
+    price: "₹ 78 Lacs onwards",
+    image:
+      "https://www.re-thinkingthefuture.com/wp-content/uploads/2020/02/A618-The-marvellous-Bohra-Homes-of-the-understated-city-of-Sidhpur-in-Gujarat.jpg",
   },
   {
+    id: 3,
+    title: "Elite Business Park",
+    location: "Bangalore, Whitefield",
+    type: "Commercial Spaces",
+    price: "₹ 1.1 Cr onwards",
+    image:
+      "https://www.adotrip.com/public/images/areas/615d6adae8850-Siidhpur.jpg",
+  },
+  {
+    id: 4,
+    title: "Palm Heights",
+    location: "Mumbai, Andheri",
+    type: "Luxury Apartments",
+    price: "₹ 3.2 Cr onwards",
+    image:
+      "https://i.pinimg.com/736x/61/4f/6f/614f6f05afd8b5ad9b673d0f883f6018.jpg",
+  },
+  {
+    id: 5,
+    title: "Sunshine Residency",
+    location: "Hyderabad, Gachibowli",
+    type: "Premium Villas",
+    price: "₹ 1.8 Cr onwards",
+    image:
+      "https://i.pinimg.com/736x/be/dd/05/bedd054f18b549be7377aec2cf9b55a0.jpg",
+  },
+  {
+    id: 6,
     title: "Urban Heights",
-    by: "by Urban Infra",
-    bhk: "2, 3 BHK Apartments",
-    location: "Kondapur, Hyderabad",
-    price: "₹95 L - 1.45 Cr",
-    image: "https://images.unsplash.com/photo-1592595896616-c37162298647",
-  },
-  {
-    title: "Skyline Grande",
-    by: "by Skyline Builders",
-    bhk: "3 BHK Apartments",
-    location: "Gachibowli, Hyderabad",
-    price: "₹1.25 Cr - 1.75 Cr",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    location: "Pune, Hinjewadi",
+    type: "Modern Apartments",
+    price: "₹ 95 Lacs onwards",
+    image:
+      "https://tse4.mm.bing.net/th/id/OIP.lYqVYM0FflUnQ4AK-ARXxQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
   },
 ];
 
 const TopHighlightedProjects = () => {
-  const scrollRef = useRef(null);
-
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({
-      left: -500,
-      behavior: "smooth",
-    });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({
-      left: 500,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div className="thp-wrapper">
-      <h2 className="thp-title">Top highlighted projects</h2>
-      <p className="thp-subtitle">Noteworthy projects to watch</p>
-
-      <div className="thp-scroll">
-        {/* LEFT ARROW */}
-        <div className="thp-arrow left" onClick={scrollLeft}>
-          <LeftOutlined />
-        </div>
-
-        {/* RIGHT ARROW */}
-        <div className="thp-arrow right" onClick={scrollRight}>
-          <RightOutlined />
-        </div>
-
-        <div className="thp-scroll-track" ref={scrollRef}>
-          {projects.map((item, index) => (
-            <div className="thp-card" key={index}>
-              <img src={item.image} alt={item.title} />
-
-              <div className="thp-overlay">
-                <h3>{item.title}</h3>
-                <span className="price">{item.price}</span>
-                <p className="by">{item.by}</p>
-                <p>{item.bhk}</p>
-                <p className="location">{item.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <section className="top-projects">
+      <div className="section-header">
+        <h2>Top Highlighted Projects</h2>
+        <div className="underline" />
       </div>
-    </div>
+
+      <div className="projects-scroll">
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="project-card"
+            style={{ backgroundImage: `url(${project.image})` }}
+          >
+            {/* Price separate */}
+            <div className="price-tag">{project.price}</div>
+
+            {/* Overlay Details */}
+            <div className="overlay">
+              <h3>{project.title}</h3>
+              <p className="location">{project.location}</p>
+              <p className="type">{project.type}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

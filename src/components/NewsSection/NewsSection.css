@@ -5,8 +5,7 @@
   width: 100%;
   padding: 40px 20px;
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  
 }
 
 /* ===============================
@@ -156,23 +155,89 @@
 /* ===============================
    Responsive
 ================================ */
-@media (max-width: 1024px) {
+/* =====================================
+   Extra Small Devices (360px)
+===================================== */
+@media (max-width: 360px) {
+  .news-section {
+    padding: 20px 10px;
+  }
+
   .news-section-card {
-    min-width: 250px;
+    min-width: 180px;
+  }
+
+  .news-section-card .ant-card-cover img {
+    height: 130px;
   }
 
   .news-section-header h2 {
-    font-size: 24px;
+    font-size: 18px;
+  }
+
+  .news-section-header .line {
+    width: 40px;
+    height: 2px;
+  }
+
+  .news-desc {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+
+  .author {
+    font-size: 11px;
+  }
+
+  .date {
+    font-size: 10px;
   }
 }
 
+/* =====================================
+   Small Devices (480px)
+===================================== */
+@media (max-width: 480px) {
+  .news-section {
+    padding: 25px 12px;
+  }
+
+  .news-section-card {
+    min-width: 200px;
+  }
+
+  .news-section-card .ant-card-cover img {
+    height: 140px;
+  }
+
+  .news-section-header h2 {
+    font-size: 20px;
+  }
+
+  .news-section-header .line {
+    width: 50px;
+  }
+
+  .news-desc {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* =====================================
+   Medium Devices (768px - Tablet)
+===================================== */
 @media (max-width: 768px) {
   .news-section {
     padding: 30px 15px;
   }
 
   .news-section-card {
-    min-width: 220px; /* smaller cards for mobile */
+    min-width: 230px;
+  }
+
+  .news-section-card .ant-card-cover img {
+    height: 150px;
   }
 
   .news-section-header h2 {
@@ -184,20 +249,15 @@
   }
 }
 
-@media (max-width: 480px) {
-  .news-section {
-    padding: 25px 10px;
-  }
-
+/* =====================================
+   Small Laptop (1024px)
+===================================== */
+@media (max-width: 1024px) {
   .news-section-card {
-    min-width: 200px;
+    min-width: 250px;
   }
 
   .news-section-header h2 {
-    font-size: 20px;
-  }
-
-  .news-section-header .line {
-    width: 50px;
+    font-size: 24px;
   }
 }

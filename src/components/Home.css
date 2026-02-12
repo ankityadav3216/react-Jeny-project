@@ -1,11 +1,11 @@
 /* ================= GLOBAL SPACING CONTROL ================= */
 
-/* 🔥 Yaha se control karo section ke beech ka gap */
 :root {
-  --section-gap: 60px;        /* Normal gap */
-  --section-gap-mobile: 40px; /* Mobile gap */
-  --first-section-gap: 40px;  /* Hero ke baad ka gap */
+  --section-gap: 18px;        /* Desktop gap (very tight) */
+  --section-gap-mobile: 14px; /* Mobile gap */
+  --first-section-gap: 15px;
 }
+
 
 .home-page {
   width: 100%;
@@ -19,11 +19,6 @@
   margin: 0;
   padding: 0;
 }
-/* 🔥 Special tight spacing for selected sections */
-.tight-section + .tight-section {
-  margin-top: -50px !important;   /* Yaha se control karo */
-}
-
 
 /* All other sections */
 .container {
@@ -42,6 +37,11 @@
   margin-top: var(--section-gap);
 }
 
+/* 🔥 REMOVE negative margin (problem creator) */
+.tight-section + .tight-section {
+  margin-top: var(--section-gap);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .container {
@@ -57,4 +57,15 @@
   .container + .container {
     margin-top: var(--section-gap-mobile);
   }
+
+  /* 🔥 Hero ke baad ke 5 sections ke liye tight spacing */
+.compact-section + .compact-section {
+  margin-top: 1px !important;   /* Bahut tight gap */
+}
+
+/* Hero ke baad first compact section */
+.full-width + .compact-section {
+  margin-top: 1px !important;
+}
+
 }

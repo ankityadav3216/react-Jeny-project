@@ -17,14 +17,15 @@
   gap: 25px;
 }
 
+/* Card */
 .hservice-card {
   background: #ffffff;
   border-radius: 16px;
   padding: 25px;
   border: 1px solid rgb(239, 235, 235);
   display: flex;
-  align-items: center; /* center vertically */
-  justify-content: space-between; /* left content, right icon */
+  align-items: center;        /* SAME */
+  justify-content: space-between; /* SAME */
   gap: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -37,7 +38,7 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Icon Section - Right Side */
+/* Icon Right Side */
 .hservice-icon {
   min-width: 60px;
   min-height: 60px;
@@ -54,7 +55,11 @@
   height: 35px;
 }
 
-/* Content Section - Left Side */
+/* Content Left */
+.hservice-content {
+  flex: 1;
+}
+
 .hservice-content h3 {
   font-size: 18px;
   font-weight: 600;
@@ -92,28 +97,28 @@
   }
 }
 
-/* Responsive */
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablet */
 @media (max-width: 1024px) {
   .hservices-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Mobile - ONE BELOW ONE but SAME CARD LAYOUT */
 @media (max-width: 768px) {
-  .hservices-grid {
-    grid-template-columns: 1fr;
-  }
-
   .hservices-section {
     padding: 60px 20px;
   }
 
-  .hservice-card {
-    flex-direction: column;
-    align-items: flex-start;
+  .hservices-grid {
+    grid-template-columns: 1fr;   /* 🔥 ONE COLUMN */
   }
 
-  .hservice-icon {
-    margin-top: 15px;
+  /* IMPORTANT: no flex-direction change */
+  .hservice-card {
+    padding: 22px;
+    gap: 20px;
   }
 }

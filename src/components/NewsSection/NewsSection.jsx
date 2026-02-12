@@ -9,7 +9,7 @@ const NewsSection = () => {
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&h=250&q=80",
+        "https://tse3.mm.bing.net/th/id/OIP.g7-cHf8NnpF6I0w84ESbHgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
       title: "Increasing popularity of villas in Chennai west",
       description:
         "We examine the factors that have led to the growth of the real estate market in the western suburbs of Chennai.",
@@ -20,7 +20,7 @@ const NewsSection = () => {
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=400&h=250&q=80",
+        "https://tse1.mm.bing.net/th/id/OIP.3OfjpfzEFrfwla_e4NA0twHaEK?w=648&h=365&rs=1&pid=ImgDetMain&o=7&rm=3",
       title: "Cost of living: Chennai vs Bangalore",
       description:
         "While Chennai may be relatively affordable compared to Bangalore, lifestyle choices matter.",
@@ -31,7 +31,7 @@ const NewsSection = () => {
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=400&h=250&q=80",
+        "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c1fd/live/6e1bb430-b24d-11ef-bba1-a334b209aa1a.jpg",
       title: "Things to check before buying a property",
       description:
         "Professionals recommend checking legal documents, builder reputation and location.",
@@ -42,7 +42,7 @@ const NewsSection = () => {
     {
       id: 4,
       image:
-        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&h=250&q=80",
+        "https://e3.365dm.com/16/07/768x432/cegrab-20130913-135709-317-2_3638475.jpg?20160706023947",
       title: "RERA impact on real estate transparency",
       description:
         "How RERA transformed real estate with accountability and consumer protection.",

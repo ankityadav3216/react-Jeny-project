@@ -27,9 +27,7 @@ const PropertyCategories = () => {
       <div className="category-wrapper">
         {categories.map((item) => (
           <Card key={item.id} hoverable className="category-card">
-            <div className="icon-wrapper">
-              {item.icon}
-            </div>
+            <div className="icon-wrapper">{item.icon}</div>
             <p className="category-title">{item.title}</p>
           </Card>
         ))}

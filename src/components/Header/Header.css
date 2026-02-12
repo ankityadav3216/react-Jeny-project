@@ -1,6 +1,6 @@
 /* ================= HEADER BASE ================= */
 .main-header {
-  background: #ffffff; /* white background */
+  background: #ffffff;
   height: 64px;
   position: fixed;
   width: 100%;
@@ -16,72 +16,62 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  gap: 20px;
 }
 
 /* ================= LEFT ================= */
 .left-section {
-  display: flex;
-  align-items: center;
+  flex-shrink: 0;
 }
 
 .header-logo {
-  color: #000; /* logo black */
+  color: #000;
   font-size: 26px;
   font-weight: 700;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.header-logo:hover {
-  color: #333;
+  white-space: nowrap;
 }
 
 /* ================= CENTER MENU ================= */
 .center-menu-wrapper {
+  flex: 1;
+  overflow-x: auto;   /* 🔥 allow scroll instead of hide */
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex: 1 1 auto; /* allow shrinking */
-  min-width: 300px; /* prevent collapse on zoom */
-  overflow-x: auto; /* horizontal scroll if too small */
+  scrollbar-width: none;
+}
+
+.center-menu-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .desktop-menu {
   background: transparent !important;
   border-bottom: none !important;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap; /* prevent items from wrapping */
-  min-width: 0; /* prevent collapsing on zoom */
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  min-width: max-content;   /* 🔥 prevents shrink */
 }
 
 .desktop-menu .ant-menu-item {
-  color: #000 !important; /* menu items black */
+  white-space: nowrap;
   font-size: 15px;
-  font-weight: 500;
-  padding: 0 12px;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  white-space: nowrap; /* prevent breaking into new line */
+  padding: 0 14px;
+  color: #000 !important;
 }
 
 .desktop-menu .ant-menu-item:hover {
-  color: #444 !important; /* hover dark gray */
+  color: #444 !important;
 }
 
+/* Post Property */
 .post-property-btn {
-  background-color: #ffffff;
-  color: #000 !important;
+  background-color: #000000;
+  color: #ffffff !important;
   border-radius: 20px;
   padding: 0 12px !important;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #000000;
   height: 32px;
-  cursor: pointer;
 }
 
 .post-property-btn:hover {
@@ -102,7 +92,8 @@
 .right-section {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .reels-btn,
@@ -115,18 +106,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.reels-btn:hover,
-.icon-circle-btn:hover,
-.pill-btn:hover {
-  background-color: #222 !important;
-  color: #fff !important;
-}
-
-/* BUTTON SIZES */
 .reels-btn {
   height: 34px;
   padding: 0 16px;
@@ -145,14 +126,89 @@
   align-items: center;
   gap: 6px;
 }
+/* ================= MOBILE RESPONSIVE ================= */
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .desktop-menu {
+  .center-menu-wrapper {
+    display: none; /* hide desktop menu */
+  }
+}
+
+/* Tablet */
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  /* Header padding */
+  .header-container {
+    padding: 0 12px;
+  }
+
+  /* Logo smaller */
+  .header-logo {
+    font-size: 20px;
+  }
+
+  /* Hide desktop center menu */
+  .center-menu-wrapper {
     display: none !important;
   }
 
+  /* Right section spacing */
+  .right-section {
+    gap: 8px;
+  }
+
+  /* Reels button exact same style but responsive */
+  .reels-btn {
+    height: 32px;
+    padding: 0 14px;
+    font-size: 14px;
+    border-radius: 18px;
+  }
+
+  /* Menu & Profile icons */
+  .pill-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+  }
+
+  .user-pill {
+    gap: 6px;
+  }
+}
+
+
+/* Mobile Small Devices */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 10px;
+  }
+
   .header-logo {
-    font-size: 22px;
+    font-size: 18px;
+  }
+
+  /* Reels text remove only icon show */
+  .reels-btn {
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    font-size: 0;
+  }
+
+  .reels-btn .anticon {
+    font-size: 18px;
+  }
+
+  .icon-circle-btn,
+  .pill-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .right-section {
+    gap: 6px;
   }
 }

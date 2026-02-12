@@ -142,3 +142,195 @@
   background: #ddd;
   border-radius: 12px;
 }
+/* ================= 🔥 MOBILE RESPONSIVE - SIRF YEH ADD KAR ================= */
+@media (max-width: 768px) {
+  .highlight-section {
+    height: auto;
+    padding: 10px 16px;
+    max-width: 100%;
+  }
+
+  .highlight-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .count {
+    align-self: flex-end;
+  }
+
+  /* Horizontal scroll */
+  .card-scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Card - fixed width, height auto */
+  .highlight-card {
+    flex: 0 0 300px;
+    min-width: 300px;
+    width: 300px;
+    height: auto !important;
+    padding: 0 !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+
+  .highlight-card .ant-card-body {
+    padding: 0 !important;
+  }
+
+  /* Row/Col vertical stack */
+  .highlight-card .ant-row {
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+
+  .highlight-card .ant-col {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Image - full width */
+  .main-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px 20px 12px 12px;
+    display: block;
+  }
+
+  /* Content - no fixed height */
+  .content-wrapper {
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  /* Title & Price - column */
+  .title-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 2px !important;
+  }
+
+  .title-price h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+  }
+
+  /* Location - bina icon */
+  .location {
+    margin: 4px 0 12px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .location .anticon {
+    display: none;
+  }
+
+  /* Info grid - 2 columns */
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 10px;
+  }
+
+  .info-grid div .ant-typography {
+    font-size: 12px;
+    color: #888;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 2px;
+  }
+
+  /* Developer box - hide */
+  .developer-box {
+    display: none !important;
+  }
+
+  /* Fade shadow mobile pe nahi */
+  .fade-left::before {
+    display: none;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .highlight-card {
+    flex: 0 0 260px;
+    min-width: 260px;
+    width: 260px;
+  }
+
+  .main-img {
+    height: 160px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .title-price h3 {
+    font-size: 15px;
+  }
+
+  .location {
+    font-size: 13px;
+  }
+
+  .info-grid {
+    gap: 12px 8px;
+  }
+
+  .value {
+    font-size: 13px;
+  }
+}
+
+/* Extra Small (max-width: 360px) */
+@media (max-width: 360px) {
+  .highlight-card {
+    flex: 0 0 240px;
+    min-width: 240px;
+    width: 240px;
+  }
+
+  .main-img {
+    height: 140px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .title-price h3 {
+    font-size: 14px;
+  }
+}
