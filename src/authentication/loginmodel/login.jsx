@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input, Button, Divider } from "antd";
 import {
   GoogleOutlined,
@@ -6,16 +6,60 @@ import {
   AppleFilled,
   ArrowRightOutlined,
 } from "@ant-design/icons";
+
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useLoginUserMutation } from "../../redux/api";
+import { setLoginID } from "../../redux/authSlice";
+
 import "./Login.css";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [loginUser, { isLoading }] = useLoginUserMutation();
+  const [values, setValues] = useState({ Username: "", password: "" });
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = async () => {
+    if (!values.Username || !values.password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    try {
+      // ✅ Convert frontend keys to backend expected keys
+      const result = await loginUser({
+        username: values.Username,
+        password: values.password,
+      }).unwrap();
+
+      // ✅ Dispatch to Redux store
+      dispatch(
+        setLoginID({
+          token: result.ResponseData.Token,
+          userName: result.ResponseData.Username,
+        })
+      );
+
+      // ✅ Redirect after login
+      navigate("/");
+    } catch (err) {
+      console.error("Login error:", err);
+      alert("Login failed. Please check credentials.");
+    }
+  };
+
   return (
     <div className="page">
 
       {/* HEADER */}
       <header className="login-header">
         <div className="logo">PrimeAcres.</div>
-
         <div className="header-right">
           <span>En</span>
           <span>Sign In</span>
@@ -25,8 +69,6 @@ const Login = () => {
 
       {/* CENTER WRAPPER */}
       <div className="center-wrapper">
-
-        {/* 🔥 MAIN CONTAINER */}
         <div className="main-container">
 
           {/* CENTER TEXT */}
@@ -47,20 +89,31 @@ const Login = () => {
 
           {/* FORM + SOCIAL */}
           <div className="login-box-wrapper">
+
             {/* LEFT FORM */}
             <div className="login-form">
               <Input
                 size="middle"
                 placeholder="Phone / Email / ArtistID"
                 className="input"
+                name="Username"
+                value={values.Username}
+                onChange={handleChange}
               />
               <Input.Password
                 size="middle"
                 placeholder="Passcode"
                 className="input"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
               />
 
-              <Button className="login-btn">
+              <Button
+                className="login-btn"
+                onClick={handleLogin}
+                loading={isLoading}
+              >
                 Login to Your Account <ArrowRightOutlined />
               </Button>
             </div>
@@ -86,6 +139,7 @@ const Login = () => {
           </div>
 
           <div className="forgot">Forgot Passcode?</div>
+
         </div>
       </div>
 

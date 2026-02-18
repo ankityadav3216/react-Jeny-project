@@ -86,7 +86,6 @@
 }
 
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 1024px) {
   .reel-card {
     width: 180px;

@@ -1,0 +1,204 @@
+.main-wrapper {
+  width: 100%;
+  padding: 70px 0;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* CARD */
+.property-layout {
+  position: relative;
+  width: 1100px;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.image-container {
+  width: 350px;
+  height: 270px;
+  border-radius: 42px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* DETAILS BOX */
+.details-container {
+  position: absolute;
+  left: 260px;
+  width: 790px;
+  height: 215px;
+  background: #ffffff;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 55px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* COLUMN */
+.details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 220px;
+}
+
+/* LAST COLUMN */
+.last-col {
+  justify-content: space-between;
+}
+
+/* DIVIDER */
+.divider {
+  width: 1px;
+  height: 70%;
+  background: #e8e8e8;
+  flex-shrink: 0;
+}
+
+/* SMALL TEXT */
+.small-text {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: #999;
+  margin: 0;
+  line-height: 1;
+}
+
+/* TITLE LOCKED */
+.property-title {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  min-height: 44px;
+  max-height: 44px;
+  overflow: hidden;
+}
+
+/* PRICE */
+.price-text {
+  font-size: 18px !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* HOST */
+.meet-host {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.2;
+}
+
+/* INFO ITEMS */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #333;
+  line-height: 1.2;
+  white-space: nowrap;       /* prevent wrap */
+}
+
+/* LAST COLUMN TEXT */
+.details-col Text {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* BUTTON */
+.book-btn {
+  align-self: flex-end;
+  background: #000;
+  color: #fff;
+  border: none;
+  height: 40px;
+  width: 140px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.book-btn:hover {
+  background: #222;
+}
+/* CLICKABLE TEXT */
+.clickable {
+  cursor: pointer;
+  color: #1677ff;
+  margin-top: 10px;
+}
+
+/* DESCRIPTION CONTAINER */
+.description-container {
+  width: 1100px;
+  margin: -40px auto 30px auto;
+  display: flex;
+  justify-content: center;
+  animation: slideDown 0.4s ease;
+}
+
+/* TRAPEZIUM STYLE BOX */
+.description-box {
+  width: 850px;
+  background: #ffffff;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* Decorative trapezium sides */
+.description-box::before,
+.description-box::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  width: 120px;
+  height: 60px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.description-box::before {
+  left: -60px;
+  transform: skewY(20deg);
+  border-radius: 10px;
+}
+
+.description-box::after {
+  right: -60px;
+  transform: skewY(-20deg);
+  border-radius: 10px;
+}
+
+/* ANIMATION */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

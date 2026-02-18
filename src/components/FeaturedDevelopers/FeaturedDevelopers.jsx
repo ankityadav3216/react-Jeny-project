@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./FeaturedDevelopers.css";
 import { ArrowRightOutlined, BuildOutlined } from "@ant-design/icons";
 
@@ -66,6 +66,34 @@ const developers = [
 ];
 
 const FeaturedDevelopers = () => {
+  const containerRef = useRef(null);
+  const [isHover, setIsHover] = useState(false);
+
+  // Auto scroll
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let scrollAmount = 0;
+    const scrollStep = 1;
+    let interval;
+
+    const startScroll = () => {
+      interval = setInterval(() => {
+        if (!isHover) {
+          scrollAmount += scrollStep;
+          if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+            scrollAmount = 0; // loop
+          }
+          container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, 20);
+    };
+
+    startScroll();
+    return () => clearInterval(interval);
+  }, [isHover]);
+
   return (
     <div className="featured-developers">
       <div className="fd-header">
@@ -75,7 +103,12 @@ const FeaturedDevelopers = () => {
         </h2>
       </div>
 
-      <div className="fd-scroll">
+      <div
+        className="fd-scroll"
+        ref={containerRef}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
         {developers.map((dev, index) => (
           <div className="fd-card" key={index}>
             <div className="fd-top">

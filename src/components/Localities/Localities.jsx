@@ -19,34 +19,36 @@ const Localities = () => {
   const wrapperRef = useRef(null);
   const [cardStyles, setCardStyles] = useState({});
 
-  const scrollToCard = (index) => {
+  // ----------------- AUTO SCROLL -----------------
+  useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
-    const card = wrapper.children[index];
-    if (!card) return;
 
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const cardRect = card.getBoundingClientRect();
+    let scrollAmount = 0;
+    const scrollStep = 1; // pixels per interval
 
-    const relativeLeft = cardRect.left - wrapperRect.left;
-    const scrollLeft =
-      wrapper.scrollLeft +
-      relativeLeft +
-      card.offsetWidth / 2 -
-      wrapper.clientWidth / 2;
+    const interval = setInterval(() => {
+      if (wrapper) {
+        scrollAmount += scrollStep;
+        if (scrollAmount >= wrapper.scrollWidth) {
+          scrollAmount = 0; // loop continuously
+        }
+        wrapper.scrollTo({ left: scrollAmount, behavior: "smooth" });
+      }
+    }, 20);
 
-    wrapper.scrollTo({ left: scrollLeft, behavior: "smooth" });
-  };
+    return () => clearInterval(interval);
+  }, []);
 
+  // ----------------- ROTATION & SCALE -----------------
   const updateTransforms = () => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
     const isMobile = window.innerWidth <= 768;
-
     const cards = wrapper.children;
     const wrapperRect = wrapper.getBoundingClientRect();
-    const centerX = wrapperRect.width / 2;
+    const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
 
     const newStyles = {};
 
@@ -54,13 +56,11 @@ const Localities = () => {
       const card = cards[i];
       const cardRect = card.getBoundingClientRect();
       const cardCenterX = cardRect.left + cardRect.width / 2;
-      const offsetX = cardCenterX - (wrapperRect.left + centerX);
+      const offsetX = cardCenterX - wrapperCenter;
 
-      const normalizedOffset = Math.max(Math.min(offsetX / centerX, 1), -1);
-
-      // Mobile pe rotation kam rakha
+      const normalizedOffset = Math.max(Math.min(offsetX / (wrapperRect.width / 2), 1), -1);
       const rotationY = normalizedOffset * (isMobile ? 15 : 30);
-      const scale = 1 - Math.min(Math.abs(normalizedOffset) * 0.15, 0.15);
+      const scale = 1 - Math.min(Math.abs(normalizedOffset) * 0.1, 0.1);
 
       newStyles[i] = {
         transform: `perspective(1000px) rotateY(${rotationY}deg) scale(${scale})`,
@@ -76,31 +76,21 @@ const Localities = () => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const containerWidth = wrapper.clientWidth;
-    const cardWidth = wrapper.children[0]?.offsetWidth || 140;
-    const padding = Math.max((containerWidth - cardWidth) / 2, 0);
-
-    wrapper.style.paddingLeft = `${padding}px`;
-    wrapper.style.paddingRight = `${padding}px`;
+    // ✅ Remove center padding, full-width cards
+    wrapper.style.paddingLeft = "0px";
+    wrapper.style.paddingRight = "0px";
 
     updateTransforms();
   };
 
   useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-
     adjustPadding();
-
-    setTimeout(() => {
-      scrollToCard(4);
-    }, 100);
-
-    wrapper.addEventListener("scroll", updateTransforms);
+    const wrapper = wrapperRef.current;
+    wrapper?.addEventListener("scroll", updateTransforms);
     window.addEventListener("resize", adjustPadding);
 
     return () => {
-      wrapper.removeEventListener("scroll", updateTransforms);
+      wrapper?.removeEventListener("scroll", updateTransforms);
       window.removeEventListener("resize", adjustPadding);
     };
   }, []);

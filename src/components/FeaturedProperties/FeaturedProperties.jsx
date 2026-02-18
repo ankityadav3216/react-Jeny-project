@@ -80,32 +80,32 @@ const properties = [
 const FeaturedProperties = () => {
   const scrollRef = useRef(null);
   const [isHovering, setIsHovering] = useState(false);
-  // Duplicate cards 3 times for smooth infinite scroll
+
+  // Duplicate cards for smooth infinite scroll
   const allProperties = [...properties, ...properties, ...properties];
 
   useEffect(() => {
-    let interval;
-    if (!isHovering) {
-      interval = setInterval(() => {
-        if (scrollRef.current) {
-          const container = scrollRef.current;
-          const cardWidth = 330; // card width (300px) + gap (30px)
-          const maxScroll = container.scrollWidth - container.clientWidth;
+    const container = scrollRef.current;
+    if (!container) return;
 
-          // Smoothly scroll one card at a time
-          let nextScroll = container.scrollLeft + cardWidth;
-          if (nextScroll >= maxScroll) {
-            // Reset to start without animation
-            container.scrollLeft = 0;
-          } else {
-            container.scrollTo({
-              left: nextScroll,
-              behavior: "smooth",
-            });
+    let scrollPos = 0;
+    const cardWidth = 330; // card width + gap
+    let interval;
+
+    const startScroll = () => {
+      interval = setInterval(() => {
+        if (!isHovering && container) {
+          scrollPos += 1; // scroll 1px per step
+          if (scrollPos >= container.scrollWidth / 3) {
+            scrollPos = 0; // reset to start for infinite loop
           }
+          container.scrollTo({ left: scrollPos, behavior: "smooth" });
         }
-      }, 2500); // scroll every 2.5 seconds
-    }
+      }, 20); // speed of scroll
+    };
+
+    startScroll();
+
     return () => clearInterval(interval);
   }, [isHovering]);
 

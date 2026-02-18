@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./RecommendedSellers.css";
 
 const sellers = [
@@ -62,25 +62,31 @@ const sellers = [
 
 const RecommendedSellers = () => {
   const containerRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
 
-  // Auto scroll
+  // Duplicate sellers for smooth infinite scroll
+  const allSellers = [...sellers, ...sellers, ...sellers];
+
   useEffect(() => {
     const container = containerRef.current;
-    let scrollAmount = 0;
+    if (!container) return;
+
+    let scrollPos = 0;
     const scrollStep = 1;
+    const intervalSpeed = 20;
 
     const interval = setInterval(() => {
-      if (container) {
-        scrollAmount += scrollStep;
-        if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-          scrollAmount = 0;
+      if (!isHovering && container) {
+        scrollPos += scrollStep;
+        if (scrollPos >= container.scrollWidth / 3) {
+          scrollPos = 0;
         }
-        container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        container.scrollTo({ left: scrollPos, behavior: "smooth" });
       }
-    }, 20);
+    }, intervalSpeed);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovering]);
 
   const scroll = (direction) => {
     const container = containerRef.current;
@@ -95,15 +101,27 @@ const RecommendedSellers = () => {
   return (
     <div className="recommended-sellers-section">
       <h2>Recommended Sellers</h2>
-      <div className="rs-scroll-btn left" onClick={() => scroll("left")}>
+
+      <div
+        className="rs-scroll-btn left"
+        onClick={() => scroll("left")}
+      >
         &#8592;
       </div>
-      <div className="rs-scroll-btn right" onClick={() => scroll("right")}>
+      <div
+        className="rs-scroll-btn right"
+        onClick={() => scroll("right")}
+      >
         &#8594;
       </div>
 
-      <div className="recommended-sellers-container" ref={containerRef}>
-        {sellers.map((seller, index) => (
+      <div
+        className="recommended-sellers-container"
+        ref={containerRef}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {allSellers.map((seller, index) => (
           <div className="recommended-seller-card" key={index}>
             <div
               className="rs-seller-header"

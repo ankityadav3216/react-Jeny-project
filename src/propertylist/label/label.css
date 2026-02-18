@@ -1,58 +1,79 @@
-/* ===============================
-   LABEL CONTAINER
-   =============================== */
-.label-container {
+.label-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-  background: linear-gradient(135deg, #cee0f2);
-  border-bottom: 1px solid #ddd;
-  background-color: #efefef;
-  /* ❌ sticky removed to prevent header overlap */
-  position: relative;
-  top: auto;
-  z-index: auto;
-  margin: auto;
+  flex-wrap: nowrap;               /* no wrapping */
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 30px;
+  align-items: center;
+  border:3px solid rgb(245, 245, 245);
+  user-select: none;
+  max-width: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
 }
 
-/* ===============================
-   BUTTONS
-   =============================== */
+.label-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Buttons */
 .label-button {
-  padding: 8px 16px;
-  background-color: #94b8dc;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 20px;
+
+  border-radius: 30px;
   cursor: pointer;
   font-size: 14px;
-  transition: 0.2s;
-  white-space: nowrap; /* prevent line break */
+  font-weight: 500;
+  color: #333;
+  background: transparent;
+
+  /* No truncation - force full text visibility */
+  white-space: nowrap;
+  overflow: visible;      /* important - no clipping */
+  text-overflow: clip;
+
+  /* Keep vertical size fixed, no jumping */
+  line-height: 22px;      /* lock line height */
+  min-height: 34px;       /* consistent height */
+  user-select: none;
+  border: none;
+  box-shadow: none;
+
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .label-button:hover {
-  background-color: #2b73bb;
-  border-color: #ffffff;
+  color: #fa8c16;
+  background-color: #fff3e0;
 }
 
-/* ===============================
-   MOBILE HORIZONTAL SCROLL
-   =============================== */
-@media (max-width: 768px) {
-  .label-container {
-    flex-wrap: nowrap;               /* horizontal scrolling */
-    overflow-x: auto;                /* scroll if overflow */
-    -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
-    padding: 10px 0;
-  }
+.label-button.active {
+  background-color: #fa8c16;
+  color: white;
+  box-shadow: 0 0 8px rgb(250 140 22 / 0.6);
+}
 
-  /* hide scrollbar nicely */
-  .label-container::-webkit-scrollbar {
-    display: none;
-  }
+/* Star button */
+.label-star-button {
+  color: #fadb14;
+  font-weight: 600;
+}
 
-  .label-container {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
+.label-star-button.active {
+  background-color: #fadb14;
+  color: #333;
+  box-shadow: 0 0 6px rgb(250 219 20 / 0.8);
+}
+
+.label-star-button:hover {
+  color: #d4b106;
 }

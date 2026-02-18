@@ -1,14 +1,12 @@
-/* ================= HIGHLIGHT SECTION ================= */
 .highlight-section {
   width: 100%;
-  max-width: 1300px; /* fixed max width for parent */
+  max-width: 1300px;
   margin: 0 auto;
   padding: 5px 0;
   box-sizing: border-box;
-  height: 500px; /* fixed height */
+  height: 500px;
 }
 
-/* Header */
 .highlight-header {
   display: flex;
   justify-content: space-between;
@@ -46,21 +44,20 @@
 
 /* ================= CARD ================= */
 .highlight-card {
-  flex: 0 0 1000px; /* fixed width */
-  height: 400px; /* fixed height */
+  flex: 0 0 1000px;
+  height: 400px;
   border-radius: 25px !important;
   padding: 10px !important;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   border: 1px solid rgb(223, 222, 222) !important;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 1000px; /* prevent shrinking */
+  min-width: 1000px;
 }
 
-/* Fade left shadow for smooth horizontal scroll */
 .fade-left {
   position: relative;
 }
@@ -80,14 +77,14 @@
 /* ================= IMAGE ================= */
 .main-img {
   width: 100%;
-  height: 330px; /* fixed image height */
+  height: 330px;
   object-fit: cover;
   border-radius: 20px;
 }
 
 /* ================= CONTENT ================= */
 .content-wrapper {
-  height: 330px; /* fixed content height */
+  height: 330px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -126,7 +123,6 @@
   margin-top: 4px;
 }
 
-/* ================= DEVELOPER BOX ================= */
 .developer-box {
   display: flex;
   align-items: center;
@@ -142,7 +138,8 @@
   background: #ddd;
   border-radius: 12px;
 }
-/* ================= 🔥 MOBILE RESPONSIVE - SIRF YEH ADD KAR ================= */
+
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .highlight-section {
     height: auto;
@@ -161,7 +158,6 @@
     align-self: flex-end;
   }
 
-  /* Horizontal scroll */
   .card-scroll {
     display: flex;
     flex-direction: row;
@@ -172,11 +168,6 @@
     scroll-snap-type: x mandatory;
   }
 
-  .card-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Card - fixed width, height auto */
   .highlight-card {
     flex: 0 0 300px;
     min-width: 300px;
@@ -192,7 +183,6 @@
     padding: 0 !important;
   }
 
-  /* Row/Col vertical stack */
   .highlight-card .ant-row {
     flex-direction: column !important;
     margin: 0 !important;
@@ -204,7 +194,6 @@
     padding: 0 !important;
   }
 
-  /* Image - full width */
   .main-img {
     width: 100%;
     height: 180px;
@@ -213,14 +202,12 @@
     display: block;
   }
 
-  /* Content - no fixed height */
   .content-wrapper {
     height: auto;
     padding: 16px;
     gap: 12px;
   }
 
-  /* Title & Price - column */
   .title-price {
     flex-direction: column;
     align-items: flex-start;
@@ -239,7 +226,6 @@
     color: #000;
   }
 
-  /* Location - bina icon */
   .location {
     margin: 4px 0 12px;
     font-size: 14px;
@@ -250,7 +236,6 @@
     display: none;
   }
 
-  /* Info grid - 2 columns */
   .info-grid {
     grid-template-columns: 1fr 1fr;
     gap: 14px 10px;
@@ -270,18 +255,15 @@
     margin-top: 2px;
   }
 
-  /* Developer box - hide */
   .developer-box {
     display: none !important;
   }
 
-  /* Fade shadow mobile pe nahi */
   .fade-left::before {
     display: none;
   }
 }
 
-/* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .highlight-card {
     flex: 0 0 260px;
@@ -314,7 +296,6 @@
   }
 }
 
-/* Extra Small (max-width: 360px) */
 @media (max-width: 360px) {
   .highlight-card {
     flex: 0 0 240px;

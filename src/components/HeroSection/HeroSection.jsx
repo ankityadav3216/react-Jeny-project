@@ -4,6 +4,7 @@ import "./HeroSection.css";
 
 const HeroSection = () => {
   const [selectedCity, setSelectedCity] = useState("Gandhinagar");
+  const [activeTab, setActiveTab] = useState("Buy"); // ✅ Active tab state
 
   const gujaratCities = [
     "Ahmedabad",
@@ -18,17 +19,23 @@ const HeroSection = () => {
     "Navsari"
   ];
 
+  const tabs = ["Buy", "Rent", "Commercial", "Plots/Lands", "PG/Hostel"];
+
   return (
     <section className="hero-section">
       <div className="hero-overlay">
 
-        {/* 🔥 MOBILE TOP TABS */}
+        {/* MOBILE TOP TABS */}
         <div className="mobile-top-tabs">
-          <button className="active">Buy</button>
-          <button>Rent</button>
-          <button>Commercial</button>
-          <button>Plots</button>
-          <button>PG</button>
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              className={activeTab === tab ? "active" : ""}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
 
         {/* TEXT CONTENT */}
@@ -38,7 +45,7 @@ const HeroSection = () => {
           <button className="hero-btn">Explore Now</button>
         </div>
 
-        {/* 🔥 MOBILE CITY SELECT */}
+        {/* MOBILE CITY SELECT */}
         <div className="mobile-city-select">
           <select
             value={selectedCity}
@@ -52,24 +59,25 @@ const HeroSection = () => {
           </select>
         </div>
 
-        {/* 🔥 MOBILE SEARCH INPUT */}
+        {/* MOBILE SEARCH */}
         <div className="mobile-search-box">
-          <input
-            type="text"
-            placeholder="Search Area, Project or Builder"
-          />
+          <input type="text" placeholder="Search Area, Project or Builder" />
           <SearchOutlined className="search-icon" />
         </div>
 
-        {/* DESKTOP SEARCH (Same as before) */}
+        {/* DESKTOP SEARCH */}
         <div className="property-search-wrapper">
 
           <div className="property-tabs">
-            <button className="active">Buy</button>
-            <button>Rent</button>
-            <button>Commercial</button>
-            <button>Plots/Lands</button>
-            <button>PG/Hostel</button>
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={activeTab === tab ? "active" : ""}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
 
           <div className="property-search-bar">

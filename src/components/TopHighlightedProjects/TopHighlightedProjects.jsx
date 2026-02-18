@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./TopHighlightedProjects.css";
 
 const projects = [
@@ -59,6 +59,37 @@ const projects = [
 ];
 
 const TopHighlightedProjects = () => {
+  const scrollRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  // Duplicate projects for smooth infinite scroll
+  const allProjects = [...projects, ...projects, ...projects];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let scrollPos = 0;
+    const intervalSpeed = 20; // ms per scroll step
+    let interval;
+
+    const startScroll = () => {
+      interval = setInterval(() => {
+        if (!isHovering && container) {
+          scrollPos += 1; // scroll 1px per step
+          if (scrollPos >= container.scrollWidth / 3) {
+            scrollPos = 0; // reset for infinite loop
+          }
+          container.scrollTo({ left: scrollPos, behavior: "smooth" });
+        }
+      }, intervalSpeed);
+    };
+
+    startScroll();
+
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
   return (
     <section className="top-projects">
       <div className="section-header">
@@ -66,17 +97,19 @@ const TopHighlightedProjects = () => {
         <div className="underline" />
       </div>
 
-      <div className="projects-scroll">
-        {projects.map((project) => (
+      <div
+        className="projects-scroll"
+        ref={scrollRef}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {allProjects.map((project, index) => (
           <div
-            key={project.id}
+            key={`${project.id}-${index}`}
             className="project-card"
             style={{ backgroundImage: `url(${project.image})` }}
           >
-            {/* Price separate */}
             <div className="price-tag">{project.price}</div>
-
-            {/* Overlay Details */}
             <div className="overlay">
               <h3>{project.title}</h3>
               <p className="location">{project.location}</p>

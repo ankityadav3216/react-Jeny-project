@@ -1,5 +1,6 @@
+// src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import "antd/dist/reset.css";
 
@@ -27,41 +28,40 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#2563eb",        // 🔵 BLUE
+          colorPrimary: "#2563eb",
           colorPrimaryHover: "#1d4ed8",
           colorPrimaryActive: "#1e40af",
           borderRadius: 6,
         },
       }}
     >
-      <Router>
-        {/* Infobar globally har page ke upar */}
-        <Infobar />
+      <Infobar />
 
-        <RouteLoader>
-          <Routes>
-            
-            {/* Pages WITH Layout */}
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/property/:id" element={<PropertyDetail />} />
-            </Route>
+      <RouteLoader>
+        <Routes>
+          
+          {/* Pages WITH Layout */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/property/:id" element={<PropertyDetail />} />
+          </Route>
 
-            {/* Pages WITH OWN Header */}
+          {/* PropertyList with header only */}
+          <Route element={<Layout hideFooter={true} />}>
             <Route path="/buy/:location" element={<PropertyList />} />
+          </Route>
 
-            {/* Pages WITHOUT Header */}
-            <Route path="/emi" element={<EMI />} />
-            <Route path="/pvc" element={<PVC />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/RRG" element={<RRG />} />
-            <Route
-              path="/property-registration"
-              element={<PropertyRegistration />}
-            />
-          </Routes>
-        </RouteLoader>
-      </Router>
+          {/* Pages WITHOUT Layout/Header */}
+          <Route path="/emi" element={<EMI />} />
+          <Route path="/pvc" element={<PVC />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/RRG" element={<RRG />} />
+          <Route
+            path="/property-registration"
+            element={<PropertyRegistration />}
+          />
+        </Routes>
+      </RouteLoader>
     </ConfigProvider>
   );
 }

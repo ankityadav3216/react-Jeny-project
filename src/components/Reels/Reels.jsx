@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Card } from "antd";
 import { PlayCircleOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import "./Reels.css";
@@ -12,22 +12,47 @@ const reelsData = [
   { id: 6, videoUrl: "https://youtube.com/shorts/lhjKS8SJMvE" },
 ];
 
-/* Convert ANY YouTube URL to EMBED */
 const toEmbedUrl = (url) => {
   if (url.includes("/shorts/")) {
     const id = url.split("/shorts/")[1].split("?")[0];
     return `https://www.youtube.com/embed/${id}`;
   }
-
   if (url.includes("watch?v=")) {
     const id = url.split("watch?v=")[1].split("&")[0];
     return `https://www.youtube.com/embed/${id}`;
   }
-
   return url;
 };
 
 const Reels = () => {
+  const containerRef = useRef(null);
+  const [isHover, setIsHover] = useState(false);
+
+  // Auto scroll effect
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let scrollAmount = 0;
+    const scrollStep = 1; // speed
+    let interval;
+
+    const startScroll = () => {
+      interval = setInterval(() => {
+        if (!isHover) {
+          scrollAmount += scrollStep;
+          if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+            scrollAmount = 0; // loop back
+          }
+          container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, 20);
+    };
+
+    startScroll();
+    return () => clearInterval(interval);
+  }, [isHover]);
+
   const openReel = (url) => {
     const embedUrl = toEmbedUrl(url);
     const win = window.open("", "_blank");
@@ -78,7 +103,12 @@ const Reels = () => {
         <h2 className="reels-heading">Watch Reels</h2>
       </div>
 
-      <div className="reels-scroll">
+      <div
+        className="reels-scroll"
+        ref={containerRef}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
         {reelsData.map((reel) => (
           <Card
             key={reel.id}

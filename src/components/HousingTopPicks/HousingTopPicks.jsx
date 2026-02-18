@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Card, Row, Col, Typography } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import "./HousingTopPicks.css";
@@ -42,13 +42,40 @@ const HousingTopPicks = () => {
       developer: "Green Group",
       mainImage:
         "https://tse2.mm.bing.net/th/id/OIP.yTurIxdeps4hEeua02qJIwHaEK?w=1024&h=576&rs=1&pid=ImgDetMain&o=7&rm=3"
-        
     }
   ];
 
+  const containerRef = useRef(null);
+  const [isHover, setIsHover] = useState(false);
+
+  // Auto scroll effect
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let scrollAmount = 0;
+    const scrollStep = 1; // scroll speed
+    let interval;
+
+    const startScroll = () => {
+      interval = setInterval(() => {
+        if (!isHover) {
+          scrollAmount += scrollStep;
+          if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+            scrollAmount = 0; // loop back to start
+          }
+          container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, 20);
+    };
+
+    startScroll();
+
+    return () => clearInterval(interval);
+  }, [isHover]);
+
   return (
     <section className="highlight-section">
-
       <div className="highlight-header">
         <div>
           <Title level={3}>
@@ -63,7 +90,12 @@ const HousingTopPicks = () => {
         </div>
       </div>
 
-      <div className="card-scroll">
+      <div
+        className="card-scroll"
+        ref={containerRef}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
         {properties.map((item, index) => (
           <Card
             key={index}
@@ -71,24 +103,19 @@ const HousingTopPicks = () => {
             bordered={false}
           >
             <Row gutter={40} align="middle">
-
               <Col span={10}>
-                <img
-                  src={item.mainImage}
-                  alt=""
-                  className="main-img"
-                />
+                <img src={item.mainImage} alt="" className="main-img" />
               </Col>
-
               <Col span={14}>
                 <div className="content-wrapper">
-
                   <div className="title-price">
                     <Title level={4} className="title">
                       {item.title}
                     </Title>
-                    <div >
-                      <b><h3>{item.price}</h3></b>                      
+                    <div>
+                      <b>
+                        <h3>{item.price}</h3>
+                      </b>
                     </div>
                   </div>
 
@@ -127,15 +154,12 @@ const HousingTopPicks = () => {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </Col>
-
             </Row>
           </Card>
         ))}
       </div>
-
     </section>
   );
 };

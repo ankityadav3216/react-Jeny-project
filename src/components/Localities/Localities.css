@@ -1,26 +1,24 @@
 .localities-container {
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 10px 0;
   background-color: #ffffff;
 }
 
-/* Scroll Wrapper */
 .cards-wrapper {
   display: flex;
   gap: 15px;
   overflow-x: auto;
-  padding-bottom: 20px;
-  perspective: 1000px;
   scroll-behavior: smooth;
+  perspective: 1000px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .cards-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-/* Card */
 .locality-card {
   width: 160px !important;
   min-width: 160px !important;
@@ -46,13 +44,8 @@
   color: #000;
 }
 
-/* ---------------- MOBILE RESPONSIVE ---------------- */
-
+/* ---------------- MOBILE ---------------- */
 @media (max-width: 768px) {
-  .localities-container {
-    padding: 25px 0;
-  }
-
   .cards-wrapper {
     gap: 12px;
   }

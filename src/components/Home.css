@@ -1,11 +1,13 @@
 /* ================= GLOBAL SPACING CONTROL ================= */
 
 :root {
-  --section-gap: 18px;        /* Desktop gap (very tight) */
-  --section-gap-mobile: 14px; /* Mobile gap */
-  --first-section-gap: 15px;
+  --first-section-gap: -50px;
+  --compact-gap: -6px;
+  --after-dev-gap: -50px;
+  --mobile-gap: -18px;
 }
 
+/* ================= BASE LAYOUT ================= */
 
 .home-page {
   width: 100%;
@@ -13,36 +15,43 @@
   background: #ffffff;
 }
 
-/* Hero full width */
 .full-width {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* All other sections */
 .container {
   width: 92%;
   max-width: 1400px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Hero ke baad wala first section */
-.container:first-of-type {
+/* ================= SPACING LOGIC ================= */
+
+/* Hero ke baad */
+.full-width + .container {
   margin-top: var(--first-section-gap);
 }
 
-/* Section to section spacing */
-.container + .container {
-  margin-top: var(--section-gap);
+/* Compact sections */
+.compact-section + .compact-section {
+  margin-top: var(--compact-gap);
 }
 
-/* 🔥 REMOVE negative margin (problem creator) */
-.tight-section + .tight-section {
-  margin-top: var(--section-gap);
+/* Developer ke baad sections tight */
+.after-developer + .after-developer {
+  margin-top: var(--after-dev-gap);
 }
 
-/* Responsive */
+/* First section after developer */
+.compact-section + .after-developer {
+  margin-top: var(--after-dev-gap);
+}
+
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1200px) {
   .container {
     width: 95%;
@@ -50,22 +59,20 @@
 }
 
 @media (max-width: 768px) {
+
   .container {
     width: 92%;
   }
 
-  .container + .container {
-    margin-top: var(--section-gap-mobile);
+  .compact-section + .compact-section {
+    margin-top: var(--mobile-gap);
   }
 
-  /* 🔥 Hero ke baad ke 5 sections ke liye tight spacing */
-.compact-section + .compact-section {
-  margin-top: 1px !important;   /* Bahut tight gap */
-}
+  .after-developer + .after-developer {
+    margin-top: var(--mobile-gap);
+  }
 
-/* Hero ke baad first compact section */
-.full-width + .compact-section {
-  margin-top: 1px !important;
-}
-
+  .compact-section + .after-developer {
+    margin-top: var(--mobile-gap);
+  }
 }
