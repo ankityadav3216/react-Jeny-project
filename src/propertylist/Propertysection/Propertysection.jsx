@@ -30,8 +30,18 @@ const propertyData = [
     image:
       "https://hblimg.mmtcdn.com/content/hubble/img/manipal/mmt/activities/m_Hasta%20Shilpa%20Heritage%20Village-3_l_384_512.jpg",
     description:
-      "Experience luxury living in this premium villa featuring a private landscaped garden, high ceilings, and elegant architecture. Ideal for families seeking comfort and privacy.",
+      "Experience luxury living in this premium villa featuring a private landscaped garden, high ceilings, and elegant architecture.",
   },
+  {
+    id: 3,
+    title: "Modern 2BHK with city view balcony",
+    price: "₹85 Lakh",
+    image:
+      "https://media-cdn.tripadvisor.com/media/photo-s/17/2f/55/20/oyo-13103-ample-s-den.jpg",
+    description:
+      "Stylish 2BHK apartment with open balcony, modular kitchen and premium flooring. Close to metro and shopping complex.",
+  },
+  
 ];
 
 const PropertySection = () => {
@@ -43,10 +53,19 @@ const PropertySection = () => {
 
   return (
     <div className="main-wrapper">
+
+      {/* SECTION HEADER */}
+      {/* <div className="section-header">
+        <div className="breadcrumb">Home\Ghandhinagar</div>
+        <h2 className="main-heading">
+          Houses for sale in Ghandhinagar
+        </h2>
+      </div> */}
+
       {propertyData.map((item) => (
         <div key={item.id}>
-
           <div className="property-layout">
+
             {/* IMAGE */}
             <div className="image-container">
               <img src={item.image} alt="property" />
@@ -54,13 +73,15 @@ const PropertySection = () => {
 
             {/* DETAILS BOX */}
             <div className="details-container">
+
+              {/* COL 1 */}
               <div className="details-col">
                 <Text className="small-text">FEATURED PROPERTY</Text>
                 <Title level={4} className="property-title">
                   {item.title}
                 </Title>
                 <Text
-                  className="meet-host clickable"
+                  className="clickable"
                   onClick={() => toggleDetails(item.id)}
                 >
                   <UserOutlined /> View Details <DownOutlined />
@@ -69,8 +90,11 @@ const PropertySection = () => {
 
               <div className="divider"></div>
 
+              {/* COL 2 */}
               <div className="details-col">
-                <Title level={4}>{item.price}</Title>
+                <Title level={4} className="price-text">
+                  {item.price}
+                </Title>
                 <div className="info-item">
                   <HomeOutlined /> 3 Bedrooms
                 </div>
@@ -84,6 +108,7 @@ const PropertySection = () => {
 
               <div className="divider"></div>
 
+              {/* COL 3 */}
               <div className="details-col last-col">
                 <div>
                   <div className="info-item">
@@ -98,18 +123,15 @@ const PropertySection = () => {
             </div>
           </div>
 
-          {/* DESCRIPTION CONTAINER */}
+          {/* DESCRIPTION */}
           {activeId === item.id && (
             <div className="description-container">
               <div className="description-box">
                 <Title level={4}>Property Description</Title>
-                <Text>
-                  {item.description}
-                </Text>
+                <Text>{item.description}</Text>
               </div>
             </div>
           )}
-
         </div>
       ))}
     </div>

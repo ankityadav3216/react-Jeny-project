@@ -1,0 +1,123 @@
+.most-demand-projects {
+  padding: 60px 50px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.mdp-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.mdp-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 2px;
+}
+
+.mdp-scroll {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 0 20px;
+  scrollbar-width: none;
+}
+
+.mdp-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.mdp-card {
+  min-width: 300px;
+  height: 400px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.mdp-card:hover {
+  transform: translateY(-5px);
+}
+
+.mdp-image-wrapper {
+  position: relative;
+  height: 220px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mdp-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mdp-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #007bff;
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  text-transform: uppercase;
+}
+
+.mdp-details {
+  position: relative;
+  width: 90%;
+  margin: -50px auto 0;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mdp-details h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #003366;
+}
+
+.mdp-dev {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.mdp-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.mdp-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mdp-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #61676d;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #e0e0e0;
+}

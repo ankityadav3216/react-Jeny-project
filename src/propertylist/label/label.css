@@ -52,12 +52,12 @@
 }
 
 .label-button:hover {
-  color: #fa8c16;
+  color: #f25f0a;
   background-color: #fff3e0;
 }
 
 .label-button.active {
-  background-color: #fa8c16;
+  background-color: #ef7d04;
   color: white;
   box-shadow: 0 0 8px rgb(250 140 22 / 0.6);
 }

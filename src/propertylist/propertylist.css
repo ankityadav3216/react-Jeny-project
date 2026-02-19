@@ -1,15 +1,8 @@
-/* src/propertylist/PropertyList.css */
-
-/* Page container to prevent header overlap */
-.page-content {
-  padding-top: 64px; /* Adjust this to match your header height */
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: #f5f5f5; /* optional, page background */
-  min-height: calc(100vh - 64px); /* ensure full viewport height minus header */
+.property-list-wrapper {
+  padding-top: 64px;
 }
 
-/* Optional: spacing for Label component */
-.page-content .label-bar {
-  margin-bottom: 16px;
+/* Yaha sirf ReadyMove aur next PropertySection ka gap control */
+.property-after-ready {
+  margin-top:-310px;   /* 🔥 sirf 10px gap */
 }
