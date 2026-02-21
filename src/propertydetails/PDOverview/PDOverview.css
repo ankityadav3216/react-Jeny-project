@@ -1,490 +1,456 @@
-/* PDOverview.css */
-
 .pd-overview-container {
-  width: 100%;
-  padding: 20px;
-  background: white;
+  padding: 24px;
+  background: #fff;
+  overflow: visible; /* Ensure no content is hidden */
+  width: 100%; /* Take full width of parent */
   box-sizing: border-box;
-  
 }
 
-/* Breadcrumb */
-.breadcrumb {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-/* ================= HEADER ================= */
-.pd-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.pd-breadcrumb {
   margin-bottom: 20px;
-  gap: 20px;
-  flex-wrap: wrap;
+  font-size: 15px;
 }
 
-.pd-header-left {
-  flex: 1;
-  min-width: 300px;
+.pd-property-name {
+  color: #ff6a00;
 }
 
-.pd-title-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.pd-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1e40af;
-  margin: 0;
-}
-
-.rera-tag {
-  background: #60a5fa !important; /* Light blue */
-  color: white !important;
-  border: none !important;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  box-shadow: 0 2px 6px rgba(96, 165, 250, 0.4);
-}
-
-.rera-tag .anticon {
-  color: white;
-}
-
-.pd-info-section {
-  margin-top: 4px;
-}
-
-.pd-developer {
-  font-size: 14px;
-  color: #666;
-  margin: 0 0 4px 0;
-}
-
-.pd-developer-name {
-  color: #3b82f6;
-  font-weight: 600;
-}
-
-.pd-address {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
-}
-
-/* Header Right */
-.pd-header-right {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.pd-updated {
-  font-size: 12px;
-  color: #999;
-  margin: 0 0 8px 0;
-}
-
-.pd-price-section {
-  margin-bottom: 8px;
-}
-
-.pd-price {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1e40af;
-  margin: 0;
-  display: inline;
-}
-
-.pd-price-unit {
-  font-size: 14px;
-  color: #3b82f6;
-  font-weight: 500;
-}
-
-.pd-emi {
-  font-size: 14px;
-  color: #3b82f6;
-  font-weight: 500;
-  margin: 0 0 12px 0;
-}
-
-/* Contact Button - Light blue with shadow */
-.pd-contact-btn {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%) !important;
-  border: none !important;
-  font-weight: 500;
-  padding: 10px 20px;
-  height: auto;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.pd-contact-btn:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4) !important;
-}
-
-/* ================= IMAGE SECTION ================= */
-.pd-image-grid {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 30px;
-  height: 320px;
-}
-
-/* Main Image */
+/* BIG IMAGE */
 .pd-main-image {
-  flex: 2;
   position: relative;
+  height: 400px;
+  overflow: hidden; /* Keep image cropping, but container itself is visible */
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.pd-main-img {
+.pd-main-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.pd-cover-tag {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+/* SIDE IMAGES */
+.pd-side-image {
+  height: 192px;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-/* Action Buttons - Light blue with shadow */
+.pd-side-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* +MORE CARD */
+.pd-more-card {
+  position: relative;
+  height: 192px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pd-more-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  backdrop-filter: blur(2px);
+}
+
+/* GALLERY */
+.pd-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.pd-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pd-gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* IMAGE ACTION BUTTONS */
 .pd-image-actions {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   z-index: 2;
 }
 
 .pd-action-btn {
-  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%) !important;
-  border: none !important;
-  color: white !important;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #ff6a00;
   font-weight: 500;
-  padding: 6px 12px;
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3) !important;
-  transition: all 0.3s ease !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
 }
 
 .pd-action-btn:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
-}
-
-/* Side Images Grid */
-.pd-side-images {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 12px;
-}
-
-.pd-side-image-container {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.pd-side-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.pd-video-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 28px;
+  background: #ff6a00;
   color: white;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  padding: 6px;
+  border-color: #ff6a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.25);
 }
 
-/* ================= QUICK NAV ================= */
-.pd-quick-nav {
-  margin-top: 30px;
+/* ===== Main Container (no change if already set) ===== */
+.pd-highlight-main-container {
+  padding: 32px;
+  border-radius: 16px;
+  width: 800px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: visible; /* Ensure no hidden overflow */
 }
 
-.pd-quick-nav-header {
+/* ===== Title ===== */
+.pd-highlight-title {
+  color: #000;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  word-wrap: break-word;
+}
+
+/* ===== Card Styling ===== */
+.pd-highlight-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+/* Card hover */
+.pd-highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: #ff6a00;
+}
+
+/* ===== Icon ===== */
+.pd-highlight-icon {
+  font-size: 22px;
+  color: #ff6a00;
+  margin-right: 10px;
+}
+
+/* ===== Text ===== */
+.pd-highlight-text {
+  font-size: 15px;
+  color: #334155;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+/* ===== BUTTON UPDATED (Shadow + Hover Effect) ===== */
+.pd-highlight-btn {
+  margin-top: 24px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  background: #ff6a00;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 106, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.pd-highlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 106, 0, 0.35);
+  background: #e05e00;
+}
+
+.pd-highlight-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 14px rgba(255, 106, 0, 0.2);
+}
+
+/* DETAILS */
+.pd-details { 
+  margin-top: 30px; 
+  overflow: visible;
+}
+
+.pd-title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+  overflow: visible;
 }
 
-.pd-quick-nav-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1e40af;
-  margin: 0;
+.pd-location { 
+  color: #777; 
+  display: block; 
+  margin-top: 6px; 
+  word-wrap: break-word;
 }
 
-.pd-nav-buttons {
-  display: flex;
-  gap: 8px;
+.pd-price {
+  font-size: 22px;
+  margin: 15px 0;
+  font-weight: 600;
+  color: #000;
+  word-wrap: break-word;
 }
 
-/* Scroll Buttons - Light blue with shadow */
-.pd-scroll-btn {
-  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%) !important;
-  border: none !important;
-  color: white !important;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* BUTTONS - all with hover effects */
+.pd-primary-btn {
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.pd-scroll-btn:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
-}
-
-/* Scroll Container */
-.pd-scroll-container {
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.pd-scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.pd-scroll-content {
-  display: flex;
-  gap: 12px;
-  padding-bottom: 8px;
-}
-
-/* Quick Navigation Items - Light/Dark Blue with Shadows */
-.pd-nav-item {
-  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%) !important;
-  border: none !important;
-  color: white !important;
-  min-width: 160px;
-  height: 48px;
-  border-radius: 10px;
+  margin-right: 10px;
   cursor: pointer;
-  font-size: 14px;
   font-weight: 500;
-  padding: 0 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.2);
+  white-space: nowrap; /* Keep buttons on one line */
+}
+
+.pd-primary-btn:hover {
+  background: #e05e00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.3);
+}
+
+.pd-whatsapp-btn {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  color: #25D366;
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3) !important;
 }
 
-.pd-nav-item:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4) !important;
-}
-
-.pd-nav-text {
+.pd-whatsapp-btn:hover {
+  background: #25D366;
   color: white;
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+}
+
+.pd-outline-btn {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+.pd-outline-btn:hover {
+  background: #f5f5f5;
+  border-color: #ff6a00;
+  color: #ff6a00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* INFO BOXES */
+.pd-info-box {
+  background: #ffffff;
+  border: 1px solid #efeded;
+  padding: 20px;
+  border-radius: 6px;
   text-align: center;
   font-weight: 500;
+  transition: all 0.25s ease;
+  word-wrap: break-word;
+  overflow: visible;
 }
 
-/* ================= RESPONSIVE DESIGN ================= */
+.pd-info-box:hover {
+  border-color: #ff6a00;
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.1);
+  transform: translateY(-2px);
+}
 
-/* Tablet */
+.pd-info-box span {
+  display: block;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 6px;
+  word-wrap: break-word;
+}
+
+/* TABS - scroll only on mobile, always visible */
+.pd-tabs {
+  margin-top: 25px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 55px;
+  overflow-x: auto; /* Allow scroll only when needed */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6a00 #f0f0f0;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
+  width: 100%; /* Ensure full width */
+}
+
+/* Hide scrollbar on desktop if not needed, but keep functionality */
+@media (min-width: 1025px) {
+  .pd-tabs {
+    overflow-x: visible;
+    flex-wrap: wrap; /* Allow wrapping on large screens if needed */
+    gap: 40px;
+  }
+}
+
+.pd-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.pd-tabs::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.pd-tabs::-webkit-scrollbar-thumb {
+  background: #ff6a00;
+  border-radius: 10px;
+}
+
+.pd-tabs span {
+  padding-bottom: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  position: relative;
+  font-weight: 600; /* Make tab text bold */
+  color: #333; /* Default color */
+}
+
+.pd-tabs span:hover {
+  color: #ff6a00;
+}
+
+/* Active tab: orange text and underline with shadow */
+.pd-tabs .active {
+  color: #ff6a00;
+  border-bottom: 2px solid #ff6a00;
+  font-weight: 700; /* Slightly bolder when active */
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.3);
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .pd-image-grid {
-    height: 280px;
-  }
-  
-  .pd-title {
-    font-size: 24px;
-  }
-  
-  .pd-price {
-    font-size: 20px;
-  }
-  
-  .pd-nav-item {
-    min-width: 140px;
-    height: 44px;
-    font-size: 13px;
+  .pd-highlight-main-container {
+    width: 100%;
+    padding: 24px;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .pd-overview-container {
-    padding: 16px;
+  .pd-main-image {
+    height: 260px;
   }
-  
-  .pd-header {
-    flex-direction: column;
-    gap: 16px;
+
+  .pd-side-image,
+  .pd-more-card {
+    height: 160px;
   }
-  
-  .pd-header-right {
-    text-align: left;
-    width: 100%;
+
+  .pd-highlight-main-container {
+    padding: 20px;
   }
-  
-  .pd-title {
+
+  .pd-highlight-title {
     font-size: 22px;
   }
-  
-  .pd-price {
-    font-size: 20px;
-  }
-  
-  /* Stack Images Vertically on Mobile */
-  .pd-image-grid {
-    flex-direction: column;
-    height: auto;
-  }
-  
-  .pd-main-image {
-    height: 250px;
-  }
-  
-  .pd-side-images {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 200px;
-  }
-  
-  .pd-quick-nav-header {
+
+  .pd-title-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
   }
-  
-  .pd-nav-buttons {
-    align-self: flex-end;
+
+  .pd-action-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
   }
-  
-  .pd-nav-item {
-    min-width: 130px;
-    height: 42px;
-    font-size: 12px;
+
+  .pd-primary-btn,
+  .pd-whatsapp-btn,
+  .pd-outline-btn {
+    flex: 1;
+    margin-right: 0;
+    padding: 12px 10px;
+    text-align: center;
+    justify-content: center;
+    white-space: normal; /* Allow wrapping on small screens */
   }
-  
-  .pd-scroll-btn {
-    width: 36px;
-    height: 36px;
+
+  .pd-tabs {
+    gap: 30px;
   }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
-  .pd-overview-container {
-    padding: 12px;
+  .pd-tabs {
+    gap: 20px;
   }
-  
-  .pd-title {
-    font-size: 20px;
-  }
-  
-  .rera-tag {
-    font-size: 11px;
-    padding: 3px 8px;
-  }
-  
-  .pd-price {
-    font-size: 18px;
-  }
-  
-  .pd-price-unit {
-    font-size: 12px;
-  }
-  
-  .pd-main-image {
-    height: 200px;
-  }
-  
-  .pd-side-images {
-    height: 180px;
-  }
-  
-  .pd-quick-nav-title {
-    font-size: 18px;
-  }
-  
-  .pd-nav-item {
-    min-width: 120px;
-    height: 40px;
-    font-size: 11px;
-    padding: 0 12px;
-  }
-  
-  .pd-scroll-btn {
-    width: 32px;
-    height: 32px;
-  }
-}
 
-/* Extra Small Mobile */
-@media (max-width: 360px) {
-  .pd-title {
-    font-size: 18px;
+  .pd-action-group {
+    flex-direction: column;
   }
-  
-  .pd-price {
-    font-size: 16px;
+
+  .pd-primary-btn,
+  .pd-whatsapp-btn,
+  .pd-outline-btn {
+    width: 100%;
+    white-space: normal;
   }
-  
-  .pd-main-image {
-    height: 180px;
-  }
-  
-  .pd-side-images {
-    height: 160px;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-  }
-  
-  .pd-nav-item {
-    min-width: 110px;
-    height: 38px;
-    font-size: 10px;
+
+  .pd-info-box {
+    padding: 15px;
   }
 }

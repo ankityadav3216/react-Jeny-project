@@ -1,204 +1,126 @@
-// PDOverview.jsx
-import React, { useRef } from "react";
-import { Button, Tag } from "antd";
+import React, { useState } from "react";
+import { Row, Col, Typography, Modal } from "antd";
 import {
   ShareAltOutlined,
   HeartOutlined,
   PhoneOutlined,
-  PlayCircleFilled,
-  CheckCircleFilled,
-  LeftOutlined,
-  RightOutlined,
+  WhatsAppOutlined,
+  DownloadOutlined,
+  EnvironmentOutlined,
+  TagOutlined
 } from "@ant-design/icons";
 import "./PDOverview.css";
 
-/* 🔹 FRONTEND IMAGE CONFIG (backend-ready but frontend-only) */
-const projectImages = {
-  cover: {
-    url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
-    tag: "Cover Image",
-  },
-  gallery: [
-    {
-      url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400",
-      type: "image",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400",
-      type: "image",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
-      type: "image",
-    },
-    {
-      url:  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
-      type: "image",
-    },
-  ],
-};
+const { Text, Title } = Typography;
 
 const PDOverview = () => {
-  const scrollContainerRef = useRef(null);
 
-  /* 🔹 QUICK NAV SECTIONS */
-  const sections = [
-    { label: "Overview", id: "overview" },
-    { label: "Home Highlights", id: "highlights" },
-    { label: "Around This project", id: "this-project" },
-    { label: "More About Project", id: "about-project" },
-    { label: "Floor Plan", id: "floor-plan" },
-    { label: "Tour This project", id: "Tour-project" },
-    { label: "Amenities", id: "amenities" },
-    { label: "Contact seller ", id: "contact-seller" },
-    { label: "Ratings&Reviews", id: "Rating-reviews" },
-    { label: "Calculator", id: "Calculator" },
-    { label: "Locality", id: "Locality" },
-    { label: "Compare properties", id: "compare-property" },
-    { label: "About developer", id: "About-developer" },
-    { label: "Q&A", id: "Q&A" },
-    { label: "Frequently Asked Questions", id: "Frequently-Asked-Questions" },
-    { label: "Similar project", id: "Similar-project" },
-    { label: "DACMillennium", id: "DACMillennium" },
+  const images = [
+    "https://img.freepik.com/premium-photo/traditional-bhungas-kutch-gujarat-india-december-2016_1168123-62150.jpg",
+    "https://www.dsource.in/sites/default/files/gallery/4616/6.jpg",
+    "https://img.freepik.com/premium-photo/traditional-bhungas-kutch-gujarat-india-december-2016_1168123-62011.jpg",
+    "https://media2.thrillophilia.com/images/photos/000/293/729/original/1591100479_c17c.png",
+    "https://www.orientbell.com/blog/wp-content/uploads/2024/03/850x550-Pix-1.jpg",
   ];
 
-  /* 🔹 SCROLL TO SECTION */
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+  const [previewOpen, setPreviewOpen] = useState(false);
 
-  const scrollLeft = () =>
-    scrollContainerRef.current?.scrollBy({ left: -200, behavior: "smooth" });
+  const visibleImages = images.slice(0, 4);
+  const remainingCount = images.length - 4;
 
-  const scrollRight = () =>
-    scrollContainerRef.current?.scrollBy({ left: 200, behavior: "smooth" });
+  const stopClick = (e) => e.stopPropagation();
 
   return (
-    <div id="overview" className="pd-overview-container">
-      {/* Breadcrumb */}
-      <div className="breadcrumb">
-        Home / Pune / Baner / Nyati Emerald
-      </div>
+    <div className="pd-overview-container">
 
-      {/* Header - Fixed Layout */}
-      <div className="pd-header">
-        {/* Left Section */}
-        <div className="pd-header-left">
-          <div className="pd-title-section">
-            <h1 className="pd-title">Nyati Emerald</h1>
-            <Tag className="rera-tag">
-              <CheckCircleFilled /> RERA
-            </Tag>
-          </div>
-          
-          <div className="pd-info-section">
-            <p className="pd-developer">
-              By <span className="pd-developer-name">NYATI GROUP</span>
-            </p>
-            <p className="pd-address">
-              S.No. 55, Mohan Nagar Co. Op. Society, Baner, Pune
-            </p>
-          </div>
-        </div>
+      {/* IMAGE SECTION */}
+      <Row gutter={[16, 16]}>
+        <Col xs={24} md={14}>
+          <div className="pd-main-image" onClick={() => setPreviewOpen(true)}>
+            <img src={images[0]} alt="main" />
 
-        {/* Right Section */}
-        <div className="pd-header-right">
-          <p className="pd-updated">
-            Last updated: Jan 7, 2026
-          </p>
-          
-          <div className="pd-price-section">
-            <p className="pd-price">
-              ₹1.18 Cr - 1.7 Cr
-            </p>
-            <span className="pd-price-unit">
-              | ₹14.05 K/sq.ft
-            </span>
-          </div>
-          
-          <p className="pd-emi">
-            EMI starts at ₹58.58 K
-          </p>
-          
-          <Button
-            type="primary"
-            icon={<PhoneOutlined />}
-            className="pd-contact-btn"
-          >
-            Contact Developer
-          </Button>
-        </div>
-      </div>
-
-      {/* ================= IMAGE SECTION ================= */}
-      <div className="pd-image-grid">
-        {/* MAIN IMAGE */}
-        <div className="pd-main-image">
-          <span className="pd-cover-tag">{projectImages.cover.tag}</span>
-          <img
-            src={projectImages.cover.url}
-            alt="cover"
-            className="pd-main-img"
-          />
-
-          <div className="pd-image-actions">
-            <Button className="pd-action-btn">
-              <ShareAltOutlined /> Share
-            </Button>
-            <Button className="pd-action-btn">
-              <HeartOutlined /> Save
-            </Button>
-          </div>
-        </div>
-
-        {/* SIDE IMAGES - 2x2 Grid */}
-        <div className="pd-side-images">
-          {projectImages.gallery.map((item, index) => (
-            <div key={index} className="pd-side-image-container">
-              <img
-                src={item.url}
-                alt="gallery"
-                className="pd-side-img"
-              />
-              {item.type === "video" && (
-                <PlayCircleFilled className="pd-video-icon" />
-              )}
+            <div className="pd-image-actions" onClick={stopClick}>
+              <button className="pd-action-btn"><ShareAltOutlined /> Share</button>
+              <button className="pd-action-btn"><HeartOutlined /> Save</button>
             </div>
+          </div>
+        </Col>
+
+        <Col xs={24} md={10}>
+          <Row gutter={[16, 16]}>
+            {visibleImages.slice(1, 4).map((img, index) => (
+              <Col span={12} key={index}>
+                <div className="pd-side-image" onClick={() => setPreviewOpen(true)}>
+                  <img src={img} alt="side" />
+                </div>
+              </Col>
+            ))}
+
+            {images.length > 4 && (
+              <Col span={12}>
+                <div className="pd-more-card" onClick={() => setPreviewOpen(true)}>
+                  <img src={images[4]} alt="more" />
+                  <div className="pd-overlay">+{remainingCount} Photos</div>
+                </div>
+              </Col>
+            )}
+          </Row>
+        </Col>
+      </Row>
+
+      {/* DETAILS SECTION */}
+      <div className="pd-details">
+
+        <div className="pd-title-row">
+          <div>
+            <Title level={2}>Sahajanand Shreehari</Title>
+            <Text className="pd-location">
+              <EnvironmentOutlined /> Sargasan, Gandhinagar
+            </Text>
+          </div>
+
+          <div className="pd-action-group">
+            <button className="pd-primary-btn"><PhoneOutlined /> View Contact</button>
+            <button className="pd-whatsapp-btn"><WhatsAppOutlined /> WhatsApp</button>
+            <button className="pd-outline-btn"><DownloadOutlined /> Download Brochure</button>
+          </div>
+        </div>
+
+        <div className="pd-price">
+          <TagOutlined /> ₹80 L - ₹1.12 Cr
+        </div>
+
+        {/* INFO CARDS */}
+        <Row gutter={[16, 16]} className="pd-info-cards">
+          <Col xs={24} md={6}><div className="pd-info-box"><span>AVG. PRICE</span>₹35,000 / SqYd</div></Col>
+          <Col xs={24} md={6}><div className="pd-info-box"><span>CONFIGURATION</span>3 BHK Flat</div></Col>
+          <Col xs={24} md={6}><div className="pd-info-box"><span>SIZE</span>258 SqYd - 321 SqYd</div></Col>
+          <Col xs={24} md={6}><div className="pd-info-box"><span>POSSESSION STARTS</span>Jun, 2027</div></Col>
+        </Row>
+
+        {/* TABS */}
+        <div className="pd-tabs">
+          <span >Overview</span>
+          <span>Project USPs</span>
+          <span>Watch Our Reels</span>
+          <span>Floor Plan</span>
+          <span>Location</span>
+          <span>Amenities</span>
+          <span>Brochure</span>
+          <span>About Developer</span>
+          <span>FAQs</span>
+        </div>
+
+      </div>
+
+      {/* GALLERY */}
+      <Modal open={previewOpen} footer={null} onCancel={() => setPreviewOpen(false)} width="90%">
+        <div className="pd-gallery">
+          {images.map((img, index) => (
+            <img key={index} src={img} alt="gallery" />
           ))}
         </div>
-      </div>
-
-      {/* ================= QUICK NAV ================= */}
-      <div className="pd-quick-nav">
-        <div className="pd-quick-nav-header">
-          <h3 className="pd-quick-nav-title">Quick Navigation</h3>
-          <div className="pd-nav-buttons">
-            <Button className="pd-scroll-btn" onClick={scrollLeft}>
-              <LeftOutlined />
-            </Button>
-            <Button className="pd-scroll-btn" onClick={scrollRight}>
-              <RightOutlined />
-            </Button>
-          </div>
-        </div>
-
-        <div ref={scrollContainerRef} className="pd-scroll-container">
-          <div className="pd-scroll-content">
-            {sections.map((sec) => (
-              <button
-                key={sec.id}
-                className="pd-nav-item"
-                onClick={() => scrollToSection(sec.id)}
-              >
-                <span className="pd-nav-text">{sec.label}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      </Modal>
     </div>
   );
 };

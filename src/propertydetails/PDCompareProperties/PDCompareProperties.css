@@ -3,14 +3,15 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 24px;
-  background: white; /* WHITE CONTAINER */
+  background: #ffffff;
   min-height: 100vh;
   margin-left: 0;
   margin-right: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
-  border: 1px solid #dbeafe;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* BLACK SHADOW */
+  border: 1px solid rgba(0,0,0,0.2); /* LIGHT BLACK BORDER */
+  color: #000;
 }
 
 /* Header Section */
@@ -18,90 +19,36 @@
   text-align: center;
   margin-bottom: 32px;
   padding: 20px 0;
-  background: #f8fafc;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.1);
-  border: 1px solid #dbeafe;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
-/* DARK BLUE HEADING */
+/* Title */
 .compare-title {
   font-size: 32px;
   font-weight: 700;
-  color: #1e40af !important; /* DARK BLUE HEADING */
+  color: #000 !important;
   margin: 0 0 12px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
 }
 
-.title-icon {
-  color: #3B82F6 !important; /* BLUE ICON */
-  font-size: 36px;
-}
-
-/* LIGHT BLUE SUBTITLE */
+/* Subtitle */
 .compare-subtitle {
   font-size: 16px;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  color: #000 !important;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.5;
-  font-weight: 500;
 }
 
 /* Search Section */
 .search-section {
-  background: #f8fafc;
+  background: #ffffff;
   padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
   margin-bottom: 32px;
-  border: 1px solid #dbeafe;
-}
-
-.property-search {
-  margin-bottom:14px;
-}
-
-.property-search .ant-input-group-addon button {
-  height: 30px !important;
-  border-radius: 0 8px 8px 0 !important;
-  background: #3b82f6 !important;
-  border-color: #3b82f6 !important;
-}
-
-.property-search .ant-input {
-  height: 25px;
-  border-radius: 8px 0 0 8px !important;
-  border-color: #93c5fd !important;
-  color: #2563eb !important;
-}
-
-.search-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.search-tags .ant-tag {
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: #dbeafe !important; /* LIGHT BLUE BACKGROUND */
-  color: #1e40af !important; /* DARK BLUE TEXT */
-  border: 1px solid #87bdfb !important; /* LIGHT BLUE BORDER */
-}
-
-.search-tags .ant-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
-  background: #bfdbfe !important;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 /* Properties Grid */
@@ -109,66 +56,27 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-bottom: 32px;
-}
-
-@media (max-width: 992px) {
-  .properties-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .properties-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Property Card */
 .property-card {
-  border: 1px solid #dbeafe !important; /* LIGHT BLUE BORDER */
+  border: 1px solid rgba(0,0,0,0.2) !important;
   border-radius: 12px !important;
   overflow: hidden !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  background: #f8fafc; /* LIGHT BLUE BACKGROUND */
+  background: #ffffff;
+  color: #000;
 }
 
 .property-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15) !important;
-  border-color: #3B82F6 !important;
-  background: #f0f7ff;
-}
-
-.property-header {
-  display: flex;
-  gap: 8px;
-  padding: 16px 16px 0;
-  flex-wrap: wrap;
-}
-
-.featured-tag {
-  background: linear-gradient(135deg, #fef3c7, #f59e0b) !important;
-  color: #92400e !important;
-  border: none !important;
-  font-weight: 600;
-  font-size: 11px;
-}
-
-.verified-tag {
-  background: linear-gradient(135deg, #d1fae5, #10b981) !important;
-  color: #065f46 !important;
-  border: none !important;
-  font-weight: 600;
-  font-size: 11px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25) !important;
 }
 
 /* Property Image */
 .property-image-container {
-  position: relative;
   height: 200px;
   overflow: hidden;
   margin: 12px 16px;
@@ -179,25 +87,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.property-card:hover .property-image {
-  transform: scale(1.05);
-}
-
-.image-overlay {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
-
-.image-overlay .ant-tag {
-  font-weight: 600;
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: none;
 }
 
 /* Property Details */
@@ -208,312 +97,134 @@
   flex-direction: column;
 }
 
-/* DARK BLUE HEADING */
+/* Title */
 .property-title {
   font-size: 18px;
   font-weight: 700;
-  color: #1e40af !important; /* DARK BLUE HEADING */
-  margin: 0 0 8px 0;
-  line-height: 1.3;
+  color: #000 !important;
+  margin-bottom: 8px;
 }
 
-/* LIGHT BLUE TEXT */
+/* Location */
 .property-location {
-  display: flex;
-  align-items: center;
-  gap: 6px;
   font-size: 13px;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  color: #000 !important;
   margin-bottom: 16px;
-  font-weight: 500;
 }
 
-.location-icon {
-  color: #3b82f6 !important; /* BLUE ICON */
-  font-size: 14px;
-}
-
-/* Price Section */
+/* Price */
 .price-section {
   margin-bottom: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-/* BLUE PRICE */
 .price-main {
   font-size: 22px;
   font-weight: 700;
-  color: #3B82F6 !important; /* BLUE TEXT */
-  margin-bottom: 4px;
+  color: #000 !important;
 }
 
-.price-details {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-}
-
-/* LIGHT BLUE TEXT */
-.price-per-sqft {
-  font-weight: 600;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
-}
-
+.price-per-sqft,
 .property-area {
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  color: #000 !important;
 }
 
-/* Rating Section */
-.rating-section {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.property-rating .ant-rate-star {
-  font-size: 16px;
-}
-
-.rating-details {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.rating-value {
-  font-size: 16px;
-  font-weight: 700;
-  color: #f59e0b; /* KEEP YELLOW FOR RATING */
-}
-
-/* LIGHT BLUE TEXT */
-.rating-reviews {
-  font-size: 13px;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
-}
-
-/* Key Details Grid */
+/* Key Details */
 .key-details-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-bottom: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.detail-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* LIGHT BLUE LABELS */
 .detail-label {
   font-size: 11px;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  color: #000 !important;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
-/* DARK BLUE VALUES */
 .detail-value {
   font-size: 14px;
   font-weight: 600;
-  color: #1e40af !important; /* DARK BLUE TEXT */
+  color: #000 !important;
 }
 
-.builder-name {
-  font-size: 13px;
-  color: #3B82F6 !important; /* BLUE TEXT */
-  font-weight: 500;
-}
-
-/* Possession Section */
+/* Possession */
 .possession-section {
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  background: #ffffff;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 16px;
-  border: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
-.possession-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.possession-icon {
-  color: #3b82f6 !important; /* BLUE ICON */
-  font-size: 14px;
-}
-
-/* LIGHT BLUE TEXT */
-.possession-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* BLUE TEXT */
+.possession-label,
 .possession-date {
-  font-size: 18px;
+  color: #000 !important;
   font-weight: 700;
-  color: #3B82F6 !important; /* BLUE TEXT */
   text-align: center;
-  padding: 4px 0;
 }
 
 /* Contact Seller Button */
 .contact-seller-btn {
-  background: #3b82f6 !important; /* BLUE BACKGROUND */
-  border: none !important;
+  background: #ffffff !important; /* WHITE BUTTON */
+  border: 1px solid rgba(0,0,0,0.3) !important;
   border-radius: 8px !important;
   height: 44px !important;
   font-weight: 600 !important;
   font-size: 15px !important;
   margin-top: auto;
-  transition: all 0.3s ease !important;
-  color: white !important;
+  color: orange !important; /* ORANGE TEXT */
 }
 
 .contact-seller-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
-  background: #2563eb !important; /* DARKER BLUE ON HOVER */
+  background: #ffffff !important;
+  color: #000 !important; /* BLACK ON HOVER */
+  border-color: #000 !important;
 }
 
 /* Comparison Summary */
 .comparison-summary {
-  background: #f8fafc; /* LIGHT BLUE BACKGROUND */
+  background: #ffffff;
   padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
   margin-top: 24px;
-  border: 1px solid #dbeafe;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
-.comparison-summary .ant-divider {
-  border-color: #dbeafe; /* LIGHT BLUE BORDER */
-  margin: 0 0 16px 0;
-}
-
-/* DARK BLUE HEADING */
 .comparison-summary h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #1e40af !important; /* DARK BLUE HEADING */
-  margin: 0;
+  color: #000 !important;
 }
 
-.summary-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-/* LIGHT BLUE TEXT */
 .summary-content p {
-  flex: 1;
-  margin: 0;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
-  font-size: 15px;
-  line-height: 1.6;
-  min-width: 300px;
-  font-weight: 500;
+  color: #000 !important;
 }
 
-.summary-content .ant-btn-link {
-  color: #3B82F6 !important; /* BLUE TEXT */
-  font-weight: 600;
-  font-size: 15px;
-  padding: 8px 16px;
+/* Force All Text Black */
+.compare-property-container * {
+  color: #000 !important;
 }
 
-.summary-content .ant-btn-link:hover {
-  color: #1D4ED8 !important; /* DARKER BLUE ON HOVER */
+/* Responsive */
+@media (max-width: 992px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+
   .compare-property-container {
     padding: 16px;
   }
-  
-  .compare-title {
-    font-size: 26px;
-  }
-  
-  .property-card {
-    margin-bottom: 16px;
-  }
-  
-  .summary-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .property-image-container {
-    height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .compare-title {
-    font-size: 22px;
-  }
-  
-  .key-details-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Ensure all text in container is light blue except headings */
-.compare-property-container p,
-.compare-property-container span:not(.property-title):not(.compare-title):not(.detail-value):not(.possession-date) {
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
-}
-
-/* Ensure all headings are dark blue */
-.compare-property-container h1,
-.compare-property-container h2,
-.compare-property-container h3,
-.compare-property-container h4,
-.compare-property-container h5,
-.compare-property-container h6 {
-  color: #1e40af !important; /* DARK BLUE HEADINGS */
-}
-
-/* Ensure buttons have blue styling */
-.compare-property-container button.ant-btn-primary {
-  background: #3b82f6 !important;
-  color: white !important;
-  border: none !important;
-}
-
-.compare-property-container button.ant-btn-primary:hover {
-  background: #2563eb !important;
-}
-
-/* Remove any previously defined colors that might conflict */
-.amenities-section,
-.emi-offer-section {
-  display: none !important;
-}
-
-/* Smooth transitions */
-.property-card,
-.contact-seller-btn,
-.search-tags .ant-tag {
-  transition: all 0.2s ease-in-out;
 }

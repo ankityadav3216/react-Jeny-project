@@ -7,9 +7,14 @@ body,
 /* MAIN CONTAINER */
 .property-detail-container {
   width: 100%;
-  max-width: 1400px; /* adjust based on design */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 16px;
+}
+
+/* ✅ ADD THIS — OVERVIEW TOP SPACING */
+.property-detail-container > :first-child {
+  margin-top: 27px;   /* Space from top header */
 }
 
 /* MAIN 2-COLUMN LAYOUT */
@@ -27,10 +32,8 @@ body,
 
 /* RIGHT – STICKY CONTACT SELLER */
 .pd-right {
-  
   position: sticky;
   top: 90px; /* header height */
-  
   flex-shrink: 0;
 }
 
@@ -76,9 +79,10 @@ body,
 
 /* MOBILE SMALL 480px */
 @media (max-width: 480px) {
-  .property-detail-container{
+  .property-detail-container {
     max-width: 100%;
   }
+
   .pd-main-layout {
     gap: 12px;
     padding: 6px;
@@ -91,9 +95,10 @@ body,
 
 /* VERY SMALL MOBILE – 360px AND BELOW */
 @media (max-width: 360px) {
-  .property-detail-container{
+  .property-detail-container {
     width: 100%;
   }
+
   .pd-main-layout {
     flex-direction: column;
     gap: 10px;
@@ -107,7 +112,7 @@ body,
 
   .pd-right {
     width: 100%;
-    position: static; /* sticky off */
+    position: static;
     top: auto;
     margin-top: 10px;
   }

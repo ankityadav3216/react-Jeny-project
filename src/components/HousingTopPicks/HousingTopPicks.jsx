@@ -1,13 +1,17 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Card, Row, Col, Typography } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
 import "./HousingTopPicks.css";
 
 const { Title, Text } = Typography;
 
 const HousingTopPicks = () => {
+  const navigate = useNavigate(); // ✅ navigation hook
+
   const properties = [
     {
+      id: "park-paradise", // ✅ IMPORTANT
       title: "Park Paradise",
       price: "₹85 L - ₹1.10 Cr",
       location: "Sargasan, Gandhinagar",
@@ -20,6 +24,7 @@ const HousingTopPicks = () => {
         "https://yuandesign.asia/wp-content/uploads/2022/02/luxury-living-room-with-comfortable-sofa-and-throw-pillows.jpg"
     },
     {
+      id: "sky-heights",
       title: "Sky Heights",
       price: "₹70 L - ₹95 L",
       location: "Ahmedabad",
@@ -32,6 +37,7 @@ const HousingTopPicks = () => {
         "https://besthomedesigns.org/wp-content/uploads/2020/11/Ideal-Restaurant-Modern-Interior-Design.png"
     },
     {
+      id: "green-valley",
       title: "Green Valley",
       price: "₹1.2 Cr",
       location: "Surat",
@@ -54,7 +60,7 @@ const HousingTopPicks = () => {
     if (!container) return;
 
     let scrollAmount = 0;
-    const scrollStep = 1; // scroll speed
+    const scrollStep = 1;
     let interval;
 
     const startScroll = () => {
@@ -62,7 +68,7 @@ const HousingTopPicks = () => {
         if (!isHover) {
           scrollAmount += scrollStep;
           if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-            scrollAmount = 0; // loop back to start
+            scrollAmount = 0;
           }
           container.scrollTo({ left: scrollAmount, behavior: "smooth" });
         }
@@ -70,9 +76,13 @@ const HousingTopPicks = () => {
     };
 
     startScroll();
-
     return () => clearInterval(interval);
   }, [isHover]);
+
+  // ✅ CLICK HANDLER
+  const openProperty = (id) => {
+    navigate(`/property/${id}`);
+  };
 
   return (
     <section className="highlight-section">
@@ -98,9 +108,11 @@ const HousingTopPicks = () => {
       >
         {properties.map((item, index) => (
           <Card
-            key={index}
+            key={item.id}
             className={`highlight-card ${index !== 0 ? "fade-left" : ""}`}
             bordered={false}
+            hoverable
+            onClick={() => openProperty(item.id)} // ✅ CLICK WORKING
           >
             <Row gutter={40} align="middle">
               <Col span={10}>
@@ -112,11 +124,7 @@ const HousingTopPicks = () => {
                     <Title level={4} className="title">
                       {item.title}
                     </Title>
-                    <div>
-                      <b>
-                        <h3>{item.price}</h3>
-                      </b>
-                    </div>
+                    <h3>{item.price}</h3>
                   </div>
 
                   <Text className="location">

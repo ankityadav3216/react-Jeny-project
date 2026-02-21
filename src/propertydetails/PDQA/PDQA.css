@@ -1,13 +1,13 @@
-/* PDQA.css - Updated with Light Blue Theme & White Container */
+/* PDQA.css - BLACK, WHITE & ORANGE THEME */
 .pd-qa {
   padding: 40px 0;
   width: 800px;
   height: auto;
   margin: 20px 0;
-  background: white; /* WHITE CONTAINER */
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* black shadow */
+  border: 1px solid #ddd; /* light black border */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   margin-left: 0;
   margin-right: auto;
@@ -19,13 +19,13 @@
   padding: 0 20px;
 }
 
-/* LIGHT BLUE TEXT */
+/* Section Title - Black */
 .pd-section-title {
   font-size: 2rem;
-  color: #3b82f6; /* LIGHT BLUE */
+  color: black;
   margin-bottom: 30px;
   padding-bottom: 10px;
-  border-bottom: 3px solid #3b82f6; /* LIGHT BLUE */
+  border-bottom: 3px solid #ddd; /* light grey */
   display: inline-block;
 }
 
@@ -36,13 +36,13 @@
 
 .pd-qa-intro p {
   font-size: 18px;
-  color: #60a5fa; /* LIGHT BLUE (LIGHTER) */
+  color: #666; /* medium grey */
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* LIGHT BLUE BUTTONS */
+/* Category Buttons */
 .pd-qa-filters {
   display: flex;
   gap: 10px;
@@ -53,9 +53,9 @@
 
 .pd-category-btn {
   padding: 8px 20px;
-  border: 1px solid #bfdbfe; /* LIGHT BLUE BORDER */
+  border: 1px solid #ddd; /* light grey border */
   background: white;
-  color: #3b82f6; /* LIGHT BLUE TEXT */
+  color: orange;
   border-radius: 20px;
   font-size: 14px;
   cursor: pointer;
@@ -63,14 +63,15 @@
 }
 
 .pd-category-btn:hover {
-  border-color: #3b82f6;
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  border-color: orange;
+  background: #fff5e6; /* very light orange */
+  color: black;
 }
 
 .pd-category-btn.active {
-  background: #3b82f6; /* LIGHT BLUE */
+  background: orange;
   color: white;
-  border-color: #3b82f6;
+  border-color: orange;
 }
 
 .pd-questions-list {
@@ -81,16 +82,16 @@
 }
 
 .pd-question-card {
-  background: #f8fafc; /* VERY LIGHT BLUE/GRAY */
+  background: #f8f8f8; /* light grey */
   border-radius: 12px;
-  border: 1px solid #e0f2ff; /* LIGHT BLUE BORDER */
+  border: 1px solid #ddd;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .pd-question-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  border-color: orange;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .pd-question-header {
@@ -103,7 +104,7 @@
 }
 
 .pd-question-header:hover {
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  background: #fff5e6; /* light orange */
 }
 
 .pd-question-main {
@@ -113,7 +114,7 @@
 .pd-question-text {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2563eb; /* DARKER BLUE FOR CONTRAST */
+  color: black;
   margin-bottom: 10px;
   line-height: 1.4;
 }
@@ -122,7 +123,7 @@
   display: flex;
   gap: 15px;
   font-size: 14px;
-  color: #60a5fa; /* LIGHT BLUE */
+  color: #666;
   flex-wrap: wrap;
 }
 
@@ -131,8 +132,8 @@
 }
 
 .pd-question-category {
-  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
-  color: #2563eb; /* DARK BLUE TEXT */
+  background: #f0f0f0;
+  color: black;
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 12px;
@@ -141,14 +142,14 @@
 
 .pd-question-toggle {
   font-size: 1.5rem;
-  color: #3b82f6; /* LIGHT BLUE */
+  color: orange;
   font-weight: bold;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  background: #f0f0f0;
   border-radius: 50%;
   margin-left: 15px;
   flex-shrink: 0;
@@ -156,8 +157,8 @@
 
 .pd-answer-section {
   padding: 20px;
-  border-top: 1px solid #e0f2ff; /* LIGHT BLUE BORDER */
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  border-top: 1px solid #ddd;
+  background: #fff5e6; /* light orange */
   border-radius: 0 0 12px 12px;
 }
 
@@ -167,18 +168,18 @@
 
 .pd-answer-label {
   font-weight: 600;
-  color: #2563eb; /* DARK BLUE */
+  color: black;
   margin-bottom: 10px;
 }
 
 .pd-answer p {
   font-size: 16px;
-  color: #1e40af; /* DARK BLUE TEXT */
+  color: #333;
   line-height: 1.6;
   margin: 0;
 }
 
-/* LIGHT BLUE ACTION BUTTONS */
+/* Action Buttons */
 .pd-answer-actions {
   display: flex;
   gap: 15px;
@@ -189,42 +190,40 @@
 .pd-report-btn,
 .pd-follow-btn {
   padding: 6px 12px;
-  border: 1px solid #bfdbfe; /* LIGHT BLUE BORDER */
+  border: 1px solid #ddd;
   background: white;
-  color: #3b82f6; /* LIGHT BLUE TEXT */
+  color: orange;
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.pd-like-btn:hover {
-  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
-  border-color: #3b82f6;
+.pd-like-btn:hover,
+.pd-follow-btn:hover {
+  background: black;
+  color: white;
+  border-color: black;
 }
 
 .pd-report-btn:hover {
-  background: #fee2e2; /* LIGHT RED FOR REPORT */
+  background: #fee2e2;
   border-color: #dc2626;
   color: #dc2626;
 }
 
-.pd-follow-btn:hover {
-  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
-  border-color: #3b82f6;
-}
-
+/* Ask Question Section */
 .pd-ask-question {
-  background: #f8fafc; /* VERY LIGHT BLUE/GRAY */
+  background: #f8f8f8;
   border-radius: 12px;
   padding: 30px;
-  border: 2px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border: 2px solid #ddd;
   height: auto;
 }
 
 .pd-ask-title {
   font-size: 1.5rem;
-  color: #2563eb; /* DARK BLUE */
+  color: black;
   margin-bottom: 25px;
   text-align: center;
 }
@@ -241,39 +240,33 @@
 .pd-form-group label {
   display: block;
   font-weight: 600;
-  color: #2563eb; /* DARK BLUE */
+  color: black;
   margin-bottom: 8px;
   font-size: 14px;
 }
 
-.pd-form-group textarea {
-  height: 50px;
-  width: 100%; /* CHANGED FROM 600px TO 100% */
-  border: 1px solid #bfdbfe; /* LIGHT BLUE BORDER */
-  border-radius: 8px;
-  padding: 12px 15px;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  resize: vertical;
-  min-height: 100px;
-}
-
+.pd-form-group textarea,
 .pd-form-group input,
 .pd-form-group select {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #bfdbfe; /* LIGHT BLUE BORDER */
+  border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.3s ease;
+}
+
+.pd-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 .pd-form-group textarea:focus,
 .pd-form-group input:focus,
 .pd-form-group select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  border-color: orange;
+  box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.2);
 }
 
 .pd-form-row {
@@ -282,13 +275,13 @@
   gap: 20px;
 }
 
-/* LIGHT BLUE SUBMIT BUTTON */
+/* Submit Button */
 .pd-submit-question {
   width: 100%;
   padding: 15px;
-  background: #3b82f6; /* LIGHT BLUE BACKGROUND */
-  color: white;
-  border: none;
+  background: white;
+  color: orange;
+  border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -297,67 +290,65 @@
 }
 
 .pd-submit-question:hover {
-  background: #2563eb; /* DARKER BLUE ON HOVER */
+  background: black;
+  color: white;
+  border-color: black;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* RESPONSIVE DESIGN - MOBILE FIRST APPROACH */
+/* ================= RESPONSIVE DESIGN ================= */
 
 /* For tablets and smaller desktops */
 @media (max-width: 850px) {
   .pd-qa {
-    width: 100%; /* FULL WIDTH ON TABLETS */
+    width: 100%;
     padding: 30px 0;
-    margin: 20px auto; /* CENTERED ON TABLET */
+    margin: 20px auto;
   }
-  
+
   .pd-container {
     padding: 0 16px;
   }
-  
+
   .pd-section-title {
     font-size: 1.75rem;
   }
-  
+
   .pd-qa-intro p {
     font-size: 16px;
   }
-  
+
   .pd-question-form {
     max-width: 100%;
-  }
-  
-  .pd-form-group textarea {
-    width: 100%; /* ENSURE FULL WIDTH */
   }
 }
 
 /* For mobile phones */
 @media (max-width: 480px) {
   .pd-qa {
-    width: 100%; /* FULL WIDTH ON MOBILE */
+    width: 100%;
     padding: 20px 0;
-    margin: 16px auto; /* SMALLER MARGINS */
+    margin: 16px auto;
     border-radius: 6px;
   }
-  
+
   .pd-container {
     padding: 0 12px;
   }
-  
+
   .pd-section-title {
     font-size: 1.5rem;
     text-align: center;
     display: block;
     width: 100%;
   }
-  
+
   .pd-qa-intro p {
     font-size: 14px;
     line-height: 1.5;
   }
-  
+
   .pd-qa-filters {
     gap: 6px;
     overflow-x: auto;
@@ -365,57 +356,57 @@
     justify-content: flex-start;
     scrollbar-width: thin;
   }
-  
+
   .pd-qa-filters::-webkit-scrollbar {
     height: 4px;
   }
-  
+
   .pd-category-btn {
     padding: 6px 14px;
     font-size: 13px;
     white-space: nowrap;
   }
-  
+
   .pd-questions-list {
     gap: 12px;
     margin-bottom: 30px;
   }
-  
+
   .pd-question-header {
     padding: 16px;
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .pd-question-toggle {
     align-self: flex-end;
     margin-left: 0;
     margin-top: -40px;
   }
-  
+
   .pd-question-text {
     font-size: 1rem;
   }
-  
+
   .pd-question-meta {
     flex-direction: column;
     gap: 6px;
     font-size: 12px;
   }
-  
+
   .pd-answer-section {
     padding: 16px;
   }
-  
+
   .pd-answer p {
     font-size: 14px;
   }
-  
+
   .pd-answer-actions {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .pd-like-btn,
   .pd-report-btn,
   .pd-follow-btn {
@@ -423,35 +414,35 @@
     text-align: center;
     padding: 8px;
   }
-  
+
   .pd-ask-question {
     padding: 20px;
   }
-  
+
   .pd-ask-title {
     font-size: 1.25rem;
   }
-  
+
   .pd-form-row {
-    grid-template-columns: 1fr; /* SINGLE COLUMN ON MOBILE */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .pd-form-group {
     margin-bottom: 16px;
   }
-  
+
   .pd-form-group textarea {
     min-height: 80px;
     font-size: 13px;
   }
-  
+
   .pd-form-group input,
   .pd-form-group select {
     font-size: 13px;
     padding: 10px 12px;
   }
-  
+
   .pd-submit-question {
     padding: 12px;
     font-size: 15px;
@@ -463,20 +454,20 @@
   .pd-qa {
     padding: 16px 0;
   }
-  
+
   .pd-container {
     padding: 0 10px;
   }
-  
+
   .pd-section-title {
     font-size: 1.3rem;
   }
-  
+
   .pd-category-btn {
     padding: 5px 10px;
     font-size: 12px;
   }
-  
+
   .pd-question-text {
     font-size: 0.95rem;
   }
@@ -488,13 +479,13 @@
     height: auto;
     min-height: auto;
   }
-  
+
   .pd-question-form textarea {
     min-height: 60px;
   }
 }
 
-/* Smooth transitions */
+/* Smooth transitions and focus states */
 .pd-question-card,
 .pd-category-btn,
 .pd-submit-question,
@@ -503,12 +494,11 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* Focus states for accessibility */
 .pd-category-btn:focus,
 .pd-like-btn:focus,
 .pd-report-btn:focus,
 .pd-follow-btn:focus,
 .pd-submit-question:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid orange;
   outline-offset: 2px;
 }

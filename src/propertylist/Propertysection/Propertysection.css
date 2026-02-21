@@ -40,7 +40,7 @@
   width: 350px;
   height: 270px;
   border: 1px solid rgb(227, 222, 222);
-  border-radius: 42px;
+  border-radius: 22px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -56,14 +56,15 @@
   position: absolute;
   left: 260px;
   width: 790px;
-  height: 215px;
+  height: 245px;
   background: #ffffff;
-  border-radius: 60px;
+  border:1px solid rgb(239, 235, 235);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 30px 55px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 45px rgba(0, 0, 0, 0.05);
 }
 
 /* COLUMNS */

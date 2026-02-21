@@ -1,16 +1,16 @@
-/* PDAmenities.css - COMPLETE EXPANSION VERSION - BLUE THEME */
+/* PDAmenities.css - BLACK / ORANGE THEME */
+
 .pd-amenities-container {
   width: 800px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* Black Shadow */
+  border: 1px solid rgba(0,0,0,0.15); /* Light Black Border */
   padding: 20px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 20px 0;
   margin-left: 0;
   margin-right: auto;
-  margin: 20px 0;
-  background: rgb(255, 255, 255);
-  margin-right: auto;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -20,99 +20,85 @@
   height: auto;
 }
 
-/* BLUE HEADING */
+/* HEADING */
 .pd-amenities-heading {
   font-size: 22px;
   font-weight: 600;
-  color: #3b82f6; /* BLUE TEXT */
+  color: #000; /* Black Title */
   margin: 0 0 20px 0;
   padding-bottom: 12px;
-  border-bottom: 2px solid #3b82f6; /* BLUE BORDER */
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
+/* GRID */
 .pd-amenities-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   flex: 1;
-  transition: all 0.3s ease;
 }
 
-.pd-amenities-grid.expanded {
-  grid-template-columns: repeat(5, 1fr);
-}
-
+/* CARD */
 .pd-amenity-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   padding: 12px;
-  border: 1px solid #e0f2ff; /* LIGHT BLUE BORDER */
+  border: 1px solid rgba(0,0,0,0.15); /* Light Black Border */
   border-radius: 8px;
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  background: #ffffff;
   transition: all 0.2s ease;
   min-height: 90px;
-  cursor: default;
 }
 
 .pd-amenity-item:hover {
-  border-color: #3b82f6; /* BLUE BORDER ON HOVER */
-  background: #dbeafe; /* DEEPER BLUE ON HOVER */
+  border-color: rgba(0,0,0,0.35);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Black Hover Shadow */
 }
 
-/* BLUE ICONS */
+/* ICON */
 .pd-amenity-icon {
   font-size: 24px;
-  color: #3b82f6 !important; /* BLUE ICONS */
+  color: #000 !important;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: #dbeafe; /* LIGHT BLUE BACKGROUND */
+  background: #f4f4f4;
   border-radius: 50%;
-  border: 1px solid #bfdbfe; /* BLUE BORDER */
+  border: 1px solid rgba(0,0,0,0.15);
 }
 
-/* BLUE TEXT FOR AMENITY NAMES */
+/* TEXT */
 .pd-amenity-name {
   font-size: 13px;
   font-weight: 500;
-  color: #2563eb; /* DARK BLUE TEXT */
+  color: #000; /* Black Text */
   text-align: center;
   line-height: 1.3;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  word-break: break-word;
 }
 
-/* BLUE "MORE" ITEM */
+/* MORE ITEM */
 .pd-more-item {
   cursor: pointer !important;
-  border: 2px dashed #3b82f6 !important; /* BLUE DASHED BORDER */
-  background: #e0f2ff !important; /* BLUE BACKGROUND */
+  border: 1px dashed rgba(0,0,0,0.25) !important;
+  background: #fafafa !important;
 }
 
 .pd-more-item:hover {
-  border-color: #1d4ed8 !important; /* DARKER BLUE ON HOVER */
-  background: #dbeafe !important; /* DEEPER BLUE ON HOVER */
-  transform: translateY(-2px) scale(1.05) !important;
+  border-color: rgba(0,0,0,0.45) !important;
+  transform: translateY(-2px) scale(1.03);
 }
 
 .pd-more-icon-bg {
-  background: #3b82f6 !important; /* BLUE BACKGROUND */
-  color: white !important; /* WHITE ICON */
-  border-color: #2563eb !important; /* BLUE BORDER */
+  background: #ffffff !important;
+  color: #000 !important;
 }
 
-/* BLUE EXTERNAL TOGGLE BUTTON */
+/* TOGGLE BUTTON CONTAINER */
 .pd-external-toggle-container {
   display: flex;
   justify-content: center;
@@ -122,13 +108,14 @@
   margin-right: auto;
 }
 
+/* BUTTON STYLE */
 .pd-external-toggle-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #3b82f6; /* BLUE BACKGROUND */
-  color: white; /* WHITE TEXT */
-  border: none;
+  background: #ffffff; /* White Background */
+  color: orange; /* Orange Text */
+  border: 1px solid rgba(0,0,0,0.2); /* Light Black Border */
   border-radius: 20px;
   padding: 8px 20px;
   font-size: 14px;
@@ -137,54 +124,31 @@
   transition: all 0.2s ease;
 }
 
+/* BUTTON HOVER */
 .pd-external-toggle-btn:hover {
-  background: #2563eb; /* DARKER BLUE ON HOVER */
+  color: #000; /* Black Hover */
+  border-color: rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .pd-external-toggle-btn:active {
-  background: #1d4ed8; /* EVEN DARKER BLUE ON CLICK */
   transform: translateY(0);
 }
 
-/* ANIMATIONS */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.pd-amenities-container.expanded .pd-amenity-item {
-  animation: fadeInUp 0.3s ease-out forwards;
-}
-
-.pd-amenities-container.expanded .pd-amenity-item:nth-child(n+11) {
-  animation-delay: calc((var(--item-index) - 10) * 0.05s);
-}
-
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 @media (max-width: 850px) {
   .pd-amenities-container {
     width: 100%;
     margin: 0 auto;
     padding: 16px;
   }
-  
+
   .pd-external-toggle-container {
     width: 100%;
   }
-  
+
   .pd-amenities-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .pd-amenities-grid.expanded {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -193,75 +157,33 @@
   .pd-amenities-container {
     padding: 12px;
   }
-  
+
   .pd-amenities-heading {
     font-size: 20px;
   }
-  
+
   .pd-amenities-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-  
-  .pd-amenities-grid.expanded {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
+
   .pd-amenity-item {
     padding: 10px;
     min-height: 80px;
   }
-  
+
   .pd-amenity-icon {
     font-size: 20px;
     width: 40px;
     height: 40px;
   }
-  
+
   .pd-amenity-name {
     font-size: 12px;
   }
-  
+
   .pd-external-toggle-btn {
     padding: 6px 16px;
     font-size: 13px;
   }
-}
-
-@media (max-width: 1024px) and (min-width: 768px) {
-  .pd-amenities-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .pd-amenities-grid.expanded {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* SMOOTH EXPANSION */
-.pd-amenities-container:not(.expanded) {
-  max-height: 350px;
-  overflow: hidden;
-}
-
-.pd-amenities-container.expanded {
-  max-height: 1000px;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.pd-amenities-grid.expanded {
-  min-height: 400px;
-}
-
-/* BLUE SHADOWS AND EFFECTS */
-.pd-amenity-item:focus-within {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* BLUE BULLET POINTS IF NEEDED */
-.pd-amenities-heading::before {
-  content: "•";
-  color: #3b82f6;
-  margin-right: 8px;
 }

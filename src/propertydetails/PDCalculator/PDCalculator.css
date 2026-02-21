@@ -1,18 +1,19 @@
-/* PDCalculator.css - WHITE CONTAINER, BLUE THEME */
+/* PDCalculator.css - BLACK / WHITE / ORANGE THEME */
 
-/* Main Container - WHITE */
+/* Main Container */
 .helpful-tools-container {
   width: 800px;
-  background: white !important; /* WHITE CONTAINER */
+  background: #ffffff !important;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1); /* LIGHT BLUE SHADOW */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Black Shadow */
   padding: 24px;
   margin: 0 auto;
   margin-left: 0;
   margin: 20px 0;
   margin-right: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  border: 1px solid #dbeafe; /* LIGHT BLUE BORDER */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Light Black Border */
+  color: #000;
 }
 
 /* Header */
@@ -21,33 +22,33 @@
   text-align: center;
 }
 
-/* DARK BLUE HEADING */
+/* Title */
 .tools-title {
   font-size: 24px;
   font-weight: 700;
-  color: #1e40af !important; /* DARK BLUE HEADING */
+  color: #000 !important; /* Black Title */
   margin: 0 0 8px 0;
   padding-bottom: 8px;
-  border-bottom: 2px solid #3b82f6; /* BLUE BORDER */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: inline-block;
 }
 
-/* LIGHT BLUE SUBTITLE */
+/* Subtitle */
 .tools-subtitle {
   font-size: 14px;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  color: #000 !important;
   margin: 0;
   font-weight: 400;
 }
 
-/* Tools Horizontal Scroll Container */
+/* Scroll Container */
 .tools-scroll-container {
   display: flex;
   overflow-x: auto;
   gap: 20px;
   padding: 10px 5px 20px;
   scrollbar-width: thin;
-  scrollbar-color: #93c5fd transparent; /* LIGHT BLUE SCROLLBAR */
+  scrollbar-color: rgba(0,0,0,0.3) transparent;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -56,22 +57,21 @@
 }
 
 .tools-scroll-container::-webkit-scrollbar-track {
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
-  border-radius: 3px;
+  background: #f5f5f5;
 }
 
 .tools-scroll-container::-webkit-scrollbar-thumb {
-  background: #93c5fd; /* LIGHT BLUE THUMB */
+  background: rgba(0,0,0,0.3);
   border-radius: 3px;
 }
 
 .tools-scroll-container::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6; /* BLUE ON HOVER */
+  background: rgba(0,0,0,0.5);
 }
 
 /* Tool Card */
 .tool-card {
-  border: 1px solid #dbeafe !important; /* LIGHT BLUE BORDER */
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
   border-radius: 8px !important;
   padding: 16px !important;
   text-align: center;
@@ -85,18 +85,18 @@
   min-width: 150px;
   max-width: 150px;
   flex-shrink: 0;
-  background: #f8fafc; /* VERY LIGHT BLUE/GRAY BACKGROUND */
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.05); /* LIGHT BLUE SHADOW */
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  color: #000;
 }
 
 .tool-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15); /* LIGHT BLUE SHADOW */
-  border-color: #3b82f6 !important; /* BLUE BORDER ON HOVER */
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND ON HOVER */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-/* LIGHT BLUE POPULAR BADGE */
+/* Popular Badge */
 .popular-badge {
   position: absolute;
   top: 8px;
@@ -104,99 +104,86 @@
   font-size: 10px !important;
   padding: 2px 8px !important;
   border-radius: 10px !important;
-  background: #dbeafe !important; /* LIGHT BLUE BACKGROUND */
-  color: #1e40af !important; /* DARK BLUE TEXT */
-  border: 1px solid #93c5fd !important; /* LIGHT BLUE BORDER */
+  background: #ffffff !important;
+  color: #000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Tool Icon Container - 60x60 */
+/* Icon Container */
 .tool-icon-container {
   width: 60px;
   height: 60px;
   border-radius: 12px;
-  border: 2px solid #93c5fd; /* LIGHT BLUE BORDER */
+  border: 1px solid rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
   transition: all 0.3s ease;
-  background: #f0f7ff; /* LIGHT BLUE BACKGROUND */
+  background: #ffffff;
 }
 
 .tool-card:hover .tool-icon-container {
   transform: scale(1.05);
-  border-color: #3b82f6; /* BLUE BORDER ON HOVER */
-  background: #dbeafe; /* DEEPER BLUE BACKGROUND ON HOVER */
 }
 
-/* Tool Icon - LIGHT BLUE */
+/* Icon */
 .tool-icon {
   width: 32px;
   height: 32px;
-  color: #3b82f6; /* BLUE ICON */
+  color: #000;
 }
 
 .tool-icon svg {
   width: 100%;
   height: 100%;
-  stroke-width: 1.5;
-  fill: #3b82f6; /* BLUE FILL */
-  stroke: #3b82f6; /* BLUE STROKE */
+  fill: #000;
+  stroke: #000;
 }
 
-/* Tool Title - DARK BLUE */
+/* Title */
 .tool-title {
   font-size: 13px;
   font-weight: 600;
-  color: #1e40af !important; /* DARK BLUE HEADING */
+  color: #000 !important;
   margin: 0 0 4px 0;
-  line-height: 1.3;
 }
 
-/* Tool Description - LIGHT BLUE */
+/* Description */
 .tool-description {
   font-size: 11px;
-  color: #60a5fa !important; /* LIGHT BLUE TEXT */
+  color: #000 !important;
   margin: 0;
   line-height: 1.3;
-  height: 28px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  font-weight: 500;
 }
 
-/* Remove any existing text color overrides */
+/* Default text */
 .helpful-tools-container p,
 .helpful-tools-container span {
-  color: #60a5fa !important; /* LIGHT BLUE FOR ALL TEXT */
+  color: #000 !important;
 }
 
-/* Ensure headings remain dark blue */
-.helpful-tools-container h1,
-.helpful-tools-container h2,
-.helpful-tools-container h3,
-.helpful-tools-container h4 {
-  color: #1e40af !important; /* DARK BLUE HEADINGS */
+/* Buttons (if used now or later) */
+.helpful-tools-container button,
+.helpful-tools-container .ant-btn {
+  background: #ffffff !important;
+  color: orange !important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Focus states for accessibility */
-.tool-card:focus-within {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+.helpful-tools-container button:hover,
+.helpful-tools-container .ant-btn:hover {
+  background: #ffffff !important;
+  color: #000 !important;
+  border-color: #000 !important;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 850px) {
   .helpful-tools-container {
     width: 95%;
     max-width: 800px;
     padding: 20px;
-  }
-  
-  .tools-title {
-    font-size: 22px;
   }
 }
 
@@ -205,134 +192,21 @@
     padding: 16px;
     border-radius: 10px;
   }
-  
-  .tools-title {
-    font-size: 20px;
-    padding-bottom: 6px;
-  }
-  
-  .tools-subtitle {
-    font-size: 13px;
-  }
-  
-  .tools-scroll-container {
-    gap: 15px;
-    padding: 10px 3px 16px;
-  }
-  
+
   .tool-card {
     padding: 12px !important;
     min-height: 140px;
     min-width: 130px;
     max-width: 130px;
-    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.1);
   }
-  
+
   .tool-icon-container {
     width: 50px;
     height: 50px;
-    margin-bottom: 8px;
-    border-width: 1.5px;
   }
-  
+
   .tool-icon {
     width: 28px;
     height: 28px;
   }
-  
-  .tool-title {
-    font-size: 12px;
-  }
-  
-  .tool-description {
-    font-size: 10px;
-    height: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .tools-scroll-container {
-    gap: 12px;
-  }
-  
-  .tool-card {
-    min-height: 130px;
-    min-width: 120px;
-    max-width: 120px;
-  }
-  
-  .tool-icon-container {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .tool-icon {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .tools-title {
-    font-size: 18px;
-  }
-  
-  .tools-subtitle {
-    font-size: 12px;
-  }
-}
-
-/* For very small screens */
-@media (max-width: 360px) {
-  .helpful-tools-container {
-    padding: 12px;
-  }
-  
-  .tool-card {
-    min-width: 110px;
-    max-width: 110px;
-    padding: 10px !important;
-  }
-  
-  .tool-icon-container {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .tool-icon {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-/* Smooth hover transitions */
-.tool-card,
-.tool-icon-container,
-.tool-icon {
-  transition: all 0.2s ease-in-out;
-}
-
-/* Color scheme consistency */
-.helpful-tools-container {
-  --dark-blue: #1e40af;
-  --medium-blue: #3b82f6;
-  --light-blue: #60a5fa;
-  --very-light-blue: #f0f7ff;
-  --border-blue: #dbeafe;
-}
-
-/* Fix for any Ant Design Tag styles */
-.ant-tag {
-  border-color: #93c5fd !important;
-  color: #1e40af !important;
-  background: #dbeafe !important;
-}
-
-/* Ensure icons in tool cards are blue */
-.tool-card .anticon {
-  color: #3b82f6 !important;
-}
-
-/* If using SVG icons, ensure they're blue */
-.tool-card svg:not(.tool-icon svg) {
-  fill: #3b82f6 !important;
-  stroke: #3b82f6 !important;
 }

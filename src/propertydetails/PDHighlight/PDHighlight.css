@@ -6,13 +6,13 @@
   border-radius: 16px;
   width: 800px;
   background: white;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 4px 20px rgba(53, 52, 52, 0.15);
   box-sizing: border-box;
 }
 
 /* Title styling */
 .pd-highlight-title {
-  color: #1e40af;
+  color: #000000;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 24px;
@@ -31,12 +31,12 @@
   font-size: 16px;
   line-height: 1.6;
   font-weight: 500;
-  color: #1e40af;
+  color: #000000;
 }
 
 /* Bullet */
 .pd-highlight-point-bullet {
-  color: #3b82f6;
+  color: #000000;
   font-size: 24px;
   margin-right: 12px;
   flex-shrink: 0;
@@ -47,13 +47,13 @@
 .pd-highlight-point-text {
   flex: 1;
   font-weight: 500;
-  color: #1e40af;
+  color: #000000;
 }
 
 /* Toggle button - Same blue theme as previous section */
 .pd-highlight-toggle-btn {
-  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
-  color: white;
+  background:rgb(255, 255, 255);
+  color: rgb(192, 65, 6);
   border: none;
   padding: 12px 24px;
   border-radius: 10px;
@@ -61,15 +61,16 @@
   font-size: 16px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: block;
   margin: 0 auto;
 }
 
 .pd-highlight-toggle-btn:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: white;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  color: orange ;
 }
 
 /* ================= RESPONSIVE ================= */

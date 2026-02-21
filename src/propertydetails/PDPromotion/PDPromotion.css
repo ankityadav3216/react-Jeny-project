@@ -4,11 +4,12 @@
   flex-direction: column;
   padding: 20px;
   border-radius: 8px;
-  max-width: 800px;      /* same width as highlight */
+  max-width: 800px;
   width: 100%;
-  margin: 4px 0;         /* reduced margin */
-  background: #ffffff;   /* WHITE background */
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); /* Blue tint shadow */
+  margin: 4px 0;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* BLACK SHADOW */
+  border: 1px solid rgba(0, 0, 0, 0.2);       /* LIGHT BLACK BORDER */
   box-sizing: border-box;
 }
 
@@ -18,36 +19,36 @@
   flex-direction: column;
 }
 
-/* Title → BLUE */
+/* Title → BLACK */
 .ps-title {
-  color: #1e40af;        /* BLUE */
+  color: #000000;
   font-size: 1.5rem;
-  margin-bottom: 8px;   /* reduced margin */
+  margin-bottom: 8px;
   font-weight: 600;
   text-align: left;
 }
 
 /* Offers container */
 .ps-offers-container {
-  margin-bottom: 8px;   /* reduced margin */
+  margin-bottom: 8px;
 }
 
-/* Offer item → BLUE TEXT */
+/* Offer item → BLACK TEXT */
 .ps-offer-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 4px;   /* reduced spacing */
+  margin-bottom: 4px;
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #1e40af;        /* BLUE TEXT */
+  color: #000000;
 }
 
-/* Toggle button → LIGHT BLUE with BLUE TEXT */
+/* Toggle button → WHITE BG + ORANGE TEXT */
 .ps-toggle-btn {
-  margin-top: 4px;      /* tight spacing */
-  background-color: #93c5fd;  /* LIGHT BLUE */
-  color: #1e40af;              /* BLUE TEXT */
-  border: none;
+  margin-top: 4px;
+  background-color: #ffffff;
+  color: #ff6a00;                         /* ORANGE TEXT */
+  border: 1px solid rgba(0, 0, 0, 0.2);    /* LIGHT BLACK BORDER */
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -56,15 +57,17 @@
   transition: all 0.3s ease;
 }
 
+/* Hover → BLACK */
 .ps-toggle-btn:hover {
-  background-color: #3b82f6;  /* MEDIUM BLUE */
-  color: #ffffff;              /* WHITE TEXT on hover */
+  background-color: #f3f3f3;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .ps-main-container {
     max-width: 90%;
-    margin: 4px auto;  /* tight margin on mobile too */
+    margin: 4px auto;
   }
 }

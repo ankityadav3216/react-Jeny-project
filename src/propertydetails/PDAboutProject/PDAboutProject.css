@@ -1,38 +1,39 @@
-/* PDAboutProject.css - NO SCROLL VERSION */
+/* PDAboutProject.css - UPDATED BLACK THEME (NO SCROLL VERSION) */
 .pd-about-project-container {
   width: 800px;
-  
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Black Shadow */
+  border: 1px solid rgba(0,0,0,0.15); /* Light Black Border */
   padding: 20px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 20px 0;
   margin-left: 0;
   margin-right: auto;
-  margin: 20px 0;
-background: rgb(245, 245, 245);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  height: 250px; /* Default height */
-  overflow: hidden; /* Hide overflow by default */
+  height: 250px;
+  overflow: hidden;
 }
 
-/* Expanded state - container grows to fit content */
+/* Expanded state */
 .pd-about-project-container.expanded {
-  height: auto; /* Auto height when expanded */
-  min-height: 250px; /* Minimum height */
+  height: auto;
+  min-height: 250px;
 }
 
+/* Heading */
 .pd-about-heading {
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #000; /* Black Title */
   margin: 0 0 16px 0;
   padding-bottom: 12px;
-  border-bottom: 2px solid #3b82f6;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
+/* Text Content */
 .pd-text-content {
   flex: 1;
   margin-bottom: 16px;
@@ -41,13 +42,13 @@ background: rgb(245, 245, 245);
 .pd-paragraph {
   font-size: 14px;
   line-height: 1.6;
-  color: #333;
+  color: #000; /* Black Text */
   margin: 0;
   text-align: justify;
 }
 
 .pd-paragraph-gap {
-  height: 24px; /* 2 line gap */
+  height: 24px;
   width: 100%;
 }
 
@@ -55,42 +56,45 @@ background: rgb(245, 245, 245);
 .pd-toggle-container {
   margin-top: auto;
   padding-top: 12px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid rgba(0,0,0,0.15);
   display: flex;
   justify-content: center;
 }
 
+/* Button Style */
 .pd-toggle-btn {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
+  background: #ffffff; /* White Background */
+  border: 1px solid rgba(0,0,0,0.2); /* Light Black Border */
   border-radius: 6px;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 500;
-  color: #3b82f6;
+  color: orange; /* Orange Text */
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
+/* Hover Effect */
 .pd-toggle-btn:hover {
-  background: #e9ecef;
-  border-color: #3b82f6;
+  background: #ffffff;
+  color: #000; /* Hover Black */
+  border-color: rgba(0,0,0,0.4);
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Black Shadow */
 }
 
 .pd-toggle-btn:active {
   transform: translateY(0);
 }
 
-/* Fade effect for collapsed state */
+/* Fade effect when collapsed */
 .pd-about-project-container:not(.expanded) .pd-text-content {
   position: relative;
   overflow: hidden;
-  max-height: 120px; /* Limit height for first paragraph */
+  max-height: 120px;
 }
 
 .pd-about-project-container:not(.expanded) .pd-text-content::after {
@@ -100,11 +104,11 @@ background: rgb(245, 245, 245);
   left: 0;
   right: 0;
   height: 60px;
-  background: linear-gradient(transparent, white);
+  background: linear-gradient(transparent, #ffffff);
   pointer-events: none;
 }
 
-/* Animation for smooth expansion */
+/* Smooth Expansion Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -120,7 +124,7 @@ background: rgb(245, 245, 245);
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 850px) {
   .pd-about-project-container {
     width: 100%;
@@ -128,12 +132,12 @@ background: rgb(245, 245, 245);
     margin: 0 auto;
     padding: 16px;
   }
-  
+
   .pd-about-project-container.expanded {
     height: auto;
     min-height: 250px;
   }
-  
+
   .pd-about-project-container:not(.expanded) .pd-text-content {
     max-height: 100px;
   }
@@ -143,29 +147,29 @@ background: rgb(245, 245, 245);
   .pd-about-project-container {
     padding: 12px;
   }
-  
+
   .pd-about-heading {
     font-size: 18px;
   }
-  
+
   .pd-paragraph {
     font-size: 13px;
     line-height: 1.5;
   }
-  
+
   .pd-paragraph-gap {
     height: 20px;
   }
-  
+
   .pd-toggle-btn {
     padding: 6px 12px;
     font-size: 13px;
   }
-  
+
   .pd-about-project-container:not(.expanded) .pd-text-content {
     max-height: 80px;
   }
-  
+
   .pd-about-project-container:not(.expanded) .pd-text-content::after {
     height: 50px;
   }
