@@ -1,0 +1,50 @@
+/* Container */
+.property-detail-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main 2-column layout */
+.pd-main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* LEFT COLUMN */
+.pd-left {
+  flex: 1;
+  min-width: 0;
+}
+
+/* RIGHT COLUMN */
+.pd-right {
+  width: 380px;
+  position: relative;
+}
+
+/* Sticky DeveloperContactCard */
+.pd-right > * {
+  position: sticky;
+  top: 100px; /* Header ke niche ka gap */
+}
+
+/* Mobile responsive */
+@media (max-width: 992px) {
+  .pd-main-layout {
+    flex-direction: column;
+  }
+
+  .pd-right {
+    width: 100%;
+  }
+
+  .pd-right > * {
+    position: relative;
+    top: 0;
+  }
+}

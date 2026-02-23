@@ -1,0 +1,456 @@
+.pd-overview-container {
+  padding: 24px;
+  background: #fff;
+  overflow: visible; /* Ensure no content is hidden */
+  width: 100%; /* Take full width of parent */
+  box-sizing: border-box;
+}
+
+.pd-breadcrumb {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.pd-property-name {
+  color: #ff6a00;
+}
+
+/* BIG IMAGE */
+.pd-main-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden; /* Keep image cropping, but container itself is visible */
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.pd-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SIDE IMAGES */
+.pd-side-image {
+  height: 192px;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.pd-side-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* +MORE CARD */
+.pd-more-card {
+  position: relative;
+  height: 192px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pd-more-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  backdrop-filter: blur(2px);
+}
+
+/* GALLERY */
+.pd-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.pd-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pd-gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* IMAGE ACTION BUTTONS */
+.pd-image-actions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.pd-action-btn {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #ff6a00;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.pd-action-btn:hover {
+  background: #ff6a00;
+  color: white;
+  border-color: #ff6a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.25);
+}
+
+/* ===== Main Container (no change if already set) ===== */
+.pd-highlight-main-container {
+  padding: 32px;
+  border-radius: 16px;
+  width: 800px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: visible; /* Ensure no hidden overflow */
+}
+
+/* ===== Title ===== */
+.pd-highlight-title {
+  color: #000;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  word-wrap: break-word;
+}
+
+/* ===== Card Styling ===== */
+.pd-highlight-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+/* Card hover */
+.pd-highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: #ff6a00;
+}
+
+/* ===== Icon ===== */
+.pd-highlight-icon {
+  font-size: 22px;
+  color: #ff6a00;
+  margin-right: 10px;
+}
+
+/* ===== Text ===== */
+.pd-highlight-text {
+  font-size: 15px;
+  color: #334155;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+/* ===== BUTTON UPDATED (Shadow + Hover Effect) ===== */
+.pd-highlight-btn {
+  margin-top: 24px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  background: #ff6a00;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 106, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.pd-highlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 106, 0, 0.35);
+  background: #e05e00;
+}
+
+.pd-highlight-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 14px rgba(255, 106, 0, 0.2);
+}
+
+/* DETAILS */
+.pd-details { 
+  margin-top: 30px; 
+  overflow: visible;
+}
+
+.pd-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  overflow: visible;
+}
+
+.pd-location { 
+  color: #777; 
+  display: block; 
+  margin-top: 6px; 
+  word-wrap: break-word;
+}
+
+.pd-price {
+  font-size: 22px;
+  margin: 15px 0;
+  font-weight: 600;
+  color: #000;
+  word-wrap: break-word;
+}
+
+/* BUTTONS - all with hover effects */
+.pd-primary-btn {
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.2);
+  white-space: nowrap; /* Keep buttons on one line */
+}
+
+.pd-primary-btn:hover {
+  background: #e05e00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.3);
+}
+
+.pd-whatsapp-btn {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  color: #25D366;
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+.pd-whatsapp-btn:hover {
+  background: #25D366;
+  color: white;
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+}
+
+.pd-outline-btn {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 12px 22px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+.pd-outline-btn:hover {
+  background: #f5f5f5;
+  border-color: #ff6a00;
+  color: #ff6a00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* INFO BOXES */
+.pd-info-box {
+  background: #ffffff;
+  border: 1px solid #efeded;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  word-wrap: break-word;
+  overflow: visible;
+}
+
+.pd-info-box:hover {
+  border-color: #ff6a00;
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.pd-info-box span {
+  display: block;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 6px;
+  word-wrap: break-word;
+}
+
+/* TABS - scroll only on mobile, always visible */
+.pd-tabs {
+  margin-top: 25px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 55px;
+  overflow-x: auto; /* Allow scroll only when needed */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6a00 #f0f0f0;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
+  width: 100%; /* Ensure full width */
+}
+
+/* Hide scrollbar on desktop if not needed, but keep functionality */
+@media (min-width: 1025px) {
+  .pd-tabs {
+    overflow-x: visible;
+    flex-wrap: wrap; /* Allow wrapping on large screens if needed */
+    gap: 40px;
+  }
+}
+
+.pd-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.pd-tabs::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.pd-tabs::-webkit-scrollbar-thumb {
+  background: #ff6a00;
+  border-radius: 10px;
+}
+
+.pd-tabs span {
+  padding-bottom: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  position: relative;
+  font-weight: 600; /* Make tab text bold */
+  color: #333; /* Default color */
+}
+
+.pd-tabs span:hover {
+  color: #ff6a00;
+}
+
+/* Active tab: orange text and underline with shadow */
+.pd-tabs .active {
+  color: #ff6a00;
+  border-bottom: 2px solid #ff6a00;
+  font-weight: 700; /* Slightly bolder when active */
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .pd-highlight-main-container {
+    width: 100%;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-main-image {
+    height: 260px;
+  }
+
+  .pd-side-image,
+  .pd-more-card {
+    height: 160px;
+  }
+
+  .pd-highlight-main-container {
+    padding: 20px;
+  }
+
+  .pd-highlight-title {
+    font-size: 22px;
+  }
+
+  .pd-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pd-action-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .pd-primary-btn,
+  .pd-whatsapp-btn,
+  .pd-outline-btn {
+    flex: 1;
+    margin-right: 0;
+    padding: 12px 10px;
+    text-align: center;
+    justify-content: center;
+    white-space: normal; /* Allow wrapping on small screens */
+  }
+
+  .pd-tabs {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-tabs {
+    gap: 20px;
+  }
+
+  .pd-action-group {
+    flex-direction: column;
+  }
+
+  .pd-primary-btn,
+  .pd-whatsapp-btn,
+  .pd-outline-btn {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .pd-info-box {
+    padding: 15px;
+  }
+}

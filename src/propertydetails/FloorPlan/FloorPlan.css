@@ -1,0 +1,82 @@
+.floorplan-container {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* Title */
+.floorplan-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* BHK Buttons */
+.bhk-selector {
+  margin-bottom: 20px;
+}
+
+.bhk-btn {
+  border-radius: 20px;
+  margin-right: 10px;
+  border: none;
+  background: #f3f4f6;
+}
+
+.bhk-btn.active {
+  background: #f97316;
+  color: #fff;
+}
+
+/* Size Tabs */
+.size-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.size-tab {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #374151;
+}
+
+.size-tab.active {
+  color: #f97316;
+  border-bottom: 2px solid #f97316;
+}
+
+/* Info */
+.plan-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #6b7280;
+}
+
+/* Image */
+.plan-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.plan-image-wrapper img {
+  width: 420px;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .size-tabs {
+    overflow-x: auto;
+    gap: 20px;
+  }
+
+  .plan-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

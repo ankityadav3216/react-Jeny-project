@@ -1,0 +1,118 @@
+.reels-section {
+  padding: 20px 0;
+  background: #ffffff;
+  width: 100%;
+}
+
+/* HEADER */
+.reels-heading-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.reels-logo {
+  font-size: 24px;
+  color: #ff0000;
+  background: #fff;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.reels-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* SCROLL */
+.reels-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.reels-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.reel-card {
+  flex: 0 0 auto;
+  width: 200px;
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* 9:16 Aspect Ratio */
+.reel-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reel-thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+/* PLAY ICON */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  font-size: 50px;
+  color: #fff;
+  background: rgba(255, 0, 0, 0.9);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .reel-card {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reel-card {
+    width: 160px;
+  }
+
+  .reels-heading {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reel-card {
+    width: 140px;
+  }
+
+  .reels-heading {
+    font-size: 16px;
+  }
+
+  .play-icon {
+    font-size: 40px;
+    padding: 8px;
+  }
+}
