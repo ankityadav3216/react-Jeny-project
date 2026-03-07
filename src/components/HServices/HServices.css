@@ -9,6 +9,7 @@
   font-weight: 600;
   margin-bottom: 50px;
   color: #1a1a1a;
+  overflow-y: hidden;
 }
 
 .hservices-grid {
@@ -28,13 +29,14 @@
   justify-content: space-between; /* SAME */
   gap: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   text-align: left;
+  overflow: hidden;
 }
 
 .hservice-card:hover {
-  transform: translateY(-6px);
+  transform: none;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -65,6 +67,7 @@
   font-weight: 600;
   margin-bottom: 8px;
   color: #222;
+  overflow-y: hidden;
 }
 
 .hservice-number {
@@ -77,13 +80,14 @@
   font-size: 14px;
   color: #666;
   line-height: 1.6;
+  overflow-y: hidden;
 }
 
 .hservice-more {
   margin-top: 10px;
   font-size: 13px;
   color: #444;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: none;
 }
 
 @keyframes fadeIn {

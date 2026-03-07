@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Card } from "antd";
 import { PlayCircleOutlined, VideoCameraOutlined } from "@ant-design/icons";
-import "./Reels.css";
+import "./ReelsSection.css";
 
 const reelsData = [
   { id: 1, videoUrl: "https://youtube.com/shorts/8cumXFw9TlY" },
@@ -24,7 +24,7 @@ const toEmbedUrl = (url) => {
   return url;
 };
 
-const Reels = () => {
+const ReelsSection = () => {
   const containerRef = useRef(null);
 
   const openReel = (url) => {
@@ -102,4 +102,4 @@ const Reels = () => {
   );
 };
 
-export default Reels;
+export default ReelsSection;

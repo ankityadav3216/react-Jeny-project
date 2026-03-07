@@ -12,6 +12,7 @@
   font-weight: 700;
   color: #111827;
   margin: 0;
+  overflow-y: hidden;
 }
 
 .underline {
@@ -27,17 +28,18 @@
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: hidden;
+  
   padding-bottom: 10px;
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .projects-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.projects-scroll::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
 /* Card */
@@ -52,11 +54,11 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: none;
 }
 
 /* Overlay bottom */
@@ -76,12 +78,14 @@
   margin: 0 0 6px 0;
   font-size: 18px;
   font-weight: 600;
+  overflow-y: hidden;
 }
 
 .overlay p {
   margin: 0;
   font-size: 13px;
   opacity: 0.9;
+  overflow-y: hidden;
 }
 
 /* Price Tag */
@@ -96,6 +100,7 @@
   padding: 6px 14px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow-y: hidden;
 }
 
 /* Responsive */

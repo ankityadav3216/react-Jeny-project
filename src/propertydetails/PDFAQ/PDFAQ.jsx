@@ -1,6 +1,3 @@
-// =============================
-// File: PDFAQ.jsx
-// =============================
 import React from "react";
 import { Collapse, Typography } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
@@ -50,17 +47,17 @@ const faqData = [
 
 const PDFAQ = () => {
   return (
-    <div className="pdfaq-section">
+    <section className="pdfaq-section" id="faq">
       <div className="pdfaq-container">
-        {/* Heading */}
         <div className="pdfaq-header">
           <div className="pdfaq-icon">
             <MessageOutlined />
           </div>
-          <Title level={3} className="pdfaq-title">FAQs</Title>
+          <Title level={3} className="pdfaq-title">
+            FAQs
+          </Title>
         </div>
 
-        {/* FAQ Collapse */}
         <Collapse
           bordered={false}
           expandIconPosition="end"
@@ -70,7 +67,7 @@ const PDFAQ = () => {
           {faqData.map((item, index) => (
             <Panel
               header={<span className="pdfaq-question">{item.q}</span>}
-              key={index}
+              key={String(index)}
               className="pdfaq-panel"
             >
               <Text className="pdfaq-answer">{item.a}</Text>
@@ -78,9 +75,8 @@ const PDFAQ = () => {
           ))}
         </Collapse>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default PDFAQ;
-

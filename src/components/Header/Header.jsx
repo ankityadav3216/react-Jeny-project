@@ -20,6 +20,7 @@ const Header = () => {
   const [activeMega, setActiveMega] = useState(null);
   const [menuBarOpen, setMenuBarOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [servicesAnchorX, setServicesAnchorX] = useState(null);
 
   const megaRef = useRef(null);
 
@@ -45,7 +46,7 @@ const Header = () => {
         <div className="header-container">
           {/* LEFT */}
           <div className="left-section">
-            <div className="header-logo">PrimeAcres</div>
+            <h2 className="header-logo">PrimeAcres</h2>
           </div>
 
           {/* CENTER MENU */}
@@ -59,7 +60,15 @@ const Header = () => {
               <Menu.Item onClick={() => toggleMega("buy")}>
                 For Buyers
               </Menu.Item>
-              <Menu.Item onClick={() => toggleMega("services")}>
+              <Menu.Item
+                onClick={(info) => {
+                  const rect = info?.domEvent?.currentTarget?.getBoundingClientRect?.();
+                  if (rect) {
+                    setServicesAnchorX(rect.left + rect.width / 2);
+                  }
+                  toggleMega("services");
+                }}
+              >
                 For Services
               </Menu.Item>
               <Menu.Item>News & Guide</Menu.Item>
@@ -105,7 +114,7 @@ const Header = () => {
       {/* MEGA MENUS */}
       <div ref={megaRef}>
         <Buy open={activeMega === "buy"} />
-        <Services open={activeMega === "services"} />
+        <Services open={activeMega === "services"} anchorX={servicesAnchorX} />
       </div>
 
       {/* MOBILE DRAWERS */}

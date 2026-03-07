@@ -1,51 +1,64 @@
-// propertydetails/PropertyDetail.jsx
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import PDHerosection from "./PDHerosection/PDHerosection";
 import PDOverview from "./PDOverview/PDOverview";
+import ProjectUpdates from "./ProjectUpdates/ProjectUpdates";
 import ProjectUSPs from "./ProjectUSPs/ProjectUSPs";
-import WatchReels from "./WatchReels/WatchReels";
-import LocationSection from "./LocationSection/LocationSection";
+import ReelsSection from "./ReelsSection/ReelsSection";
 import FloorPlan from "./FloorPlan/FloorPlan";
-import DeveloperContactCard from "./DeveloperContactCard/DeveloperContactCard";
+import LocationSection from "./LocationSection/LocationSection";
 import PDAmenities from "./PDAmenities/PDAmenities";
-import PDAboutDeveloper from "./PDAboutDeveloper/PDAboutDeveloper";
+import AboutDeveloper from "./AboutDeveloper/AboutDeveloper";
 import PDFAQ from "./PDFAQ/PDFAQ";
-
+import PDContactSeller from "./PDContactSeller/PDContactSeller";
 
 import "./PropertyDetail.css";
 
 const PropertyDetail = () => {
-  const { id } = useParams();
+  const { id: _id } = useParams();
   const [property] = useState(null);
 
   return (
-    <div className="property-detail-container">
-      {/* 1️⃣ OVERVIEW */}
+    <main className="property-detail-container">
       <PDHerosection property={property} />
 
-      {/* 2️⃣ MAIN LAYOUT */}
       <div className="pd-main-layout">
-        {/* LEFT CONTENT */}
-        <div className="pd-left">
-          <PDOverview property={property} />
-          <ProjectUSPs property={property} />
-          <WatchReels  property={property} />
-          <FloorPlan property={property} />
-          <LocationSection property={property} />
-          <PDAmenities property={property} />          
-          <PDAboutDeveloper property={property} />        
-          <PDFAQ property={property} />
-          
-        </div>
+        <section className="pd-left" aria-label="Property details sections">
+          <div id="overview-section">
+            <PDOverview property={property} />
+          </div>
+          <div id="project-update-section">
+            <ProjectUpdates property={property} />
+          </div>
+          <div id="project-usps-section">
+            <ProjectUSPs property={property} />
+          </div>
+          <div id="reels-section">
+            <ReelsSection property={property} />
+          </div>
+          <div id="floor-plan-section">
+            <FloorPlan property={property} />
+          </div>
+          <div id="location-section">
+            <LocationSection property={property} />
+          </div>
+          <div id="amenities-section">
+            <PDAmenities property={property} />
+          </div>
+          <div id="about-developer-section">
+            <AboutDeveloper property={property} />
+          </div>
+          <div id="faq-section">
+            <PDFAQ property={property} />
+          </div>
+        </section>
 
-        {/* RIGHT – STICKY CONTACT SELLER */}
-        <div className="pd-right">
-          <DeveloperContactCard property={property} />
-        </div>
+        <aside className="pd-right" aria-label="Contact seller panel">
+          <PDContactSeller property={property} />
+        </aside>
       </div>
-    </div>
+    </main>
   );
 };
 

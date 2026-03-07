@@ -39,6 +39,15 @@
 /* TABLE SCROLL CONTAINER */
 .amortization-wrapper .ant-table-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.amortization-wrapper .ant-table-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 /* MEDIA QUERIES */

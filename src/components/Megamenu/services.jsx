@@ -2,13 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Services.css";
 
-const Services = ({ open }) => {
+const Services = ({ open, anchorX }) => {
   const navigate = useNavigate();
 
   if (!open) return null;
 
+  const popupStyle = anchorX
+    ? { left: `${anchorX}px`, transform: "translateX(-50%)" }
+    : undefined;
+
   return (
-    <div className="services-wrapper">
+    <div className="services-wrapper" style={popupStyle}>
       <div className="services-mega">
         <div className="services-col">
           <p className="services-title">Tools</p>

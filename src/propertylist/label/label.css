@@ -12,12 +12,16 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 
   scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .label-bar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
   display: none;
 }
 

@@ -15,6 +15,7 @@
   align-items: center;
   gap: 12px;
   color: #111;
+  overflow-y: hidden;
 }
 
 .fd-title-icon {
@@ -27,12 +28,18 @@
   display: flex;
   gap: 30px;
   overflow-x: auto;
+  overflow-y: hidden;
+  
   scroll-behavior: smooth;
   padding-bottom: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .fd-scroll::-webkit-scrollbar {
-  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
 /* Card */
@@ -46,11 +53,12 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
 .fd-card:hover {
-  transform: translateY(-6px);
+  transform: none;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -73,11 +81,13 @@
   font-size: 17px;
   font-weight: 600;
   margin: 0;
+  overflow-y: hidden;
 }
 
 .fd-role {
   font-size: 13px;
   color: #777;
+  overflow-y: hidden;
 }
 
 /* Description */
@@ -86,6 +96,7 @@
   color: #555;
   line-height: 1.6;
   margin-bottom: 18px;
+  overflow-y: hidden;
 }
 
 /* Project Image */
@@ -111,11 +122,13 @@
 .fd-overlay h3 {
   font-size: 17px;
   margin: 0;
+  overflow-y: hidden;
 }
 
 .fd-overlay p {
   font-size: 13px;
   margin: 5px 0 0;
+  overflow-y: hidden;
 }
 
 /* Button */

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import "./FeaturedProperties.css";
 import { EnvironmentOutlined, AppstoreOutlined } from "@ant-design/icons";
 
@@ -78,48 +78,12 @@ const properties = [
 ];
 
 const FeaturedProperties = () => {
-  const scrollRef = useRef(null);
-  const [isHovering, setIsHovering] = useState(false);
-
-  // Duplicate cards for smooth infinite scroll
-  const allProperties = [...properties, ...properties, ...properties];
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    let scrollPos = 0;
-    const cardWidth = 330; // card width + gap
-    let interval;
-
-    const startScroll = () => {
-      interval = setInterval(() => {
-        if (!isHovering && container) {
-          scrollPos += 1; // scroll 1px per step
-          if (scrollPos >= container.scrollWidth / 3) {
-            scrollPos = 0; // reset to start for infinite loop
-          }
-          container.scrollTo({ left: scrollPos, behavior: "smooth" });
-        }
-      }, 20); // speed of scroll
-    };
-
-    startScroll();
-
-    return () => clearInterval(interval);
-  }, [isHovering]);
-
   return (
     <div className="featured-properties">
       <h2 className="fp-heading">Featured Properties</h2>
 
-      <div
-        className="fp-scroll"
-        ref={scrollRef}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
-        {allProperties.map((item, index) => (
+      <div className="fp-scroll">
+        {properties.map((item, index) => (
           <div className="fp-card" key={`${item.title}-${index}`}>
             <div className="fp-image-wrapper">
               <img src={item.image} alt={item.title} />

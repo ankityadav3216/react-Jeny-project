@@ -33,13 +33,18 @@
   display: flex;
   gap: 30px;
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   scroll-behavior: smooth;
   position: relative;
   padding-bottom: 10px;
 }
 
 .card-scroll::-webkit-scrollbar {
-  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
 /* ================= CARD ================= */

@@ -1,55 +1,93 @@
-/* 🔹 BODY & ROOT */
-body,
-#root {
-  overflow: visible;
-}
-
 /* MAIN CONTAINER */
 .property-detail-container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 16px 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-/* ✅ ADD THIS — OVERVIEW TOP SPACING */
-.property-detail-container > :first-child {
-  margin-top: 27px;   /* Space from top header */
+/* Hide scrollbar UI for all scrollable elements inside property details page */
+.property-detail-container,
+.property-detail-container * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  scrollbar-color: transparent transparent !important;
 }
 
-/* MAIN 2-COLUMN LAYOUT */
+.property-detail-container::-webkit-scrollbar,
+.property-detail-container *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+.property-detail-container *::-webkit-scrollbar-track,
+.property-detail-container *::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Freeze inner text/icon/child vertical scroll in property detail sections */
+.pd-left :is(h1, h2, h3, h4, h5, h6, p, span, button, i, svg, .anticon) {
+  overflow-y: visible !important;
+  max-height: none !important;
+}
+
+.pd-left [class*="item"],
+.pd-left [class*="card"],
+.pd-left [class*="box"],
+.pd-left [class*="content"] {
+  overflow-y: visible !important;
+}
+
+/* MAIN 2 COLUMN LAYOUT */
 .pd-main-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
   align-items: flex-start;
   gap: 24px;
+  width: 100%;
+  height: calc(100vh - 110px);
+  overflow: hidden;
 }
 
 /* LEFT CONTENT */
 .pd-left {
   flex: 1;
   min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
 }
 
-/* RIGHT – STICKY CONTACT SELLER */
+/* RIGHT CONTACT SELLER */
 .pd-right {
   position: sticky;
-  top: 90px; /* header height */
+  top: 90px;
+  width: 360px;
   flex-shrink: 0;
+  overflow: visible;
+  align-self: start;
+  max-height: calc(100vh - 110px);
 }
 
-/* ANT DESIGN FIX */
+/* ANT DESIGN LAYOUT FIX */
 .ant-layout,
 .ant-layout-content {
   overflow: visible !important;
 }
 
-/* ====================== MEDIA QUERIES ====================== */
-
 /* TABLET */
 @media (max-width: 1024px) {
   .pd-main-layout {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 16px;
+    height: auto;
+    overflow: visible;
   }
 
   .pd-right {
@@ -59,7 +97,7 @@ body,
   }
 }
 
-/* MOBILE MEDIUM 576px - 768px */
+/* MOBILE */
 @media (max-width: 768px) {
   .pd-main-layout {
     gap: 14px;
@@ -75,30 +113,30 @@ body,
     position: static;
     margin-top: 12px;
   }
+
+  .pd-left {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    height: auto;
+  }
 }
 
-/* MOBILE SMALL 480px */
+/* SMALL MOBILE */
 @media (max-width: 480px) {
   .property-detail-container {
     max-width: 100%;
+    padding: 10px;
   }
 
   .pd-main-layout {
     gap: 12px;
     padding: 6px;
   }
-
-  .pd-right {
-    margin-top: 10px;
-  }
 }
 
-/* VERY SMALL MOBILE – 360px AND BELOW */
+/* VERY SMALL */
 @media (max-width: 360px) {
-  .property-detail-container {
-    width: 100%;
-  }
-
   .pd-main-layout {
     flex-direction: column;
     gap: 10px;
@@ -113,7 +151,6 @@ body,
   .pd-right {
     width: 100%;
     position: static;
-    top: auto;
     margin-top: 10px;
   }
 }

@@ -22,6 +22,10 @@
   margin-right: 10px;
   border: none;
   background: #f3f4f6;
+  line-height: 1.35 !important;
+  height: auto !important;
+  min-height: 34px;
+  overflow: visible !important;
 }
 
 .bhk-btn.active {
@@ -41,6 +45,9 @@
   padding: 10px 0;
   cursor: pointer;
   color: #374151;
+  line-height: 1.35;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .size-tab.active {
@@ -54,6 +61,7 @@
   justify-content: space-between;
   margin-bottom: 20px;
   color: #6b7280;
+  line-height: 1.35;
 }
 
 /* Image */
@@ -68,11 +76,28 @@
   border-radius: 6px;
 }
 
+/* Freeze child text/icon blocks from internal vertical scroll */
+.floorplan-container :is(h1, h2, h3, h4, h5, h6, p, span, button, i, svg, .anticon) {
+  overflow-y: visible !important;
+  max-height: none !important;
+  text-overflow: clip !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .size-tabs {
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .size-tabs::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
   }
 
   .plan-info {

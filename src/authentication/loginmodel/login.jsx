@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Button, Divider } from "antd";
 import {
   GoogleOutlined,
@@ -20,6 +20,18 @@ const Login = () => {
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
   const [values, setValues] = useState({ Username: "", password: "" });
+
+  useEffect(() => {
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
+    };
+  }, []);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -54,6 +66,10 @@ const Login = () => {
     }
   };
 
+  const goToRegistration = () => {
+    navigate("/property-registration");
+  };
+
   return (
     <div className="page">
 
@@ -62,8 +78,8 @@ const Login = () => {
         <div className="logo">PrimeAcres.</div>
         <div className="header-right">
           <span>En</span>
-          <span>Sign In</span>
-          <button className="get-started">Get Started</button>
+          <span className="signup-link" onClick={goToRegistration}>Sign-up</span>
+          <button className="get-started" onClick={goToRegistration}>Get Started</button>
         </div>
       </header>
 
@@ -124,15 +140,15 @@ const Login = () => {
 
             {/* RIGHT SOCIAL */}
             <div className="social-login">
-              <Button icon={<GoogleOutlined />} className="social-btn">
+              <Button icon={<GoogleOutlined />} className="social-btn social-btn-google">
                 Sign in with Gmail Account
               </Button>
 
-              <Button icon={<FacebookOutlined />} className="social-btn">
+              <Button icon={<FacebookOutlined />} className="social-btn social-btn-facebook">
                 Sign in Facebook Account
               </Button>
 
-              <Button icon={<AppleFilled />} className="social-btn">
+              <Button icon={<AppleFilled />} className="social-btn social-btn-apple">
                 Sign in Apple Secure ID
               </Button>
             </div>

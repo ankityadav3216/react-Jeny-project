@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Modal } from "antd";
 import Login from "../authentication/loginmodel/Login";
 import SignUp from "../authentication/registration/sign-up";
+import "./AuthModel.css";
 
 const AuthModal = ({ open, onClose }) => {
   const [isLogin, setIsLogin] = useState(true);

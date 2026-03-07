@@ -58,6 +58,15 @@
 /* Horizontal scroll for small screens */
 .bank-offers-wrapper .ant-table-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bank-offers-wrapper .ant-table-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 /* MEDIA QUERIES */

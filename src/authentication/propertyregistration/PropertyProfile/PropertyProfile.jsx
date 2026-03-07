@@ -452,14 +452,6 @@ const PropertyProfile = () => {
           </button>
         </div>
 
-        {/* Property Score Display */}
-        <div className="property-score-display">
-          <div className="score-circle">63%</div>
-          <p className="score-description">
-            Better your property score, greater your visibility
-          </p>
-        </div>
-
         {/* Help Section */}
         <div className="help-section">
           <h3>Need help?</h3>

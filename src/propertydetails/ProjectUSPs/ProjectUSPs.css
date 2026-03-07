@@ -1,109 +1,96 @@
-/* ProjectUSPs.css */
-
-.project-usps-section {
-  width: 100%;
+.pd-usps {
   background: #ffffff;
-  padding: 40px 0;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  margin-top: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: auto;
 }
 
-.project-usps-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+.pd-usps-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1f2937;
+  overflow: visible;
 }
 
-/* Header with icon */
-.project-usps-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.project-usps-icon {
-  font-size: 32px;
-  color: #ff6a00; /* Orange icon as requested */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project-usps-title {
+.pd-usp-row {
   margin: 0 !important;
-  font-size: 28px !important;
-  font-weight: 700 !important;
-  color: #000000; /* Black text */
-  line-height: 1.2;
+  overflow: visible;
 }
 
-/* USP items */
-.usp-item {
+.pd-usp-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 20px;
-  padding: 8px 0;
-  border-bottom: 1px dashed #f0f0f0;
+  min-width: 0;
+  overflow: visible;
 }
 
-.usp-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.usp-arrow {
-  font-size: 16px;
-  color: #ff6a00; /* Orange arrow */
+.pd-usp-arrow {
+  color: #ff6a00;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  margin-top: 3px;
   flex-shrink: 0;
-  margin-top: 2px;
+  overflow: visible;
 }
 
-.usp-text {
-  font-size: 16px;
-  color: #333333;
-  line-height: 1.5;
-  flex: 1;
+.pd-usp-item p {
+  margin: 0;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  word-break: break-word;
+  overflow: visible;
 }
 
-/* Responsive adjustments */
+@media (max-width: 992px) {
+  .pd-usps {
+    padding: 26px;
+  }
+
+  .pd-usps-title {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 768px) {
-  .project-usps-section {
-    padding: 30px 0;
+  .pd-usps {
+    padding: 20px;
+    border-radius: 10px;
   }
 
-  .project-usps-header {
+  .pd-usps-title {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .pd-usp-item {
     gap: 10px;
-    margin-bottom: 24px;
   }
 
-  .project-usps-icon {
-    font-size: 28px;
+  .pd-usp-arrow {
+    font-size: 18px;
   }
 
-  .project-usps-title {
-    font-size: 24px !important;
-  }
-
-  .usp-item {
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .usp-arrow {
+  .pd-usp-item p {
     font-size: 14px;
-  }
-
-  .usp-text {
-    font-size: 15px;
+    line-height: 1.6;
   }
 }
 
 @media (max-width: 480px) {
-  .project-usps-title {
-    font-size: 22px !important;
+  .pd-usps {
+    padding: 16px;
   }
 
-  .usp-text {
-    font-size: 14px;
+  .pd-usp-item p {
+    font-size: 13.5px;
   }
 }

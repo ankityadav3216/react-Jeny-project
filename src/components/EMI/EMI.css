@@ -7,6 +7,15 @@ html, body {
   overflow-x: hidden; /* Lock horizontal scroll */
   overflow-y: auto;   /* Vertical scroll ok */
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 * {
@@ -21,6 +30,14 @@ html, body {
   min-height: 100vh;
   width: 100vw;       /* Full width */
   overflow-x: hidden; /* Lock horizontal scroll */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emi-page::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 /* ========== MAIN SECTION ========== */

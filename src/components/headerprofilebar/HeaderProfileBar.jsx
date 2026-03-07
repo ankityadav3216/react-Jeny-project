@@ -10,6 +10,7 @@ const HeaderProfileBar = ({ open, onClose }) => {
       onClose={onClose}
       open={open}
       width={300}
+      className="header-profile-drawer"
       bodyStyle={{ padding: "20px" }}
     >
       {/* User Name */}

@@ -11,6 +11,22 @@ import "./HeaderMenuBar.css";
 
 const HeaderMenuBar = ({ open, onClose, isLoggedIn = false, userName = "" }) => {
   const navigate = useNavigate();
+  const [openSection, setOpenSection] = React.useState(null);
+
+  const buyerItems = [
+    "Properties for sale in Mumbai",
+    "Properties for sale in Bangalore",
+    "Properties for sale in New Delhi",
+    "Properties for sale in Hyderabad",
+    "Properties for sale in Chennai",
+    "Top Developers in India",
+  ];
+
+  const serviceItems = [
+    { label: "EMI Calculator", route: "/emi" },
+    { label: "Property Value Calculator", route: "/pvc" },
+    { label: "Rent Receipt Generator", route: "/RRG" },
+  ];
 
   const handleLoginClick = () => {
     onClose(); // close drawer
@@ -20,6 +36,10 @@ const HeaderMenuBar = ({ open, onClose, isLoggedIn = false, userName = "" }) => 
   const handleRegisterClick = () => {
     onClose(); // close drawer
     navigate("/property-registration"); // go to property registration
+  };
+
+  const toggleSection = (section) => {
+    setOpenSection((prev) => (prev === section ? null : section));
   };
 
   return (
@@ -54,6 +74,12 @@ const HeaderMenuBar = ({ open, onClose, isLoggedIn = false, userName = "" }) => 
         <CloseOutlined className="close-icon" onClick={onClose} />
       </div>
 
+      {/* SEARCH */}
+      <div className="search-box top-search-box">
+        <input placeholder="Search by Property Code" />
+        <SearchOutlined />
+      </div>
+
       {/* PROMO CARD */}
       <div className="promo-card">
         <div>
@@ -65,52 +91,46 @@ const HeaderMenuBar = ({ open, onClose, isLoggedIn = false, userName = "" }) => 
       {/* MENU LIST */}
       <div className="menu-list">
         <p className="section-title">Jeny Plans and Services</p>
-
-        <div className="menu-item">
-          Owner Plans <span className="new-badge">NEW</span>
+        <div className="menu-item arrow" onClick={() => toggleSection("buyers")}>
+          For Buyers
+          <RightOutlined className={openSection === "buyers" ? "open-arrow" : ""} />
         </div>
-        <div className="menu-item">Dealer Plans</div>
+        {openSection === "buyers" && (
+          <div className="submenu-list">
+            {buyerItems.map((item) => (
+              <div key={item} className="submenu-item">
+                {item}
+              </div>
+            ))}
+          </div>
+        )}
 
-        <div className="divider" />
-
-        <div className="menu-item arrow">
-          For Buyers <RightOutlined />
+        <div className="menu-item arrow" onClick={() => toggleSection("services")}>
+          For Services
+          <RightOutlined className={openSection === "services" ? "open-arrow" : ""} />
         </div>
-        <div className="menu-item arrow">
-          For Tenants <RightOutlined />
-        </div>
-        <div className="menu-item arrow">
-          For Owners <RightOutlined />
-        </div>
-        <div className="menu-item arrow">
-          For Dealers / Builders <RightOutlined />
-        </div>
-
-        <div className="divider" />
-
-        <div className="menu-item">Home Loans</div>
-
-        <div className="menu-item arrow">
-          Insights <span className="new-badge">NEW</span> <RightOutlined />
-        </div>
-
-        <div className="menu-item arrow">
-          Articles & News <RightOutlined />
-        </div>
+        {openSection === "services" && (
+          <div className="submenu-list">
+            {serviceItems.map((item) => (
+              <div
+                key={item.label}
+                className="submenu-item submenu-link"
+                onClick={() => {
+                  onClose();
+                  navigate(item.route);
+                }}
+              >
+                {item.label}
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="divider" />
 
         <div className="menu-item">About Us</div>
-        <div className="menu-item arrow">
-          Get Help <RightOutlined />
-        </div>
+        <div className="menu-item arrow">Get Help</div>
         <div className="menu-item">Download App</div>
-      </div>
-
-      {/* SEARCH */}
-      <div className="search-box">
-        <input placeholder="Search by Property Code" />
-        <SearchOutlined />
       </div>
 
       {/* FOOTER */}

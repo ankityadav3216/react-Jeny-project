@@ -11,7 +11,6 @@ import PropertyList from "./propertylist/propertylist.jsx";
 import EMI from "./components/EMI/EMI";
 import PVC from "./components/PVC/PVC";
 import RRG from "./components/RRG/RRG";
-import Infobar from "./components/Infobar/Infobar.jsx";
 
 // Auth pages
 import Login from "./authentication/loginmodel/login";
@@ -35,8 +34,6 @@ function App() {
         },
       }}
     >
-      <Infobar />
-
       <RouteLoader>
         <Routes>
           

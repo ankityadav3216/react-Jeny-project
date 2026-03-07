@@ -1,27 +1,50 @@
 /* ================= HEADER BASE ================= */
 .main-header {
-  background: #ffffff;
-  height: 64px;
+  background: #f8f1f1;
+  height: 64px !important;
   position: fixed;
+  top: 40px;
   width: 100%;
   z-index: 1000;
   font-family: "Inter", "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  overflow: hidden !important;
+  box-sizing: border-box;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Force all direct children to respect height */
+.main-header,
+.main-header > * {
+  max-height: 64px;
+  overflow-y: hidden !important;
 }
 
 .header-container {
   max-width: 1300px;
-  margin: auto;
-  height: 100%;
+  margin: 0 auto;
+  height: 100% !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   gap: 20px;
+  width: 100%;
+  overflow: hidden !important;
+  box-sizing: border-box;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 /* ================= LEFT ================= */
 .left-section {
   flex-shrink: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .header-logo {
@@ -29,19 +52,25 @@
   font-size: 26px;
   font-weight: 700;
   white-space: nowrap;
+  line-height: 1;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* ================= CENTER MENU ================= */
 .center-menu-wrapper {
-  flex: 1;
-  overflow-x: auto;   /* 🔥 allow scroll instead of hide */
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   justify-content: center;
+  overflow: hidden !important;
+  height: 100%;
+  align-items: center;
   scrollbar-width: none;
-}
-
-.center-menu-wrapper::-webkit-scrollbar {
-  display: none;
+  -ms-overflow-style: none;
 }
 
 .desktop-menu {
@@ -49,21 +78,80 @@
   border-bottom: none !important;
   display: flex !important;
   flex-wrap: nowrap !important;
-  min-width: max-content;   /* 🔥 prevents shrink */
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
+.desktop-menu .ant-menu-overflow-item-rest,
+.desktop-menu .ant-menu-overflowed-submenu,
+.desktop-menu .ant-menu-item-ellipsis {
+  display: none !important;
+}
+
+.desktop-menu .ant-menu-overflow {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.desktop-menu .ant-menu-overflow-item,
+.desktop-menu .ant-menu-title-content {
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+.main-header::-webkit-scrollbar,
+.header-container::-webkit-scrollbar,
+.desktop-menu::-webkit-scrollbar,
+.center-menu-wrapper::-webkit-scrollbar,
+.right-section::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.main-header *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* Override Ant Design default menu item styles */
 .desktop-menu .ant-menu-item {
   white-space: nowrap;
   font-size: 15px;
-  padding: 0 14px;
+  padding: 0 14px !important;
   color: #000 !important;
+  flex-shrink: 1;
+  min-width: fit-content;
+  transition: font-size 0.2s, padding 0.2s;
+  height: 64px !important;
+  line-height: 64px !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 !important;
+  border: none !important;
 }
 
 .desktop-menu .ant-menu-item:hover {
   color: #444 !important;
 }
 
-/* Post Property */
+/* Special handling for the last menu item containing the Post Property button */
+.desktop-menu .ant-menu-item:last-child {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Post Property button */
 .post-property-btn {
   background-color: #000000;
   color: #ffffff !important;
@@ -71,7 +159,19 @@
   padding: 0 12px !important;
   font-weight: 600;
   border: 1px solid #000000;
-  height: 32px;
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: inherit;
+  line-height: 1 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  box-sizing: border-box;
+  overflow: hidden !important;
 }
 
 .post-property-btn:hover {
@@ -86,6 +186,9 @@
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: 6px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* ================= RIGHT ================= */
@@ -94,6 +197,10 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  height: 100%;
+  overflow: hidden !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .reels-btn,
@@ -106,6 +213,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  max-height: 100%;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .reels-btn {
@@ -113,6 +226,20 @@
   padding: 0 16px;
   font-weight: 600;
   gap: 6px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden !important;
+}
+
+.reels-btn .ant-btn-icon + span,
+.post-property-btn > span:not(.free-label) {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icon-circle-btn,
@@ -125,89 +252,111 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
 }
-/* ================= MOBILE RESPONSIVE ================= */
+
+/* ================= RESPONSIVE – NO SCROLL ================= */
+
+@media (max-width: 1200px) {
+  .desktop-menu .ant-menu-item {
+    font-size: 14px;
+    padding: 0 12px !important;
+  }
+  .reels-btn {
+    padding: 0 14px;
+    font-size: 14px;
+  }
+}
 
 @media (max-width: 1024px) {
-  .center-menu-wrapper {
-    display: none; /* hide desktop menu */
+  .desktop-menu .ant-menu-item {
+    font-size: 13px;
+    padding: 0 10px !important;
+  }
+  .reels-btn {
+    padding: 0 12px;
+    font-size: 13px;
+  }
+  .post-property-btn {
+    padding: 0 10px !important;
+    font-size: 13px;
+  }
+  .free-label {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+  .header-logo {
+    font-size: 22px;
   }
 }
 
-/* Tablet */
-/* ================= MOBILE RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-  /* Header padding */
-  .header-container {
-    padding: 0 12px;
+@media (max-width: 900px) {
+  .desktop-menu .ant-menu-item {
+    font-size: 12px;
+    padding: 0 8px !important;
   }
-
-  /* Logo smaller */
+  .reels-btn {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  .post-property-btn {
+    padding: 0 8px !important;
+    font-size: 12px;
+  }
   .header-logo {
     font-size: 20px;
   }
+}
 
-  /* Hide desktop center menu */
-  .center-menu-wrapper {
-    display: none !important;
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 12px;
   }
-
-  /* Right section spacing */
+  .header-logo {
+    font-size: 20px;
+  }
+  .center-menu-wrapper {
+    display: none;
+  }
   .right-section {
     gap: 8px;
   }
-
-  /* Reels button exact same style but responsive */
   .reels-btn {
     height: 32px;
     padding: 0 14px;
     font-size: 14px;
     border-radius: 18px;
   }
-
-  /* Menu & Profile icons */
   .pill-btn {
     width: 34px;
     height: 34px;
     border-radius: 50%;
   }
-
-  .user-pill {
-    gap: 6px;
-  }
 }
 
-
-/* Mobile Small Devices */
 @media (max-width: 480px) {
   .header-container {
     padding: 0 10px;
   }
-
   .header-logo {
     font-size: 18px;
   }
-
-  /* Reels text remove only icon show */
   .reels-btn {
     padding: 0;
     width: 34px;
     height: 34px;
     font-size: 0;
   }
-
   .reels-btn .anticon {
     font-size: 18px;
   }
-
   .icon-circle-btn,
   .pill-btn {
     width: 32px;
     height: 32px;
   }
-
   .right-section {
     gap: 6px;
   }

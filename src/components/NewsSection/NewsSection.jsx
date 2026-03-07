@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { Card, Button, Tag } from "antd";
 import "./NewsSection.css";
 
@@ -52,35 +52,6 @@ const newsItems = [
 ];
 
 const NewsSection = () => {
-  const scrollRef = useRef(null);
-  const [isHovering, setIsHovering] = useState(false);
-
-  // Duplicate items for seamless infinite scroll
-  const duplicatedNews = [...newsItems, ...newsItems];
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    let scrollLeft = 0;
-    let requestId;
-
-    const step = () => {
-      if (!isHovering) {
-        scrollLeft += 1; // scroll speed, adjust if needed
-        if (scrollLeft >= container.scrollWidth / 2) {
-          scrollLeft = 0; // reset scroll
-        }
-        container.scrollLeft = scrollLeft;
-      }
-      requestId = requestAnimationFrame(step);
-    };
-
-    requestId = requestAnimationFrame(step);
-
-    return () => cancelAnimationFrame(requestId);
-  }, [isHovering]);
-
   return (
     <section className="news-section">
       <div className="news-section-header">
@@ -88,15 +59,10 @@ const NewsSection = () => {
         <div className="line" />
       </div>
 
-      <div
-        className="news-section-scroll"
-        ref={scrollRef}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
-        {duplicatedNews.map((item, index) => (
+      <div className="news-section-scroll">
+        {newsItems.map((item) => (
           <Card
-            key={`${item.id}-${index}`}
+            key={item.id}
             hoverable
             cover={<img alt={item.title} src={item.image} />}
             className="news-section-card"

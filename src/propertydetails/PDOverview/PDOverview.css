@@ -1,12 +1,13 @@
-/* Main Container */
 .pd-overview-container {
   background: #ffffff;
   padding: 32px 36px;
   border-radius: 12px;
   border: 1px solid #f0f0f0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
-/* Header */
 .pd-overview-header {
   margin-bottom: 24px;
 }
@@ -17,14 +18,13 @@
   color: #1f2937;
 }
 
-/* Each Item */
 .pd-overview-item {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
-/* Label (PRICE, SIZE etc.) */
 .pd-overview-label {
   font-size: 12px;
   letter-spacing: 0.6px;
@@ -32,7 +32,6 @@
   font-weight: 600;
 }
 
-/* Value */
 .pd-overview-value {
   font-size: 16px;
   color: #111827;
@@ -40,16 +39,16 @@
   align-items: center;
   gap: 6px;
   line-height: 1.5;
+  flex-wrap: wrap;
 }
 
-/* Info Icon */
 .pd-info-icon {
   font-size: 14px;
   color: #9ca3af;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-/* Responsive Behaviour */
 @media (max-width: 768px) {
   .pd-overview-container {
     padding: 24px;
