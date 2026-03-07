@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .pdfaq-section {
   background: #ffffff;
@@ -74,3 +75,81 @@
     padding: 30px 15px;
   }
 }
+=======
+/* Card */
+.pd-card {
+  width: 340px;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Header Section */
+.pd-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar */
+.pd-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #f2f2f2;
+  flex-shrink: 0;
+}
+
+/* Info */
+.pd-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Title - No Scroll */
+.pd-title {
+  margin: 0 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Role */
+.pd-role {
+  font-size: 13px;
+  color: #8c8c8c;
+}
+
+/* Buttons Container */
+.pd-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Common Button */
+.pd-btn {
+  height: 48px;
+  border-radius: 12px !important;
+  font-weight: 500;
+}
+
+/* Contact Button */
+.pd-contact-btn {
+  background: linear-gradient(90deg, #ff7a18, #ff4d4f) !important;
+  border: none !important;
+}
+
+/* WhatsApp Button */
+.pd-whatsapp-btn {
+  border: 1px solid #52c41a !important;
+  color: #52c41a !important;
+}
+
+/* Visit Button */
+.pd-visit-btn {
+  background: #0d2c54 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)

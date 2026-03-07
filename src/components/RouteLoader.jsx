@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import PageLoader from "./PageLoader/PageLoader"; // ✅ UPDATED PATH
+import PageLoader from "./PageLoader/PageLoader";
 
-const RouteLoader = ({ children }) => {
-  const location = useLocation();
-  const [loading, setLoading] = useState(false);
+const RouteTransition = ({ children }) => {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 700);
+
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, []);
 
   return (
     <>
@@ -21,6 +19,12 @@ const RouteLoader = ({ children }) => {
       {children}
     </>
   );
+};
+
+const RouteLoader = ({ children }) => {
+  const location = useLocation();
+
+  return <RouteTransition key={location.pathname}>{children}</RouteTransition>;
 };
 
 export default RouteLoader;

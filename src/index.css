@@ -1,13 +1,40 @@
-@import 'antd/dist/reset.css';
+@import "antd/dist/reset.css";
 
-/* ❌ REMOVE these if present */
-/*
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-*/
-
-/* ✅ Custom CSS only */
-body {
+html,
+body,
+#root {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.ant-layout,
+.ant-layout-content {
+  overflow: visible !important;
+}
+
+button,
+span,
+p,
+h1,
+h2,
+h3,
+h4 {
+  overflow: visible;
+}
+
+.ant-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Hide scrollbar indicators globally while preserving scroll */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

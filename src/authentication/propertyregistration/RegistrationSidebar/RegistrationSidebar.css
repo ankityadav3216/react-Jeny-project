@@ -12,6 +12,7 @@
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   overflow: hidden;
+  overflow-y: hidden !important;
 }
 
 /* Animated Background Elements */
@@ -163,6 +164,7 @@
   padding: 15px 20px;
   flex: 1;
   overflow: visible;
+  overflow-y: visible !important;
   position: relative;
   z-index: 2;
 }
@@ -179,7 +181,7 @@
 .steps-container {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .step-item {
@@ -322,4 +324,91 @@
   .logo-sub{font-size:9px;}
   .step-label{font-size:12px;}
   .score-circle{width:50px;height:50px;font-size:14px;}
+}
+
+/* ===== Theme Override: Orange / White / Black ===== */
+.registration-sidebar {
+  background: #fff4eb !important;
+  color: #111111 !important;
+  border-right: 2px solid #111111;
+  box-shadow: 3px 0 14px rgba(0, 0, 0, 0.08);
+  overflow-y: hidden !important;
+}
+
+.registration-sidebar::before {
+  display: none !important;
+}
+
+.logo-main {
+  color: #111111 !important;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logo-sub {
+  color: #111111 !important;
+}
+
+.section-title {
+  color: #111111 !important;
+}
+
+.step-item {
+  background: #ffffff !important;
+  border: 1px solid #ffe1cc;
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  min-height: 46px;
+  height: auto;
+  padding: 10px 12px;
+  box-shadow: none;
+  transition: none;
+}
+
+.step-item:hover {
+  background: #fff2e8 !important;
+  border-color: #ffc9a3;
+  box-shadow: none;
+  transform: none !important;
+}
+
+.step-item.active {
+  background: #ff5a00 !important;
+  border-left: 3px solid #111111 !important;
+  border-color: #ff5a00;
+  box-shadow: none;
+}
+
+.step-label {
+  color: #111111 !important;
+  font-size: 14px;
+  white-space: normal;
+  overflow: visible;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.step-item.active .step-label {
+  color: #ffffff !important;
+}
+
+.help-section {
+  border-top: 1px solid #ffe1cc;
+}
+
+.help-text {
+  color: #111111 !important;
+}
+
+.help-link {
+  color: #ff5a00 !important;
+}
+
+.help-link::after {
+  background: #ff5a00 !important;
+}
+
+.phone-number {
+  color: #111111 !important;
+  animation: none !important;
 }

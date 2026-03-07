@@ -7,34 +7,66 @@
 
 .cards-wrapper {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   scroll-behavior: smooth;
   perspective: 1000px;
-  padding-left: 0px;
-  padding-right: 0px;
+  transform-style: preserve-3d;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .cards-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
   display: none;
 }
 
 .locality-card {
-  width: 160px !important;
-  min-width: 160px !important;
-  height: 230px;
+  width: 150px !important;
+  min-width: 150px !important;
+  height: 215px;
   border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.42) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   padding: 0 !important;
-  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+  filter: saturate(1.03);
+}
+
+.locality-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.locality-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  filter: saturate(1.08);
+}
+
+.locality-card:active {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
 
 .card-image {
   width: 100%;
-  height: 140px;
+  height: 155px;
   object-fit: cover;
+  transform: translateZ(10px);
 }
 
 .city-name {
@@ -42,22 +74,25 @@
   font-weight: 700;
   margin: 6px 0 0 0;
   color: #000;
+  transform: translateZ(14px);
 }
 
 /* ---------------- MOBILE ---------------- */
 @media (max-width: 768px) {
   .cards-wrapper {
-    gap: 12px;
+    gap: 8px;
+    padding-top: 6px;
+    padding-bottom: 10px;
   }
 
   .locality-card {
-    width: 130px !important;
-    min-width: 130px !important;
-    height: 200px;
+    width: 116px !important;
+    min-width: 116px !important;
+    height: 178px;
   }
 
   .card-image {
-    height: 120px;
+    height: 126px;
   }
 
   .city-name {
@@ -66,14 +101,19 @@
 }
 
 @media (max-width: 480px) {
+  .cards-wrapper {
+    padding-top: 6px;
+    padding-bottom: 10px;
+  }
+
   .locality-card {
-    width: 115px !important;
-    min-width: 115px !important;
-    height: 180px;
+    width: 102px !important;
+    min-width: 102px !important;
+    height: 162px;
   }
 
   .card-image {
-    height: 100px;
+    height: 116px;
   }
 
   .city-name {

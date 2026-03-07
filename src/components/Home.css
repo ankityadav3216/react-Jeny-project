@@ -11,8 +11,56 @@
 
 .home-page {
   width: 100%;
-  overflow-x: hidden;
+  
   background: #ffffff;
+}
+
+/* Force-hide scrollbar UI across all Home sections */
+.home-page,
+.home-page * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.home-page::-webkit-scrollbar,
+.home-page *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Keep horizontal scroll behavior, remove tiny vertical inner scroll on Home sections */
+.home-page .cards-wrapper,
+.home-page .category-wrapper,
+.home-page .card-scroll,
+.home-page .reels-scroll,
+.home-page .fd-scroll,
+.home-page .fp-scroll,
+.home-page .recommended-sellers-container,
+.home-page .projects-scroll,
+.home-page .prt-scroll,
+.home-page .news-section-scroll,
+.home-page .property-types-scroll,
+.home-page .mobile-top-tabs {
+  overflow-y: hidden !important;
+}
+
+/* Keep cards/icons static (no vertical lift/shift on hover) */
+.home-page .fd-card:hover,
+.home-page .fp-card:hover,
+.home-page .project-card:hover,
+.home-page .hservice-card:hover,
+.home-page .prt-card:hover {
+  transform: none !important;
+}
+
+/* Disable vertical shift animations inside Home sections */
+.home-page .hservice-more,
+.home-page .fp-image-wrapper img,
+.home-page .prt-icon {
+  transition-property: color, background-color, box-shadow, border-color, opacity !important;
+  transform: none !important;
 }
 
 .full-width {

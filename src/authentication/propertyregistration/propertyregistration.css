@@ -2,10 +2,26 @@
 .property-registration-wrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh; /* full viewport height */
+  min-height: 100vh;
+  height: 100vh;
   font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
-  overflow: hidden; /* scroll only inside content */
+  background-color: #ffffff;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  color: #111111;
+}
+
+.property-registration-wrapper,
+.property-registration-wrapper * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.property-registration-wrapper::-webkit-scrollbar,
+.property-registration-wrapper *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 /* ================= SIDEBAR ================= */
@@ -19,7 +35,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  overflow-y: auto; /* sidebar scroll if content exceeds height */
+  overflow-y: hidden;
 }
 
 .sidebar-wrapper .registration-sidebar {
@@ -33,10 +49,12 @@
   margin-left: 250px; /* space for fixed sidebar */
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
+  align-items: center;
+  padding: 24px 40px;
   box-sizing: border-box;
-  height: 100vh; /* full height */
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* ================= FORM CONTAINER ================= */
@@ -49,7 +67,9 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100vh - 48px);
+  min-height: 0;
+  overflow: hidden !important;
 }
 
 /* ================= CENTERED LOGO ================= */
@@ -75,23 +95,32 @@
 .logo-main {
   font-size: 18px;
   font-weight: 900;
-  color: #e0f2fe;
+  color: #ff5a00;
   letter-spacing: 1px;
 }
 
 .logo-sub {
   font-size: 12px;
   font-weight: 500;
-  color: #bfdbfe;
+  color: #111111;
 }
 
 /* ================= SCROLLABLE STEP CONTENT ================= */
 .scrollable-step-content {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto !important;
+  overflow-x: hidden;
   padding-right: 6px;
   margin-bottom: 20px;
   scroll-behavior: smooth;
+  max-height: none !important;
+  min-width: 0;
+}
+
+.scrollable-step-content > * {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 /* Scrollbar styles */
@@ -100,8 +129,14 @@
 }
 
 .scrollable-step-content::-webkit-scrollbar-thumb {
-  background: #c7d2fe;
+  background: #ffd1b3;
   border-radius: 6px;
+}
+
+.sidebar-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 /* ================= NAVIGATION BUTTONS ================= */
@@ -118,36 +153,55 @@
   font-weight: 500;
   font-size: 16px;
   transition: all 0.2s ease;
+  line-height: 1.2;
+  overflow: visible;
+  white-space: normal;
 }
 
 .prev-btn {
-  background-color: #eee;
-  color: #333;
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
 }
 
 .prev-btn:hover {
-  background-color: #ddd;
+  background-color: #f5f5f5;
 }
 
 .next-btn {
-  background-color: #007bff;
+  background-color: #ff5a00;
   color: #fff;
 }
 
 .next-btn:hover {
-  background-color: #006ae1;
+  background-color: #e14d00;
 }
 
 .submit-btn {
-  background: linear-gradient(90deg, #3c82d1, #06243f);
+  background: linear-gradient(90deg, #ff7a1a, #ff5a00);
   color: #fff;
   width: 20%;
+}
+
+.property-registration-wrapper .ant-btn-primary,
+.property-registration-wrapper .ant-btn-primary:hover,
+.property-registration-wrapper .ant-btn-primary:focus {
+  background: #ff5a00 !important;
+  border-color: #ff5a00 !important;
+  color: #ffffff !important;
+}
+
+.property-registration-wrapper .ant-btn-link,
+.property-registration-wrapper .ant-typography a {
+  color: #ff5a00 !important;
 }
 
 /* ================= MEDIA QUERIES ================= */
 @media (max-width: 1024px) {
   .property-registration-wrapper {
     flex-direction: column;
+    height: auto;
+    overflow-y: auto;
   }
 
   .sidebar-wrapper {
@@ -162,12 +216,22 @@
     margin-left: 0;
     padding: 20px;
     height: auto;
+    min-height: auto;
+    overflow: visible;
+    align-items: flex-start;
   }
 
   .centered-form-container {
     max-width: 100%;
     padding: 20px;
     height: auto;
+    min-height: calc(100vh - 80px);
+    overflow: visible !important;
+  }
+
+  .scrollable-step-content {
+    overflow: visible !important;
+    padding-right: 0;
   }
 }
 

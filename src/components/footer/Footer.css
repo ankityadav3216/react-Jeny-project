@@ -5,12 +5,18 @@
   padding-top: 80px;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .footer-inner {
   max-width: 1300px;
   margin: auto;
   padding: 0 40px 40px;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .footer-logo {
@@ -77,6 +83,14 @@
 
 .social-icons svg:hover {
   color: #ff7a00;
+}
+
+.main-footer::-webkit-scrollbar,
+.footer-inner::-webkit-scrollbar,
+.main-footer *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 .footer-divider {

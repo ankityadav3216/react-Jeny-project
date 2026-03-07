@@ -1,88 +1,76 @@
-*,
-*::before,
-*::after {
+/* App.css - Global container styles */
+
+/* Main app container */
+.app-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: clamp(15px, 1vw, 16px);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-  background-color: #f9fafb;
-  color: #111827;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-#root {
-  min-height: 100vh;
-  width: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-/* Layout helper */
-.app-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Page animation */
-main {
-  animation: fadeIn 0.25s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  body {
-    font-size: 0.95rem;
-  }
-
-  .app-container {
-    padding: 0 14px;
-  }
-}
-
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .app-container {
     padding: 0 16px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
   .app-container {
-    max-width: 100%;
+    padding: 0 12px;
   }
 }
 
-@media (min-width: 1400px) {
-  .app-container {
-    max-width: 1320px;
+/* ===== GLOBAL FIX: NO HORIZONTAL SCROLL ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Main container for all pages – ensures content is centered and never overflows */
+.page-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow-x: hidden;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 0 16px;
   }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 0 12px;
+  }
+}
+
+/* Force any overflowing elements to wrap or truncate */
+img,
+video,
+iframe,
+table,
+pre,
+code {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent long words from breaking layout */
+h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }

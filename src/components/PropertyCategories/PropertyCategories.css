@@ -66,11 +66,16 @@
 @media (max-width: 768px) {
   .category-wrapper {
     overflow-x: auto;      /* 🔥 Horizontal scroll */
+    overflow-y: hidden;
     scroll-behavior: smooth;
     padding-bottom: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .category-wrapper::-webkit-scrollbar {
+    width: 0;
+    height: 0;
     display: none;
   }
 

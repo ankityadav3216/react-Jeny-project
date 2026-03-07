@@ -72,11 +72,29 @@
 @media (max-width: 768px) {
   .size-tabs {
     overflow-x: auto;
+<<<<<<< HEAD
     gap: 20px;
+=======
+    overflow-y: hidden;
+    gap: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .size-tabs::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
   }
 
   .plan-info {
     flex-direction: column;
     gap: 6px;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)

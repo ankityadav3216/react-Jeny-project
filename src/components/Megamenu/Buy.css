@@ -1,28 +1,31 @@
 .mega-wrapper {
-  position: absolute;
-  top: 64px; 
+  position: fixed;
+  top: calc(var(--infobar-height, 40px) + var(--header-height, 64px));
   left: 0;
   width: 100%;
   background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   z-index: 999;
-  overflow-x: auto;   /* horizontal scroll */
-  overflow-y: hidden;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 12px 0;
 }
 
 .mega-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;   /* ❌ never wrap */
-  width: max-content;  /* important: allow horizontal scroll if needed */
+  flex-wrap: wrap;
+  width: min(1240px, calc(100% - 40px));
   gap: 20px;
-  padding: 0 24px;
+  padding: 0 20px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
 
 .mega-card {
-  min-width: 260px;     /* fixed width for each card */
-  flex: 0 0 260px;      /* prevent shrinking */
+  min-width: 260px;
+  flex: 1 1 260px;
 }
 
 .mega-card .ant-card-head {
@@ -50,38 +53,47 @@
   font-size: 14px;
   padding: 6px 0;
   cursor: pointer;
-  transition: 0.2s;
+  transition: color 0.2s ease;
 }
 
 .mega-list li:hover {
   color: #1677ff;
-  transform: translateX(4px);
+  transform: none;
 }
 
-/* scrollbar */
 .mega-wrapper::-webkit-scrollbar {
-  height: 6px;
-}
-.mega-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.25);
-  border-radius: 4px;
+  width: 0;
+  height: 0;
+  display: none;
 }
 
-/* Responsive: mobile */
 @media (max-width: 767px) {
+  .mega-wrapper {
+    overflow: hidden;
+  }
+
+  .mega-container {
+    width: calc(100% - 20px);
+    gap: 12px;
+    padding: 0 10px;
+  }
+
   .mega-card {
     min-width: 200px;
+    flex: 1 1 200px;
   }
+
   .mega-list li {
     font-size: 13px;
   }
 }
 
-/* Extra small mobile <360px */
 @media (max-width: 360px) {
   .mega-card {
     min-width: 160px;
+    flex: 1 1 160px;
   }
+
   .mega-list li {
     font-size: 12px;
   }

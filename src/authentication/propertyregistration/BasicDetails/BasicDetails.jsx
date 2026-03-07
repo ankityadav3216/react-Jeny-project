@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './BasicDetails.css';
 
 const BasicDetails = () => {
@@ -8,7 +8,7 @@ const BasicDetails = () => {
 
   const lookingForOptions = ['Sell', 'Rent / Lease', 'PG'];
   const propertyCategories = ['Residential', 'Commercial'];
-  const propertyTypes = [
+  const residentialPropertyTypes = [
     'Flat/Apartment',
     'Independent House / Villa',
     'Independent / Builder Floor',
@@ -18,6 +18,29 @@ const BasicDetails = () => {
     'Farmhouse',
     'Other'
   ];
+  const commercialPropertyTypes = [
+    'Office Space',
+    'Shop/Showroom',
+    'Commercial Land',
+    'Warehouse/Godown',
+    'Industrial Building',
+    'Industrial Shed',
+    'Co-working Space',
+    'Other Commercial'
+  ];
+
+  const propertyTypes =
+    propertyCategory === 'Commercial'
+      ? commercialPropertyTypes
+      : residentialPropertyTypes;
+
+  useEffect(() => {
+    setPropertyType(
+      propertyCategory === 'Commercial'
+        ? commercialPropertyTypes[0]
+        : residentialPropertyTypes[0]
+    );
+  }, [propertyCategory]);
 
   return (
     <div className="centered-form">

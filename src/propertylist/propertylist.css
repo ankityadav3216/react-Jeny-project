@@ -1,5 +1,33 @@
+<<<<<<< HEAD
 .property-list-wrapper {
   padding-top: 64px;
+=======
+/* src/propertylist/PropertyList.css */
+
+/* Page container to prevent header overlap */
+.page-content {
+  padding-top: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #f5f5f5; /* optional, page background */
+  min-height: 100vh;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page-content,
+.page-content * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.page-content::-webkit-scrollbar,
+.page-content *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
 }
 
 /* Yaha sirf ReadyMove aur next PropertySection ka gap control */

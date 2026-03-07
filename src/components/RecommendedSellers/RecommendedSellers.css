@@ -9,11 +9,14 @@
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
+  overflow-y: hidden;
 }
 
 .recommended-sellers-container {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
+  
   scroll-behavior: smooth;
   gap: 15px;
   padding-bottom: 10px;
@@ -46,6 +49,7 @@
 .rs-seller-details {
   padding: 10px;
   font-size: 13px;
+  overflow-y: hidden;
 }
 
 .rs-seller-location span {
@@ -54,6 +58,7 @@
   border-radius: 12px;
   margin-right: 5px;
   font-size: 12px;
+  overflow-y: hidden;
 }
 
 .rs-seller-details button {
@@ -89,6 +94,11 @@
   z-index: 10;
 }
 
+/* Hide tiny manual scroll arrows */
+.rs-scroll-btn {
+  display: none !important;
+}
+
 .rs-scroll-btn.left {
   left: -10px;
 }
@@ -99,6 +109,8 @@
 
 /* Hide scrollbar */
 .recommended-sellers-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
   display: none;
 }
 .recommended-sellers-container {

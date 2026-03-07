@@ -1,12 +1,59 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { Card, Row, Col, Typography } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
+=======
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
 import "./HousingTopPicks.css";
 
 const { Title, Text } = Typography;
 
+const properties = [
+  {
+    id: 1, // Added unique id for routing
+    title: "Park Paradise",
+    price: "₹85 L - ₹1.10 Cr",
+    location: "Sargasan, Gandhinagar",
+    configuration: "3 BHK Flat",
+    projectSize: "5 Buildings - 258 Units",
+    size: "205 SqYd - 255 SqYd",
+    projectArea: "1.77 Acre",
+    developer: "Manibhadra Worldwide LLP",
+    mainImage:
+      "https://yuandesign.asia/wp-content/uploads/2022/02/luxury-living-room-with-comfortable-sofa-and-throw-pillows.jpg"
+  },
+  {
+    id: 2,
+    title: "Sky Heights",
+    price: "₹70 L - ₹95 L",
+    location: "Ahmedabad",
+    configuration: "2 BHK Flat",
+    projectSize: "3 Buildings - 180 Units",
+    size: "180 SqYd",
+    projectArea: "1.2 Acre",
+    developer: "Skyline Group",
+    mainImage:
+      "https://besthomedesigns.org/wp-content/uploads/2020/11/Ideal-Restaurant-Modern-Interior-Design.png"
+  },
+  {
+    id: 3,
+    title: "Green Valley",
+    price: "₹1.2 Cr",
+    location: "Surat",
+    configuration: "4 BHK Flat",
+    projectSize: "2 Buildings - 120 Units",
+    size: "300 SqYd",
+    projectArea: "2 Acre",
+    developer: "Green Group",
+    mainImage:
+      "https://tse2.mm.bing.net/th/id/OIP.yTurIxdeps4hEeua02qJIwHaEK?w=1024&h=576&rs=1&pid=ImgDetMain&o=7&rm=3"
+  }
+];
+
 const HousingTopPicks = () => {
+<<<<<<< HEAD
   const navigate = useNavigate(); // ✅ navigation hook
 
   const properties = [
@@ -78,6 +125,13 @@ const HousingTopPicks = () => {
     startScroll();
     return () => clearInterval(interval);
   }, [isHover]);
+=======
+  const navigate = useNavigate();
+
+  const handleCardClick = (id) => {
+    navigate(`/property/${id}`); // Navigate to property detail page
+  };
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
 
   // ✅ CLICK HANDLER
   const openProperty = (id) => {
@@ -100,19 +154,19 @@ const HousingTopPicks = () => {
         </div>
       </div>
 
-      <div
-        className="card-scroll"
-        ref={containerRef}
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
-      >
+      <div className="card-scroll">
         {properties.map((item, index) => (
           <Card
             key={item.id}
             className={`highlight-card ${index !== 0 ? "fade-left" : ""}`}
             bordered={false}
+<<<<<<< HEAD
             hoverable
             onClick={() => openProperty(item.id)} // ✅ CLICK WORKING
+=======
+            onClick={() => handleCardClick(item.id)} // Make card clickable
+            style={{ cursor: "pointer" }} // Add pointer cursor
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
           >
             <Row gutter={40} align="middle">
               <Col span={10}>

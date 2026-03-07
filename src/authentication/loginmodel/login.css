@@ -13,10 +13,26 @@
 .page {
   font-family: "Inter", sans-serif;
   background: #ffffff;
-  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden; /* 🔥 prevent horizontal scroll */
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page,
+.page * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page::-webkit-scrollbar,
+.page *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 /* ===============================
@@ -26,7 +42,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 14px 28px;
   flex-wrap: nowrap;
   width: 100%;
 }
@@ -35,6 +51,8 @@
   font-size: 22px;
   font-weight: 700;
   white-space: nowrap;
+  line-height: 1;
+  overflow: visible;
 }
 
 .header-right {
@@ -43,15 +61,32 @@
   align-items: center;
   font-size: 14px;
   white-space: nowrap;
+  line-height: 1;
+}
+
+.header-right span {
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.signup-link {
+  cursor: pointer;
+  color: #ff5a00;
+  font-weight: 600;
 }
 
 .get-started {
-  background: linear-gradient(180deg, #0b2d4d, #3c82d1);
+  background: linear-gradient(180deg, #ff7a1a, #ff5a00);
   border: none;
   padding: 7px 14px;
   border-radius: 20px;
   font-weight: 600;
   color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* ===============================
@@ -62,7 +97,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 12px 20px;
 }
 
 .main-container {
@@ -75,7 +110,7 @@
    =============================== */
 .center-text {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
 
 .top-badge {
@@ -86,12 +121,15 @@
   padding: 8px 14px;
   border-radius: 24px;
   font-size: 13px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1.35;
 }
 
 .badge-arrow {
-  background: #dbeafe;
-  color: #2563eb;
+  background: #fff1e8;
+  color: #ff5a00;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -102,16 +140,23 @@
 
 h1 {
   font-family: "Playfair Display", serif;
-  font-size: 52px;
+  font-size: clamp(34px, 4.2vw, 52px);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  color: #111111;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .subtitle {
-  color: #64748b;
-  font-size: 14px;
+  color: #2f3a4a;
+  font-size: 13px;
   max-width: 520px;
   margin: 0 auto;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1.5;
 }
 
 /* ===============================
@@ -140,12 +185,16 @@ h1 {
   border: 1px solid #322424 !important;
   padding: 0 18px !important;
   margin-bottom: 12px;
-  color: #2563eb !important;
+  color: #1f2937 !important;
+  line-height: 38px !important;
+  overflow: hidden;
 }
 
 .ant-input-password .ant-input {
   border: none !important;
   padding: 0 !important;
+  line-height: 38px !important;
+  overflow: hidden;
 }
 
 /* ===============================
@@ -155,17 +204,24 @@ h1 {
   width: 100%;
   height: 40px;
   border-radius: 30px !important;
-  background: linear-gradient(180deg, #0b2d4d, #3c82d1) !important;
+  background: linear-gradient(180deg, #ff7a1a, #ff5a00) !important;
   color: #ffffff !important;
   font-size: 13px;
   border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px;
+  line-height: 1 !important;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* ===============================
    DIVIDER
    =============================== */
 .ant-divider {
-  border-color: #bfdbfe !important;
+  border-color: #ffd8bf !important;
 }
 
 /* ===============================
@@ -181,21 +237,43 @@ h1 {
   width: 100%;
   height: 40px;
   border-radius: 30px !important;
-  background: linear-gradient(180deg, #0b2d4d, #3c82d1) !important;
+  background: linear-gradient(180deg, #ff7a1a, #ff5a00) !important;
   border: none !important;
   color: #ffffff !important;
   font-size: 13px;
   text-align: left;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px;
+  line-height: 1 !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.social-btn-google .anticon {
+  color: #ea4335 !important;
+}
+
+.social-btn-facebook .anticon {
+  color: #1877f2 !important;
+}
+
+.social-btn-apple .anticon {
+  color: #111111 !important;
 }
 
 /* ===============================
    FORGOT
    =============================== */
 .forgot {
-  margin-top: 32px;
+  margin-top: 22px;
   text-align: center;
   font-size: 13px;
-  color: #2563eb;
+  color: #ff5a00;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1.3;
 }
 
 /* ===============================
@@ -204,62 +282,141 @@ h1 {
 .login-footer {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 12px 28px;
   font-size: 12px;
-  color: #64748b;
+  color: #2f3a4a;
+  overflow: visible;
+  line-height: 1.3;
+}
+
+.center-text,
+.top-badge,
+.login-footer span {
+  overflow: visible;
+  white-space: normal;
 }
 
 /* ===============================
    RESPONSIVE FIX (NO SCROLL)
    =============================== */
 @media (max-width: 768px) {
+  .page {
+    overflow: hidden !important;
+  }
+
   .login-header {
-    padding: 14px 20px;
+    padding: 8px 12px;
+    min-height: 44px;
   }
 
   .logo {
-    font-size: 18px; /* 🔥 logo smaller */
+    font-size: 16px;
   }
 
   .header-right {
-    gap: 12px;
-    font-size: 13px;
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .center-wrapper {
+    padding: 2px 8px;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .main-container {
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .center-text {
+    margin-bottom: 6px;
+  }
+
+  .top-badge {
+    margin-bottom: 6px;
+    font-size: 9px;
+    padding: 4px 8px;
   }
 
   .login-box-wrapper {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 8px;
     justify-items: center;
   }
 
   .login-form,
   .social-login {
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+    line-height: 1.25;
+  }
+
+  .ant-input,
+  .ant-input-password,
+  .login-btn,
+  .social-btn {
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .ant-input,
+  .ant-input-password {
+    margin-bottom: 8px;
+  }
+
+  .social-login {
+    gap: 8px;
+  }
+
+  .divider {
+    display: none !important;
+  }
+
+  .forgot {
+    margin-top: 6px;
+    font-size: 11px;
+  }
+
+  .login-footer {
+    gap: 6px;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 9px;
+    flex-shrink: 0;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    font-size: 16px; /* 🔥 extra small logo */
+    font-size: 14px;
   }
 
   .get-started {
-    padding: 6px 12px;
-    font-size: 12px;
+    padding: 5px 10px;
+    font-size: 11px;
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 22px;
   }
 
   .login-footer {
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     text-align: center;
+    padding: 4px 8px;
   }
 }

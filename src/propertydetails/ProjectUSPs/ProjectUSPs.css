@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ProjectUSPs.css */
 
 .project-usps-section {
@@ -105,5 +106,131 @@
 
   .usp-text {
     font-size: 14px;
+=======
+/* ===============================
+   MAIN CONTAINER
+================================= */
+.pd-usps {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  margin-top: 24px;
+  width: 100%;
+  box-sizing: border-box;
+
+  overflow: hidden;  /* Prevent scrolling */
+  height: auto;      /* Content decides height */
+}
+
+/* ===============================
+   TITLE
+================================= */
+.pd-usps-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1f2937;
+  overflow: visible;  /* Freeze scroll */
+}
+
+/* ===============================
+   ROW FIX (overrides Ant Design negative margins)
+================================= */
+.pd-usp-row {
+  margin: 0 !important;
+  overflow: visible;   /* Row scroll-free */
+}
+
+/* ===============================
+   EACH USP
+================================= */
+.pd-usp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  overflow: visible;   /* Child scroll-free */
+}
+
+/* ORANGE ARROW */
+.pd-usp-arrow {
+  color: #ff6a00;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  margin-top: 3px;
+  flex-shrink: 0;
+  overflow: visible;  /* Freeze scroll */
+}
+
+/* TEXT */
+.pd-usp-item p {
+  margin: 0;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  word-break: break-word;
+  overflow: visible;  /* Freeze scroll */
+}
+
+/* ===============================
+   TABLET
+================================= */
+@media (max-width: 992px) {
+  .pd-usps {
+    padding: 26px;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .pd-usps-title {
+    font-size: 20px;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 768px) {
+  .pd-usps {
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .pd-usps-title {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .pd-usp-item {
+    gap: 10px;
+  }
+
+  .pd-usp-arrow {
+    font-size: 18px;
+  }
+
+  .pd-usp-item p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE
+================================= */
+@media (max-width: 480px) {
+  .pd-usps {
+    padding: 16px;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .pd-usp-item p {
+    font-size: 13.5px;
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
   }
 }

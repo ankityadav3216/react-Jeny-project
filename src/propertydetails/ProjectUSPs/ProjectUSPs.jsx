@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // =============================
 // File: ProjectUSPs.jsx
 // =============================
@@ -56,10 +57,45 @@ const ProjectUSPs = () => {
           </Col>
         </Row>
       </div>
+=======
+import React from "react";
+import { Row, Col } from "antd";
+import "./ProjectUSPs.css";
+
+const usps = [
+  "30-Meter Wide Front Road with an open layout ensuring easy accessibility",
+  "Just 200 Meters from Sargasan Cross Road prime area connectivity",
+  "2 Iconic Towers | Only 76 Thoughtfully Designed Units",
+  "Double Parking Facility, including 1 allotted parking space",
+  "Spacious 10-Feet Clear Floor Height for an airy, premium feel",
+  "Lift Access up to the Terrace for added convenience",
+  "Elegant Multipurpose Hall ideal for gatherings and events",
+];
+
+const ProjectUSPs = () => {
+  return (
+    <div className="pd-usps">
+      <h2 className="pd-usps-title">Project USPs</h2>
+
+      <Row gutter={[24, 20]} className="pd-usp-row">
+        {usps.map((item, index) => (
+          <Col xs={24} sm={24} md={12} lg={12} key={index}>
+            <div className="pd-usp-item">
+              <span className="pd-usp-arrow">›</span>
+              <p>{item}</p>
+            </div>
+          </Col>
+        ))}
+      </Row>
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default ProjectUSPs;
 
 
+=======
+export default ProjectUSPs;
+>>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)

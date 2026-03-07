@@ -40,7 +40,17 @@ const HeroSection = () => {
 
         {/* TEXT CONTENT */}
         <div className="hero-content">
-          <h1>Welcome to PrimeAcres</h1>
+          <h1 className="hero-title-animate">
+            {["Welcome", "to", "PrimeAcres"].map((word, index) => (
+              <span
+                key={word}
+                className="hero-word"
+                style={{ "--word-delay": `${index * 0.14}s` }}
+              >
+                {word}
+              </span>
+            ))}
+          </h1>
           <p>Find your dream property with ease</p>
           <button className="hero-btn">Explore Now</button>
         </div>
@@ -81,7 +91,6 @@ const HeroSection = () => {
           </div>
 
           <div className="property-search-bar">
-
             <select
               className="location-select"
               value={selectedCity}

@@ -1,5 +1,14 @@
 .centered-form {
   width: 100%;
+  box-sizing: border-box;
+}
+
+.centered-form *,
+.centered-form *::before,
+.centered-form *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .form-header {
@@ -42,7 +51,7 @@
 /* Options Group */
 .options-group {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px; /* Reduced from 15px */
 }
 
@@ -61,17 +70,17 @@
   font-weight: 500;
   color: #4b5563;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 .option-btn:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
+  border-color: #e5e7eb;
+  color: #4b5563;
 }
 
 .option-btn.active {
-  background: #4f46e5;
-  border-color: #4f46e5;
+  background: #ff5a00;
+  border-color: #ff5a00;
   color: white;
   font-weight: 600;
 }
@@ -108,12 +117,12 @@
   border-radius: 50%;
   margin-right: 8px; /* Reduced from 10px */
   position: relative;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 .radio-input:checked + .radio-custom {
-  border-color: #4f46e5;
-  background: #4f46e5;
+  border-color: #ff5a00;
+  background: #ff5a00;
 }
 
 .radio-input:checked + .radio-custom::after {
@@ -135,7 +144,7 @@
 /* Property Types Grid */
 .property-types-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px; /* Reduced from 12px */
 }
 
@@ -154,18 +163,18 @@
   font-weight: 500;
   color: #4b5563;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
   text-align: center;
 }
 
 .property-type-btn:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
+  border-color: #e5e7eb;
+  color: #4b5563;
 }
 
 .property-type-btn.selected {
-  background: #eef2ff;
-  border-color: #4f46e5;
-  color: #4f46e5;
+  background: #fff1e8;
+  border-color: #ff5a00;
+  color: #ff5a00;
   font-weight: 600;
 }

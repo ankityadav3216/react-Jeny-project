@@ -1,5 +1,17 @@
 /* src/components/headersidebar/HeaderSidebar.css */
 
+.header-profile-drawer .ant-drawer-body {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.header-profile-drawer .ant-drawer-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 .sidebar-username {
   font-weight: 700;
   font-size: 18px;

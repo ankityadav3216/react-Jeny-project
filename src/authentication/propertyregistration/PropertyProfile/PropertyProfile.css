@@ -73,31 +73,36 @@
   margin: 0 auto;
   height: calc(100vh - 160px);
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 5px;
   animation: fadeIn 0.5s ease-out;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
 }
 
 /* Custom scrollbar with animation */
 .property-profile-container::-webkit-scrollbar {
-  width: 4px;
-  animation: fadeIn 0.8s ease-out;
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 .property-profile-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 2px;
-  transition: background 0.3s ease;
+  background: transparent;
+  border-radius: 0;
+  transition: none;
 }
 
 .property-profile-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #4f46e5, #3b82f6);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  background: transparent;
+  border-radius: 0;
+  transition: none;
 }
 
 .property-profile-container::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #3730a3, #1d4ed8);
-  transform: scaleX(1.2);
+  background: transparent;
+  transform: none;
 }
 
 .property-profile-header {
@@ -116,13 +121,13 @@
 }
 
 .property-profile-header h1::after {
-  content: '';
+  content: none;
   position: absolute;
   bottom: -8px;
   left: 25%;
   width: 50%;
   height: 3px;
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  background: none;
   border-radius: 2px;
   animation: slideInLeft 0.8s ease-out;
 }
@@ -154,13 +159,13 @@
 }
 
 .form-section::before {
-  content: '';
+  content: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, #4f46e5, #3b82f6);
+  background: none;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.4s ease;
@@ -191,13 +196,13 @@
 }
 
 .section-header h3::before {
-  content: '';
+  content: none;
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 4px;
-  background: #4f46e5;
+  background: none;
   border-radius: 2px;
   animation: slideInLeft 0.6s ease-out;
 }
@@ -271,7 +276,7 @@
 
 .area-input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #ff5a00;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
   transform: translateY(-2px);
 }
@@ -291,7 +296,7 @@
 }
 
 .area-input:focus + .area-unit {
-  background: linear-gradient(to right, #4f46e5, #6366f1);
+  background: linear-gradient(to right, #ff5a00, #ff8f45);
   color: white;
   transform: translateY(-50%) scale(1.05);
 }
@@ -369,15 +374,15 @@
 }
 
 .room-option:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
+  border-color: #ff5a00;
+  color: #ff5a00;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
 }
 
 .room-option.selected {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  border-color: #4f46e5;
+  background: linear-gradient(135deg, #ff5a00, #ff8f45);
+  border-color: #ff5a00;
   color: white;
   font-weight: 600;
   transform: translateY(-3px) scale(1.05);
@@ -389,7 +394,7 @@
   align-self: flex-start;
   background: none;
   border: none;
-  color: #4f46e5;
+  color: #ff5a00;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -407,7 +412,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  background: linear-gradient(to right, #ff5a00, #ff7a1a);
   transition: width 0.3s ease;
 }
 
@@ -475,7 +480,7 @@
 
 .floor-select:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #ff5a00;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
   transform: translateY(-2px);
 }
@@ -524,7 +529,7 @@
 }
 
 .availability-label:hover .availability-text {
-  color: #4f46e5;
+  color: #ff5a00;
   transform: translateX(3px);
 }
 
@@ -605,7 +610,7 @@
 
 .possession-select:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #ff5a00;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
   transform: translateY(-2px);
 }
@@ -655,7 +660,7 @@
 }
 
 .age-label:hover .age-text {
-  color: #4f46e5;
+  color: #ff5a00;
   transform: translateX(3px);
 }
 
@@ -704,7 +709,7 @@
 }
 
 .ownership-label:hover .ownership-text {
-  color: #4f46e5;
+  color: #ff5a00;
   transform: translateX(3px);
 }
 
@@ -774,13 +779,13 @@
 
 .price-input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #ff5a00;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
   transform: translateY(-2px);
 }
 
 .price-input:focus + .currency-symbol {
-  color: #4f46e5;
+  color: #ff5a00;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -801,7 +806,7 @@
 }
 
 .area-basis label:hover {
-  color: #4f46e5;
+  color: #ff5a00;
   transform: translateX(5px);
 }
 
@@ -875,7 +880,7 @@
 
 .additional-input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #ff5a00;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
   transform: translateY(-2px);
 }
@@ -895,7 +900,7 @@
 }
 
 .additional-input:focus + .additional-unit {
-  background: linear-gradient(to right, #4f46e5, #6366f1);
+  background: linear-gradient(to right, #ff5a00, #ff8f45);
   color: white;
   transform: translateY(-50%) scale(1.05);
 }
@@ -903,8 +908,8 @@
 .add-more-btn {
   align-self: flex-start;
   background: none;
-  border: 1.5px solid #4f46e5;
-  color: #4f46e5;
+  border: 1.5px solid #ff5a00;
+  color: #ff5a00;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -928,7 +933,7 @@
 }
 
 .add-more-btn:hover {
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  background: linear-gradient(135deg, #ff5a00, #ff7a1a);
   color: white;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
@@ -942,9 +947,9 @@
 .property-score-display {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #f0f9ff 0%, #fff2e6 100%);
   border-radius: 8px;
-  border: 1px solid #bae6fd;
+  border: 1px solid #ffd9bf;
   animation: fadeInUp 0.8s ease-out;
   transition: all 0.4s ease;
 }
@@ -952,14 +957,14 @@
 .property-score-display:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  background: linear-gradient(135deg, #fff2e6 0%, #ffd9bf 100%);
 }
 
 .score-circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #ff7a1a 0%, #e14d00 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -979,14 +984,14 @@
 
 .score-description {
   font-size: 12px;
-  color: #0369a1;
+  color: #ff5a00;
   margin: 0;
   line-height: 1.4;
   transition: all 0.3s ease;
 }
 
 .property-score-display:hover .score-description {
-  color: #1d4ed8;
+  color: #e14d00;
   transform: translateY(-2px);
 }
 
@@ -1015,7 +1020,7 @@
 }
 
 .help-section:hover h3 {
-  color: #4f46e5;
+  color: #ff5a00;
   transform: translateX(3px);
 }
 
@@ -1032,7 +1037,7 @@
 }
 
 .help-section a {
-  color: #4f46e5;
+  color: #ff5a00;
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -1046,7 +1051,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #4f46e5;
+  background: #ff5a00;
   transition: width 0.3s ease;
 }
 
@@ -1065,7 +1070,7 @@
 }
 
 .help-section:hover strong {
-  color: #4f46e5;
+  color: #ff5a00;
 }
 
 /* Form validation animations */
@@ -1095,7 +1100,7 @@
   width: 16px;
   height: 16px;
   border: 2px solid #f3f3f3;
-  border-top: 2px solid #4f46e5;
+  border-top: 2px solid #ff5a00;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-right: 8px;
@@ -1116,3 +1121,173 @@
 .glow-on-focus:focus {
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.4) !important;
 }
+
+/* ===== Flat Orange Overrides (Simple UI) ===== */
+.property-profile-container .section-header h3::after,
+.property-profile-container .score-circle,
+.property-profile-container .add-more-btn:hover,
+.property-profile-container .room-option.selected,
+.property-profile-container .availability-label input:checked + .availability-text::before,
+.property-profile-container .age-label input:checked + .age-text::before,
+.property-profile-container .ownership-label input:checked + .ownership-text::before {
+  background: #ff5a00 !important;
+}
+
+.property-profile-container .add-more-btn,
+.property-profile-container .add-other-btn,
+.property-profile-container .area-input:focus,
+.property-profile-container .price-input:focus,
+.property-profile-container .additional-input:focus,
+.property-profile-container .floor-select:focus,
+.property-profile-container .possession-select:focus {
+  border-color: #ff5a00 !important;
+}
+
+.property-profile-container .add-more-btn,
+.property-profile-container .add-other-btn,
+.property-profile-container .optional,
+.property-profile-container .help-section a,
+.property-profile-container .score-description {
+  color: #ff5a00 !important;
+}
+
+.property-profile-container .property-score-display,
+.property-profile-container .help-section {
+  background: #fff7f2 !important;
+  border-color: #ffd8bf !important;
+}
+
+.property-profile-container .add-more-btn::before,
+.property-profile-container .step-item::before {
+  display: none !important;
+}
+
+.property-profile-container .form-section,
+.property-profile-container .add-more-btn,
+.property-profile-container .add-other-btn,
+.property-profile-container .room-option,
+.property-profile-container .area-input,
+.property-profile-container .price-input,
+.property-profile-container .additional-input,
+.property-profile-container .property-score-display,
+.property-profile-container .help-section {
+  animation: none !important;
+  transition: none !important;
+}
+
+.property-profile-container * {
+  animation: none !important;
+  transition: none !important;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.property-profile-container .form-section:hover,
+.property-profile-container .add-more-btn:hover,
+.property-profile-container .add-other-btn:hover,
+.property-profile-container .room-option:hover,
+.property-profile-container .property-score-display:hover,
+.property-profile-container .help-section:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep hover simple: only orange highlight, no movement/size change */
+.property-profile-container .form-section:hover,
+.property-profile-container .room-option:hover,
+.property-profile-container .add-other-btn:hover,
+.property-profile-container .add-more-btn:hover,
+.property-profile-container .area-input:hover,
+.property-profile-container .area-input:focus,
+.property-profile-container .floor-select:hover,
+.property-profile-container .floor-select:focus,
+.property-profile-container .price-input:hover,
+.property-profile-container .price-input:focus,
+.property-profile-container .additional-input:hover,
+.property-profile-container .additional-input:focus,
+.property-profile-container .possession-select:hover,
+.property-profile-container .possession-select:focus,
+.property-profile-container .availability-label:hover .availability-text,
+.property-profile-container .age-label:hover .age-text,
+.property-profile-container .ownership-label:hover .ownership-text,
+.property-profile-container .area-basis label:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.property-profile-container .form-section:hover,
+.property-profile-container .room-option:hover,
+.property-profile-container .area-input:hover,
+.property-profile-container .area-input:focus,
+.property-profile-container .floor-select:hover,
+.property-profile-container .floor-select:focus,
+.property-profile-container .price-input:hover,
+.property-profile-container .price-input:focus,
+.property-profile-container .additional-input:hover,
+.property-profile-container .additional-input:focus,
+.property-profile-container .possession-select:hover,
+.property-profile-container .possession-select:focus {
+  border-color: #ff5a00 !important;
+}
+
+.property-profile-container .room-options {
+  flex-wrap: wrap;
+}
+
+.property-profile-container .area-grid,
+.property-profile-container .room-details-grid,
+.property-profile-container .floor-grid,
+.property-profile-container .possession-grid,
+.property-profile-container .age-grid,
+.property-profile-container .ownership-grid,
+.property-profile-container .price-grid,
+.property-profile-container .additional-pricing-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.property-profile-container .area-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 600px) {
+  .property-profile-container .area-grid,
+  .property-profile-container .room-details-grid,
+  .property-profile-container .floor-grid,
+  .property-profile-container .possession-grid,
+  .property-profile-container .age-grid,
+  .property-profile-container .ownership-grid,
+  .property-profile-container .price-grid,
+  .property-profile-container .additional-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Text-only small action buttons */
+.property-profile-container .add-other-btn,
+.property-profile-container .add-more-btn {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: auto;
+  color: #ff5a00 !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.property-profile-container .add-other-btn::after,
+.property-profile-container .add-more-btn::before {
+  display: none !important;
+}
+
+.property-profile-container .add-other-btn:hover,
+.property-profile-container .add-other-btn:focus,
+.property-profile-container .add-more-btn:hover,
+.property-profile-container .add-more-btn:focus {
+  color: #e14d00 !important;
+  text-decoration: underline;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
