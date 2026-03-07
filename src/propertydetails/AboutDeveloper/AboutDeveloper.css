@@ -152,3 +152,25 @@
   justify-content: space-between;
   font-weight: 500;
 }
+
+/* Freeze child text/icon blocks from internal vertical scroll */
+.about-wrapper :is(h1, h2, h3, h4, h5, h6, p, span, button, i, svg, .anticon) {
+  overflow-y: visible !important;
+  overflow-x: visible !important;
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+}
+
+.about-wrapper .property-title,
+.about-wrapper .property-by,
+.about-wrapper .property-location,
+.about-wrapper .property-icons,
+.about-wrapper .construction-btn {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  text-overflow: clip !important;
+}

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 .pdfaq-section {
   background: #ffffff;
   padding: 40px 20px;
@@ -8,10 +6,9 @@
 .pdfaq-container {
   max-width: 1100px;
   margin: auto;
-  width: 1400px;
+  width: 100%;
 }
 
-/* Header */
 .pdfaq-header {
   display: flex;
   align-items: center;
@@ -37,7 +34,6 @@
   color: #2b2b2b !important;
 }
 
-/* Collapse Styling */
 .pdfaq-collapse {
   background: transparent;
 }
@@ -59,7 +55,6 @@
   line-height: 1.6;
 }
 
-/* Remove default antd background */
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
   padding-left: 0 !important;
 }
@@ -69,87 +64,29 @@
   border: none !important;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .pdfaq-section {
     padding: 30px 15px;
   }
 }
-=======
-/* Card */
-.pd-card {
-  width: 340px;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+/* Freeze child text/icon blocks from internal vertical scroll */
+.pdfaq-container :is(h1, h2, h3, h4, h5, h6, p, span, button, i, svg, .anticon) {
+  overflow-y: visible !important;
+  overflow-x: visible !important;
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
 }
 
-/* Header Section */
-.pd-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.pdfaq-container .ant-collapse-header,
+.pdfaq-container .ant-collapse-content-box,
+.pdfaq-container .pdfaq-question,
+.pdfaq-container .pdfaq-answer {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  text-overflow: clip !important;
 }
-
-/* Avatar */
-.pd-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  background: #f2f2f2;
-  flex-shrink: 0;
-}
-
-/* Info */
-.pd-info {
-  flex: 1;
-  overflow: hidden;
-}
-
-/* Title - No Scroll */
-.pd-title {
-  margin: 0 !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Role */
-.pd-role {
-  font-size: 13px;
-  color: #8c8c8c;
-}
-
-/* Buttons Container */
-.pd-actions {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Common Button */
-.pd-btn {
-  height: 48px;
-  border-radius: 12px !important;
-  font-weight: 500;
-}
-
-/* Contact Button */
-.pd-contact-btn {
-  background: linear-gradient(90deg, #ff7a18, #ff4d4f) !important;
-  border: none !important;
-}
-
-/* WhatsApp Button */
-.pd-whatsapp-btn {
-  border: 1px solid #52c41a !important;
-  color: #52c41a !important;
-}
-
-/* Visit Button */
-.pd-visit-btn {
-  background: #0d2c54 !important;
-  color: #ffffff !important;
-  border: none !important;
-}
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)

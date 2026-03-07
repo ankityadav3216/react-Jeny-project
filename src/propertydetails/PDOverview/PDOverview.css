@@ -1,13 +1,13 @@
-<<<<<<< HEAD
-/* Main Container */
 .pd-overview-container {
   background: #ffffff;
   padding: 32px 36px;
   border-radius: 12px;
   border: 1px solid #f0f0f0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
-/* Header */
 .pd-overview-header {
   margin-bottom: 24px;
 }
@@ -18,14 +18,13 @@
   color: #1f2937;
 }
 
-/* Each Item */
 .pd-overview-item {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
-/* Label (PRICE, SIZE etc.) */
 .pd-overview-label {
   font-size: 12px;
   letter-spacing: 0.6px;
@@ -33,7 +32,6 @@
   font-weight: 600;
 }
 
-/* Value */
 .pd-overview-value {
   font-size: 16px;
   color: #111827;
@@ -41,16 +39,16 @@
   align-items: center;
   gap: 6px;
   line-height: 1.5;
+  flex-wrap: wrap;
 }
 
-/* Info Icon */
 .pd-info-icon {
   font-size: 14px;
   color: #9ca3af;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-/* Responsive Behaviour */
 @media (max-width: 768px) {
   .pd-overview-container {
     padding: 24px;
@@ -58,83 +56,5 @@
 
   .pd-overview-value {
     font-size: 15px;
-=======
-.pfd-overview-wrapper {
-  background: #f5f6f8;
-  padding: 24px;
-  width: 100%; /* Ensures it fills parent without overflow */
-}
-
-.pfd-overview-card {
-  background: #ffffff;
-  padding: 28px 32px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  width: 100%; /* Responsive */
-  box-sizing: border-box; /* Padding included in width */
-}
-
-.pfd-title {
-  font-weight: 600 !important;
-  margin-bottom: 24px !important;
-  color: #1a1a1a;
-}
-
-.pfd-overview-card{
-overflow:visible;
-}
-.pfd-item{
-display:flex;
-flex-direction:column;
-gap:6px;
-overflow:visible;
-}
-
-.pfd-overview-wrapper,
-.pfd-overview-card,
-.pfd-item{
-overflow:visible;
-}
-.pfd-label {
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  color: #8c8c8c;
-  font-weight: 500;
-}
-
-.pfd-value-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap; /* Prevents icon from causing overflow on very small screens */
-}
-
-.pfd-value {
-  font-size: 16px;
-  font-weight: 600;
-  color: #262626;
-  word-break: break-word; /* Handles long text */
-}
-
-.pfd-info-icon {
-  font-size: 14px;
-  color: #bfbfbf;
-  cursor: pointer;
-  flex-shrink: 0; /* Prevents icon from shrinking */
-}
-
-/* Mobile spacing */
-@media (max-width: 576px) {
-  .pfd-overview-wrapper {
-    padding: 16px;
-  }
-
-  .pfd-overview-card {
-    padding: 18px;
-  }
-
-  .pfd-value {
-    font-size: 14px;
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
   }
 }

@@ -1,28 +1,12 @@
 /* PDAmenities.css - BLACK / ORANGE THEME */
 
 .pd-amenities-container {
-<<<<<<< HEAD
-  width: 900px; /* was 800px → now compact */
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  border: 1px solid rgba(0,0,0,0.15);
-  padding: 16px; /* reduced padding */
-=======
-
   width: 900px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  border: 1px solid rgba(0,0,0,0.15);
-  padding: 20px;
-
-  width: 900px; /* was 800px → now compact */
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  border: 1px solid rgba(0,0,0,0.15);
-  padding: 16px; /* reduced padding */
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 20px 0;
   margin-left: 0;
   margin-right: auto;
@@ -32,7 +16,7 @@
   box-sizing: border-box;
   overflow: visible;
   transition: all 0.3s ease;
-  min-height: 260px; /* reduced height */
+  min-height: 260px;
   height: auto;
 }
 
@@ -41,25 +25,17 @@
   font-size: 21px;
   font-weight: 600;
   color: #000;
-<<<<<<< HEAD
   margin: 0 0 16px 0;
   padding-bottom: 10px;
-=======
-
-  margin: 0 0 20px 0;
-  padding-bottom: 12px;
-  margin: 0 0 16px 0;
-  padding-bottom: 10px;
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
 }
 
 /* GRID */
 .pd-amenities-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px; /* was 16px → tighter */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
   flex: 1;
 }
 
@@ -68,19 +44,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-<<<<<<< HEAD
   gap: 6px;
   padding: 10px;
-=======
-
-  gap: 8px;
-  padding: 12px;
-
-  gap: 6px;
-  padding: 10px;
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   background: #ffffff;
   transition: all 0.2s ease;
@@ -90,69 +56,28 @@
 .pd-amenity-item:hover {
   border-color: orange;
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-<<<<<<< HEAD
 /* ICON */
 .pd-amenity-icon {
   font-size: 22px;
-  color: orange !important; /* 🔥 ICON COLOR CHANGED */
+  color: orange !important;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: #fff7ed; /* light orange bg */
+  background: #fff7ed;
   border-radius: 50%;
-  border: 1px solid rgba(255,165,0,0.35);
+  border: 1px solid rgba(255, 165, 0, 0.35);
   transition: all 0.2s ease;
+  line-height: 1;
 }
 
 .pd-amenity-item:hover .pd-amenity-icon {
   background: orange;
   color: #fff !important;
-=======
-/* ICON - ORANGE UPDATED */
-.pd-amenity-icon {
-
-  font-size: 24px;
-  color: #ff7a00 !important;   /* ORANGE ICON */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: #fff3e6;         /* Light orange background */
-  border-radius: 50%;
-  border: 1px solid rgba(255,122,0,0.4);
-  transition: all 0.2s ease;
-}
-
-/* ICON HOVER EFFECT */
-.pd-amenity-item:hover .pd-amenity-icon {
-  background: #ff7a00;
-  color: #ffffff !important;   /* White icon on hover */
-  border-color: #ff7a00;
-
-  font-size: 22px;
-  color: orange !important; /* 🔥 ICON COLOR CHANGED */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: #fff7ed; /* light orange bg */
-  border-radius: 50%;
-  border: 1px solid rgba(255,165,0,0.35);
-  transition: all 0.2s ease;
-}
-
-.pd-amenity-item:hover .pd-amenity-icon {
-  background: orange;
-  color: #fff !important;
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
 }
 
 /* TEXT */
@@ -162,46 +87,25 @@
   color: #000;
   text-align: center;
   line-height: 1.3;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 /* MORE ITEM */
 .pd-more-item {
   cursor: pointer !important;
-<<<<<<< HEAD
-  border: 1px dashed rgba(0,0,0,0.25) !important;
+  border: 1px dashed rgba(0, 0, 0, 0.25) !important;
   background: #fafafa !important;
 }
 
 .pd-more-item:hover {
   border-color: orange !important;
-=======
-  border: 1px dashed rgba(255,122,0,0.6) !important;
-  background: #fff8f0 !important;
-}
-
-.pd-more-item:hover {
-
-  border-color: #ff7a00 !important;
-
-  border-color: orange !important;
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
   transform: translateY(-2px) scale(1.03);
 }
 
 .pd-more-icon-bg {
-<<<<<<< HEAD
   background: #fff7ed !important;
   color: orange !important;
-=======
-
-  background: #fff3e6 !important;
-  color: #ff7a00 !important;
-
-  background: #fff7ed !important;
-  color: orange !important;
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
 }
 
 /* TOGGLE BUTTON CONTAINER */
@@ -209,7 +113,7 @@
   display: flex;
   justify-content: center;
   margin-top: 14px;
-  width: 720px; /* match container */
+  width: 720px;
   margin-left: 0;
   margin-right: auto;
 }
@@ -220,49 +124,51 @@
   align-items: center;
   gap: 8px;
   background: #ffffff;
-<<<<<<< HEAD
   color: orange;
-  border: 1px solid rgba(0,0,0,0.2);
-=======
-
-  color: #ff7a00;              /* Orange text */
-  border: 1px solid rgba(255,122,0,0.6);
-
-  color: orange;
-  border: 1px solid rgba(0,0,0,0.2);
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   padding: 7px 18px;
   font-size: 13.5px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  line-height: 1.35;
+  height: auto;
+  overflow: visible;
 }
 
 /* BUTTON HOVER */
 .pd-external-toggle-btn:hover {
-<<<<<<< HEAD
-=======
-  background: #ff7a00;
-  color: #ffffff;
-  border-color: #ff7a00;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
   color: #fff;
   background: orange;
   border-color: orange;
-  box-shadow: 0 4px 12px rgba(255,165,0,0.35);
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d87dee (Major changes in project and fixed the error of scroll icons)
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.35);
   transform: translateY(-1px);
 }
 
 .pd-external-toggle-btn:active {
   transform: translateY(0);
+}
+
+/* Freeze child text/icon blocks from internal vertical scroll */
+.pd-amenities-container :is(h1, h2, h3, h4, h5, h6, p, span, button, i, svg, .anticon) {
+  overflow-y: visible !important;
+  overflow-x: visible !important;
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+}
+
+.pd-amenities-container .pd-amenity-item,
+.pd-amenities-container .pd-amenity-name,
+.pd-amenities-container .pd-amenity-icon,
+.pd-amenities-container .pd-external-toggle-btn {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto;
+  text-overflow: clip !important;
 }
 
 /* RESPONSIVE */
@@ -278,7 +184,7 @@
   }
 
   .pd-amenities-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -292,7 +198,7 @@
   }
 
   .pd-amenities-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
