@@ -56,32 +56,27 @@ const projects = [
 const PremiumProjectsSection = () => {
   return (
     <div className="premium-wrapper">
-      <h2 className="section-heading">Premium Projects</h2>
+      <h2 className="section-heading">Luxury Picks For You</h2>
+      <p className="section-subheading">Curated premium projects with trusted developers</p>
 
       <div className="premium-scroll">
         {projects.map((item, index) => (
-          <div className="premium-card" key={index}>
-            
-            {/* Top Oval Image */}
-            <div className="top-oval">
+          <article className="premium-card" key={index}>
+            <div className="premium-card-image">
               <img src={item.image} alt={item.title} />
             </div>
 
-            {/* Center Logo - Now touching image */}
-            <div className="logo-wrapper">
-              <div className="logo-inner">
+            <div className="premium-card-body">
+              <div className="premium-logo-chip">
                 <img src={item.logo} alt="logo" />
               </div>
+              <div className="premium-card-text">
+                <h3>{item.title}</h3>
+                <p>{item.location}</p>
+                <h4>{item.price}</h4>
+              </div>
             </div>
-
-            {/* Bottom Details - Now touching logo */}
-            <div className="bottom-details">
-              <h3>{item.title}</h3>
-              <p>{item.location}</p>
-              <h4>{item.price}</h4>
-            </div>
-
-          </div>
+          </article>
         ))}
       </div>
     </div>

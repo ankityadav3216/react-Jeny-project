@@ -1,138 +1,161 @@
-import React, { useState } from "react";
-import { Typography } from "antd";
+import React from "react";
 import {
-  HomeOutlined,
-  WifiOutlined,
-  CarOutlined,
-  CheckCircleFilled,
-  StarFilled,
-  UserOutlined,
-  DownOutlined,
+  ShareAltOutlined,
+  HeartOutlined,
+  WhatsAppOutlined,
+  PhoneOutlined,
+  RocketOutlined,
+  TagOutlined,
+  ApartmentOutlined,
+  CheckCircleOutlined,
 } from "@ant-design/icons";
-import "./PropertySection.css";
-
-const { Title, Text } = Typography;
+import "./Propertysection.css";
 
 const propertyData = [
   {
     id: 1,
-    title: "Luxury apartment with modern interior design",
-    price: "₹1.20 Cr",
+    title: "Atulyam Saral",
+    builder: "Atulyam Group",
+    heading: "3, 4 BHK Flat",
+    subheading: "for Sale in Kudasan, Gandhinagar",
+    price: "Rs1.14 Cr - Rs1.62 Cr",
+    size: "2430 SqFt - 3438 SqFt",
+    status: "Ready to Move",
+    area: "1 Acre",
+    usps: [
+      "2 tower with limited units",
+      "G+12 Residential Floors with Premium Features",
+      "20 luxurious 4 BHK apartments",
+    ],
     image:
-      "https://1.bp.blogspot.com/-0RluMOPpKJQ/VA_yGrkVzZI/AAAAAAAAH2o/VCSCwHrGMPw/s1600/otla1.jpg",
-    description:
-      "This beautifully designed 3BHK apartment offers spacious living with modern interiors, premium fittings, and natural lighting. Located in a peaceful neighborhood with easy access to schools, markets, and transportation.",
+      "https://greenevolution.in/wp-content/uploads/2022/09/BannerImage-6-1920_1050-1.webp",
   },
   {
     id: 2,
-    title: "Premium villa with private garden",
-    price: "₹2.40 Cr",
+    title: "Atulyam Crest",
+    builder: "Atulyam Group",
+    heading: "3, 4 BHK Flat",
+    subheading: "for Sale in Kudasan, Gandhinagar",
+    price: "Rs1.04 Cr - Rs1.49 Cr",
+    size: "2140 SqFt - 3310 SqFt",
+    status: "Under Construction",
+    area: "0.9 Acre",
+    usps: [
+      "Low density planning",
+      "Club + co-working deck",
+      "Smart security at all entries",
+    ],
     image:
-      "https://hblimg.mmtcdn.com/content/hubble/img/manipal/mmt/activities/m_Hasta%20Shilpa%20Heritage%20Village-3_l_384_512.jpg",
-    description:
-      "Experience luxury living in this premium villa featuring a private landscaped garden, high ceilings, and elegant architecture.",
+      "https://en-media.thebetterindia.com/uploads/2016/06/bungalow.jpg",
   },
   {
     id: 3,
-    title: "Modern 2BHK with city view balcony",
-    price: "₹85 Lakh",
+    title: "Atulyam Heights",
+    builder: "Atulyam Group",
+    heading: "3, 4 BHK Flat",
+    subheading: "for Sale in Kudasan, Gandhinagar",
+    price: "Rs98 Lakh - Rs1.28 Cr",
+    size: "1920 SqFt - 2860 SqFt",
+    status: "Ready to Move",
+    area: "0.8 Acre",
+    usps: [
+      "Project near SG Highway",
+      "Green podium and kids zone",
+      "Only 4 flats per floor",
+    ],
     image:
-      "https://media-cdn.tripadvisor.com/media/photo-s/17/2f/55/20/oyo-13103-ample-s-den.jpg",
-    description:
-      "Stylish 2BHK apartment with open balcony, modular kitchen and premium flooring. Close to metro and shopping complex.",
+      "https://www.buildingmaterialreporter.com/uploads/blogs/thumb_front/bf17bcf56e7471062477546da2e2d3d1.jpg",
   },
-  
 ];
 
 const PropertySection = () => {
-  const [activeId, setActiveId] = useState(null);
-
-  const toggleDetails = (id) => {
-    setActiveId(activeId === id ? null : id);
-  };
-
   return (
     <div className="main-wrapper">
-
-      {/* SECTION HEADER */}
-      {/* <div className="section-header">
-        <div className="breadcrumb">Home\Ghandhinagar</div>
-        <h2 className="main-heading">
-          Houses for sale in Ghandhinagar
-        </h2>
-      </div> */}
-
       {propertyData.map((item) => (
-        <div key={item.id}>
-          <div className="property-layout">
+        <article key={item.id} className="property-layout">
+          <div className="image-container">
+            <img src={item.image} alt={item.title} />
+          </div>
 
-            {/* IMAGE */}
-            <div className="image-container">
-              <img src={item.image} alt="property" />
+          <div className="details-container">
+            <div className="project-head-row">
+              <div className="project-head-content">
+                <h3 className="project-title">{item.title}</h3>
+                <p className="project-builder">by {item.builder}</p>
+              </div>
+
+              <div className="project-actions">
+                <button type="button" aria-label="Share" className="icon-btn">
+                  <ShareAltOutlined />
+                </button>
+                <button type="button" aria-label="Wishlist" className="icon-btn">
+                  <HeartOutlined />
+                </button>
+              </div>
             </div>
 
-            {/* DETAILS BOX */}
-            <div className="details-container">
+            <p className="project-subtitle">
+              <span>{item.heading}</span> {item.subheading}
+            </p>
 
-              {/* COL 1 */}
-              <div className="details-col">
-                <Text className="small-text">FEATURED PROPERTY</Text>
-                <Title level={4} className="property-title">
-                  {item.title}
-                </Title>
-                <Text
-                  className="clickable"
-                  onClick={() => toggleDetails(item.id)}
-                >
-                  <UserOutlined /> View Details <DownOutlined />
-                </Text>
+            <div className="stats-strip" role="list">
+              <div className="stat-col" role="listitem">
+                <div className="stat-value">
+                  <TagOutlined /> {item.price}
+                </div>
+                <div className="stat-label">Price</div>
               </div>
-
-              <div className="divider"></div>
-
-              {/* COL 2 */}
-              <div className="details-col">
-                <Title level={4} className="price-text">
-                  {item.price}
-                </Title>
-                <div className="info-item">
-                  <HomeOutlined /> 3 Bedrooms
+              <div className="stat-col" role="listitem">
+                <div className="stat-value">
+                  <ApartmentOutlined /> {item.size}
                 </div>
-                <div className="info-item">
-                  <WifiOutlined /> High-speed Internet
-                </div>
-                <div className="info-item">
-                  <CarOutlined /> Covered Parking
-                </div>
+                <div className="stat-label">Size</div>
               </div>
+              <div className="stat-col" role="listitem">
+                <div className="stat-value">
+                  <CheckCircleOutlined /> {item.status}
+                </div>
+                <div className="stat-label">Project Status</div>
+              </div>
+              <div className="stat-col" role="listitem">
+                <div className="stat-value">
+                  <RocketOutlined /> {item.area}
+                </div>
+                <div className="stat-label">Project Area</div>
+              </div>
+            </div>
 
-              <div className="divider"></div>
+            <div className="usp-row-wrap">
+              <p className="usp-title">Project USPs</p>
+              <div className="usp-row">
+                {item.usps.map((usp) => (
+                  <span key={usp} className="usp-pill">
+                    {usp}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-              {/* COL 3 */}
-              <div className="details-col last-col">
+            <div className="project-footer-row">
+              <div className="dev-block">
+                <div className="dev-logo">AG</div>
                 <div>
-                  <div className="info-item">
-                    <CheckCircleFilled /> Verified Listing
-                  </div>
-                  <div className="info-item">
-                    <StarFilled /> Premium Amenities
-                  </div>
+                  <p className="dev-name">{item.builder}</p>
+                  <p className="dev-role">Developer</p>
                 </div>
-                <button className="book-btn">Book Now</button>
+              </div>
+
+              <div className="cta-row">
+                <button type="button" className="contact-btn">
+                  <PhoneOutlined /> View Contact
+                </button>
+                <button type="button" className="wa-btn">
+                  <WhatsAppOutlined /> WhatsApp
+                </button>
               </div>
             </div>
           </div>
-
-          {/* DESCRIPTION */}
-          {activeId === item.id && (
-            <div className="description-container">
-              <div className="description-box">
-                <Title level={4}>Property Description</Title>
-                <Text>{item.description}</Text>
-              </div>
-            </div>
-          )}
-        </div>
+        </article>
       ))}
     </div>
   );

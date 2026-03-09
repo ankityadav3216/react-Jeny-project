@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Card, Button, Tag } from "antd";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 import "./NewsSection.css";
 
 const { Meta } = Card;
@@ -52,6 +53,9 @@ const newsItems = [
 ];
 
 const NewsSection = () => {
+  const scrollRef = useRef(null);
+  useAutoHorizontalScroll(scrollRef, { speed: 0.65 });
+
   return (
     <section className="news-section">
       <div className="news-section-header">
@@ -59,7 +63,7 @@ const NewsSection = () => {
         <div className="line" />
       </div>
 
-      <div className="news-section-scroll">
+      <div className="news-section-scroll" ref={scrollRef}>
         {newsItems.map((item) => (
           <Card
             key={item.id}

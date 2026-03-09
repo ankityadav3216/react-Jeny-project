@@ -1,35 +1,51 @@
-.most-demand-projects {
-  padding: 60px 50px;
+﻿.most-demand-projects {
+  padding: 14px 12px;
   background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
 }
 
-.mdp-heading {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  position: relative;
-  display: inline-block;
+.mdp-head-wrap {
+  border-radius: 12px;
+  padding: 6px 8px;
+  margin-bottom: 10px;
+  background: #f8fbff;
 }
 
-.mdp-heading::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  border-radius: 2px;
+.mdp-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #d15e0d;
+  background: #fff2e7;
+  border: 1px solid #ffd7bd;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.mdp-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 6px 0 3px;
+  color: #16345c;
+}
+
+.mdp-subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: #5f7398;
 }
 
 .mdp-scroll {
   display: flex;
-  gap: 30px;
+  gap: 12px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 10px 0 20px;
+  padding: 4px 2px 6px;
   scrollbar-width: none;
+  border-radius: 12px;
 }
 
 .mdp-scroll::-webkit-scrollbar {
@@ -37,22 +53,23 @@
 }
 
 .mdp-card {
-  min-width: 300px;
-  height: 400px;
+  min-width: 220px;
+  max-width: 220px;
+  height: auto;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .mdp-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .mdp-image-wrapper {
   position: relative;
-  height: 220px;
-  border-radius: 24px;
+  height: 160px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
 .mdp-image-wrapper img {
@@ -63,13 +80,13 @@
 
 .mdp-badge {
   position: absolute;
-  bottom: 16px;
+  bottom: 9px;
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  padding: 6px 18px;
+  padding: 4px 12px;
   border-radius: 30px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   color: #007bff;
   border: 1px solid rgba(0, 123, 255, 0.2);
@@ -78,46 +95,100 @@
 
 .mdp-details {
   position: relative;
-  width: 90%;
-  margin: -50px auto 0;
+  width: 91%;
+  margin: -34px auto 0;
   background: white;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  border-radius: 13px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.07);
 }
 
 .mdp-details h3 {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin: 0;
   color: #003366;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .mdp-dev {
-  font-size: 13px;
+  font-size: 11px;
   color: #666;
-  margin: 0;
+  margin: 1px 0 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .mdp-info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 13px;
+  gap: 4px;
+  font-size: 11px;
   margin: 5px 0;
 }
 
 .mdp-info span {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mdp-price {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
-  color: #61676d;
-  margin-top: 8px;
-  padding-top: 8px;
+  color: #1f4f90;
+  margin-top: 5px;
+  padding-top: 5px;
   border-top: 1px dashed #e0e0e0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .most-demand-projects {
+    padding: 12px 10px;
+    border-radius: 14px;
+  }
+
+  .mdp-heading {
+    font-size: 18px;
+  }
+
+  .mdp-card {
+    min-width: 200px;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .mdp-image-wrapper {
+    height: 146px;
+  }
+}
+
+@media (max-width: 480px) {
+  .most-demand-projects {
+    padding: 10px 6px;
+  }
+
+  .mdp-heading {
+    font-size: 16px;
+  }
+
+  .mdp-subtitle {
+    font-size: 11px;
+  }
+
+  .mdp-card {
+    min-width: 84%;
+    max-width: 84%;
+    height: auto;
+  }
+
+  .mdp-image-wrapper {
+    height: 136px;
+  }
 }

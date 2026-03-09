@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./TopHighlightedProjects.css";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 
 const projects = [
   {
@@ -59,6 +60,9 @@ const projects = [
 ];
 
 const TopHighlightedProjects = () => {
+  const scrollRef = useRef(null);
+  useAutoHorizontalScroll(scrollRef, { speed: 0.73 });
+
   return (
     <section className="top-projects">
       <div className="section-header">
@@ -66,7 +70,7 @@ const TopHighlightedProjects = () => {
         <div className="underline" />
       </div>
 
-      <div className="projects-scroll">
+      <div className="projects-scroll" ref={scrollRef}>
         {projects.map((project) => (
           <div
             key={project.id}

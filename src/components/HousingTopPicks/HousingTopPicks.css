@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 5px 0;
   box-sizing: border-box;
-  height: 500px;
+  height: 450px;
 }
 
 .highlight-header {
@@ -49,18 +49,49 @@
 
 /* ================= CARD ================= */
 .highlight-card {
-  flex: 0 0 1000px;
-  height: 400px;
-  border-radius: 25px !important;
-  padding: 10px !important;
+  flex: 0 0 920px;
+  height: 350px;
+  border-radius: 22px !important;
+  padding: 0 !important;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   border: 1px solid rgb(223, 222, 222) !important;
   background: #fff;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 1000px;
+  min-width: 920px;
+  overflow: hidden;
+}
+
+.highlight-card .ant-card-body {
+  padding: 0 !important;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+.highlight-card .ant-row {
+  margin: 0 !important;
+  height: 100%;
+  width: 100%;
+  align-items: stretch !important;
+}
+
+.highlight-card .ant-col {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.highlight-card .ant-col:first-child {
+  flex: 0 0 43% !important;
+  max-width: 43% !important;
+}
+
+.highlight-card .ant-col:last-child {
+  flex: 0 0 57% !important;
+  max-width: 57% !important;
+  padding: 18px 20px !important;
+  overflow: hidden !important;
 }
 
 .fade-left {
@@ -82,17 +113,20 @@
 /* ================= IMAGE ================= */
 .main-img {
   width: 100%;
-  height: 330px;
+  height: 100%;
+  min-height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 22px 0 0 22px;
+  display: block;
 }
 
 /* ================= CONTENT ================= */
 .content-wrapper {
-  height: 330px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: visible !important;
 }
 
 .title-price {
@@ -126,6 +160,7 @@
 .value {
   font-weight: 600;
   margin-top: 4px;
+  overflow: visible !important;
 }
 
 .developer-box {
@@ -142,6 +177,14 @@
   height: 60px;
   background: #ddd;
   border-radius: 12px;
+}
+
+/* Prevent child internal vertical scroll in card */
+.highlight-card :is(h1, h2, h3, h4, h5, h6, p, span, button, i, svg, .anticon) {
+  overflow-y: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  text-overflow: clip !important;
 }
 
 /* ================= MOBILE RESPONSIVE ================= */
@@ -191,9 +234,17 @@
   .highlight-card .ant-row {
     flex-direction: column !important;
     margin: 0 !important;
+    height: auto;
   }
 
   .highlight-card .ant-col {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding: 0 !important;
+  }
+
+  .highlight-card .ant-col:first-child,
+  .highlight-card .ant-col:last-child {
     max-width: 100% !important;
     flex: 0 0 100% !important;
     padding: 0 !important;

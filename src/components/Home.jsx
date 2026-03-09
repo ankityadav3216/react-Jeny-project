@@ -34,40 +34,40 @@ const Home = () => {
         <PropertyCategories />
       </section>
 
-      <section className="container compact-section">
+      <section className="container compact-section equal-width-section">
         <HousingTopPicks />
       </section>
 
-      <section className="container compact-section">
+      <section className="container compact-section equal-width-section">
         <Reels />
       </section>
 
-      <section className="container compact-section">
+      <section className="container compact-section equal-width-section">
         <FeaturedDeveloper />
       </section>
 
       {/* 🔥 After Developer (Tight Gap Sections) */}
-      <section className="container after-developer">
+      <section className="container after-developer equal-width-section">
         <FeaturedProperties />
       </section>
 
-      <section className="container after-developer">
+      <section className="container after-developer equal-width-section">
         <RecommendedSellers />
       </section>
 
-      <section className="container after-developer">
+      <section className="container after-developer equal-width-section">
         <HServices />
       </section>
 
-      <section className="container after-developer">
+      <section className="container after-developer equal-width-section">
         <TopHighlightedProjects />
       </section>
 
-      <section className="container after-developer">
+      <section className="container after-developer equal-width-section">
         <PropertyResearchTools />
       </section>
 
-      <section className="container after-developer">
+      <section className="container after-developer equal-width-section">
         <NewsSection />
       </section>
 

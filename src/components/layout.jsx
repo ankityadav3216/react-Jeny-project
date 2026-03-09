@@ -7,7 +7,7 @@ import Footer from "./Footer/Footer";
 
 import "./Layout.css";
 
-const Layout = () => {
+const Layout = ({ hideFooter = false }) => {
   return (
     <div className="app-layout">
       <Infobar />
@@ -20,7 +20,7 @@ const Layout = () => {
       </main>
 
       {/* Footer */}
-      <Footer />
+      {!hideFooter && <Footer />}
     </div>
   );
 };

@@ -1,10 +1,59 @@
 .property-list-wrapper {
-  padding-top: 64px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 16px 16px;
   background-color: #f5f5f5;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.property-list-grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: start;
+  column-gap: 14px;
+  row-gap: 0;
+}
+
+.property-list-breadcrumb {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 14px;
+  color: #556b8f;
+  padding: 0 2px 1px;
+  line-height: 1.1;
+}
+
+.property-list-left {
+  grid-column: 1;
+  grid-row: 2;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: fit-content;
+  z-index: 2;
+}
+
+.property-list-left .pl-filters {
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
+}
+
+.property-list-right {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.property-list-right > * + * {
+  margin-top: 12px;
+}
+
+.property-list-mobile-breadcrumb,
+.property-list-mobile-filters,
+.property-list-mobile-content {
+  display: none;
 }
 
 .property-list-wrapper,
@@ -20,6 +69,186 @@
   display: none !important;
 }
 
-.property-after-ready {
-  margin-top: -310px;
+.property-mobile-filter-drawer .ant-drawer-content {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-mobile-filter-drawer .ant-drawer-header {
+  display: none;
+}
+
+.property-mobile-filter-drawer .ant-drawer-body {
+  padding: 10px 12px 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+}
+
+.property-mobile-filter-drawer .ant-drawer-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.property-mobile-filter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1c2433;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
+.property-mobile-filter-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d9dfe9;
+  background: #f5f7fb;
+  color: #2c3545;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.property-mobile-filter-close:active {
+  transform: scale(0.97);
+  background: #eceff5;
+}
+
+@media (max-width: 1024px) {
+  .property-list-grid {
+    display: none;
+  }
+
+  .property-list-mobile-breadcrumb,
+  .property-list-mobile-filters,
+  .property-list-mobile-content {
+    display: block;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  .property-list-mobile-breadcrumb {
+    font-size: 13px;
+    color: #556b8f;
+    margin-bottom: 10px;
+    padding: 0 2px;
+  }
+
+  .property-list-mobile-content {
+    margin-top: 16px;
+  }
+
+  .property-list-mobile-content > * + * {
+    margin-top: 16px;
+  }
+}
+
+/* Unified white container + light border + orange actions */
+.property-list-wrapper .pl-label-block,
+.property-list-wrapper .main-wrapper,
+.property-list-wrapper .handpicked-wrap,
+.property-list-wrapper .reels-section,
+.property-list-wrapper .ready-wrapper,
+.property-list-wrapper .most-demand-projects,
+.property-list-wrapper .premium-wrapper {
+  background: #ffffff !important;
+  border: none !important;
+}
+
+.property-list-wrapper .property-layout,
+.property-list-wrapper .image-container,
+.property-list-wrapper .details-container,
+.property-list-wrapper .stats-strip,
+.property-list-wrapper .handpicked-details,
+.property-list-wrapper .mdp-details,
+.property-list-wrapper .premium-card,
+.property-list-wrapper .premium-logo-chip,
+.property-list-wrapper .reel-card,
+.property-list-wrapper .ready-icon-wrap,
+.property-list-wrapper .mdp-head-wrap,
+.property-list-wrapper .pl-insight-strip {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.property-list-wrapper .project-title,
+.property-list-wrapper .project-builder,
+.property-list-wrapper .project-subtitle,
+.property-list-wrapper .project-subtitle span,
+.property-list-wrapper .stat-value,
+.property-list-wrapper .stat-label,
+.property-list-wrapper .usp-title,
+.property-list-wrapper .dev-name,
+.property-list-wrapper .dev-role,
+.property-list-wrapper .handpicked-title,
+.property-list-wrapper .handpicked-subtitle,
+.property-list-wrapper .handpicked-details h3,
+.property-list-wrapper .handpicked-details p,
+.property-list-wrapper .handpicked-details h4,
+.property-list-wrapper .reels-heading,
+.property-list-wrapper .reels-subtitle,
+.property-list-wrapper .ready-title,
+.property-list-wrapper .ready-sub,
+.property-list-wrapper .ready-card-name,
+.property-list-wrapper .ready-card-location,
+.property-list-wrapper .ready-card-price,
+.property-list-wrapper .mdp-heading,
+.property-list-wrapper .mdp-subtitle,
+.property-list-wrapper .mdp-details h3,
+.property-list-wrapper .mdp-dev,
+.property-list-wrapper .mdp-price,
+.property-list-wrapper .section-heading,
+.property-list-wrapper .section-subheading,
+.property-list-wrapper .premium-card-text h3,
+.property-list-wrapper .premium-card-text p,
+.property-list-wrapper .premium-card-text h4,
+.property-list-wrapper .pl-label-title,
+.property-list-wrapper .pl-insight-text {
+  color: #111111 !important;
+}
+
+.property-list-wrapper .icon-btn,
+.property-list-wrapper .usp-pill,
+.property-list-wrapper .contact-btn,
+.property-list-wrapper .wa-btn,
+.property-list-wrapper .mdp-badge,
+.property-list-wrapper .reels-kicker,
+.property-list-wrapper .pl-insight-link,
+.property-list-wrapper .pl-chip-next-btn,
+.property-list-wrapper .pl-sort-trigger,
+.property-list-wrapper .pl-filter-chip,
+.property-list-wrapper .pl-sort-option {
+  background: #ffffff !important;
+  color: #f07617 !important;
+  border: 1px solid rgba(0, 0, 0, 0.16) !important;
+}
+
+.property-list-wrapper .icon-btn:hover,
+.property-list-wrapper .contact-btn:hover,
+.property-list-wrapper .wa-btn:hover,
+.property-list-wrapper .usp-pill:hover,
+.property-list-wrapper .mdp-badge:hover,
+.property-list-wrapper .pl-insight-link:hover,
+.property-list-wrapper .pl-chip-next-btn:hover,
+.property-list-wrapper .pl-sort-trigger:hover,
+.property-list-wrapper .pl-filter-chip:hover,
+.property-list-wrapper .pl-sort-option:hover {
+  background: #fff2e6 !important;
+  color: #b85300 !important;
 }

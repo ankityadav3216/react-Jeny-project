@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Card } from "antd";
-import { PlayCircleOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import { PlayCircleOutlined, VideoCameraOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import "./PLReels.css";
 
 const reelsData = [
@@ -29,28 +29,23 @@ const PLReels = () => {
   const [isHover, setIsHover] = useState(false);
   const [hoveredId, setHoveredId] = useState(null);
 
-  // Auto scroll effect
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    let scrollAmount = 0;
+    let scrollAmount = container.scrollLeft;
     const scrollStep = 1;
-    let interval;
-
-    const startScroll = () => {
-      interval = setInterval(() => {
-        if (!isHover) {
-          scrollAmount += scrollStep;
-          if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-            scrollAmount = 0;
-          }
-          container.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    const interval = setInterval(() => {
+      if (!isHover) {
+        scrollAmount += scrollStep;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        if (scrollAmount >= maxScroll) {
+          scrollAmount = 0;
         }
-      }, 20);
-    };
+        container.scrollTo({ left: scrollAmount, behavior: "auto" });
+      }
+    }, 24);
 
-    startScroll();
     return () => clearInterval(interval);
   }, [isHover]);
 
@@ -100,15 +95,23 @@ const PLReels = () => {
   return (
     <div className="reels-section">
       <div className="reels-heading-container">
-        <VideoCameraOutlined className="reels-logo" />
-        <h2 className="reels-heading">Watch Reels</h2>
+        <span className="reels-logo-wrap">
+          <VideoCameraOutlined className="reels-logo" />
+        </span>
+        <div className="reels-heading-copy">
+          <span className="reels-kicker">Spotlight</span>
+          <h2 className="reels-heading">Watch Reels</h2>
+          <p className="reels-subtitle">
+            <ThunderboltOutlined /> Quick property highlights in short videos
+          </p>
+        </div>
       </div>
 
       <div
         className="reels-scroll"
-        // ref={containerRef}
-        // onMouseEnter={() => setIsHover(false)}
-        // onMouseLeave={() => setIsHover(false)}
+        ref={containerRef}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
       >
         {reelsData.map((reel) => {
           const embedUrl = toEmbedUrl(reel.videoUrl);

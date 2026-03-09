@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./FeaturedDevelopers.css";
 import { ArrowRightOutlined, BuildOutlined } from "@ant-design/icons";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 
 const developers = [
   {
@@ -66,6 +67,9 @@ const developers = [
 ];
 
 const FeaturedDevelopers = () => {
+  const scrollRef = useRef(null);
+  useAutoHorizontalScroll(scrollRef, { speed: 0.7 });
+
   return (
     <div className="featured-developers">
       <div className="fd-header">
@@ -75,7 +79,7 @@ const FeaturedDevelopers = () => {
         </h2>
       </div>
 
-      <div className="fd-scroll">
+      <div className="fd-scroll" ref={scrollRef}>
         {developers.map((dev, index) => (
           <div className="fd-card" key={index}>
             <div className="fd-top">

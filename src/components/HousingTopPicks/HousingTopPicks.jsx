@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Card, Row, Col, Typography } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 import "./HousingTopPicks.css";
 
 const { Title, Text } = Typography;
@@ -50,6 +51,8 @@ const properties = [
 
 const HousingTopPicks = () => {
   const navigate = useNavigate();
+  const scrollRef = useRef(null);
+  useAutoHorizontalScroll(scrollRef, { speed: 0.8 });
 
   const openProperty = (id) => {
     navigate(`/property/${id}`);
@@ -71,7 +74,7 @@ const HousingTopPicks = () => {
         </div>
       </div>
 
-      <div className="card-scroll">
+      <div className="card-scroll" ref={scrollRef}>
         {properties.map((item, index) => (
           <Card
             key={item.id}
@@ -81,7 +84,7 @@ const HousingTopPicks = () => {
             onClick={() => openProperty(item.id)}
             style={{ cursor: "pointer" }}
           >
-            <Row gutter={40} align="middle">
+            <Row gutter={0} align="stretch">
               <Col span={10}>
                 <img src={item.mainImage} alt={item.title} className="main-img" />
               </Col>

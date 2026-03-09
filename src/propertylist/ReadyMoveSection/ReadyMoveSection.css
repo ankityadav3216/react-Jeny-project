@@ -1,111 +1,221 @@
-.ready-wrapper {
+﻿.ready-wrapper {
   width: 100%;
-  max-width: 1400px;        /* container bada */
-  margin: 0 auto;
-  padding: 70px 50px;       /* proper side spacing */
-  background: #ffffff;
-  overflow: hidden;         /* hover safe */
+  margin: 0;
+  padding: 8px 10px 10px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* HEADER */
 .ready-header {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ready-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #eef3ff;
+  color: #4a6eb5;
+  border: 1px solid #d7e3ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .ready-title {
-  margin: 0 !important;
-  font-weight: 700 !important;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #102748;
 }
 
 .ready-sub {
-  font-size: 16px;
-  color: #6b7280;
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #4d6284;
 }
 
-/* SCROLL AREA */
-.ready-scroll {
+.ready-grid {
   display: flex;
-  gap: 1px;                 /* PERFECT balanced gap */
+  gap: 16px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
-  padding: 20px 0 30px 0;    /* hover ke liye space */
+  padding-bottom: 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.ready-scroll::-webkit-scrollbar {
+.ready-grid::-webkit-scrollbar {
   display: none;
 }
 
-/* CARD */
-.project-card {
+.ready-card {
+  min-width: 190px;
+  flex: 0 0 clamp(190px, calc((100% - 48px) / 4), 240px);
+  max-width: 240px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 155px;              /* fit size */
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-}
-
-/* CIRCLE IMAGE */
-.circle-image {
-  position: relative;
-  width: 140px;              /* slightly bigger */
-  height: 140px;
+.ready-circle-image {
+  width: min(150px, 100%);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 3px solid #1677ff;
+  border: 3px solid #ff7a00;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  background: #dfe8f6;
 }
 
-.circle-image img {
+.ready-circle-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* RERA BADGE */
-.rera-badge {
+.ready-rera-badge {
   position: absolute;
-  bottom: 5px;
   left: 50%;
+  bottom: 8px;
   transform: translateX(-50%);
-  background: #ff4d00;
+  background: #ff7a00;
   color: #fff;
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 7px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ready-card-name {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #102748;
+  font-weight: 600;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.ready-card-location {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #677a98;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-/* INFO */
-.project-info {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.project-name {
-  font-weight: 600;
+.ready-card-price {
+  margin-top: 3px;
   font-size: 14px;
+  line-height: 1.1;
+  color: #17396d;
+  font-weight: 600;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-.project-location {
-  font-size: 12px;
-  color: #6b7280;
+@media (max-width: 1024px) {
+  .ready-title {
+    font-size: 22px;
+  }
+
+  .ready-card-name {
+    font-size: 15px;
+  }
+
+  .ready-card-price {
+    font-size: 13px;
+  }
+
+  .ready-grid {
+    gap: 14px;
+  }
+
+  .ready-card {
+    min-width: 180px;
+    flex: 0 0 clamp(180px, calc((100% - 14px) / 2), 230px);
+    max-width: 230px;
+  }
 }
 
-.project-price {
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: 4px;
+@media (max-width: 640px) {
+  .ready-wrapper {
+    padding: 8px 6px;
+  }
+
+  .ready-title {
+    font-size: 20px;
+  }
+
+  .ready-sub {
+    font-size: 11px;
+  }
+
+  .ready-grid {
+    gap: 12px;
+  }
+
+  .ready-card {
+    min-width: 82%;
+    flex: 0 0 82%;
+    max-width: 82%;
+  }
+
+  .ready-card-name {
+    font-size: 15px;
+  }
+
+  .ready-card-price {
+    font-size: 13px;
+  }
 }
+
+@media (max-width: 480px) {
+  .ready-wrapper {
+    padding: 6px 2px 8px;
+  }
+
+  .ready-header {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .ready-icon-wrap {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .ready-title {
+    font-size: 18px;
+  }
+
+  .ready-card {
+    min-width: 88%;
+    flex: 0 0 88%;
+    max-width: 88%;
+  }
+}
+

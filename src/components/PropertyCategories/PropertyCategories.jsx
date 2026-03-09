@@ -1,22 +1,22 @@
 import React from "react";
 import { Card } from "antd";
 import {
-  HomeOutlined,
-  ApartmentOutlined,
-  ShopOutlined,
-  CalendarOutlined,
-  BuildOutlined,
-  AppstoreOutlined,
+  BankOutlined,
+  DashboardOutlined,
+  ShopFilled,
+  CalendarFilled,
+  BuildFilled,
+  AppstoreFilled,
 } from "@ant-design/icons";
 import "./PropertyCategories.css";
 
 const categories = [
-  { id: 1, title: "Houses", icon: <HomeOutlined /> },
-  { id: 2, title: "Apartments", icon: <ApartmentOutlined /> },
-  { id: 3, title: "Commercial", icon: <ShopOutlined /> },
-  { id: 4, title: "Daily Rental", icon: <CalendarOutlined /> },
-  { id: 5, title: "New Buildings", icon: <BuildOutlined /> },
-  { id: 6, title: "More", icon: <AppstoreOutlined /> },
+  { id: 1, title: "Houses", icon: <BankOutlined /> },
+  { id: 2, title: "Apartments", icon: <DashboardOutlined /> },
+  { id: 3, title: "Commercial", icon: <ShopFilled /> },
+  { id: 4, title: "Daily Rental", icon: <CalendarFilled /> },
+  { id: 5, title: "New Buildings", icon: <BuildFilled /> },
+  { id: 6, title: "More", icon: <AppstoreFilled /> },
 ];
 
 const PropertyCategories = () => {
@@ -26,7 +26,7 @@ const PropertyCategories = () => {
 
       <div className="category-wrapper">
         {categories.map((item) => (
-          <Card key={item.id} hoverable className="category-card">
+          <Card key={item.id} className="category-card">
             <div className="icon-wrapper">{item.icon}</div>
             <p className="category-title">{item.title}</p>
           </Card>

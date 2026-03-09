@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./FeaturedProperties.css";
 import { EnvironmentOutlined, AppstoreOutlined } from "@ant-design/icons";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 
 const properties = [
   {
@@ -78,11 +79,14 @@ const properties = [
 ];
 
 const FeaturedProperties = () => {
+  const scrollRef = useRef(null);
+  useAutoHorizontalScroll(scrollRef, { speed: 0.72 });
+
   return (
     <div className="featured-properties">
       <h2 className="fp-heading">Featured Properties</h2>
 
-      <div className="fp-scroll">
+      <div className="fp-scroll" ref={scrollRef}>
         {properties.map((item, index) => (
           <div className="fp-card" key={`${item.title}-${index}`}>
             <div className="fp-image-wrapper">

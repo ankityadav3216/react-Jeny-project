@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Card } from "antd";
 import {
   CalculatorOutlined,
@@ -12,6 +12,7 @@ import {
   FundOutlined,
   FileDoneOutlined,
 } from "@ant-design/icons";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 import "./PropertyResearchTools.css";
 
 const tools = [
@@ -28,6 +29,9 @@ const tools = [
 ];
 
 const PropertyResearchTools = () => {
+  const scrollRef = useRef(null);
+  useAutoHorizontalScroll(scrollRef, { speed: 0.66 });
+
   return (
     <div className="prt-wrapper">
       <h2 className="prt-title">
@@ -37,7 +41,7 @@ const PropertyResearchTools = () => {
         User Property Research Tools
       </h2>
 
-      <div className="prt-scroll">
+      <div className="prt-scroll" ref={scrollRef}>
         {tools.map((item, index) => (
           <Card className="prt-card" bordered={false} key={`${item.title}-${index}`}>
             <div className="prt-icon-wrapper">

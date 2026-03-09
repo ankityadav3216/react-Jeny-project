@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./RecommendedSellers.css";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 
 const sellers = [
   {
@@ -62,6 +63,7 @@ const sellers = [
 
 const RecommendedSellers = () => {
   const containerRef = useRef(null);
+  useAutoHorizontalScroll(containerRef, { speed: 0.68 });
 
   const scroll = (direction) => {
     const container = containerRef.current;

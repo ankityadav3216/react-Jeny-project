@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Card } from "antd";
 import { PlayCircleOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import useAutoHorizontalScroll from "../../hooks/useAutoHorizontalScroll";
 import "./Reels.css";
 
 const reelsData = [
@@ -26,6 +27,7 @@ const toEmbedUrl = (url) => {
 
 const Reels = () => {
   const containerRef = useRef(null);
+  useAutoHorizontalScroll(containerRef, { speed: 0.75 });
 
   const openReel = (url) => {
     const embedUrl = toEmbedUrl(url);
